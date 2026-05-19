@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import stretchGloves from "@/assets/stretch-test.jpg";
 import whyDifferent from "@/assets/why-different.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
