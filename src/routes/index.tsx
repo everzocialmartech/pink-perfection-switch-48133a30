@@ -325,8 +325,9 @@ function Index() {
               const fromRight = i % 2 === 0; // 0: right, 1: left, 2: right...
               const offscreen = fromRight ? 1300 : -1000 - 100;
               const y = 80 + i * 90;
-              const threshold = 0.04 + i * 0.09;
-              const span = 0.18;
+              // All 8 lines finish by progress = 0.5 (card centered in viewport)
+              const threshold = i * 0.05;
+              const span = 0.1;
               const t = Math.max(0, Math.min(1, (buyProgress - threshold) / span));
               // ease-out cubic
               const eased = 1 - Math.pow(1 - t, 3);
