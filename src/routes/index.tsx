@@ -330,13 +330,6 @@ function Index() {
 
             <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
               <ChallengeVideo />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-                <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
-                    Michigan Dental Association
-                  </p>
-                </div>
-              </div>
               <a
                 href="#buy"
                 onClick={(e) => {
