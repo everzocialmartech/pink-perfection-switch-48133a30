@@ -94,7 +94,7 @@ function Index() {
 
         {/* Bold pink stage circle — like the sport landing page reference */}
         <div
-          className="absolute left-1/2 top-[7.5rem] md:top-1/2 -translate-x-1/2 -translate-y-1/2 md:-translate-y-[42%] w-[230vw] h-[230vw] md:w-[88vw] md:h-[88vw] md:max-w-[820px] md:max-h-[820px] rounded-full animate-hero-glow-in md:hidden"
+          className="absolute left-1/2 top-[27rem] -translate-x-1/2 -translate-y-1/2 w-[180vw] h-[180vw] rounded-full animate-hero-glow-in md:hidden"
           style={{
             background:
               "radial-gradient(circle at 35% 70%, oklch(0.78 0.17 350) 0%, oklch(0.68 0.22 350) 55%, oklch(0.58 0.23 350) 100%)",
