@@ -326,7 +326,7 @@ function Index() {
               </svg>
               <div className="relative h-full flex flex-col justify-end">
                 <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[oklch(0.78_0.16_350)] font-medium">
-                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Glide
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Glide
                 </div>
                 <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-[1.05] max-w-md">
                   Wet-hand glide.
@@ -355,7 +355,7 @@ function Index() {
             {/* C — Premium feel: small text card */}
             <div className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06] transition-colors">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
-                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 03 · Touch
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Touch
               </div>
               <h3 className="mt-4 font-serif text-2xl md:text-[1.625rem] font-normal text-white leading-tight">
                 Premium feel.
@@ -385,7 +385,7 @@ function Index() {
               </svg>
               <div className="relative max-w-[60%]">
                 <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
-                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Stretch
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 03 · Stretch
                 </div>
                 <h3 className="mt-4 font-serif text-2xl md:text-[1.75rem] font-normal text-white leading-tight">
                   Wetsuit stretch.
