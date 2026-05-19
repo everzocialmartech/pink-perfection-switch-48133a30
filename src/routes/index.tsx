@@ -213,7 +213,14 @@ function Index() {
                 Michigan Dental Association.
               </p>
 
-              <div className="mt-10 space-y-4">
+              <div className="mt-10 flex items-center gap-3">
+                <span className="h-px flex-1 bg-[#0b1f3a]/10" />
+                <h3 className="font-serif text-sm md:text-base italic font-light text-[#0b1f3a]/70 tracking-wide whitespace-nowrap">
+                  Polychloroprene is Better
+                </h3>
+                <span className="h-px flex-1 bg-[#0b1f3a]/10" />
+              </div>
+              <div className="mt-5 space-y-4">
                 {[
                   { quote: "I put it on and my hand just disappeared into it. It felt like skin.", who: "DDS, Ann Arbor" },
                   { quote: "Wet hands, no fight. We've never had a glove go on this easily.", who: "Hygienist, MDA 2026" },
