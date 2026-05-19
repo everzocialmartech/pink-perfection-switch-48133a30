@@ -37,7 +37,7 @@ function Index() {
 
           <h1 className="mt-6 font-bold tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
             <span className="text-primary">The </span>
-            <span className="text-accent font-bold">Pink Glove</span>
+            <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
@@ -58,9 +58,10 @@ function Index() {
           <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-fade-in">
             <a
               href="#buy"
-              className="relative inline-flex items-center gap-2 rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-[oklch(0.65_0.22_350)]/40 hover:scale-[1.04] hover:bg-[oklch(0.6_0.24_350)] transition animate-pulse-glow"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
             >
-              Shop Posi-Prene <ArrowRight className="w-5 h-5" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
+              Shop Posi-Prene <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
 
@@ -165,9 +166,10 @@ function Index() {
               </div>
               <a
                 href="#"
-                className="mt-7 relative inline-flex items-center justify-center gap-2 rounded-md bg-accent text-accent-foreground px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-accent/40 hover:scale-[1.03] transition w-full sm:w-auto animate-pulse-glow"
+                className="group mt-7 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto"
               >
-                Buy Posi-Prene Pink <ArrowRight className="w-5 h-5" />
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                Buy Posi-Prene Pink <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <p className="mt-4 text-xs text-muted-foreground">Free shipping on orders over $250.</p>
               <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center gap-3">
