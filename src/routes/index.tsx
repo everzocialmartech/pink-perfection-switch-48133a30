@@ -28,8 +28,8 @@ function Index() {
         <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-primary/10 blur-3xl" />
 
         <div className="relative w-full max-w-6xl mx-auto px-6 text-center">
-          <span className="inline-flex items-center gap-2 rounded-sm bg-white/60 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent shadow-sm animate-fade-in">
-            <Sparkles className="w-3.5 h-3.5" /> Latex-Free • Nitrile-Free • Premium Polychloroprene
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-accent shadow-sm animate-fade-in">
+            <Sparkles className="w-3.5 h-3.5" /> Premium Polychloroprene
           </span>
 
           <h1 className="mt-4 font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] animate-fade-in max-w-5xl mx-auto">
