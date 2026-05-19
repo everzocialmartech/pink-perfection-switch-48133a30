@@ -76,7 +76,9 @@ function Index() {
       const vh = window.innerHeight || 1;
       // 0 when section bottom enters viewport, 1 when section top leaves
       const p = 1 - (rect.top + rect.height) / (vh + rect.height);
-      setBuyProgress(Math.max(0, Math.min(1, p)));
+      const clamped = Math.max(0, Math.min(1, p));
+      // Only ever increase — lines should not retreat when scrolling back up
+      setBuyProgress((prev) => (clamped > prev ? clamped : prev));
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
