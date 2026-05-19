@@ -409,13 +409,14 @@ function Index() {
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
-              <Reveal as="p" className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
-                <Truck className="w-3.5 h-3.5 mb-[17px]" /> Ships today · Orders before 1pm EST
+              <Reveal as="p" className="inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)] leading-none">
+                <Truck className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <span>Ships today — orders before 4pm EST</span>
               </Reveal>
-              <Reveal as="h2" delay={120} className="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
+              <Reveal as="h2" delay={40} className="mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
                 Join the <span className="text-[oklch(0.65_0.22_350)]">Posi-Prene Squad.</span>
               </Reveal>
-              <Reveal as="p" delay={240} className="mt-2 text-sm md:text-base text-muted-foreground">
+              <Reveal as="p" delay={80} className="mt-3 text-sm md:text-base text-muted-foreground">
                 Your hands deserve this.
               </Reveal>
 
