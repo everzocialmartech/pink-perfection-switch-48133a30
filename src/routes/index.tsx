@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import posipreneBox from "@/assets/posiprene-box.png";
+import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
 import { ArrowRight, Truck } from "lucide-react";
 
@@ -413,62 +414,17 @@ function Index() {
                 backgroundColor: "oklch(0.97 0.008 260)",
               }}
             >
-              <div
-                className="relative"
-                style={{ perspective: "1400px" }}
-              >
-                <div
-                  className="relative w-[16rem] md:w-[18rem] aspect-[4/3] rounded-[10px] will-change-transform animate-buy-box-float"
-                  style={{
-                    transform: "rotateY(-22deg) rotateX(8deg)",
-                    transformStyle: "preserve-3d",
-                    background:
-                      "linear-gradient(145deg, #1A3A80 0%, #200E5A 100%)",
-                    boxShadow:
-                      "0 40px 60px -25px rgba(10,8,40,0.55), 0 18px 30px -18px rgba(10,8,40,0.4)",
-                  }}
-                >
-                  {/* pink top hairline */}
-                  <div
-                    aria-hidden
-                    className="absolute top-5 left-6 right-6 h-px"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, transparent, oklch(0.7 0.22 350) 30%, oklch(0.7 0.22 350) 70%, transparent)",
-                    }}
-                  />
-                  {/* subtle gloss */}
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 rounded-[10px] pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(115deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.06) 100%)",
-                    }}
-                  />
-
-                  {/* Label */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 select-none">
-                    <div className="font-serif text-2xl md:text-[1.7rem] tracking-[0.18em] leading-none">
-                      POSI<span className="text-[oklch(0.78_0.16_350)]">·</span>PRENE
-                    </div>
-                    <div className="mt-2 text-[9px] tracking-[0.32em] text-white/65 font-medium">
-                      PINK PERFECTION
-                    </div>
-                    <div className="mt-6 flex flex-wrap items-center justify-center gap-1.5">
-                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">LATEX-FREE</span>
-                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">POWDER-FREE</span>
-                    </div>
-                    <div className="mt-1.5">
-                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">100 GLOVES</span>
-                    </div>
-                  </div>
-                </div>
-                {/* contact shadow */}
-                <div aria-hidden className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/25 blur-2xl rounded-full -z-10" />
-
-                {/* caption beneath */}
-                <div className="absolute -bottom-16 inset-x-0 text-center">
+              <div className="relative w-full max-w-[22rem] md:max-w-[26rem] animate-buy-box-float">
+                <img
+                  src={posipreneBoxReal}
+                  alt="Posi-Prene Pink Perfection — Polychloroprene examination gloves box"
+                  loading="lazy"
+                  width={1152}
+                  height={1152}
+                  className="relative w-full h-auto drop-shadow-[0_40px_50px_rgba(11,31,58,0.35)]"
+                />
+                <div aria-hidden className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[75%] h-6 bg-black/20 blur-2xl rounded-full -z-10" />
+                <div className="mt-6 text-center">
                   <p className="text-[10px] tracking-[0.32em] uppercase text-[#0b1f3a]/40 font-medium">
                     Polychloroprene Examination Gloves
                   </p>
