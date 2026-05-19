@@ -201,15 +201,15 @@ function Index() {
           </div>
 
           {/* Stats strip — architectural social proof */}
-          <div className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-3 gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
+          <div className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
             {[
               { stat: "0%", label: "Latex" },
               { stat: "100%", label: "Polychloroprene" },
               { stat: "4pm", label: "Same-day ship cutoff EST" },
             ].map((item) => (
-              <div key={item.label} className="text-center">
-                <div className="font-serif text-3xl md:text-4xl font-light text-white">{item.stat}</div>
-                <div className="mt-2 text-[10px] tracking-[0.22em] uppercase text-white/45">{item.label}</div>
+              <div key={item.label} className="text-center min-w-0">
+                <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-white leading-none">{item.stat}</div>
+                <div className="mt-2 text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.22em] uppercase text-white/45 leading-snug break-words">{item.label}</div>
               </div>
             ))}
           </div>
