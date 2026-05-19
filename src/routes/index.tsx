@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
@@ -11,11 +11,38 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const circleRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
       window.scrollTo({ top: 0, left: 0 });
     }
+  }, []);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const el = circleRef.current;
+        if (!el) return;
+        const y = window.scrollY;
+        const max = window.innerHeight;
+        const p = Math.min(y / max, 1.2); // 0 → 1.2
+        const translate = -42 - p * 12; // start at -42% (existing), drift up
+        const scale = 1 + p * 0.25;
+        const rotate = p * 35;
+        el.style.transform = `translate(-50%, ${translate}%) scale(${scale}) rotate(${rotate}deg)`;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
