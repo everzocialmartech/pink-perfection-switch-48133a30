@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
+import cscLogo from "@/assets/csc-logo.png";
 import { ArrowRight, Truck, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -20,8 +21,46 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Nav */}
-      <header className="absolute top-0 inset-x-0 z-20">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+      <header className="sticky top-0 inset-x-0 z-50 bg-[oklch(0.65_0.22_350)] text-white shadow-[0_4px_20px_-8px_oklch(0.45_0.18_350/0.45)]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between gap-4">
+          <a
+            href="#top"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="flex items-center shrink-0"
+            aria-label="Clinical Supply Co. — Home"
+          >
+            <img
+              src={cscLogo}
+              alt="Clinical Supply Co."
+              width={896}
+              height={512}
+              className="h-7 w-auto"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+          </a>
+
+          <nav className="flex items-center gap-1 sm:gap-2">
+            {[
+              { id: "reaction", label: "Reaction" },
+              { id: "challenge", label: "Challenge" },
+              { id: "buy", label: "Shop" },
+            ].map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="relative inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-white/90 hover:text-white hover:bg-white/15 transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
         </div>
       </header>
 
@@ -105,7 +144,7 @@ function Index() {
       </section>
 
       {/* SWITCH MOMENT */}
-      <section className="relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
+      <section id="reaction" className="scroll-mt-16 relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
             <div>
