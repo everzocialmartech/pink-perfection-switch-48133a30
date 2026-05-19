@@ -62,12 +62,10 @@ function ChallengeVideo() {
     const v = ref.current;
     if (!v) return;
     const next = !muted;
-    v.muted = next;
-    if (!next) {
-      v.volume = 1;
-      v.play().catch(() => {});
-    }
     setMuted(next);
+    v.muted = next;
+    v.volume = 1;
+    v.play().catch(() => {});
   };
   return (
     <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
@@ -76,10 +74,10 @@ function ChallengeVideo() {
         src="/challenge.mp4"
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
-        muted
         loop
         playsInline
         preload="metadata"
+        onVolumeChange={(e) => setMuted((e.target as HTMLVideoElement).muted)}
       />
       <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
       <button
