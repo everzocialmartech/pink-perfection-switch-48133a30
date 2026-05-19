@@ -127,6 +127,9 @@ function Index() {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
           </h2>
+          <p className="mt-4 text-sm font-semibold tracking-wide uppercase text-muted-foreground">
+            Filmed live at <span className="text-primary">MDA 2026</span> — Michigan Dental Association Show
+          </p>
           <div className="mt-8 relative aspect-video rounded-md overflow-hidden bg-primary shadow-2xl shadow-primary/30 ring-1 ring-primary/10">
             <video
               src="/challenge.mp4"
