@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
+import posipreneBox from "@/assets/posiprene-box.png";
 import { ArrowRight, Truck, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -30,18 +31,35 @@ function Index() {
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
-          {/* Floating 3D glove */}
-          <div className="relative mt-2 mx-auto max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-none animate-hero-drop">
+          {/* Floating 3D glove popping up from behind the box */}
+          <div className="relative mt-4 mx-auto max-w-[20rem] sm:max-w-sm md:max-w-md lg:max-w-lg pointer-events-none">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
-            <img
-              src={floatingGlove}
-              alt="Posi-Prene Pink glove floating"
-              width={1080}
-              height={1920}
-              className="relative w-full h-auto drop-shadow-2xl animate-float"
-            />
-            {/* Soft floor shadow */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/5 h-6 rounded-sm bg-foreground/20 blur-2xl" />
+
+            {/* Glove — behind the box, pops up */}
+            <div className="relative z-10 mx-auto w-[62%] -mb-[18%]">
+              <img
+                src={floatingGlove}
+                alt="Posi-Prene Pink glove floating"
+                width={1080}
+                height={1920}
+                className="w-full h-auto animate-glove-popup origin-bottom will-change-transform"
+                style={{ animation: "glove-popup 1.6s cubic-bezier(0.22,1,0.36,1) 0.2s both, float 6s ease-in-out 1.8s infinite" }}
+              />
+            </div>
+
+            {/* Box — in front, anchored bottom */}
+            <div className="relative z-20">
+              <img
+                src={posipreneBox}
+                alt="Posi-Prene Pink Perfection glove box"
+                width={1200}
+                height={900}
+                className="relative w-full h-auto animate-box-rise drop-shadow-2xl"
+              />
+            </div>
+
+            {/* Soft floor shadow under the box */}
+            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-3/4 h-6 rounded-full bg-foreground/25 blur-2xl z-0" />
           </div>
 
           <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-hero-rise delay-300">
