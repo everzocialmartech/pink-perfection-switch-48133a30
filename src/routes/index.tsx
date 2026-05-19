@@ -73,7 +73,7 @@ function Index() {
                 Still using <span className="text-[oklch(0.6_0.18_350)]">stiff nitrile?</span>
               </h2>
             </div>
-            <p className="text-sm text-muted-foreground md:max-w-xs">See what dental teams say the first time they try Posi-Prene Pink.</p>
+            <p className="text-sm text-muted-foreground md:max-w-xs">See what dental teams say the first time they try Posi-Prene Pink Perfection.</p>
           </div>
 
           <div className="grid lg:grid-cols-5 gap-6 items-stretch">
