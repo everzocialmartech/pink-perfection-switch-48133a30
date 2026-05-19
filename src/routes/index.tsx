@@ -186,9 +186,9 @@ function Index() {
               ].map((title, i) => (
                 <div
                   key={title}
-                  className="rounded-lg bg-white border border-[oklch(0.9_0.05_350)] p-4 flex items-start gap-3 shadow-sm"
+                  className="group cursor-pointer rounded-lg bg-white border border-[oklch(0.9_0.05_350)] p-4 flex items-start gap-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[oklch(0.65_0.22_350)] hover:shadow-[0_0_30px_-2px_oklch(0.65_0.22_350/0.55)]"
                 >
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-[oklch(0.97_0.04_350)] text-[oklch(0.55_0.22_350)] grid place-items-center text-[11px] font-bold tracking-widest">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[oklch(0.97_0.04_350)] text-[oklch(0.55_0.22_350)] grid place-items-center text-[11px] font-bold tracking-widest transition-colors duration-300 group-hover:bg-[oklch(0.65_0.22_350)] group-hover:text-white">
                     0{i + 1}
                   </div>
                   <div className="text-sm font-semibold text-primary leading-snug pt-1">{title}</div>
