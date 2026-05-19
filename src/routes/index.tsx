@@ -319,15 +319,15 @@ function Index() {
                 <stop offset="100%" stopColor="oklch(0.6 0.24 350)" stopOpacity="0.95" />
               </linearGradient>
             </defs>
-            {[...Array(8)].map((_, i) => {
+            {[...Array(7)].map((_, i) => {
               const lineW = 1000;
               const finalX = 100; // centered in 1200 viewBox
               const fromRight = i % 2 === 0; // 0: right, 1: left, 2: right...
               const offscreen = fromRight ? 1300 : -1000 - 100;
               const y = 80 + i * 90;
-              // All 8 lines finish by progress = 0.5 (card centered in viewport)
-              const threshold = i * 0.05;
-              const span = 0.1;
+              // All lines finish by progress = 0.5 (card centered in viewport)
+              const threshold = i * 0.045;
+              const span = 0.22;
               const t = Math.max(0, Math.min(1, (buyProgress - threshold) / span));
               // ease-out cubic
               const eased = 1 - Math.pow(1 - t, 3);
@@ -342,7 +342,7 @@ function Index() {
                   rx={17}
                   fill="url(#buyLine)"
                   style={{
-                    transition: "all 220ms cubic-bezier(0.22, 1, 0.36, 1)",
+                    transition: "all 600ms cubic-bezier(0.22, 1, 0.36, 1)",
                     opacity: 0.55 + eased * 0.4,
                   }}
                 />
