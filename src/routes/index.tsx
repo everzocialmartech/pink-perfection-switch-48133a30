@@ -65,7 +65,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[85vh] md:min-h-[95vh] flex items-center pt-16 pb-12">
+      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-8 pb-8">
         {/* Base canvas — soft warm off-white */}
         <div className="absolute inset-0 bg-[oklch(0.985_0.008_340)]" />
 
@@ -99,7 +99,7 @@ function Index() {
         <div className="relative w-full max-w-4xl mx-auto px-6 text-center">
           <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance">
             <span className="text-primary">The </span>
-            <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
+            <span className="font-bold animate-pink-to-white">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
