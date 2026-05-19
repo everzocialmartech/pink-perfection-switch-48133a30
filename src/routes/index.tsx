@@ -307,16 +307,18 @@ function Index() {
               opacity: 0.35 + buyProgress * 0.65,
             }}
           />
-          {/* Floating glove pop-ups behind the lines */}
+          {/* Two large gloves peeking from behind the card */}
           {[
-            { left: "6%", top: "12%", size: 110, rot: -18, delay: 0.05 },
-            { left: "84%", top: "20%", size: 130, rot: 22, delay: 0.12 },
-            { left: "10%", top: "62%", size: 95, rot: 14, delay: 0.2 },
-            { left: "78%", top: "70%", size: 120, rot: -12, delay: 0.28 },
-            { left: "46%", top: "86%", size: 90, rot: 6, delay: 0.36 },
+            { side: "left" as const, rot: -28, delay: 0.18 },
+            { side: "right" as const, rot: 28, delay: 0.28 },
           ].map((g, i) => {
-            const t = Math.max(0, Math.min(1, (buyProgress - g.delay) / 0.25));
+            const t = Math.max(0, Math.min(1, (buyProgress - g.delay) / 0.28));
             const eased = 1 - Math.pow(1 - t, 3);
+            const isLeft = g.side === "left";
+            // Slide in from offscreen toward the card edge
+            const finalOffset = "12%"; // distance from viewport edge at rest
+            const startOffset = "-22%";
+            const offset = `calc(${startOffset} + (${finalOffset} - (${startOffset})) * ${eased})`;
             return (
               <img
                 key={i}
@@ -325,16 +327,16 @@ function Index() {
                 aria-hidden
                 className="absolute animate-float"
                 style={{
-                  left: g.left,
-                  top: g.top,
-                  width: g.size,
+                  [isLeft ? "left" : "right"]: offset,
+                  top: "50%",
+                  width: "clamp(220px, 28vw, 360px)",
                   height: "auto",
-                  opacity: eased * 0.55,
-                  transform: `translate(-50%, -50%) scale(${0.6 + eased * 0.4}) rotate(${g.rot}deg)`,
-                  transition: "opacity 700ms ease-out, transform 900ms cubic-bezier(0.22, 1, 0.36, 1)",
-                  filter: "hue-rotate(0deg) drop-shadow(0 10px 20px oklch(0.55 0.22 350 / 0.35))",
-                  animationDelay: `${i * 0.4}s`,
-                  animationDuration: `${6 + i}s`,
+                  opacity: eased * 0.95,
+                  transform: `translateY(-50%) rotate(${g.rot}deg) scale(${0.85 + eased * 0.15})`,
+                  transition: "opacity 800ms ease-out, transform 1000ms cubic-bezier(0.22, 1, 0.36, 1)",
+                  filter: "drop-shadow(0 18px 40px oklch(0.45 0.22 350 / 0.45))",
+                  animationDelay: `${i * 0.6}s`,
+                  animationDuration: `${7 + i}s`,
                 }}
               />
             );
