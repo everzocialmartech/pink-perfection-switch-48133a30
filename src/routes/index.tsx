@@ -282,7 +282,7 @@ function Index() {
             width={896}
             height={512}
             loading="lazy"
-            className="h-10 w-auto"
+            className="h-24 md:h-28 w-auto"
           />
           <div>© {new Date().getFullYear()} Clinical Supply Company</div>
           <a href="tel:18004680188" className="font-semibold text-primary-foreground hover:text-accent">1 (800) 468 0188</a>
