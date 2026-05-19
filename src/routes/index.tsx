@@ -307,6 +307,38 @@ function Index() {
               opacity: 0.35 + buyProgress * 0.65,
             }}
           />
+          {/* Floating glove pop-ups behind the lines */}
+          {[
+            { left: "6%", top: "12%", size: 110, rot: -18, delay: 0.05 },
+            { left: "84%", top: "20%", size: 130, rot: 22, delay: 0.12 },
+            { left: "10%", top: "62%", size: 95, rot: 14, delay: 0.2 },
+            { left: "78%", top: "70%", size: 120, rot: -12, delay: 0.28 },
+            { left: "46%", top: "86%", size: 90, rot: 6, delay: 0.36 },
+          ].map((g, i) => {
+            const t = Math.max(0, Math.min(1, (buyProgress - g.delay) / 0.25));
+            const eased = 1 - Math.pow(1 - t, 3);
+            return (
+              <img
+                key={i}
+                src={floatingGlove}
+                alt=""
+                aria-hidden
+                className="absolute animate-float"
+                style={{
+                  left: g.left,
+                  top: g.top,
+                  width: g.size,
+                  height: "auto",
+                  opacity: eased * 0.55,
+                  transform: `translate(-50%, -50%) scale(${0.6 + eased * 0.4}) rotate(${g.rot}deg)`,
+                  transition: "opacity 700ms ease-out, transform 900ms cubic-bezier(0.22, 1, 0.36, 1)",
+                  filter: "hue-rotate(0deg) drop-shadow(0 10px 20px oklch(0.55 0.22 350 / 0.35))",
+                  animationDelay: `${i * 0.4}s`,
+                  animationDuration: `${6 + i}s`,
+                }}
+              />
+            );
+          })}
           {/* Diagonal pink lines — drift horizontally with scroll */}
           <svg
             className="absolute inset-0 w-full h-full"
