@@ -186,3 +186,20 @@
 .delay-150 { animation-delay: 0.15s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-500 { animation-delay: 0.5s; }
+
+@keyframes glove-popup {
+  0% { opacity: 0; transform: translateY(40%) scale(0.9); }
+  60% { opacity: 1; transform: translateY(-6%) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-glove-popup {
+  animation: glove-popup 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+@keyframes box-rise {
+  0% { opacity: 0; transform: translateY(40px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-box-rise {
+  animation: box-rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
