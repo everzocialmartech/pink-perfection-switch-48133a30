@@ -220,7 +220,7 @@ function Index() {
       {/* THE REACTION — light, two-column: quotes left, video right */}
       <section id="reaction" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left — headline + quotes */}
             <div>
               <div className="inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/65">
