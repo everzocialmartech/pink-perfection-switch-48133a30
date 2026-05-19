@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import stretchGloves from "@/assets/stretch-test.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Check, Star, Sparkles, Play, ArrowRight, ShoppingBag } from "lucide-react";
-import { motion } from "motion/react";
+import { Star, Sparkles, Play, ArrowRight, ShoppingBag } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -33,55 +32,38 @@ function Index() {
         <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-accent/25 blur-3xl" />
 
         <div className="relative w-full max-w-6xl mx-auto px-6 text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent shadow-sm"
-          >
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent shadow-sm animate-fade-in">
             <Sparkles className="w-3.5 h-3.5" /> Posi-Prene Pink
-          </motion.span>
+          </span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 font-black tracking-tight leading-[0.92] text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[8.5rem]"
-          >
+          <h1 className="mt-6 font-black tracking-tight leading-[0.92] text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-fade-in">
             <span className="text-primary">Feel the</span>
             <br />
             <span className="text-accent italic font-serif">difference.</span>
-          </motion.h1>
+          </h1>
 
           {/* Floating 3D glove */}
           <div className="relative mt-2 mx-auto max-w-md md:max-w-lg lg:max-w-xl pointer-events-none">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-full bg-accent/30 blur-3xl" />
-            <motion.img
+            <img
               src={floatingGlove}
               alt="Posi-Prene Pink glove floating"
               width={1080}
               height={1920}
-              className="relative w-full h-auto drop-shadow-2xl"
-              animate={{ y: [0, -18, 0], rotate: [0, 2, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-full h-auto drop-shadow-2xl animate-float"
             />
             {/* Soft floor shadow */}
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/5 h-6 rounded-full bg-foreground/20 blur-2xl" />
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-2 flex items-center justify-center gap-3 flex-wrap"
-          >
+          <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-fade-in">
             <a href="#buy" className="inline-flex items-center gap-2 rounded-full bg-accent text-accent-foreground px-8 py-4 font-bold shadow-xl shadow-accent/40 hover:scale-[1.03] transition">
               Shop Posi-Prene <ArrowRight className="w-4 h-4" />
             </a>
             <a href="#challenge" className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur border border-white text-primary px-6 py-4 font-semibold hover:bg-white transition">
               <Play className="w-4 h-4 fill-current" /> Watch
             </a>
-          </motion.div>
+          </div>
 
           <div className="mt-8 flex items-center justify-center gap-x-6 gap-y-2 flex-wrap text-xs font-semibold tracking-wider uppercase text-muted-foreground">
             <span>Latex-Free</span><span className="text-accent">•</span>
