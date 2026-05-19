@@ -33,7 +33,7 @@ function Index() {
 
         <div className="relative w-full max-w-6xl mx-auto px-6 text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/60 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.2em] uppercase text-accent shadow-sm animate-fade-in">
-            <Sparkles className="w-3.5 h-3.5" /> Posi-Prene Pink
+            <Sparkles className="w-3.5 h-3.5" /> Latex-Free • Nitrile-Free • Premium Polychloroprene
           </span>
 
           <h1 className="mt-6 font-black tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
