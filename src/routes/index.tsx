@@ -451,21 +451,11 @@ function Index() {
                   Engineered for high-tempo environments where every second counts. Posi-Prene
                   slides on effortlessly, even over damp skin.
                 </p>
-                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
-                  <a
-                    href="#buy"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-white/10 hover:border-white/35"
-                  >
-                    Watch the demonstration
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-                  <p className="text-[10px] tracking-[0.22em] uppercase text-white/35">
+                <div className="pt-2 flex items-center gap-4">
+                  <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-white/55">
+                    <span className="w-6 h-px bg-white/30" />
                     Filmed live · MDA 2026
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>
