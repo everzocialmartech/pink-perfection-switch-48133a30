@@ -58,6 +58,12 @@ function Reveal({
 function ChallengeVideo() {
   const ref = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
   const toggle = () => {
     const v = ref.current;
     if (!v) return;
