@@ -40,18 +40,26 @@ function Index() {
           </h1>
 
           {/* Floating 3D glove popping up from behind the box */}
-          <div className="relative -mt-2 mb-[-1.5rem] mx-auto max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] pointer-events-none">
+          <div
+            className="relative -mt-4 mb-[-3rem] mx-auto max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] pointer-events-none"
+            style={{ perspective: "1000px" }}
+          >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
 
             {/* Glove — behind the box, pops up */}
-            <div className="relative z-10 mx-auto w-[62%] -mb-[18%]">
+            <div className="relative z-10 mx-auto w-[95%] -mb-[28%]">
               <img
                 src={floatingGlove}
                 alt="Posi-Prene Pink glove floating"
                 width={1080}
                 height={1920}
-                className="w-full h-auto animate-glove-popup origin-bottom will-change-transform"
-                style={{ animation: "glove-popup 1.4s cubic-bezier(0.22,1,0.36,1) 1s both, float 6s ease-in-out 2.4s infinite" }}
+                className="w-full h-auto animate-glove-popup will-change-transform"
+                style={{
+                  transformOrigin: "bottom center",
+                  animation:
+                    "glove-popup 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1s both, float 6s ease-in-out 2.6s infinite",
+                  filter: "drop-shadow(0 18px 22px oklch(0.45 0.18 350 / 0.35))",
+                }}
               />
             </div>
 
