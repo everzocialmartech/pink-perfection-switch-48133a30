@@ -117,11 +117,7 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px" }} />
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.22_350)]/20 border border-[oklch(0.65_0.22_350)]/40 px-4 py-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.85_0.12_350)]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.7_0.22_350)] animate-pulse" />
-            The 2-Second Challenge
-          </span>
-          <h2 className="mt-5 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
             Wet hands. <span className="text-[oklch(0.78_0.18_350)]">Gloved fast.</span>
           </h2>
           <p className="mt-3 text-lg md:text-xl font-semibold text-primary-foreground/90">
