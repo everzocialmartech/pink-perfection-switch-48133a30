@@ -54,6 +54,12 @@ function Index() {
             </a>
           </div>
 
+          <div className="mt-4 animate-hero-rise delay-500">
+            <a href="#" className="text-sm font-semibold text-[oklch(0.55_0.22_350)] underline-offset-4 hover:underline">
+              Not sure yet? Get a free sample →
+            </a>
+          </div>
+
         </div>
       </section>
 
