@@ -93,8 +93,10 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Nav + Hero wrapper — sticky nav unsticks at the end of the hero */}
       <div className="relative">
-      <header className="sticky top-0 inset-x-0 z-50 text-white bg-[#04335a] shadow-[0_4px_20px_-8px_rgba(4,51,90,0.55)]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-9 flex items-center justify-between gap-4">
+      {/* Hairline pink accent — the only place pink lives at full intensity */}
+      <div className="h-[3px] w-full bg-[oklch(0.65_0.22_350)]" />
+      <header className="sticky top-0 inset-x-0 z-50 text-white bg-[#0b1f3a] shadow-[0_4px_24px_-12px_rgba(0,0,0,0.6)]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between gap-4">
           <a
             href="#top"
             onClick={(e) => {
@@ -109,7 +111,7 @@ function Index() {
               alt="Clinical Supply Co."
               width={896}
               height={512}
-              className="h-8 w-auto drop-shadow-[0_2px_8px_oklch(0.35_0.18_350/0.4)]"
+              className="h-7 w-auto opacity-95"
             />
           </a>
 
@@ -117,114 +119,101 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-12 md:pt-24 pb-8">
-        {/* Base canvas — soft warm off-white */}
-        <div className="absolute inset-0 bg-[oklch(0.86_0.14_350)]" />
-
-        {/* Diffuse white glow — soft gradient, no hard circle edge */}
+      <section className="relative overflow-hidden bg-[#0b1f3a] text-white pt-16 md:pt-24 pb-10 md:pb-16">
+        {/* Atmospheric depth — soft sapphire glow */}
         <div
-          className="absolute inset-0 animate-hero-glow-in pointer-events-none"
+          className="absolute inset-0 pointer-events-none animate-hero-glow-in"
           style={{
             background:
-              "radial-gradient(ellipse 70% 60% at 50% 45%, oklch(1 0 0 / 0.95) 0%, oklch(1 0 0 / 0.75) 25%, oklch(1 0 0 / 0.35) 55%, oklch(1 0 0 / 0) 85%)",
+              "radial-gradient(ellipse 60% 55% at 50% 35%, rgba(56,103,180,0.35) 0%, rgba(56,103,180,0.12) 40%, rgba(11,31,58,0) 75%)",
           }}
         />
-
-        {/* Subtle dot grid — adds editorial texture */}
+        {/* Single pink accent glow — restrained */}
         <div
-          className="absolute inset-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,transparent_25%,black_75%)]"
-          style={{
-            backgroundImage:
-              "radial-gradient(oklch(0.65 0.22 350 / 0.22) 1px, transparent 1px)",
-            backgroundSize: "26px 26px",
-          }}
+          className="absolute -top-24 right-[-10%] w-[40vw] h-[40vw] max-w-[480px] max-h-[480px] rounded-full pointer-events-none animate-hero-glow-in delay-300"
+          style={{ background: "radial-gradient(circle, oklch(0.65 0.22 350 / 0.22) 0%, transparent 65%)", filter: "blur(40px)" }}
         />
 
-        {/* Warm accent glow bottom-right */}
-        <div className="absolute -bottom-40 -right-32 w-[55vw] h-[55vw] max-w-[640px] max-h-[640px] rounded-full bg-[oklch(0.88_0.13_55)]/35 blur-3xl animate-hero-glow-in delay-300" />
-
-        {/* Bottom fade into next section */}
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[oklch(0.98_0.015_350)] pointer-events-none" />
-
-        <div className="relative w-full max-w-4xl mx-auto px-6 text-center py-[10px] pb-0 pt-[37px]">
-          <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance mb-[26px]">
-            <span className="text-primary">The </span>
-            <span className="font-bold text-[oklch(0.65_0.22_350)]">Pink Glove</span>
-            <span className="text-primary"> Dental Teams Keep Switching To.</span>
-          </h1>
-
-          {/* Floating 3D glove popping up from behind the box */}
-          <div
-            className="relative -mt-4 mb-2 mx-auto max-w-[14rem] sm:max-w-[16rem] md:max-w-[19rem] lg:max-w-[22rem] pointer-events-none"
-            style={{ perspective: "1000px" }}
-          >
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
-
-            {/* Glove — behind the box, pops up */}
-            <div className="relative z-10 mx-auto w-[80%] -mb-[40%]">
-              <img
-                src={floatingGlove}
-                alt="Posi-Prene Pink glove floating"
-                width={1080}
-                height={1920}
-                className="w-full h-auto animate-glove-popup will-change-transform"
-                style={{
-                  transformOrigin: "bottom center",
-                  animation:
-                    "glove-popup 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1s both, float 6s ease-in-out 2.6s infinite",
-                }}
-              />
-            </div>
-
-            {/* Box — in front, anchored bottom */}
-            <div className="relative z-20">
-              {/* Soft white glow halo behind the box */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 animate-box-glow"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 50% 55%, oklch(1 0 0 / 0.85) 0%, oklch(1 0 0 / 0.45) 30%, oklch(1 0 0 / 0) 65%)",
-                  filter: "blur(28px)",
-                }}
-              />
-              <img
-                src={posipreneBox}
-                alt="Posi-Prene Pink Perfection glove box"
-                width={1200}
-                height={900}
-                className="relative w-full h-auto animate-box-rise animate-box-float"
-                style={{
-                  filter:
-                    "saturate(1.35) contrast(1.1) brightness(1.04) drop-shadow(0 0 24px oklch(1 0 0 / 0.55)) drop-shadow(0 14px 22px oklch(0.45 0.18 350 / 0.25))",
-                }}
-              />
-            </div>
-
-            {/* Soft floor shadow under the box */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-3/4 h-6 rounded-full bg-foreground/25 blur-2xl z-0" />
+        <div className="relative w-full max-w-5xl mx-auto px-6 text-center">
+          {/* Eyebrow badge */}
+          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/75 backdrop-blur-sm">
+            <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
+            Clinical Supply Co. · Posi-Prene Pink
           </div>
 
-          <div className="mt-10 md:mt-12 flex items-center justify-center gap-3 flex-wrap animate-hero-rise delay-300">
+          {/* Serif headline — Cormorant Garamond, generous breathing room */}
+          <h1 className="font-serif font-normal tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-8 md:mt-10 max-w-4xl mx-auto animate-hero-rise text-balance">
+            The glove dental teams<br className="hidden sm:block" />{" "}
+            <em className="italic font-light text-[oklch(0.78_0.16_350)]">keep switching to.</em>
+          </h1>
+
+          {/* Subline */}
+          <p className="mt-7 max-w-xl mx-auto text-base md:text-lg text-white/65 font-light leading-relaxed animate-hero-rise delay-150">
+            Polychloroprene built like a wetsuit. Fits like a second skin.
+            Latex-free. Powder-free. Compromise-free.
+          </p>
+
+          {/* Product — single hero element, no competing glove */}
+          <div
+            className="relative mt-14 md:mt-16 mx-auto max-w-[18rem] md:max-w-[22rem] animate-box-rise"
+            style={{ perspective: "1200px" }}
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 -z-10"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 50% 65%, oklch(0.65 0.22 350 / 0.35) 0%, transparent 60%)",
+                filter: "blur(40px)",
+              }}
+            />
+            <img
+              src={posipreneBox}
+              alt="Posi-Prene Pink Perfection glove box"
+              width={1200}
+              height={900}
+              className="relative w-full h-auto animate-box-float will-change-transform"
+              style={{
+                filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.55)) drop-shadow(0 0 30px oklch(0.65 0.22 350 / 0.25))",
+              }}
+            />
+          </div>
+
+          {/* CTA — refined, not aggressive */}
+          <div className="mt-12 md:mt-14 flex flex-col items-center gap-4 animate-hero-rise delay-300">
             <a
               href="#buy"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
+              className="group relative inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-8 py-3.5 text-[13px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:text-white hover:shadow-[0_20px_50px_-15px_oklch(0.65_0.22_350/0.7)]"
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              Shop Now <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              Shop Posi-Prene
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+
+            <a
+              href="#"
+              className="text-xs text-white/45 tracking-wider hover:text-white/80 transition-colors underline-offset-4 hover:underline"
+            >
+              or request a free sample
             </a>
           </div>
 
-          <div className="mt-4 animate-hero-rise delay-500">
-            <a href="#" className="text-sm font-semibold text-[oklch(0.55_0.22_350)] underline-offset-4 hover:underline">
-              Not sure yet? Get a free sample →
-            </a>
+          {/* Stats strip — architectural social proof */}
+          <div className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-3 gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
+            {[
+              { stat: "0%", label: "Latex" },
+              { stat: "100%", label: "Polychloroprene" },
+              { stat: "4pm", label: "Same-day ship cutoff EST" },
+            ].map((item) => (
+              <div key={item.label} className="text-center">
+                <div className="font-serif text-3xl md:text-4xl font-light text-white">{item.stat}</div>
+                <div className="mt-2 text-[10px] tracking-[0.22em] uppercase text-white/45">{item.label}</div>
+              </div>
+            ))}
           </div>
-
         </div>
       </section>
       </div>
