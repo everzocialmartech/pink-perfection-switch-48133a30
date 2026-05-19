@@ -254,6 +254,20 @@ function Index() {
               ))}
             </div>
           </div>
+
+          <div className="mt-8 flex justify-center">
+            <a
+              href="#buy"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
+              Shop Now <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
       </section>
 
@@ -285,6 +299,20 @@ function Index() {
               preload="metadata"
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <a
+              href="#buy"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-white text-primary px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.2_0_0/0.5)] hover:shadow-[0_16px_40px_-12px_oklch(0.2_0_0/0.7)] hover:bg-[oklch(0.96_0.02_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
+            >
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[oklch(0.65_0.22_350)]/20 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
+              Shop Now <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </div>
         </div>
       </section>
