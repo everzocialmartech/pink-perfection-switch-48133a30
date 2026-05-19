@@ -36,10 +36,10 @@ function Index() {
             <Sparkles className="w-3.5 h-3.5" /> Posi-Prene Pink
           </span>
 
-          <h1 className="mt-6 font-black tracking-tight leading-[0.92] text-[3.5rem] sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-fade-in">
-            <span className="text-primary">Feel the</span>
-            <br />
-            <span className="text-accent italic font-serif">difference.</span>
+          <h1 className="mt-6 font-black tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
+            <span className="text-primary">The </span>
+            <span className="text-accent italic font-serif">Pink Glove</span>
+            <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
           {/* Floating 3D glove */}
