@@ -248,7 +248,7 @@ function Index() {
                     key={q.who}
                     className="relative rounded-md bg-white pl-6 pr-5 py-5 shadow-[0_8px_24px_-12px_rgba(11,31,58,0.12)] border-l-2 border-[oklch(0.65_0.22_350)]"
                   >
-                    <blockquote className="font-serif text-base md:text-lg text-[#0b1f3a] leading-snug italic font-light">
+                    <blockquote className="text-base md:text-lg text-[#0b1f3a] leading-relaxed font-light">
                       "{q.quote}"
                     </blockquote>
                     <figcaption className="mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40">
