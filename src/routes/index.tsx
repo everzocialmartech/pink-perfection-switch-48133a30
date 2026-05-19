@@ -128,15 +128,25 @@ function Index() {
 
             {/* Box — in front, anchored bottom */}
             <div className="relative z-20">
+              {/* Soft white glow halo behind the box */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10 animate-box-glow"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at 50% 55%, oklch(1 0 0 / 0.85) 0%, oklch(1 0 0 / 0.45) 30%, oklch(1 0 0 / 0) 65%)",
+                  filter: "blur(28px)",
+                }}
+              />
               <img
                 src={posipreneBox}
                 alt="Posi-Prene Pink Perfection glove box"
                 width={1200}
                 height={900}
-                className="relative w-full h-auto animate-box-rise"
+                className="relative w-full h-auto animate-box-rise animate-box-float"
                 style={{
                   filter:
-                    "saturate(1.35) contrast(1.1) brightness(1.04) drop-shadow(0 14px 22px oklch(0.45 0.18 350 / 0.25))",
+                    "saturate(1.35) contrast(1.1) brightness(1.04) drop-shadow(0 0 24px oklch(1 0 0 / 0.55)) drop-shadow(0 14px 22px oklch(0.45 0.18 350 / 0.25))",
                 }}
               />
             </div>
