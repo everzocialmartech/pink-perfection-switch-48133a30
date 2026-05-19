@@ -462,7 +462,7 @@ function Index() {
 
               <a
                 href="#"
-                className="group/btn mt-5 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_14px_40px_-10px_oklch(0.65_0.22_350/0.6)] hover:shadow-[0_20px_50px_-12px_oklch(0.65_0.22_350/0.8)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto"
+                className="group/btn mt-5 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.15em] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto shadow-md"
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:translate-x-full transition-transform duration-700 ease-out" />
                 Buy Posi-Prene Pink Perfection <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
