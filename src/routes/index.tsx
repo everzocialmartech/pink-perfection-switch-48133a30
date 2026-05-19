@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import posipreneBox from "@/assets/posiprene-box.png";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -55,7 +55,52 @@ function Reveal({
   );
 }
 
+function ChallengeVideo() {
+  const ref = useRef<HTMLVideoElement | null>(null);
+  const [muted, setMuted] = useState(true);
+  const toggle = () => {
+    const v = ref.current;
+    if (!v) return;
+    const next = !muted;
+    v.muted = next;
+    if (!next) {
+      v.volume = 1;
+      v.play().catch(() => {});
+    }
+    setMuted(next);
+  };
+  return (
+    <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
+      <video
+        ref={ref}
+        src="/challenge.mp4"
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={muted ? "Unmute video" : "Mute video"}
+        className="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/55 backdrop-blur-sm text-white border border-white/20 hover:bg-black/75 transition-colors"
+      >
+        {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+      </button>
+      <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
+        <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
+          Michigan Dental Association
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
@@ -329,23 +374,7 @@ function Index() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
-              <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
-                <video
-                  src="/challenge.mp4"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-                <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
-                    Michigan Dental Association
-                  </p>
-                </div>
-              </div>
+              <ChallengeVideo />
               <a
                 href="#buy"
                 onClick={(e) => {
