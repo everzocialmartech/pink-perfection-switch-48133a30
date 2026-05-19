@@ -364,8 +364,15 @@ function Index() {
                 Your hands deserve this.
               </p>
 
-              <div className="mt-6 mx-auto max-w-[200px]">
-                <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full h-auto drop-shadow-2xl" />
+              <div className="mt-6 mx-auto max-w-[200px] [perspective:1000px]">
+                <img
+                  src={boxImg}
+                  alt="Posi-Prene Pink glove box"
+                  loading="lazy"
+                  width={1024}
+                  height={1024}
+                  className="w-full h-auto drop-shadow-2xl animate-buy-box-float will-change-transform"
+                />
               </div>
 
               <a
