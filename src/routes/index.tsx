@@ -24,7 +24,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[90vh] flex items-center pt-20 pb-12">
+      <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 pb-6">
         {/* Brand gradient backdrop: trust-blue to emotional-pink */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[oklch(0.97_0.02_240)]" />
         <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl" />
@@ -35,14 +35,14 @@ function Index() {
             <Sparkles className="w-3.5 h-3.5" /> Latex-Free • Nitrile-Free • Premium Polychloroprene
           </span>
 
-          <h1 className="mt-6 font-bold tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
+          <h1 className="mt-4 font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] animate-fade-in max-w-5xl mx-auto">
             <span className="text-primary">The </span>
             <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
           {/* Floating 3D glove */}
-          <div className="relative mt-2 mx-auto max-w-md md:max-w-lg lg:max-w-xl pointer-events-none">
+          <div className="relative mt-2 mx-auto max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-none">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
             <img
               src={floatingGlove}
