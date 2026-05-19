@@ -137,7 +137,7 @@ function Index() {
           {/* Eyebrow badge */}
           <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/75 backdrop-blur-sm">
             <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
-            Clinical Supply Co. · Posi-Prene Pink
+            Posi-Prene Pink Perfection
           </div>
 
           {/* Serif headline — Cormorant Garamond, generous breathing room */}
