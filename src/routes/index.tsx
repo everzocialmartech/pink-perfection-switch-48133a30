@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { ArrowRight, ShoppingBag, Truck, ShieldCheck, Heart } from "lucide-react";
+import { ArrowRight, ShoppingBag, Truck, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -110,44 +110,6 @@ function Index() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* SQUAD */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[oklch(0.97_0.03_350)] via-[oklch(0.95_0.05_350)] to-[oklch(0.97_0.03_350)] py-16 md:py-24 border-y border-[oklch(0.88_0.06_350)]">
-        <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[80vw] max-w-[700px] h-[300px] rounded-full bg-[oklch(0.7_0.2_350)]/15 blur-3xl" />
-        <div className="relative max-w-4xl mx-auto px-6">
-          <div className="text-center">
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
-              <Heart className="w-3.5 h-3.5 fill-current" /> The Posi-Prene Squad
-            </span>
-            <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-primary leading-[1.05]">
-              What the squad <span className="text-[oklch(0.6_0.22_350)]">loves</span> about these gloves
-            </h2>
-            <p className="mt-3 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
-              Hygienists, assistants, and dentists across the country — all hooked on the same pink glove.
-            </p>
-          </div>
-
-          <div className="mt-10 grid sm:grid-cols-2 gap-4">
-            {[
-              "Super stretchy, moves with you, not against you",
-              "Easy to put on with wet or sweaty hands",
-              "Made out of wet suit material — premium polychloroprene",
-              "No latex. No powder. No mess.",
-            ].map((title, i) => (
-              <div
-                key={title}
-                className="group relative rounded-lg bg-white border border-[oklch(0.9_0.05_350)] p-5 flex items-start gap-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition"
-              >
-                <div className="shrink-0 w-9 h-9 rounded-full bg-[oklch(0.97_0.04_350)] text-[oklch(0.55_0.22_350)] grid place-items-center text-xs font-bold tracking-widest">
-                  0{i + 1}
-                </div>
-                <div className="text-sm md:text-base font-semibold text-primary leading-snug pt-1">{title}</div>
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
 
