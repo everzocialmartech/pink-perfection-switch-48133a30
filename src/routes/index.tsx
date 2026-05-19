@@ -56,8 +56,11 @@ function Index() {
           </div>
 
           <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-fade-in">
-            <a href="#buy" className="inline-flex items-center gap-2 rounded-sm bg-accent text-accent-foreground px-8 py-4 font-bold shadow-xl shadow-primary/30 hover:scale-[1.03] transition">
-              Shop Posi-Prene <ArrowRight className="w-4 h-4" />
+            <a
+              href="#buy"
+              className="relative inline-flex items-center gap-2 rounded-md bg-accent text-accent-foreground px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-accent/40 hover:scale-[1.04] transition animate-pulse-glow"
+            >
+              Shop Posi-Prene <ArrowRight className="w-5 h-5" />
             </a>
             <a href="#challenge" className="inline-flex items-center gap-2 rounded-sm bg-white/60 backdrop-blur border border-white text-primary px-6 py-4 font-semibold hover:bg-white transition">
               <Play className="w-4 h-4 fill-current" /> Watch
@@ -163,8 +166,11 @@ function Index() {
                 <span className="text-5xl font-bold text-primary">$24.99</span>
                 <span className="text-muted-foreground">/ box of 200</span>
               </div>
-              <a href="#" className="mt-7 inline-flex items-center justify-center gap-2 rounded-sm bg-accent text-accent-foreground px-8 py-4 font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition w-full sm:w-auto">
-                Buy Posi-Prene Pink <ArrowRight className="w-4 h-4" />
+              <a
+                href="#"
+                className="mt-7 relative inline-flex items-center justify-center gap-2 rounded-md bg-accent text-accent-foreground px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-accent/40 hover:scale-[1.03] transition w-full sm:w-auto animate-pulse-glow"
+              >
+                Buy Posi-Prene Pink <ArrowRight className="w-5 h-5" />
               </a>
               <p className="mt-4 text-xs text-muted-foreground">Free shipping on orders over $250.</p>
             </div>
