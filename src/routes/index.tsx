@@ -154,7 +154,7 @@ function Index() {
               <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full max-w-xs rounded shadow-xl" />
             </div>
             <div>
-              <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">Ships Today</p>
+              <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">Ships Today on orders before 1pm EST</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                 Your hands<br />
                 <span className="text-accent font-bold">deserve this.</span>
@@ -170,6 +170,15 @@ function Index() {
                 Buy Posi-Prene Pink <ArrowRight className="w-5 h-5" />
               </a>
               <p className="mt-4 text-xs text-muted-foreground">Free shipping on orders over $250.</p>
+              <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center gap-3">
+                <p className="text-sm font-semibold text-primary">Not sure yet?</p>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-[oklch(0.65_0.22_350)] text-[oklch(0.55_0.22_350)] px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-[oklch(0.65_0.22_350)] hover:text-white transition"
+                >
+                  Get a Free Sample <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
