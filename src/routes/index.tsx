@@ -140,23 +140,12 @@ function Index() {
         {/* Base canvas — soft warm off-white */}
         <div className="absolute inset-0 bg-[oklch(0.86_0.14_350)]" />
 
-        {/* Bold pink stage circle — like the sport landing page reference */}
+        {/* Diffuse white glow — soft gradient, no hard circle edge */}
         <div
-          className="absolute left-1/2 top-[31rem] -translate-x-1/2 -translate-y-1/2 w-[210vw] h-[210vw] rounded-full animate-hero-glow-in md:hidden"
+          className="absolute inset-0 animate-hero-glow-in pointer-events-none"
           style={{
             background:
-              "radial-gradient(circle at 35% 70%, oklch(1 0 0) 0%, oklch(0.98 0.01 350) 55%, oklch(0.95 0.03 350) 100%)",
-            boxShadow:
-              "0 -60px 120px -30px oklch(0.65 0.22 350 / 0.45), inset 0 40px 80px oklch(0.65 0.22 350 / 0.18)",
-          }}
-        />
-        <div
-          className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[42%] md:w-[88vw] md:h-[88vw] md:max-w-[820px] md:max-h-[820px] rounded-full animate-hero-glow-in"
-          style={{
-            background:
-              "radial-gradient(circle at 35% 30%, oklch(1 0 0) 0%, oklch(0.98 0.012 350) 55%, oklch(0.94 0.03 350) 100%)",
-            boxShadow:
-              "0 60px 120px -30px oklch(0.65 0.22 350 / 0.5), inset 0 -40px 80px oklch(0.65 0.22 350 / 0.2), 0 0 0 1px oklch(0.65 0.22 350 / 0.12)",
+              "radial-gradient(ellipse 70% 60% at 50% 45%, oklch(1 0 0 / 0.95) 0%, oklch(1 0 0 / 0.75) 25%, oklch(1 0 0 / 0.35) 55%, oklch(1 0 0 / 0) 85%)",
           }}
         />
 
