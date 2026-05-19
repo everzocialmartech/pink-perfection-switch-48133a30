@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { ArrowRight, ShoppingBag, Truck, ShieldCheck } from "lucide-react";
+import { ArrowRight, Truck, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
