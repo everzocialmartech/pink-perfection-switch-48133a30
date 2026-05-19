@@ -194,18 +194,6 @@ function Index() {
         </div>
       </footer>
 
-      {/* Mobile sticky CTA */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-30 p-3 pb-[max(env(safe-area-inset-bottom),0.75rem)]">
-        <div className="rounded-sm bg-white/80 backdrop-blur-xl border border-white shadow-2xl shadow-primary/15 px-3 py-2 flex items-center justify-between gap-3">
-          <div className="pl-3">
-            <div className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Posi-Prene</div>
-            <div className="text-sm font-bold text-primary leading-tight">Pink Glove</div>
-          </div>
-          <a href="#buy" className="inline-flex items-center gap-2 rounded-sm bg-accent text-accent-foreground px-5 py-3 font-bold text-sm shadow-lg shadow-primary/30">
-            <ShoppingBag className="w-4 h-4" /> Buy
-          </a>
-        </div>
-      </div>
     </div>
   );
 }
