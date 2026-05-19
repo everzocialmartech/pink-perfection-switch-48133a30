@@ -489,34 +489,6 @@ function Index() {
             </Reveal>
           </div>
 
-          {/* Bottom CTA — light card, pull quote left, button right */}
-          <div className="mt-16 md:mt-20 rounded-3xl bg-[oklch(0.97_0.01_280)] p-8 md:p-12 lg:p-14 grid md:grid-cols-2 gap-10 items-center">
-            <figure className="max-w-md">
-              <blockquote className="font-serif text-xl md:text-2xl italic font-light text-[#0b1f3a] leading-snug">
-                "We re-ordered three cases the same month. It's just a better glove."
-              </blockquote>
-              <figcaption className="mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/55">
-                Dr. Patel · Group Practice, Detroit
-              </figcaption>
-            </figure>
-
-            <div className="flex flex-col md:items-end gap-3">
-              <a
-                href="#buy"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] text-white px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[#06152b] hover:shadow-[0_20px_40px_-15px_rgba(11,31,58,0.5)]"
-              >
-                Shop Posi-Prene
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-              <a href="#" className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline md:text-right">
-                or request a free sample
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 
