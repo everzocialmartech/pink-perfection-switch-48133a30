@@ -312,9 +312,6 @@ function Index() {
           <p className="mt-3 text-lg md:text-xl font-semibold text-primary-foreground/90">
             With Posi-Prene.
           </p>
-          <p className="mt-4 text-xs font-semibold tracking-[0.2em] uppercase text-primary-foreground/60">
-            Filmed live at <span className="text-[oklch(0.85_0.12_350)]">MDA 2026</span> — Michigan Dental Association Show
-          </p>
           <div className="mt-10 relative mx-auto max-w-2xl aspect-[9/16] sm:aspect-video rounded-lg overflow-hidden bg-black shadow-[0_30px_80px_-20px_oklch(0.65_0.22_350/0.6)] ring-1 ring-[oklch(0.65_0.22_350)]/40">
             <video
               src="/challenge.mp4"
@@ -327,6 +324,9 @@ function Index() {
             />
             <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
           </div>
+          <p className="mt-4 text-xs font-semibold tracking-[0.2em] uppercase text-primary-foreground/60">
+            Filmed live at <span className="text-[oklch(0.85_0.12_350)]">MDA 2026</span> — Michigan Dental Association Show
+          </p>
 
           <div className="mt-10 flex justify-center">
             <a
