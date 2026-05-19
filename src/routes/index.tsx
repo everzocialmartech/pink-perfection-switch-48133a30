@@ -177,6 +177,8 @@ function Index() {
       </section>
 
       {/* Footer */}
+
+      {/* removed duplicate */}
       <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
           <div className="font-bold text-primary-foreground">Clinical Supply Co.</div>
