@@ -145,18 +145,18 @@ function Index() {
           className="absolute left-1/2 top-[31rem] -translate-x-1/2 -translate-y-1/2 w-[210vw] h-[210vw] rounded-full animate-hero-glow-in md:hidden"
           style={{
             background:
-              "radial-gradient(circle at 35% 70%, oklch(0.86 0.14 350) 0%, oklch(0.78 0.19 350) 55%, oklch(0.72 0.22 350) 100%)",
+              "radial-gradient(circle at 35% 70%, oklch(1 0 0) 0%, oklch(0.98 0.01 350) 55%, oklch(0.95 0.03 350) 100%)",
             boxShadow:
-              "0 -60px 120px -30px oklch(0.68 0.22 350 / 0.5), inset 0 40px 80px oklch(0.66 0.22 350 / 0.35)",
+              "0 -60px 120px -30px oklch(0.65 0.22 350 / 0.45), inset 0 40px 80px oklch(0.65 0.22 350 / 0.18)",
           }}
         />
         <div
           className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[42%] md:w-[88vw] md:h-[88vw] md:max-w-[820px] md:max-h-[820px] rounded-full animate-hero-glow-in"
           style={{
             background:
-              "radial-gradient(circle at 35% 30%, oklch(0.78 0.17 350) 0%, oklch(0.68 0.22 350) 55%, oklch(0.58 0.23 350) 100%)",
+              "radial-gradient(circle at 35% 30%, oklch(1 0 0) 0%, oklch(0.98 0.012 350) 55%, oklch(0.94 0.03 350) 100%)",
             boxShadow:
-              "0 60px 120px -30px oklch(0.55 0.22 350 / 0.45), inset 0 -40px 80px oklch(0.5 0.22 350 / 0.35)",
+              "0 60px 120px -30px oklch(0.65 0.22 350 / 0.5), inset 0 -40px 80px oklch(0.65 0.22 350 / 0.2), 0 0 0 1px oklch(0.65 0.22 350 / 0.12)",
           }}
         />
 
