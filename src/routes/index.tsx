@@ -263,6 +263,28 @@ function Index() {
                 Michigan Dental Association.
               </p>
 
+              {/* Mobile-only video — between description and testimonials */}
+              <div className="md:hidden mt-8 relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_30px_60px_-25px_rgba(11,31,58,0.45)] mx-auto max-w-[320px]">
+                <video
+                  src="/reaction.mp4"
+                  className="w-full h-auto block bg-[#0b1f3a] aspect-[9/16] object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 backdrop-blur px-2.5 py-1 text-[9px] font-medium tracking-[0.28em] uppercase text-white/85">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_350)] animate-pulse" />
+                  Live
+                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
+                <div className="pointer-events-none absolute bottom-3 left-4 right-4 text-[9px] font-medium tracking-[0.28em] uppercase text-white/70">
+                  Michigan Dental Association
+                </div>
+              </div>
+
               <div className="mt-10 flex items-center gap-3">
                 <span className="h-px flex-1 bg-[#0b1f3a]/10" />
                 <h3 className="font-serif text-sm md:text-base italic font-light text-[#0b1f3a]/70 tracking-wide whitespace-nowrap">
@@ -322,7 +344,7 @@ function Index() {
             </div>
 
             {/* Right — video */}
-            <div className="relative">
+            <div className="relative hidden md:block">
               <div className="relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
                 <video
                   src="/reaction.mp4"
