@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import boxImg from "@/assets/box.jpg";
 import posipreneBox from "@/assets/posiprene-box.png";
 import cscLogo from "@/assets/csc-logo.png";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Truck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -399,75 +399,130 @@ function Index() {
         </div>
       </section>
 
-      {/* BUY — restrained closing CTA */}
-      <section id="buy" className="scroll-mt-16 relative bg-white py-20 md:py-28">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[oklch(0.985_0.005_280)] border border-[oklch(0.92_0.01_280)] p-10 md:p-16 lg:p-24 text-center">
-            <div className="mb-12 md:mb-16 flex justify-center">
-              <div className="relative">
-                <img
-                  src={boxImg}
-                  alt="Posi-Prene Pink Perfection glove box"
-                  loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="w-64 md:w-80 h-auto"
-                />
-                <div aria-hidden className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-8 bg-black/15 blur-2xl rounded-full -z-10" />
+      {/* BUY — split layout: 3D box left, authoritative CTA right */}
+      <section id="buy" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-[oklch(0.92_0.01_280)] bg-white shadow-[0_30px_60px_-25px_rgba(11,31,58,0.15)]">
+
+            {/* LEFT — CSS-rendered 3D box on a soft surface */}
+            <div
+              className="relative flex items-center justify-center p-12 md:p-16 lg:p-20 min-h-[420px] md:min-h-[560px] overflow-hidden"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 1px 1px, oklch(0.7 0.04 260) 1px, transparent 0)",
+                backgroundSize: "18px 18px",
+                backgroundColor: "oklch(0.97 0.008 260)",
+              }}
+            >
+              <div
+                className="relative"
+                style={{ perspective: "1400px" }}
+              >
+                <div
+                  className="relative w-[16rem] md:w-[18rem] aspect-[4/3] rounded-[10px] will-change-transform animate-buy-box-float"
+                  style={{
+                    transform: "rotateY(-22deg) rotateX(8deg)",
+                    transformStyle: "preserve-3d",
+                    background:
+                      "linear-gradient(145deg, #1A3A80 0%, #200E5A 100%)",
+                    boxShadow:
+                      "0 40px 60px -25px rgba(10,8,40,0.55), 0 18px 30px -18px rgba(10,8,40,0.4)",
+                  }}
+                >
+                  {/* pink top hairline */}
+                  <div
+                    aria-hidden
+                    className="absolute top-5 left-6 right-6 h-px"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, transparent, oklch(0.7 0.22 350) 30%, oklch(0.7 0.22 350) 70%, transparent)",
+                    }}
+                  />
+                  {/* subtle gloss */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 rounded-[10px] pointer-events-none"
+                    style={{
+                      background:
+                        "linear-gradient(115deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.06) 100%)",
+                    }}
+                  />
+
+                  {/* Label */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 select-none">
+                    <div className="font-serif text-2xl md:text-[1.7rem] tracking-[0.18em] leading-none">
+                      POSI<span className="text-[oklch(0.78_0.16_350)]">·</span>PRENE
+                    </div>
+                    <div className="mt-2 text-[9px] tracking-[0.32em] text-white/65 font-medium">
+                      PINK PERFECTION
+                    </div>
+                    <div className="mt-6 flex flex-wrap items-center justify-center gap-1.5">
+                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">LATEX-FREE</span>
+                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">POWDER-FREE</span>
+                    </div>
+                    <div className="mt-1.5">
+                      <span className="px-2.5 py-1 rounded-full border border-white/20 text-[8px] tracking-[0.22em] text-white/75">100 GLOVES</span>
+                    </div>
+                  </div>
+                </div>
+                {/* contact shadow */}
+                <div aria-hidden className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/25 blur-2xl rounded-full -z-10" />
+
+                {/* caption beneath */}
+                <div className="absolute -bottom-16 inset-x-0 text-center">
+                  <p className="text-[10px] tracking-[0.32em] uppercase text-[#0b1f3a]/40 font-medium">
+                    Polychloroprene Examination Gloves
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="max-w-2xl mx-auto space-y-10">
-              <div className="space-y-5">
-                <div className="inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/65">
-                  <span className="w-8 h-px bg-[oklch(0.65_0.22_350)]" />
-                  The Professional's Choice
-                </div>
-                <h3 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl text-[#0b1f3a]">
-                  Ready to experience<br />
-                  <em className="italic font-light text-[oklch(0.6_0.22_350)]">the new standard?</em>
-                </h3>
-                <p className="text-base md:text-lg text-[#0b1f3a]/55 leading-relaxed max-w-lg mx-auto">
-                  Upgrade your practice to the performance of polychloroprene. Trusted by leading
-                  clinicians across the country.
-                </p>
+            {/* RIGHT — CTA */}
+            <div className="bg-[oklch(0.985_0.005_280)] p-10 md:p-14 lg:p-20 flex flex-col justify-center">
+              <div className="inline-flex items-start gap-3 text-[11px] font-medium tracking-[0.22em] uppercase text-[#0b1f3a]/65">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[oklch(0.65_0.22_350)]/30 bg-[oklch(0.65_0.22_350)]/8 text-[oklch(0.6_0.22_350)] shrink-0">
+                  <Truck className="w-3.5 h-3.5" aria-hidden />
+                </span>
+                <span className="pt-1.5 leading-snug">
+                  Ships today — orders before <span className="text-[#0b1f3a]">4pm EST</span>
+                </span>
               </div>
 
-              <div className="flex flex-col items-center gap-5">
+              <h3 className="mt-7 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-[3.5rem] text-[#0b1f3a]">
+                Experience the{" "}
+                <em className="italic font-light text-[oklch(0.6_0.22_350)]">difference.</em>
+              </h3>
+
+              <div className="mt-5 w-10 h-px bg-[oklch(0.65_0.22_350)]" />
+
+              <p className="mt-6 text-base md:text-lg text-[#0b1f3a]/55 leading-relaxed max-w-md">
+                Join thousands of dental teams who've already made the switch to Posi-Prene.
+              </p>
+
+              <div className="mt-10">
                 <a
                   href="#"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] text-white px-10 py-4 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:shadow-[0_20px_50px_-15px_oklch(0.65_0.22_350/0.6)] hover:-translate-y-0.5"
+                  className="group inline-flex w-full sm:w-auto items-center justify-between gap-6 rounded-md bg-[#0b1f3a] text-white px-8 py-5 text-[12px] font-medium tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#06152b] hover:shadow-[0_20px_50px_-20px_rgba(11,31,58,0.6)] hover:-translate-y-0.5"
                 >
-                  Secure Posi-Prene for your practice
+                  Order Posi-Prene
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
+              </div>
+
+              <div className="mt-6 flex items-center gap-2 text-xs text-[#0b1f3a]/50">
+                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5" />
+                </svg>
+                Free shipping on orders over $250
+              </div>
+
+              <div className="mt-4">
                 <a
                   href="#"
                   className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline"
                 >
-                  or request a complimentary sample kit
+                  Not sure yet? Request a free sample →
                 </a>
-              </div>
-
-              <div className="pt-8 flex flex-wrap items-center justify-center gap-6 md:gap-10 border-t border-[oklch(0.92_0.01_280)]">
-                <div className="flex items-center gap-2 pt-8 md:pt-0">
-                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
-                    Free clinical shipping
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 pt-8 md:pt-0">
-                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
-                    Latex-Free Certified
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 pt-8 md:pt-0">
-                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
-                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
-                    Ships same day before 4pm EST
-                  </span>
-                </div>
               </div>
             </div>
           </div>
