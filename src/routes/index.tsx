@@ -24,7 +24,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[100vh] flex items-center pt-24 pb-32">
+      <section className="relative overflow-hidden min-h-[90vh] flex items-center pt-20 pb-12">
         {/* Brand gradient backdrop: trust-blue to emotional-pink */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[oklch(0.97_0.02_240)]" />
         <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl" />
@@ -73,9 +73,9 @@ function Index() {
       </section>
 
       {/* SWITCH MOMENT */}
-      <section className="relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-14 md:py-20 border-y border-[oklch(0.92_0.04_350)]">
+      <section className="relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
             <div>
               <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-3">The reaction</p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary leading-[1.1]">
@@ -125,13 +125,13 @@ function Index() {
       </section>
 
       {/* CHALLENGE */}
-      <section id="challenge" className="bg-white py-24 md:py-32">
+      <section id="challenge" className="bg-white py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-4">The 2-Second Challenge</p>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
           </h2>
-          <div className="mt-12 relative aspect-video rounded-md overflow-hidden bg-primary shadow-2xl shadow-primary/30 ring-1 ring-primary/10">
+          <div className="mt-8 relative aspect-video rounded-md overflow-hidden bg-primary shadow-2xl shadow-primary/30 ring-1 ring-primary/10">
             <video
               src="/challenge.mp4"
               className="absolute inset-0 w-full h-full object-cover"
@@ -147,9 +147,9 @@ function Index() {
 
 
       {/* BUY */}
-      <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-24 pb-32 md:pb-40">
+      <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-12 pb-20 md:pb-24">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="rounded-lg bg-white border border-border shadow-2xl shadow-primary/10 p-8 md:p-14 grid md:grid-cols-2 gap-10 items-center">
+          <div className="rounded-lg bg-white border border-border shadow-2xl shadow-primary/10 p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
             <div className="relative rounded-md bg-gradient-to-br from-[oklch(0.97_0.02_240)] to-[oklch(0.93_0.04_240)] p-6 grid place-items-center">
               <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full max-w-xs rounded shadow-xl" />
             </div>
