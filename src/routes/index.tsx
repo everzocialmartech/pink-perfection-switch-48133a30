@@ -277,6 +277,58 @@ function Index() {
       </section>
 
       {/* FOUR REASONS — dark navy, editorial grid */}
+      {/* CHALLENGE — editorial navy card, video framed as designed object */}
+      <section id="challenge" className="scroll-mt-16 relative bg-white py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center bg-[#0b1f3a] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
+            <div className="lg:col-span-7 z-10">
+              <div className="space-y-7 md:space-y-8">
+                <div className="inline-flex items-center gap-4">
+                  <span className="h-px w-12 bg-[oklch(0.65_0.22_350)]" />
+                  <p className="text-[oklch(0.78_0.16_350)] font-medium tracking-[0.22em] uppercase text-[11px]">
+                    Live Application
+                  </p>
+                </div>
+                <h2 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.5rem]">
+                  Wet hands?<br />
+                  <em className="italic font-light text-[oklch(0.78_0.16_350)]">Now gloved fast.</em>
+                </h2>
+                <p className="text-base md:text-lg text-white/65 font-light leading-relaxed max-w-md">
+                  Engineered for high-tempo environments where every second counts. Posi-Prene
+                  slides on effortlessly, even over damp skin.
+                </p>
+                <div className="pt-2 flex items-center gap-4">
+                  <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-white/55">
+                    <span className="w-6 h-px bg-white/30" />
+                    Filmed live · MDA 2026
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
+                <video
+                  src="/challenge.mp4"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
+                    Michigan Dental Association
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[#0b1f3a] text-white py-20 md:py-28">
         <div
           className="absolute inset-0 pointer-events-none opacity-60"
@@ -441,58 +493,6 @@ function Index() {
               <a href="#" className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline md:text-right">
                 or request a free sample
               </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CHALLENGE — editorial navy card, video framed as designed object */}
-      <section id="challenge" className="scroll-mt-16 relative bg-white py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center bg-[#0b1f3a] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
-            <div className="lg:col-span-7 z-10">
-              <div className="space-y-7 md:space-y-8">
-                <div className="inline-flex items-center gap-4">
-                  <span className="h-px w-12 bg-[oklch(0.65_0.22_350)]" />
-                  <p className="text-[oklch(0.78_0.16_350)] font-medium tracking-[0.22em] uppercase text-[11px]">
-                    Live Application
-                  </p>
-                </div>
-                <h2 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.5rem]">
-                  Wet hands?<br />
-                  <em className="italic font-light text-[oklch(0.78_0.16_350)]">Now gloved fast.</em>
-                </h2>
-                <p className="text-base md:text-lg text-white/65 font-light leading-relaxed max-w-md">
-                  Engineered for high-tempo environments where every second counts. Posi-Prene
-                  slides on effortlessly, even over damp skin.
-                </p>
-                <div className="pt-2 flex items-center gap-4">
-                  <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-white/55">
-                    <span className="w-6 h-px bg-white/30" />
-                    Filmed live · MDA 2026
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
-                <video
-                  src="/challenge.mp4"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-                <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
-                    Michigan Dental Association
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
