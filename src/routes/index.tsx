@@ -124,7 +124,7 @@ function Index() {
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-            Wet hands. <span className="text-[oklch(0.78_0.18_350)]">Gloved fast.</span>
+            Wet hands? <span className="text-[oklch(0.78_0.18_350)]">Now gloved fast.</span>
           </h2>
           <p className="mt-3 text-lg md:text-xl font-semibold text-primary-foreground/90">
             With Posi-Prene.
