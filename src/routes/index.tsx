@@ -118,18 +118,27 @@ function Index() {
       </section>
 
       {/* CHALLENGE */}
-      <section id="challenge" className="bg-white py-12 md:py-16">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
+      <section id="challenge" className="relative overflow-hidden bg-primary text-primary-foreground py-16 md:py-24">
+        {/* Background flourishes */}
+        <div className="pointer-events-none absolute -top-32 -left-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -right-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/20 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px" }} />
+
+        <div className="relative max-w-5xl mx-auto px-6 text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.22_350)]/20 border border-[oklch(0.65_0.22_350)]/40 px-4 py-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.85_0.12_350)]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.7_0.22_350)] animate-pulse" />
+            The 2-Second Challenge
+          </span>
+          <h2 className="mt-5 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
+            Wet hands. <span className="text-[oklch(0.78_0.18_350)]">Gloved fast.</span>
           </h2>
-          <p className="mt-3 text-lg md:text-xl font-semibold text-primary">
+          <p className="mt-3 text-lg md:text-xl font-semibold text-primary-foreground/90">
             With Posi-Prene.
           </p>
-          <p className="mt-4 text-sm font-semibold tracking-wide uppercase text-muted-foreground">
-            Filmed live at <span className="text-primary">MDA 2026</span> — Michigan Dental Association Show
+          <p className="mt-4 text-xs font-semibold tracking-[0.2em] uppercase text-primary-foreground/60">
+            Filmed live at <span className="text-[oklch(0.85_0.12_350)]">MDA 2026</span> — Michigan Dental Association Show
           </p>
-          <div className="mt-8 relative aspect-video rounded-md overflow-hidden bg-primary shadow-2xl shadow-primary/30 ring-1 ring-primary/10">
+          <div className="mt-10 relative aspect-video rounded-lg overflow-hidden bg-black shadow-[0_30px_80px_-20px_oklch(0.65_0.22_350/0.6)] ring-1 ring-[oklch(0.65_0.22_350)]/40">
             <video
               src="/challenge.mp4"
               className="absolute inset-0 w-full h-full object-cover"
@@ -139,6 +148,7 @@ function Index() {
               playsInline
               preload="metadata"
             />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
           </div>
         </div>
       </section>
