@@ -168,11 +168,16 @@ function Index() {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
           </h2>
-          <div className="mt-12 relative aspect-video rounded-md overflow-hidden bg-gradient-to-br from-primary to-[#0777B1] grid place-items-center shadow-2xl shadow-primary/30">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.72_0.18_8/0.35),transparent_60%)]" />
-            <button className="relative w-24 h-24 rounded-full bg-white text-primary grid place-items-center shadow-2xl hover:scale-110 transition">
-              <Play className="w-9 h-9 fill-current ml-1" />
-            </button>
+          <div className="mt-12 relative aspect-video rounded-md overflow-hidden bg-primary shadow-2xl shadow-primary/30 ring-1 ring-primary/10">
+            <video
+              src="/challenge.mp4"
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+            />
           </div>
         </div>
       </section>
