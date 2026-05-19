@@ -145,8 +145,7 @@ function Index() {
       {/* BUY */}
       <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28">
         <div className="max-w-2xl mx-auto px-6">
-          <div className="group relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)] hover:shadow-[0_30px_70px_-15px_oklch(0.65_0.22_350/0.45)] hover:-translate-y-1 hover:border-[oklch(0.75_0.18_350)] transition-all duration-500 ease-out">
-            <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[oklch(0.97_0.04_350)]/0 via-transparent to-[oklch(0.97_0.04_350)]/0 group-hover:from-[oklch(0.97_0.04_350)]/60 group-hover:to-white/0 transition-opacity duration-500" />
+          <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
               <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
                 <Truck className="w-3.5 h-3.5" /> Ships today · Orders before 1pm EST
@@ -158,7 +157,7 @@ function Index() {
                 Your hands deserve this.
               </p>
 
-              <div className="mt-6 mx-auto max-w-[200px] transition-transform duration-500 ease-out group-hover:scale-[1.03]">
+              <div className="mt-6 mx-auto max-w-[200px]">
                 <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full h-auto drop-shadow-2xl" />
               </div>
 
