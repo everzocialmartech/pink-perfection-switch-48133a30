@@ -88,7 +88,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-8 pb-8">
+      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-20 md:pt-24 pb-8">
         {/* Base canvas — soft warm off-white */}
         <div className="absolute inset-0 bg-[oklch(0.985_0.008_340)]" />
 
