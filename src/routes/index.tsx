@@ -97,9 +97,9 @@ function Index() {
           className="absolute left-1/2 top-[31rem] -translate-x-1/2 -translate-y-1/2 w-[210vw] h-[210vw] rounded-full animate-hero-glow-in md:hidden"
           style={{
             background:
-              "radial-gradient(circle at 35% 70%, oklch(0.86 0.21 350) 0%, oklch(0.78 0.27 350) 55%, oklch(0.7 0.29 350) 100%)",
+              "radial-gradient(circle at 35% 70%, oklch(0.93 0.06 350) 0%, oklch(0.88 0.09 350) 55%, oklch(0.83 0.11 350) 100%)",
             boxShadow:
-              "0 -60px 120px -30px oklch(0.68 0.27 350 / 0.5), inset 0 40px 80px oklch(0.62 0.27 350 / 0.35)",
+              "0 -60px 120px -30px oklch(0.8 0.1 350 / 0.45), inset 0 40px 80px oklch(0.78 0.1 350 / 0.3)",
           }}
         />
         <div
