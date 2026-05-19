@@ -17,9 +17,6 @@ function Index() {
             <span className="inline-block w-9 h-9 rounded bg-primary text-primary-foreground grid place-items-center font-bold">C</span>
             <span className="hidden sm:inline">Clinical Supply Co.</span>
           </a>
-          <a href="#buy" className="inline-flex items-center gap-2 rounded-sm bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:opacity-90">
-            Shop <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </header>
 
