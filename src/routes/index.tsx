@@ -3,7 +3,7 @@ import stretchGloves from "@/assets/stretch-test.jpg";
 import whyDifferent from "@/assets/why-different.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Star, Sparkles, Play, ArrowRight, ShoppingBag, Check } from "lucide-react";
+import { Sparkles, Play, ArrowRight, ShoppingBag, Check } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,8 +15,8 @@ function Index() {
       {/* Nav */}
       <header className="absolute top-0 inset-x-0 z-20">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 text-primary font-black tracking-tight">
-            <span className="inline-block w-9 h-9 rounded bg-primary text-primary-foreground grid place-items-center font-black">C</span>
+          <a href="/" className="flex items-center gap-2 text-primary font-bold tracking-tight">
+            <span className="inline-block w-9 h-9 rounded bg-primary text-primary-foreground grid place-items-center font-bold">C</span>
             <span className="hidden sm:inline">Clinical Supply Co.</span>
           </a>
           <a href="#buy" className="inline-flex items-center gap-2 rounded-sm bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:opacity-90">
@@ -37,9 +37,9 @@ function Index() {
             <Sparkles className="w-3.5 h-3.5" /> Latex-Free • Nitrile-Free • Premium Polychloroprene
           </span>
 
-          <h1 className="mt-6 font-black tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
+          <h1 className="mt-6 font-bold tracking-tight leading-[0.95] text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[6rem] animate-fade-in max-w-5xl mx-auto">
             <span className="text-primary">The </span>
-            <span className="text-accent font-black">Pink Glove</span>
+            <span className="text-accent font-bold">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
@@ -77,9 +77,9 @@ function Index() {
       {/* SWITCH MOMENT */}
       <section className="bg-white py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
             Still Using<br />
-            <span className="text-accent font-black">Stiff Nitrile?</span>
+            <span className="text-accent font-bold">Stiff Nitrile?</span>
           </h2>
           <div className="mt-16 grid sm:grid-cols-3 gap-4 text-left">
             {[
@@ -88,7 +88,7 @@ function Index() {
               { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
             ].map(({ title, body }) => (
               <div key={title} className="rounded-md bg-gradient-to-br from-muted to-white border border-border p-8">
-                <div className="text-2xl md:text-3xl font-black text-primary leading-tight">{title}</div>
+                <div className="text-2xl md:text-3xl font-bold text-primary leading-tight">{title}</div>
                 <p className="mt-3 text-base text-muted-foreground leading-relaxed">{body}</p>
               </div>
             ))}
@@ -110,9 +110,9 @@ function Index() {
           </div>
 
           <div>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Why Posi-Prene<br />
-              <span className="text-accent font-black">feels different.</span>
+              <span className="text-accent font-bold">feels different.</span>
             </h2>
 
             <ul className="mt-10 space-y-3">
@@ -139,8 +139,8 @@ function Index() {
       <section id="challenge" className="bg-white py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-4">The 2-Second Challenge</p>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-            Wet hands. <span className="text-accent font-black">Gloved fast.</span>
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+            Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
           </h2>
           <div className="mt-12 relative aspect-video rounded-md overflow-hidden bg-gradient-to-br from-primary to-[#0777B1] grid place-items-center shadow-2xl shadow-primary/30">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,oklch(0.72_0.18_8/0.35),transparent_60%)]" />
@@ -160,12 +160,12 @@ function Index() {
             </div>
             <div>
               <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">Ships Today</p>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                 Your hands<br />
-                <span className="text-accent font-black">deserve this.</span>
+                <span className="text-accent font-bold">deserve this.</span>
               </h2>
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-5xl font-black text-primary">$24.99</span>
+                <span className="text-5xl font-bold text-primary">$24.99</span>
                 <span className="text-muted-foreground">/ box of 200</span>
               </div>
               <a href="#" className="mt-7 inline-flex items-center justify-center gap-2 rounded-sm bg-accent text-accent-foreground px-8 py-4 font-bold shadow-xl shadow-primary/20 hover:scale-[1.02] transition w-full sm:w-auto">
@@ -180,7 +180,7 @@ function Index() {
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-          <div className="font-black text-primary-foreground">Clinical Supply Co.</div>
+          <div className="font-bold text-primary-foreground">Clinical Supply Co.</div>
           <div>© {new Date().getFullYear()} Clinical Supply Company</div>
           <a href="tel:18004680188" className="font-semibold text-primary-foreground hover:text-accent">1 (800) 468 0188</a>
         </div>
@@ -191,7 +191,7 @@ function Index() {
         <div className="rounded-sm bg-white/80 backdrop-blur-xl border border-white shadow-2xl shadow-primary/15 px-3 py-2 flex items-center justify-between gap-3">
           <div className="pl-3">
             <div className="text-[10px] font-bold tracking-widest uppercase text-muted-foreground">Posi-Prene Pink</div>
-            <div className="text-sm font-black text-primary leading-tight">$24.99 <span className="text-xs font-medium text-muted-foreground">/ 200</span></div>
+            <div className="text-sm font-bold text-primary leading-tight">$24.99 <span className="text-xs font-medium text-muted-foreground">/ 200</span></div>
           </div>
           <a href="#buy" className="inline-flex items-center gap-2 rounded-sm bg-accent text-accent-foreground px-5 py-3 font-bold text-sm shadow-lg shadow-primary/30">
             <ShoppingBag className="w-4 h-4" /> Buy
