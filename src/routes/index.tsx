@@ -12,7 +12,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Nav */}
       <header className="absolute top-0 inset-x-0 z-20">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 text-primary font-bold tracking-tight">
             <span className="inline-block w-9 h-9 rounded bg-primary text-primary-foreground grid place-items-center font-bold">C</span>
             <span className="hidden sm:inline">Clinical Supply Co.</span>
@@ -27,7 +27,7 @@ function Index() {
         <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl animate-hero-glow-in" />
         <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-[oklch(0.65_0.22_350)]/15 blur-3xl animate-hero-glow-in delay-300" />
 
-        <div className="relative w-full max-w-6xl mx-auto px-6 text-center">
+        <div className="relative w-full max-w-4xl mx-auto px-6 text-center">
           <h1 className="font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] max-w-5xl mx-auto animate-hero-rise">
             <span className="text-primary">The </span>
             <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
@@ -63,7 +63,7 @@ function Index() {
 
       {/* SWITCH MOMENT */}
       <section className="relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
             <div>
               <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-3">The reaction</p>
@@ -118,7 +118,7 @@ function Index() {
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/20 blur-3xl" />
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px" }} />
 
-        <div className="relative max-w-5xl mx-auto px-6 text-center">
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.22_350)]/20 border border-[oklch(0.65_0.22_350)]/40 px-4 py-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.85_0.12_350)]">
             <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.7_0.22_350)] animate-pulse" />
             The 2-Second Challenge
@@ -192,7 +192,7 @@ function Index() {
 
       {/* removed duplicate */}
       <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
           <div className="font-bold text-primary-foreground">Clinical Supply Co.</div>
           <div>© {new Date().getFullYear()} Clinical Supply Company</div>
           <a href="tel:18004680188" className="font-semibold text-primary-foreground hover:text-accent">1 (800) 468 0188</a>
