@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Sparkles, Play, ArrowRight, ShoppingBag } from "lucide-react";
+import { Sparkles, ArrowRight, ShoppingBag } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -61,9 +61,6 @@ function Index() {
               className="relative inline-flex items-center gap-2 rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-[oklch(0.65_0.22_350)]/40 hover:scale-[1.04] hover:bg-[oklch(0.6_0.24_350)] transition animate-pulse-glow"
             >
               Shop Posi-Prene <ArrowRight className="w-5 h-5" />
-            </a>
-            <a href="#challenge" className="inline-flex items-center gap-2 rounded-sm bg-white/60 backdrop-blur border border-white text-primary px-6 py-4 font-semibold hover:bg-white transition">
-              <Play className="w-4 h-4 fill-current" /> Watch
             </a>
           </div>
 
