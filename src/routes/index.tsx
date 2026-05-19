@@ -319,18 +319,7 @@ function Index() {
                   Engineered for high-tempo environments where every second counts. Posi-Prene
                   slides on effortlessly, even over damp skin.
                 </p>
-                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
-                  <a
-                    href="#buy"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="group inline-flex items-center gap-3 self-start rounded-full bg-white text-[#0b1f3a] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.78_0.16_350)] hover:text-white hover:shadow-[0_20px_40px_-15px_oklch(0.65_0.22_350/0.55)]"
-                  >
-                    Shop now
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
+                <div className="pt-2 flex items-center gap-4">
                   <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-white/55">
                     <span className="w-6 h-px bg-white/30" />
                     Filmed live · MDA 2026
@@ -339,7 +328,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
               <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
                 <video
                   src="/challenge.mp4"
@@ -357,6 +346,17 @@ function Index() {
                   </p>
                 </div>
               </div>
+              <a
+                href="#buy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.78_0.16_350)] hover:text-white hover:shadow-[0_20px_40px_-15px_oklch(0.65_0.22_350/0.55)]"
+              >
+                Shop now
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </div>
           </div>
         </div>
