@@ -66,23 +66,35 @@ function Index() {
 
       {/* HERO — floating 3D glove */}
       <section className="relative overflow-hidden min-h-[85vh] md:min-h-[95vh] flex items-center pt-16 pb-12">
-        {/* Modern backdrop: soft pink-cream wash with depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.97_0.04_350)_0%,_oklch(0.99_0.015_350)_45%,_oklch(0.98_0.02_240)_100%)]" />
-        {/* Subtle dot grid */}
+        {/* Base canvas — soft warm off-white */}
+        <div className="absolute inset-0 bg-[oklch(0.985_0.008_340)]" />
+
+        {/* Bold pink stage circle — like the sport landing page reference */}
         <div
-          className="absolute inset-0 opacity-[0.35] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[42%] w-[88vw] h-[88vw] max-w-[820px] max-h-[820px] rounded-full animate-hero-glow-in"
           style={{
-            backgroundImage:
-              "radial-gradient(oklch(0.65 0.22 350 / 0.18) 1px, transparent 1px)",
-            backgroundSize: "22px 22px",
+            background:
+              "radial-gradient(circle at 35% 30%, oklch(0.78 0.17 350) 0%, oklch(0.68 0.22 350) 55%, oklch(0.58 0.23 350) 100%)",
+            boxShadow:
+              "0 60px 120px -30px oklch(0.55 0.22 350 / 0.45), inset 0 -40px 80px oklch(0.5 0.22 350 / 0.35)",
           }}
         />
-        {/* Ambient color orbs */}
-        <div className="absolute -top-40 -left-32 w-[55vw] h-[55vw] max-w-[640px] max-h-[640px] rounded-full bg-[oklch(0.72_0.2_350)]/25 blur-3xl animate-hero-glow-in" />
-        <div className="absolute -bottom-48 -right-32 w-[65vw] h-[65vw] max-w-[760px] max-h-[760px] rounded-full bg-[oklch(0.78_0.16_340)]/30 blur-3xl animate-hero-glow-in delay-300" />
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[40vw] h-[40vw] max-w-[520px] max-h-[520px] rounded-full bg-[oklch(0.85_0.12_30)]/20 blur-3xl" />
+
+        {/* Subtle dot grid — adds editorial texture */}
+        <div
+          className="absolute inset-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,transparent_25%,black_75%)]"
+          style={{
+            backgroundImage:
+              "radial-gradient(oklch(0.65 0.22 350 / 0.22) 1px, transparent 1px)",
+            backgroundSize: "26px 26px",
+          }}
+        />
+
+        {/* Warm accent glow bottom-right */}
+        <div className="absolute -bottom-40 -right-32 w-[55vw] h-[55vw] max-w-[640px] max-h-[640px] rounded-full bg-[oklch(0.88_0.13_55)]/35 blur-3xl animate-hero-glow-in delay-300" />
+
         {/* Bottom fade into next section */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[oklch(0.98_0.015_350)] pointer-events-none" />
 
         <div className="relative w-full max-w-4xl mx-auto px-6 text-center">
           <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance">
