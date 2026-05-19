@@ -199,7 +199,7 @@ function Index() {
       </section>
 
       {/* CHALLENGE */}
-      <section id="challenge" className="relative overflow-hidden bg-primary text-primary-foreground py-16 md:py-24">
+      <section id="challenge" className="scroll-mt-16 relative overflow-hidden bg-primary text-primary-foreground py-16 md:py-24">
         {/* Background flourishes */}
         <div className="pointer-events-none absolute -top-32 -left-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/30 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -right-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/20 blur-3xl" />
@@ -232,7 +232,7 @@ function Index() {
 
 
       {/* BUY */}
-      <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28">
+      <section id="buy" className="scroll-mt-16 bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28">
         <div className="max-w-2xl mx-auto px-6">
           <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
