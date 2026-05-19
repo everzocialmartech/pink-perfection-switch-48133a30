@@ -88,13 +88,13 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-20 md:pt-24 pb-8">
+      <section className="relative overflow-hidden min-h-[78vh] md:min-h-[82vh] flex items-center pt-12 md:pt-24 pb-8">
         {/* Base canvas — soft warm off-white */}
         <div className="absolute inset-0 bg-[oklch(0.985_0.008_340)]" />
 
         {/* Bold pink stage circle — like the sport landing page reference */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[18%] md:-translate-y-[42%] w-[210vw] h-[210vw] md:w-[88vw] md:h-[88vw] md:max-w-[820px] md:max-h-[820px] rounded-full animate-hero-glow-in"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[5%] md:-translate-y-[42%] w-[300vw] h-[300vw] md:w-[88vw] md:h-[88vw] md:max-w-[820px] md:max-h-[820px] rounded-full animate-hero-glow-in"
           style={{
             background:
               "radial-gradient(circle at 35% 30%, oklch(0.78 0.17 350) 0%, oklch(0.68 0.22 350) 55%, oklch(0.58 0.23 350) 100%)",
