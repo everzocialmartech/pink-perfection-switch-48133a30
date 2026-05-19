@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import posipreneBox from "@/assets/posiprene-box.png";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
+import stretchCard from "@/assets/stretch-card.png";
 import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -419,22 +420,16 @@ function Index() {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-6 md:auto-rows-[minmax(190px,auto)] gap-4 md:gap-5">
             {/* A — HERO: Wetsuit stretch with stretch SVG */}
             <Reveal as="div" delay={0} className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06]">
-              <svg
+              <img
+                src={stretchCard}
+                alt=""
                 aria-hidden
-                className="absolute right-8 top-10 opacity-70 pointer-events-none hidden md:block"
-                width="220"
-                height="160"
-                viewBox="0 0 160 120"
-              >
-                <g fill="none" stroke="oklch(0.78 0.16 350)" strokeOpacity="0.55" strokeWidth="1" strokeLinecap="round">
-                  <line x1="20" y1="60" x2="40" y2="60" />
-                  <line x1="120" y1="60" x2="140" y2="60" />
-                  <polyline points="40,55 35,60 40,65" />
-                  <polyline points="120,55 125,60 120,65" />
-                </g>
-                <ellipse cx="80" cy="60" rx="36" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.4" strokeWidth="1" />
-                <ellipse cx="80" cy="60" rx="52" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.7" strokeWidth="1.2" strokeDasharray="3 3" />
-              </svg>
+                className="hidden md:block absolute inset-y-0 right-0 h-full w-1/2 object-cover object-center pointer-events-none select-none"
+              />
+              <div
+                aria-hidden
+                className="hidden md:block absolute inset-0 pointer-events-none bg-gradient-to-r from-[#0b1f3a] via-[#0b1f3a]/85 to-transparent"
+              />
               <div className="relative h-full flex flex-col justify-end max-w-md">
                 <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[oklch(0.78_0.16_350)] font-medium">
                   <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Stretch
