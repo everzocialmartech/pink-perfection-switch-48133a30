@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import whyDifferent from "@/assets/why-different.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Sparkles, Play, ArrowRight, ShoppingBag, Check } from "lucide-react";
+import { Sparkles, Play, ArrowRight, ShoppingBag, Check, Star, Quote } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -150,6 +150,85 @@ function Index() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="bg-[oklch(0.98_0.01_240)] py-24 md:py-32 border-y border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-4">Verified Reviews</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary leading-tight">
+              Trusted by dental teams<br />across the country.
+            </h2>
+            <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <div className="flex text-accent">
+                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+              </div>
+              <span className="font-semibold">4.9 / 5</span>
+              <span>·  500+ reviews</span>
+            </div>
+          </div>
+
+          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                name: "MART701",
+                date: "08/12/2025",
+                title: "We love our Posi-Prene gloves!",
+                body: "Years ago we had a staff member who couldn't wear any glove without breaking out. We discovered Posi-Prene powder/latex-free and we've been buying them ever since. We love the pink, the price, and our sales rep. Thank you CSC for keeping our office running smoothly!",
+                feature: true,
+              },
+              {
+                name: "Sarah Ecken",
+                date: "02/05/2025",
+                title: "Love these gloves!!",
+                body: "Gloves fit and feel great!!",
+              },
+              {
+                name: "Tai",
+                date: "01/10/2025",
+                title: "Great gloves",
+                body: "These gloves slide right on. No fuss. Makes my job more efficient. Thank you!",
+              },
+              {
+                name: "NEWB950",
+                date: "06/03/2025",
+                title: "Wonderful!!! Thank you",
+                body: "Great teamwork! Super products!",
+              },
+              {
+                name: "A.",
+                date: "03/15/2024",
+                title: "The most comfortable gloves",
+                body: "The Posi-Prene gloves are the most comfortable and best-fitting gloves we have ever used. Highly recommended.",
+              },
+              {
+                name: "Verified Buyer",
+                date: "11/22/2024",
+                title: "Switched our whole office",
+                body: "Switched our whole practice over. The fit is closer to latex than any nitrile we've tried.",
+              },
+            ].map(({ name, date, title, body, feature }) => (
+              <figure
+                key={name + date}
+                className={`relative rounded-md bg-white border border-border p-7 shadow-sm hover:shadow-md transition ${feature ? "md:col-span-2 lg:col-span-1 lg:row-span-2 bg-primary text-primary-foreground border-primary" : ""}`}
+              >
+                <Quote className={`w-6 h-6 mb-4 ${feature ? "text-accent" : "text-accent/60"}`} />
+                <div className={`flex mb-3 ${feature ? "text-accent" : "text-accent"}`}>
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
+                </div>
+                <h3 className={`font-bold text-lg leading-snug ${feature ? "text-primary-foreground" : "text-primary"}`}>{title}</h3>
+                <blockquote className={`mt-3 text-sm leading-relaxed ${feature ? "text-primary-foreground/85" : "text-muted-foreground"}`}>
+                  {body}
+                </blockquote>
+                <figcaption className={`mt-6 flex items-center justify-between text-xs uppercase tracking-widest ${feature ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                  <span className="font-semibold">{name}</span>
+                  <span>{date}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* BUY */}
       <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-24 pb-32 md:pb-40">
         <div className="max-w-5xl mx-auto px-6">
@@ -177,6 +256,8 @@ function Index() {
       </section>
 
       {/* Footer */}
+
+      {/* removed duplicate */}
       <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
           <div className="font-bold text-primary-foreground">Clinical Supply Co.</div>
