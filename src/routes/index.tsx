@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import stretchGloves from "@/assets/stretch-test.jpg";
+import whyDifferent from "@/assets/why-different.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Star, Sparkles, Play, ArrowRight, ShoppingBag } from "lucide-react";
+import { Star, Sparkles, Play, ArrowRight, ShoppingBag, Check } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -104,31 +105,32 @@ function Index() {
           <div className="relative">
             <div className="absolute -inset-8 bg-accent/30 rounded-[3rem] blur-3xl" />
             <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-white/20">
-              <img src={stretchGloves} alt="Polychloroprene glove stretched" loading="lazy" width={1200} height={1400} className="w-full h-auto object-cover" />
+              <img src={whyDifferent} alt="Dental professionals stretching Posi-Prene Pink gloves" loading="lazy" width={1200} height={900} className="w-full h-auto object-cover" />
             </div>
           </div>
 
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight">
-              Moves with you.<br />
-              <span className="text-accent italic font-serif">Never against.</span>
+              Why Posi-Prene<br />
+              <span className="text-accent italic font-serif">feels different.</span>
             </h2>
 
-            {/* Glassmorphism testimonial cards */}
-            <div className="mt-10 space-y-4">
+            <ul className="mt-10 space-y-3">
               {[
-                { q: "Closest thing to latex without being latex.", a: "Dental Office Manager" },
-                { q: "My hands aren't exhausted by 3 PM anymore.", a: "Hygienist, 12 yrs" },
-              ].map(({ q, a }) => (
-                <figure key={a} className="rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl p-6 shadow-2xl">
-                  <div className="flex text-accent mb-2">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current" />)}
-                  </div>
-                  <blockquote className="text-lg font-semibold leading-snug">"{q}"</blockquote>
-                  <figcaption className="mt-2 text-xs text-primary-foreground/70 uppercase tracking-widest">— {a}</figcaption>
-                </figure>
+                "Latex-Free",
+                "Nitrile-Free",
+                "Powder-Free",
+                "High Elasticity",
+                "Premium Tactile Feel",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-4 rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl px-5 py-4 shadow-xl">
+                  <span className="grid place-items-center w-8 h-8 rounded-full bg-accent text-accent-foreground shrink-0">
+                    <Check className="w-4 h-4" strokeWidth={3} />
+                  </span>
+                  <span className="text-lg font-semibold">{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </section>
