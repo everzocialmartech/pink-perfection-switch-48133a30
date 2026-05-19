@@ -33,7 +33,7 @@ function Index() {
         <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-[oklch(0.65_0.22_350)]/15 blur-3xl animate-hero-glow-in delay-300" />
 
         <div className="relative w-full max-w-4xl mx-auto px-6 text-center">
-          <h1 className="font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] max-w-5xl mx-auto animate-hero-rise">
+          <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance">
             <span className="text-primary">The </span>
             <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
