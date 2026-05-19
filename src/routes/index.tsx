@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import boxImg from "@/assets/box.jpg";
 import posipreneBox from "@/assets/posiprene-box.png";
 import cscLogo from "@/assets/csc-logo.png";
-import { ArrowRight, Check, Play } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
