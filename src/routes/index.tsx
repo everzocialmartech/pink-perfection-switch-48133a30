@@ -151,40 +151,41 @@ function Index() {
 
 
       {/* BUY */}
-      <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-12 pb-20 md:pb-24">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="rounded-lg bg-white border border-border shadow-2xl shadow-primary/10 p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-            <div className="md:order-1">
-              <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">Ships Today on orders before 1pm EST</p>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-                Your hands<br />
-                <span className="text-accent font-bold">deserve this.</span>
-              </h2>
-              <div className="mt-6 flex items-baseline gap-2">
-                <span className="text-5xl font-bold text-primary">$24.99</span>
-                <span className="text-muted-foreground">/ box of 200</span>
-              </div>
-              <a
-                href="#"
-                className="group mt-7 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto"
-              >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
-                Buy Posi-Prene Pink <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-              <p className="mt-4 text-xs text-muted-foreground">Free shipping on orders over $250.</p>
-              <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center gap-3">
-                <p className="text-sm font-semibold text-primary">Not sure yet?</p>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-[oklch(0.65_0.22_350)] text-[oklch(0.55_0.22_350)] px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-[oklch(0.65_0.22_350)] hover:text-white transition"
-                >
-                  Get a Free Sample <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
-            </div>
-            <div className="md:order-2 relative rounded-md bg-gradient-to-br from-[oklch(0.97_0.02_240)] to-[oklch(0.93_0.04_240)] p-6 grid place-items-center">
-              <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full max-w-xs rounded shadow-xl" />
-            </div>
+      <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
+            <Truck className="w-3.5 h-3.5" /> Ships today · Orders before 1pm EST
+          </p>
+          <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-primary">
+            Your hands<br />
+            <span className="text-[oklch(0.65_0.22_350)]">deserve this.</span>
+          </h2>
+
+          <div className="mt-10 mx-auto max-w-xs">
+            <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full h-auto drop-shadow-2xl" />
+          </div>
+
+          <div className="mt-8 flex items-baseline justify-center gap-2">
+            <span className="text-6xl font-bold text-primary">$24.99</span>
+            <span className="text-muted-foreground">/ box of 200</span>
+          </div>
+
+          <a
+            href="#"
+            className="group mt-8 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-12 py-5 text-base font-bold uppercase tracking-[0.15em] shadow-[0_14px_40px_-10px_oklch(0.65_0.22_350/0.6)] hover:shadow-[0_20px_50px_-12px_oklch(0.65_0.22_350/0.8)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto"
+          >
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
+            Buy Posi-Prene Pink <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </a>
+
+          <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+            <ShieldCheck className="w-3.5 h-3.5" /> Free shipping on orders over $250
+          </div>
+
+          <div className="mt-10">
+            <a href="#" className="text-sm font-semibold text-[oklch(0.55_0.22_350)] underline-offset-4 hover:underline">
+              Not sure yet? Get a free sample →
+            </a>
           </div>
         </div>
       </section>
