@@ -74,26 +74,50 @@ function Index() {
       </section>
 
       {/* SWITCH MOMENT */}
-      <section className="bg-white py-14 md:py-20">
+      <section className="relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-14 md:py-20 border-y border-[oklch(0.92_0.04_350)]">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary leading-[1.1]">
-              Still using <span className="text-accent">stiff nitrile?</span>
-            </h2>
-            <p className="text-sm text-muted-foreground md:max-w-xs">Three reasons your team is fighting their gloves all day.</p>
+            <div>
+              <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-3">The reaction</p>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary leading-[1.1]">
+                Still using <span className="text-[oklch(0.6_0.18_350)]">stiff nitrile?</span>
+              </h2>
+            </div>
+            <p className="text-sm text-muted-foreground md:max-w-xs">See what dental teams say the first time they try Posi-Prene Pink.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-3 text-left">
-            {[
-              { title: "Hand Fatigue", body: "Long procedures shouldn't leave your hands exhausted." },
-              { title: "Cheap Glove Feel", body: "Thin, stiff gloves make precision harder — not easier." },
-              { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
-            ].map(({ title, body }, i) => (
-              <div key={title} className="rounded-md bg-muted/40 border border-border p-5">
-                <div className="text-xs font-bold tracking-widest text-accent mb-2">0{i + 1}</div>
-                <div className="text-lg font-bold text-primary leading-tight">{title}</div>
-                <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{body}</p>
+
+          <div className="grid lg:grid-cols-5 gap-6 items-stretch">
+            <div className="lg:col-span-3 relative rounded-md overflow-hidden bg-primary shadow-xl ring-1 ring-[oklch(0.85_0.08_350)]">
+              <video
+                src="/reaction.mp4"
+                className="w-full h-full object-cover aspect-video"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-sm bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase text-[oklch(0.55_0.18_350)]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.6_0.2_350)] animate-pulse" /> Live reaction
               </div>
-            ))}
+            </div>
+
+            <div className="lg:col-span-2 grid gap-3">
+              {[
+                { title: "Hand Fatigue", body: "Long procedures shouldn't leave your hands exhausted." },
+                { title: "Cheap Glove Feel", body: "Thin, stiff gloves make precision harder — not easier." },
+                { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
+              ].map(({ title, body }, i) => (
+                <div key={title} className="rounded-md bg-white border border-[oklch(0.92_0.04_350)] p-5 flex gap-4">
+                  <div className="text-xs font-bold tracking-widest text-[oklch(0.6_0.18_350)] pt-0.5">0{i + 1}</div>
+                  <div>
+                    <div className="text-base font-bold text-primary leading-tight">{title}</div>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
