@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import stretchGloves from "@/assets/stretch-gloves.jpg";
+import stretchGloves from "@/assets/stretch-test.jpg";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import { Check, Star, Sparkles, Play, ArrowRight, ShoppingBag } from "lucide-react";
