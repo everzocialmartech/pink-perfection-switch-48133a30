@@ -216,7 +216,9 @@ function Index() {
             </a>
 
             <a
-              href="#"
+              href="https://clinicalsupplycompany.com/pages/csc-samples-request"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs text-white/45 tracking-wider hover:text-white/80 transition-colors underline-offset-4 hover:underline"
             >
               or request a free sample
@@ -501,7 +503,9 @@ function Index() {
 
               <div className="mt-4">
                 <a
-                  href="#"
+                  href="https://clinicalsupplycompany.com/pages/csc-samples-request"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline"
                 >
                   Not sure yet? Request a free sample →
