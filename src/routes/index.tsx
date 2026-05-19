@@ -89,7 +89,7 @@ function Index() {
             <div className="lg:col-span-3 relative rounded-md overflow-hidden bg-primary shadow-xl ring-1 ring-[oklch(0.85_0.08_350)]">
               <video
                 src="/reaction.mp4"
-                className="w-full h-full object-cover aspect-video"
+                className="w-full h-full object-contain aspect-video bg-primary"
                 autoPlay
                 muted
                 loop
@@ -102,7 +102,10 @@ function Index() {
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid gap-3">
+            <div className="lg:col-span-2 grid gap-3 content-start">
+              <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)]">
+                What the Posi-Prene squad loves about these gloves
+              </p>
               {[
                 { title: "Powder-Free", body: "Clean, residue-free application — no mess, no waste." },
                 { title: "High Elasticity", body: "Stretches with your hands so every move stays effortless." },
