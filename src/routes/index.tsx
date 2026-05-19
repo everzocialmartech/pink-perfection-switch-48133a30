@@ -433,6 +433,9 @@ function Index() {
                 src={stretchCard}
                 alt=""
                 aria-hidden
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="hidden md:block absolute inset-y-0 right-0 h-full w-1/2 object-cover object-center pointer-events-none select-none"
               />
               <div
@@ -453,7 +456,7 @@ function Index() {
             </Reveal>
 
             {/* B — STAT anchor: ivory card with big numeral */}
-            <Reveal as="div" delay={120} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-[oklch(0.97_0.01_280)] text-[#0b1f3a] p-8 flex flex-col justify-between">
+            <Reveal as="div" delay={60} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-[oklch(0.97_0.01_280)] text-[#0b1f3a] p-8 flex flex-col justify-between">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[#0b1f3a]/60 font-medium">
                 <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> Reorder rate
               </div>
@@ -468,7 +471,7 @@ function Index() {
             </Reveal>
 
             {/* C — Premium feel: small text card */}
-            <Reveal as="div" delay={240} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06]">
+            <Reveal as="div" delay={120} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06]">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
                 <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Touch
               </div>
