@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
+import gloveLeft from "@/assets/glove-left.png";
+import gloveRight from "@/assets/glove-right.png";
 import cscLogo from "@/assets/csc-logo.png";
 import { ArrowRight, Truck, ShieldCheck } from "lucide-react";
 
@@ -309,8 +311,8 @@ function Index() {
           />
           {/* Two large gloves peeking from behind the card */}
           {[
-            { side: "left" as const, rot: -28, delay: 0.18 },
-            { side: "right" as const, rot: 28, delay: 0.28 },
+            { side: "left" as const, rot: -18, delay: 0.18, src: gloveLeft },
+            { side: "right" as const, rot: 18, delay: 0.28, src: gloveRight },
           ].map((g, i) => {
             const t = Math.max(0, Math.min(1, (buyProgress - g.delay) / 0.28));
             const eased = 1 - Math.pow(1 - t, 3);
@@ -322,7 +324,7 @@ function Index() {
             return (
               <img
                 key={i}
-                src={floatingGlove}
+                src={g.src}
                 alt=""
                 aria-hidden
                 className="absolute animate-float"
