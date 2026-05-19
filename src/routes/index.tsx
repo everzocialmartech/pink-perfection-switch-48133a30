@@ -62,9 +62,6 @@ function Index() {
             >
               Shop Posi-Prene <ArrowRight className="w-5 h-5" />
             </a>
-            <a href="#challenge" className="inline-flex items-center gap-2 rounded-sm bg-white/60 backdrop-blur border border-white text-primary px-6 py-4 font-semibold hover:bg-white transition">
-              <Play className="w-4 h-4 fill-current" /> Watch
-            </a>
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-x-6 gap-y-2 flex-wrap text-xs font-semibold tracking-wider uppercase text-muted-foreground">
