@@ -96,16 +96,14 @@ function Index() {
                 What the Posi-Prene squad loves about these gloves
               </p>
               {[
-                { title: "Powder-Free", body: "Clean, residue-free application — no mess, no waste." },
-                { title: "High Elasticity", body: "Stretches with your hands so every move stays effortless." },
-                { title: "Slides On Wet", body: "Goes on easy even with wet or sweaty hands." },
-              ].map(({ title, body }, i) => (
-                <div key={title} className="rounded-md bg-white border border-[oklch(0.92_0.04_350)] p-5 flex gap-4">
-                  <div className="text-xs font-bold tracking-widest text-[oklch(0.6_0.18_350)] pt-0.5">0{i + 1}</div>
-                  <div>
-                    <div className="text-base font-bold text-primary leading-tight">{title}</div>
-                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{body}</p>
-                  </div>
+                "Super stretchy, moves with you, not against you",
+                "Easy to put on with wet or sweaty hands",
+                "Made out of wet suit material — premium polychloroprene",
+                "No latex. No powder. No mess.",
+              ].map((title, i) => (
+                <div key={title} className="rounded-md bg-white border border-[oklch(0.92_0.04_350)] p-4 flex items-center gap-4">
+                  <div className="text-xs font-bold tracking-widest text-[oklch(0.6_0.18_350)] shrink-0">0{i + 1}</div>
+                  <div className="text-sm md:text-base font-semibold text-primary leading-snug">{title}</div>
                 </div>
               ))}
             </div>
