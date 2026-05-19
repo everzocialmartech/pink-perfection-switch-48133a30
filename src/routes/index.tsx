@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import posipreneBox from "@/assets/posiprene-box.png";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -329,16 +329,7 @@ function Index() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
-              <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
-                <video
-                  src="/challenge.mp4"
-                  className="absolute inset-0 w-full h-full object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
+              <ChallengeVideo />
                 <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
                 <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
                   <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
