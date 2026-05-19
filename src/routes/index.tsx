@@ -113,25 +113,6 @@ function Index() {
             />
           </a>
 
-          <nav className="flex items-center gap-1 sm:gap-2">
-            {[
-              { id: "reaction", label: "Reaction" },
-              { id: "challenge", label: "Challenge" },
-              { id: "buy", label: "Shop" },
-            ].map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="relative inline-flex items-center rounded-full px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-white/90 hover:text-white hover:bg-white/15 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
         </div>
       </header>
 
