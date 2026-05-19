@@ -131,7 +131,6 @@ function Index() {
                 </li>
               ))}
             </ul>
-            </div>
           </div>
         </div>
       </section>
