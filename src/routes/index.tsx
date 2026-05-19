@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
-import { Sparkles, ArrowRight, ShoppingBag } from "lucide-react";
+import { ArrowRight, ShoppingBag, Truck, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -24,22 +24,18 @@ function Index() {
       <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 pb-6">
         {/* Brand gradient backdrop: trust-blue to emotional-pink */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[oklch(0.97_0.02_240)]" />
-        <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-primary/10 blur-3xl" />
+        <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl animate-hero-glow-in" />
+        <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-[oklch(0.65_0.22_350)]/15 blur-3xl animate-hero-glow-in delay-300" />
 
         <div className="relative w-full max-w-6xl mx-auto px-6 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/70 backdrop-blur-md border border-white px-4 py-1.5 text-[11px] font-bold tracking-[0.18em] uppercase text-accent shadow-sm animate-fade-in">
-            <Sparkles className="w-3.5 h-3.5" /> Premium Polychloroprene
-          </span>
-
-          <h1 className="mt-4 font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] animate-fade-in max-w-5xl mx-auto">
+          <h1 className="font-bold tracking-tight leading-[0.95] text-[2rem] sm:text-5xl md:text-6xl lg:text-[5rem] max-w-5xl mx-auto animate-hero-rise">
             <span className="text-primary">The </span>
             <span className="text-[oklch(0.65_0.22_350)] font-bold">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
           </h1>
 
           {/* Floating 3D glove */}
-          <div className="relative mt-2 mx-auto max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-none">
+          <div className="relative mt-2 mx-auto max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md pointer-events-none animate-hero-drop">
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
             <img
               src={floatingGlove}
@@ -52,7 +48,7 @@ function Index() {
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-3/5 h-6 rounded-sm bg-foreground/20 blur-2xl" />
           </div>
 
-          <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-fade-in">
+          <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-hero-rise delay-300">
             <a
               href="#buy"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
