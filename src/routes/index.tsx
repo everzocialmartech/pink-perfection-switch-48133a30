@@ -300,7 +300,7 @@ function Index() {
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-6 md:auto-rows-[minmax(190px,auto)] gap-4 md:gap-5">
             {/* A — HERO: Wet-hand glide with abstract flow lines */}
-            <div className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors">
+            <Reveal as="div" delay={0} className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06]">
               <svg
                 aria-hidden
                 className="absolute inset-0 w-full h-full opacity-50 pointer-events-none"
@@ -335,10 +335,10 @@ function Index() {
                   Slides on over damp or sweaty skin. No fight, no tear, no second pair.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* B — STAT anchor: ivory card with big numeral */}
-            <div className="md:col-span-2 relative overflow-hidden rounded-2xl bg-[oklch(0.97_0.01_280)] text-[#0b1f3a] p-8 flex flex-col justify-between">
+            <Reveal as="div" delay={120} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-[oklch(0.97_0.01_280)] text-[#0b1f3a] p-8 flex flex-col justify-between">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[#0b1f3a]/60 font-medium">
                 <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> Reorder rate
               </div>
@@ -350,10 +350,10 @@ function Index() {
                   Of practices that try Posi-Prene re-order within 30 days.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* C — Premium feel: small text card */}
-            <div className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06] transition-colors">
+            <Reveal as="div" delay={240} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06]">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
                   <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Touch
               </div>
@@ -363,10 +363,10 @@ function Index() {
               <p className="mt-3 text-sm text-white/55 leading-relaxed">
                 Soft-touch matte finish. Real tactile feedback — reads instruments cleanly.
               </p>
-            </div>
+            </Reveal>
 
             {/* D — Wetsuit stretch with stretch SVG */}
-            <div className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors min-h-[210px]">
+            <Reveal as="div" delay={360} className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] min-h-[210px]">
               <svg
                 aria-hidden
                 className="absolute right-6 top-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
@@ -394,10 +394,10 @@ function Index() {
                   Polychloroprene moves with you. No fatigue at hour eight.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
             {/* E — Clean chemistry: small badge-style card */}
-            <div className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors">
+            <Reveal as="div" delay={480} className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06]">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
                 <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 04 · Clean
               </div>
@@ -412,7 +412,7 @@ function Index() {
                 <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Powder-free</span>
                 <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Ambidextrous</span>
               </div>
-            </div>
+            </Reveal>
           </div>
 
           {/* Bottom CTA — light card, pull quote left, button right */}
