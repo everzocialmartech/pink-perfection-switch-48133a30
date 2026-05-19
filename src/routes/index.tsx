@@ -378,46 +378,39 @@ function Index() {
               Why teams stay
             </div>
             <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
-              Four reasons they{" "}
+              Three reasons they{" "}
               <em className="italic font-light text-[oklch(0.78_0.16_350)]">don't go back.</em>
             </h2>
           </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-6 md:auto-rows-[minmax(190px,auto)] gap-4 md:gap-5">
-            {/* A — HERO: Wet-hand glide with abstract flow lines */}
+            {/* A — HERO: Wetsuit stretch with stretch SVG */}
             <Reveal as="div" delay={0} className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06]">
               <svg
                 aria-hidden
-                className="absolute inset-0 w-full h-full opacity-50 pointer-events-none"
-                viewBox="0 0 600 400"
-                preserveAspectRatio="none"
+                className="absolute right-8 top-10 opacity-70 pointer-events-none hidden md:block"
+                width="220"
+                height="160"
+                viewBox="0 0 160 120"
               >
-                <defs>
-                  <linearGradient id="glide-line" x1="0" x2="1" y1="0" y2="0">
-                    <stop offset="0%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
-                    <stop offset="50%" stopColor="oklch(0.78 0.16 350)" stopOpacity="0.55" />
-                    <stop offset="100%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                {[...Array(7)].map((_, i) => (
-                  <path
-                    key={i}
-                    d={`M -50 ${120 + i * 28} C 180 ${80 + i * 30}, 380 ${200 + i * 22}, 650 ${130 + i * 26}`}
-                    fill="none"
-                    stroke="url(#glide-line)"
-                    strokeWidth="1"
-                  />
-                ))}
+                <g fill="none" stroke="oklch(0.78 0.16 350)" strokeOpacity="0.55" strokeWidth="1" strokeLinecap="round">
+                  <line x1="20" y1="60" x2="40" y2="60" />
+                  <line x1="120" y1="60" x2="140" y2="60" />
+                  <polyline points="40,55 35,60 40,65" />
+                  <polyline points="120,55 125,60 120,65" />
+                </g>
+                <ellipse cx="80" cy="60" rx="36" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.4" strokeWidth="1" />
+                <ellipse cx="80" cy="60" rx="52" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.7" strokeWidth="1.2" strokeDasharray="3 3" />
               </svg>
-              <div className="relative h-full flex flex-col justify-end">
+              <div className="relative h-full flex flex-col justify-end max-w-md">
                 <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[oklch(0.78_0.16_350)] font-medium">
-                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Glide
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Stretch
                 </div>
-                <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-[1.05] max-w-md">
-                  Wet-hand glide.
+                <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-[1.05]">
+                  Wetsuit stretch.
                 </h3>
-                <p className="mt-4 text-sm md:text-base text-white/60 leading-relaxed max-w-sm">
-                  Slides on over damp or sweaty skin. No fight, no tear, no second pair.
+                <p className="mt-4 text-sm md:text-base text-white/60 leading-relaxed">
+                  Polychloroprene moves with you. No fatigue at hour eight.
                 </p>
               </div>
             </Reveal>
@@ -440,7 +433,7 @@ function Index() {
             {/* C — Premium feel: small text card */}
             <Reveal as="div" delay={240} className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06]">
               <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
-                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Touch
+                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Touch
               </div>
               <h3 className="mt-4 font-serif text-2xl md:text-[1.625rem] font-normal text-white leading-tight">
                 Premium feel.
@@ -448,55 +441,6 @@ function Index() {
               <p className="mt-3 text-sm text-white/55 leading-relaxed">
                 Soft-touch matte finish. Real tactile feedback — reads instruments cleanly.
               </p>
-            </Reveal>
-
-            {/* D — Wetsuit stretch with stretch SVG */}
-            <Reveal as="div" delay={360} className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] min-h-[210px]">
-              <svg
-                aria-hidden
-                className="absolute right-6 top-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
-                width="160"
-                height="120"
-                viewBox="0 0 160 120"
-              >
-                <g fill="none" stroke="oklch(0.78 0.16 350)" strokeOpacity="0.55" strokeWidth="1" strokeLinecap="round">
-                  <line x1="20" y1="60" x2="40" y2="60" />
-                  <line x1="120" y1="60" x2="140" y2="60" />
-                  <polyline points="40,55 35,60 40,65" />
-                  <polyline points="120,55 125,60 120,65" />
-                </g>
-                <ellipse cx="80" cy="60" rx="36" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.4" strokeWidth="1" />
-                <ellipse cx="80" cy="60" rx="52" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.7" strokeWidth="1.2" strokeDasharray="3 3" />
-              </svg>
-              <div className="relative max-w-[60%]">
-                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
-                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 03 · Stretch
-                </div>
-                <h3 className="mt-4 font-serif text-2xl md:text-[1.75rem] font-normal text-white leading-tight">
-                  Wetsuit stretch.
-                </h3>
-                <p className="mt-3 text-sm text-white/55 leading-relaxed">
-                  Polychloroprene moves with you. No fatigue at hour eight.
-                </p>
-              </div>
-            </Reveal>
-
-            {/* E — Clean chemistry: small badge-style card */}
-            <Reveal as="div" delay={480} className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06]">
-              <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
-                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 04 · Clean
-              </div>
-              <h3 className="mt-4 font-serif text-2xl md:text-[1.75rem] font-normal text-white leading-tight">
-                Clean chemistry.
-              </h3>
-              <p className="mt-3 text-sm text-white/55 leading-relaxed max-w-sm">
-                Latex-free. Powder-free. No mess on the tray, no mess on the patient.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Latex-free</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Powder-free</span>
-                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Ambidextrous</span>
-              </div>
             </Reveal>
           </div>
 
