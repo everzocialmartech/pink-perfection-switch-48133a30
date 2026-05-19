@@ -129,7 +129,7 @@ function Index() {
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[oklch(0.98_0.015_350)] pointer-events-none" />
 
         <div className="relative w-full max-w-4xl mx-auto px-6 text-center py-[10px] pb-0 pt-[37px]">
-          <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance mb-[22px]">
+          <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance mb-[26px]">
             <span className="text-primary">The </span>
             <span className="font-bold animate-pink-to-white">Pink Glove</span>
             <span className="text-primary"> Dental Teams Keep Switching To.</span>
