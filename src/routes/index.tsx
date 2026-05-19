@@ -38,7 +38,7 @@ function Reveal({
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -46,7 +46,7 @@ function Reveal({
   return (
     <As
       ref={ref as any}
-      className={`${className} transition-all duration-700 ease-out ${
+      className={`${className} transition-all duration-300 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
