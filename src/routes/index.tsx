@@ -206,7 +206,7 @@ function Index() {
           {/* CTA — refined, not aggressive */}
           <div className="mt-12 md:mt-14 flex flex-col items-center gap-4 animate-hero-rise delay-300">
             <a
-              href="https://clinicalsupplycompany.com/products/pink-posi-prene-gloves-powder-free"
+              href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-8 py-3.5 text-[13px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:text-white hover:shadow-[0_20px_50px_-15px_oklch(0.65_0.22_350/0.7)]"
@@ -365,7 +365,7 @@ function Index() {
               </div>
               <div className="mt-8 flex justify-center">
                 <a
-                  href="https://clinicalsupplycompany.com/products/pink-posi-prene-gloves-powder-free"
+                  href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] px-8 py-4 text-sm font-medium tracking-[0.22em] uppercase text-white shadow-[0_20px_40px_-15px_rgba(11,31,58,0.5)] transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-15px_oklch(0.65_0.22_350/0.55)]"
@@ -412,7 +412,7 @@ function Index() {
             <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
               <ChallengeVideo />
               <a
-                href="https://clinicalsupplycompany.com/products/pink-posi-prene-gloves-powder-free"
+                href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.78_0.16_350)] hover:text-white hover:shadow-[0_20px_40px_-15px_oklch(0.65_0.22_350/0.55)]"
@@ -482,7 +482,7 @@ function Index() {
 
               <div className="mt-10">
                 <a
-                  href="https://clinicalsupplycompany.com/products/pink-posi-prene-gloves-powder-free"
+                  href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex w-full sm:w-auto items-center justify-between gap-6 rounded-md bg-[#0b1f3a] text-white px-8 py-5 text-[12px] font-medium tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#06152b] hover:shadow-[0_20px_50px_-20px_rgba(11,31,58,0.6)] hover:-translate-y-0.5"
