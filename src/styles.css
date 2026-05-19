@@ -231,3 +231,19 @@
 .animate-pink-to-white {
   animation: pink-to-white 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
+
+@keyframes buy-box-float {
+  0%   { transform: translateY(20px) rotateZ(-2deg) scale(0.96); opacity: 0; }
+  60%  { opacity: 1; }
+  100% { transform: translateY(0) rotateZ(0deg) scale(1); opacity: 1; }
+}
+@keyframes buy-box-idle {
+  0%, 100% { transform: translateY(0) rotateZ(0deg); }
+  50%      { transform: translateY(-8px) rotateZ(1.5deg); }
+}
+.animate-buy-box-float {
+  animation:
+    buy-box-float 1s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    buy-box-idle 5s ease-in-out 1s infinite;
+  transform-origin: bottom center;
+}
