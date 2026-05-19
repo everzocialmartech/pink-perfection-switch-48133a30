@@ -104,9 +104,9 @@ function Index() {
 
             <div className="lg:col-span-2 grid gap-3">
               {[
-                { title: "Hand Fatigue", body: "Long procedures shouldn't leave your hands exhausted." },
-                { title: "Cheap Glove Feel", body: "Thin, stiff gloves make precision harder — not easier." },
-                { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
+                { title: "Powder-Free", body: "Clean, residue-free application — no mess, no waste." },
+                { title: "High Elasticity", body: "Stretches with your hands so every move stays effortless." },
+                { title: "Slides On Wet", body: "Goes on easy even with wet or sweaty hands." },
               ].map(({ title, body }, i) => (
                 <div key={title} className="rounded-md bg-white border border-[oklch(0.92_0.04_350)] p-5 flex gap-4">
                   <div className="text-xs font-bold tracking-widest text-[oklch(0.6_0.18_350)] pt-0.5">0{i + 1}</div>
