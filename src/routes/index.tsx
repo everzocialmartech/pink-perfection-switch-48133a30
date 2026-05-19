@@ -264,7 +264,7 @@ function Index() {
               <div className="relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
                 <video
                   src="/reaction.mp4"
-                  className="w-full h-full object-cover aspect-[4/5] bg-[#0b1f3a]"
+                  className="w-full h-auto block bg-[#0b1f3a]"
                   autoPlay
                   muted
                   loop
