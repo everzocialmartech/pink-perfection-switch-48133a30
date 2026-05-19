@@ -487,7 +487,7 @@ function Index() {
                   href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex w-full sm:w-auto items-center justify-between gap-6 rounded-md bg-[#0b1f3a] text-white px-8 py-5 text-[12px] font-medium tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#06152b] hover:shadow-[0_20px_50px_-20px_rgba(11,31,58,0.6)] hover:-translate-y-0.5"
+                  className="group inline-flex w-full sm:w-auto items-center justify-between gap-6 rounded-md bg-[#f4b6c7] text-[#0b1f3a] px-8 py-5 text-[12px] font-medium tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#efa1b6] hover:shadow-[0_20px_50px_-20px_rgba(244,182,199,0.7)] hover:-translate-y-0.5"
                 >
                   Order Posi-Prene
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
