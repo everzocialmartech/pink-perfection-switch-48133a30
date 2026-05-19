@@ -138,9 +138,6 @@ function Index() {
             ))}
           </div>
 
-          <p className="mt-10 text-center text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
-            Join the squad →
-          </p>
         </div>
       </section>
 
