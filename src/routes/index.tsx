@@ -221,12 +221,27 @@ function Index() {
                 ].map((q) => (
                   <figure
                     key={q.who}
-                    className="relative rounded-md bg-white pl-6 pr-5 py-5 shadow-[0_8px_24px_-12px_rgba(11,31,58,0.12)] border-l-2 border-[oklch(0.65_0.22_350)]"
+                    tabIndex={0}
+                    className="group relative overflow-hidden rounded-md bg-white pl-6 pr-5 py-5 shadow-[0_8px_24px_-12px_rgba(11,31,58,0.12)] border-l-2 border-[oklch(0.65_0.22_350)] cursor-pointer transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-20px_rgba(11,31,58,0.25)] hover:border-l-[3px] hover:pl-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.65_0.22_350)]/40 active:translate-y-0 active:scale-[0.995] active:shadow-[0_10px_24px_-14px_rgba(11,31,58,0.2)]"
                   >
-                    <blockquote className="text-base md:text-lg text-[#0b1f3a] leading-relaxed font-light">
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background:
+                          "radial-gradient(120% 80% at 0% 0%, oklch(0.65 0.22 350 / 0.06), transparent 55%)",
+                      }}
+                    />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute -top-2 left-3 font-serif text-5xl leading-none text-[oklch(0.65_0.22_350)]/0 group-hover:text-[oklch(0.65_0.22_350)]/15 transition-colors duration-500 select-none"
+                    >
+                      “
+                    </span>
+                    <blockquote className="relative text-base md:text-lg text-[#0b1f3a] leading-relaxed font-light transition-colors duration-300 group-hover:text-[#06152b]">
                       "{q.quote}"
                     </blockquote>
-                    <figcaption className="mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40">
+                    <figcaption className="relative mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40 transition-colors duration-300 group-hover:text-[#0b1f3a]/70">
                       {q.who}
                     </figcaption>
                   </figure>
