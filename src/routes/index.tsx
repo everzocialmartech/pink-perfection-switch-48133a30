@@ -66,10 +66,23 @@ function Index() {
 
       {/* HERO — floating 3D glove */}
       <section className="relative overflow-hidden min-h-[85vh] md:min-h-[95vh] flex items-center pt-16 pb-12">
-        {/* Brand gradient backdrop: trust-blue to emotional-pink */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[oklch(0.97_0.02_240)]" />
-        <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl animate-hero-glow-in" />
-        <div className="absolute -bottom-40 -right-32 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] rounded-sm bg-[oklch(0.65_0.22_350)]/15 blur-3xl animate-hero-glow-in delay-300" />
+        {/* Modern backdrop: soft pink-cream wash with depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_oklch(0.97_0.04_350)_0%,_oklch(0.99_0.015_350)_45%,_oklch(0.98_0.02_240)_100%)]" />
+        {/* Subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.35] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
+          style={{
+            backgroundImage:
+              "radial-gradient(oklch(0.65 0.22 350 / 0.18) 1px, transparent 1px)",
+            backgroundSize: "22px 22px",
+          }}
+        />
+        {/* Ambient color orbs */}
+        <div className="absolute -top-40 -left-32 w-[55vw] h-[55vw] max-w-[640px] max-h-[640px] rounded-full bg-[oklch(0.72_0.2_350)]/25 blur-3xl animate-hero-glow-in" />
+        <div className="absolute -bottom-48 -right-32 w-[65vw] h-[65vw] max-w-[760px] max-h-[760px] rounded-full bg-[oklch(0.78_0.16_340)]/30 blur-3xl animate-hero-glow-in delay-300" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[40vw] h-[40vw] max-w-[520px] max-h-[520px] rounded-full bg-[oklch(0.85_0.12_30)]/20 blur-3xl" />
+        {/* Bottom fade into next section */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-white pointer-events-none" />
 
         <div className="relative w-full max-w-4xl mx-auto px-6 text-center">
           <h1 className="font-bold tracking-tight leading-[1] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.75rem] max-w-5xl mx-auto animate-hero-rise text-balance">
