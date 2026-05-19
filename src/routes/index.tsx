@@ -158,10 +158,7 @@ function Index() {
       <section id="buy" className="bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-12 pb-20 md:pb-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="rounded-lg bg-white border border-border shadow-2xl shadow-primary/10 p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center">
-            <div className="relative rounded-md bg-gradient-to-br from-[oklch(0.97_0.02_240)] to-[oklch(0.93_0.04_240)] p-6 grid place-items-center">
-              <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full max-w-xs rounded shadow-xl" />
-            </div>
-            <div>
+            <div className="md:order-1">
               <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-3">Ships Today on orders before 1pm EST</p>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
                 Your hands<br />
@@ -188,6 +185,9 @@ function Index() {
                   Get a Free Sample <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
+            </div>
+            <div className="md:order-2 relative rounded-md bg-gradient-to-br from-[oklch(0.97_0.02_240)] to-[oklch(0.93_0.04_240)] p-6 grid place-items-center">
+              <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full max-w-xs rounded shadow-xl" />
             </div>
           </div>
         </div>
