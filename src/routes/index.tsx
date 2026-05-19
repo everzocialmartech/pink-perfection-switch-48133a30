@@ -23,7 +23,7 @@ function Index() {
       {/* Nav + Hero wrapper — sticky nav unsticks at the end of the hero */}
       <div className="relative">
       <header className="sticky top-0 inset-x-0 z-50 text-white bg-[oklch(0.65_0.22_350)] shadow-[0_4px_20px_-8px_oklch(0.45_0.18_350/0.45)]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-11 flex items-center justify-between gap-4">
           <a
             href="#top"
             onClick={(e) => {
@@ -38,7 +38,7 @@ function Index() {
               alt="Clinical Supply Co."
               width={896}
               height={512}
-              className="h-12 w-auto drop-shadow-[0_2px_8px_oklch(0.35_0.18_350/0.4)]"
+              className="h-8 w-auto drop-shadow-[0_2px_8px_oklch(0.35_0.18_350/0.4)]"
             />
           </a>
 
