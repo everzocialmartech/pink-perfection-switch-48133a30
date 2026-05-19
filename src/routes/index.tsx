@@ -123,10 +123,12 @@ function Index() {
       {/* CHALLENGE */}
       <section id="challenge" className="bg-white py-12 md:py-16">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-accent mb-4">The 2-Second Challenge</p>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             Wet hands. <span className="text-accent font-bold">Gloved fast.</span>
           </h2>
+          <p className="mt-3 text-lg md:text-xl font-semibold text-primary">
+            With Posi-Prene.
+          </p>
           <p className="mt-4 text-sm font-semibold tracking-wide uppercase text-muted-foreground">
             Filmed live at <span className="text-primary">MDA 2026</span> — Michigan Dental Association Show
           </p>
