@@ -58,7 +58,7 @@ function Index() {
           <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-fade-in">
             <a
               href="#buy"
-              className="relative inline-flex items-center gap-2 rounded-md bg-accent text-accent-foreground px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-accent/40 hover:scale-[1.04] transition animate-pulse-glow"
+              className="relative inline-flex items-center gap-2 rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-5 text-base font-extrabold uppercase tracking-wider shadow-[0_18px_50px_-10px_oklch(0.65_0.22_350/0.7)] ring-2 ring-[oklch(0.65_0.22_350)]/40 hover:scale-[1.04] hover:bg-[oklch(0.6_0.24_350)] transition animate-pulse-glow"
             >
               Shop Posi-Prene <ArrowRight className="w-5 h-5" />
             </a>
