@@ -77,18 +77,18 @@ function Index() {
       <section className="bg-white py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-            Built for the<br />
-            <span className="text-accent italic font-serif">precision</span> of dentistry.
+            Still Using<br />
+            <span className="text-accent italic font-serif">Stiff Nitrile?</span>
           </h2>
-          <div className="mt-16 grid sm:grid-cols-3 gap-4">
+          <div className="mt-16 grid sm:grid-cols-3 gap-4 text-left">
             {[
-              { stat: "0%", label: "Latex" },
-              { stat: "100%", label: "Polychloroprene" },
-              { stat: "2s", label: "To put on" },
-            ].map(({ stat, label }) => (
-              <div key={label} className="rounded-3xl bg-gradient-to-br from-muted to-white border border-border p-8">
-                <div className="text-5xl md:text-6xl font-black text-primary">{stat}</div>
-                <div className="mt-2 text-sm font-semibold tracking-widest uppercase text-muted-foreground">{label}</div>
+              { title: "Hand Fatigue", body: "Long procedures shouldn't leave your hands exhausted." },
+              { title: "Cheap Glove Feel", body: "Thin, stiff gloves make precision harder — not easier." },
+              { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
+            ].map(({ title, body }) => (
+              <div key={title} className="rounded-3xl bg-gradient-to-br from-muted to-white border border-border p-8">
+                <div className="text-2xl md:text-3xl font-black text-primary leading-tight">{title}</div>
+                <p className="mt-3 text-base text-muted-foreground leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
