@@ -421,7 +421,7 @@ function Index() {
               Why teams stay
             </div>
             <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
-              Three reasons they{" "}
+              Reasons they{" "}
               <em className="italic font-light text-[oklch(0.78_0.16_350)]">don't go back.</em>
             </h2>
           </div>
