@@ -315,36 +315,34 @@ function Index() {
           >
             <defs>
               <linearGradient id="buyLine" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
-                <stop offset="50%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0.55" />
-                <stop offset="100%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
+                <stop offset="0%" stopColor="oklch(0.7 0.2 350)" stopOpacity="0.85" />
+                <stop offset="100%" stopColor="oklch(0.6 0.24 350)" stopOpacity="0.95" />
               </linearGradient>
             </defs>
-            {[...Array(9)].map((_, i) => {
-              const baseY = 90 + i * 80;
-              const dir = i % 2 === 0 ? 1 : -1;
-              // Lines start short near center and extend outward with scroll
-              const center = 600;
-              const maxHalf = 900 + i * 40;
-              const half = 60 + buyProgress * maxHalf;
-              const drift = dir * buyProgress * (60 + i * 10);
-              const x1 = center - half + drift;
-              const x2 = center + half + drift;
-              const dy = (buyProgress - 0.5) * (16 + i * 5);
-              const slope = dir * 30;
+            {[...Array(8)].map((_, i) => {
+              const lineW = 1000;
+              const finalX = 100; // centered in 1200 viewBox
+              const fromRight = i % 2 === 0; // 0: right, 1: left, 2: right...
+              const offscreen = fromRight ? 1300 : -1000 - 100;
+              const y = 80 + i * 90;
+              const threshold = 0.04 + i * 0.09;
+              const span = 0.18;
+              const t = Math.max(0, Math.min(1, (buyProgress - threshold) / span));
+              // ease-out cubic
+              const eased = 1 - Math.pow(1 - t, 3);
+              const x = offscreen + (finalX - offscreen) * eased;
               return (
-                <line
+                <rect
                   key={i}
-                  x1={x1}
-                  y1={baseY + dy - slope / 2}
-                  x2={x2}
-                  y2={baseY + dy + slope / 2}
-                  stroke="url(#buyLine)"
-                  strokeWidth={i % 3 === 0 ? 7 : 4.5}
-                  strokeLinecap="round"
+                  x={x}
+                  y={y}
+                  width={lineW}
+                  height={34}
+                  rx={17}
+                  fill="url(#buyLine)"
                   style={{
-                    transition: "all 180ms cubic-bezier(0.16, 1, 0.3, 1)",
-                    opacity: 0.25 + buyProgress * 0.65,
+                    transition: "all 220ms cubic-bezier(0.22, 1, 0.36, 1)",
+                    opacity: 0.55 + eased * 0.4,
                   }}
                 />
               );
