@@ -437,15 +437,15 @@ function Index() {
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
-              <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
+              <Reveal as="p" className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
                 <Truck className="w-3.5 h-3.5" /> Ships today · Orders before 1pm EST
-              </p>
-              <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
+              </Reveal>
+              <Reveal as="h2" delay={120} className="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
                 Join the <span className="text-[oklch(0.65_0.22_350)]">Posi-Prene Squad.</span>
-              </h2>
-              <p className="mt-2 text-sm md:text-base text-muted-foreground">
+              </Reveal>
+              <Reveal as="p" delay={240} className="mt-2 text-sm md:text-base text-muted-foreground">
                 Your hands deserve this.
-              </p>
+              </Reveal>
 
               <div className="mt-6 mx-auto max-w-[200px] [perspective:1000px]">
                 <img
