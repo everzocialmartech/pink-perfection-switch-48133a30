@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import posipreneBox from "@/assets/posiprene-box.png";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
+import stretchCard from "@/assets/stretch-card.png";
 import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/")({
