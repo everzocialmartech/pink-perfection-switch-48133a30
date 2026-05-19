@@ -97,20 +97,9 @@ function Index() {
         <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[80vw] max-w-[700px] h-[300px] rounded-full bg-[oklch(0.7_0.2_350)]/15 blur-3xl" />
         <div className="relative max-w-4xl mx-auto px-6">
           <div className="text-center">
-            <div className="inline-flex items-center gap-3">
-              <div className="flex -space-x-2">
-                {["oklch(0.7_0.2_350)", "oklch(0.65_0.18_15)", "oklch(0.6_0.2_330)", "oklch(0.75_0.15_350)"].map((c, i) => (
-                  <div
-                    key={i}
-                    className="w-7 h-7 rounded-full border-2 border-white shadow-sm"
-                    style={{ backgroundColor: c }}
-                  />
-                ))}
-              </div>
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
-                <Heart className="w-3.5 h-3.5 fill-current" /> The Posi-Prene Squad
-              </span>
-            </div>
+            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
+              <Heart className="w-3.5 h-3.5 fill-current" /> The Posi-Prene Squad
+            </span>
             <h2 className="mt-5 text-3xl md:text-5xl font-bold tracking-tight text-primary leading-[1.05]">
               What the squad <span className="text-[oklch(0.6_0.22_350)]">loves</span> about these gloves
             </h2>
