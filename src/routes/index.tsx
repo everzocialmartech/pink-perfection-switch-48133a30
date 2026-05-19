@@ -23,7 +23,7 @@ function Index() {
       {/* Nav + Hero wrapper — sticky nav unsticks at the end of the hero */}
       <div className="relative">
       <header className="sticky top-0 inset-x-0 z-50 text-white bg-[oklch(0.65_0.22_350)] shadow-[0_4px_20px_-8px_oklch(0.45_0.18_350/0.45)]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-11 flex items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-9 flex items-center justify-between gap-4">
           <a
             href="#top"
             onClick={(e) => {
@@ -55,7 +55,7 @@ function Index() {
                   e.preventDefault();
                   document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="relative inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-white/90 hover:text-white hover:bg-white/15 transition-colors"
+                className="relative inline-flex items-center rounded-full px-3 sm:px-4 py-1 text-[11px] sm:text-xs font-bold uppercase tracking-[0.18em] text-white/90 hover:text-white hover:bg-white/15 transition-colors"
               >
                 {item.label}
               </a>
