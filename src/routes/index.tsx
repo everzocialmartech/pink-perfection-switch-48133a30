@@ -13,10 +13,6 @@ function Index() {
       {/* Nav */}
       <header className="absolute top-0 inset-x-0 z-20">
         <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 text-primary font-bold tracking-tight">
-            <span className="inline-block w-9 h-9 rounded bg-primary text-primary-foreground grid place-items-center font-bold">C</span>
-            <span className="hidden sm:inline">Clinical Supply Co.</span>
-          </a>
         </div>
       </header>
 
