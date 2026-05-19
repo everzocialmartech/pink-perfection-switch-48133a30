@@ -74,21 +74,24 @@ function Index() {
       </section>
 
       {/* SWITCH MOMENT */}
-      <section className="bg-white py-24 md:py-32">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-            Still Using<br />
-            <span className="text-accent font-bold">Stiff Nitrile?</span>
-          </h2>
-          <div className="mt-16 grid sm:grid-cols-3 gap-4 text-left">
+      <section className="bg-white py-14 md:py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary leading-[1.1]">
+              Still using <span className="text-accent">stiff nitrile?</span>
+            </h2>
+            <p className="text-sm text-muted-foreground md:max-w-xs">Three reasons your team is fighting their gloves all day.</p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3 text-left">
             {[
               { title: "Hand Fatigue", body: "Long procedures shouldn't leave your hands exhausted." },
               { title: "Cheap Glove Feel", body: "Thin, stiff gloves make precision harder — not easier." },
               { title: "Dry, Irritated Hands", body: "Your gloves shouldn't feel like sandpaper by 3 PM." },
-            ].map(({ title, body }) => (
-              <div key={title} className="rounded-md bg-gradient-to-br from-muted to-white border border-border p-8">
-                <div className="text-2xl md:text-3xl font-bold text-primary leading-tight">{title}</div>
-                <p className="mt-3 text-base text-muted-foreground leading-relaxed">{body}</p>
+            ].map(({ title, body }, i) => (
+              <div key={title} className="rounded-md bg-muted/40 border border-border p-5">
+                <div className="text-xs font-bold tracking-widest text-accent mb-2">0{i + 1}</div>
+                <div className="text-lg font-bold text-primary leading-tight">{title}</div>
+                <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
