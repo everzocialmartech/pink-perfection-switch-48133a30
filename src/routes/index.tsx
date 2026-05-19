@@ -222,9 +222,24 @@ function Index() {
               </div>
               <div className="mt-5 space-y-4">
                 {[
-                  { quote: "I put it on and my hand just disappeared into it. It felt like skin.", who: "DDS, Ann Arbor" },
-                  { quote: "Wet hands, no fight. We've never had a glove go on this easily.", who: "Hygienist, MDA 2026" },
-                  { quote: "We tossed our nitrile by the end of the week. Whole office switched.", who: "Practice Manager" },
+                  {
+                    quote: (
+                      <>I put it on and my hand <strong className="font-medium text-[#0b1f3a]">just disappeared into it</strong>. It felt like skin.</>
+                    ),
+                    who: "DDS, Ann Arbor",
+                  },
+                  {
+                    quote: (
+                      <><strong className="font-medium text-[#0b1f3a]">Wet hands, no fight.</strong> We've never had a glove go on this easily.</>
+                    ),
+                    who: "Hygienist, MDA 2026",
+                  },
+                  {
+                    quote: (
+                      <>We tossed our nitrile by the end of the week. <strong className="font-medium text-[#0b1f3a]">Whole office switched.</strong></>
+                    ),
+                    who: "Practice Manager",
+                  },
                 ].map((q) => (
                   <figure
                     key={q.who}
@@ -245,7 +260,7 @@ function Index() {
                     >
                       “
                     </span>
-                    <blockquote className="relative text-base md:text-lg text-[#0b1f3a] leading-relaxed font-light transition-colors duration-300 group-hover:text-[#06152b]">
+                    <blockquote className="relative text-base md:text-lg text-[#0b1f3a]/70 leading-relaxed font-light transition-colors duration-300 group-hover:text-[#0b1f3a]">
                       "{q.quote}"
                     </blockquote>
                     <figcaption className="relative mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40 transition-colors duration-300 group-hover:text-[#0b1f3a]/70">
