@@ -161,11 +161,6 @@ function Index() {
                 <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full h-auto drop-shadow-2xl" />
               </div>
 
-              <div className="mt-4 flex items-baseline justify-center gap-2">
-                <span className="text-5xl font-bold text-primary">$24.99</span>
-                <span className="text-sm text-muted-foreground">/ box of 200</span>
-              </div>
-
               <a
                 href="#"
                 className="group/btn mt-5 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_14px_40px_-10px_oklch(0.65_0.22_350/0.6)] hover:shadow-[0_20px_50px_-12px_oklch(0.65_0.22_350/0.8)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto"
