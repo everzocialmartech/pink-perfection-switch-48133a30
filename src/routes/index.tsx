@@ -21,8 +21,8 @@ function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Nav */}
-      <header className="sticky top-0 inset-x-0 z-50 bg-[oklch(0.65_0.22_350)] text-white shadow-[0_4px_20px_-8px_oklch(0.45_0.18_350/0.45)]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between gap-4">
+      <header className="sticky top-0 inset-x-0 z-50 text-white bg-gradient-to-b from-[oklch(0.65_0.22_350)] via-[oklch(0.65_0.22_350/0.65)] to-[oklch(0.65_0.22_350/0)]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-4">
           <a
             href="#top"
             onClick={(e) => {
@@ -37,7 +37,7 @@ function Index() {
               alt="Clinical Supply Co."
               width={896}
               height={512}
-              className="h-7 w-auto"
+              className="h-12 w-auto drop-shadow-[0_2px_8px_oklch(0.35_0.18_350/0.4)]"
             />
           </a>
 
@@ -276,7 +276,14 @@ function Index() {
       {/* removed duplicate */}
       <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-          <div className="font-bold text-primary-foreground">Clinical Supply Co.</div>
+          <img
+            src={cscLogo}
+            alt="Clinical Supply Co."
+            width={896}
+            height={512}
+            loading="lazy"
+            className="h-10 w-auto"
+          />
           <div>© {new Date().getFullYear()} Clinical Supply Company</div>
           <a href="tel:18004680188" className="font-semibold text-primary-foreground hover:text-accent">1 (800) 468 0188</a>
         </div>
