@@ -188,9 +188,11 @@ function Index() {
             <Truck className="w-3.5 h-3.5" /> Ships today · Orders before 1pm EST
           </p>
           <h2 className="mt-4 text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] text-primary">
-            Your hands<br />
-            <span className="text-[oklch(0.65_0.22_350)]">deserve this.</span>
+            Join the <span className="text-[oklch(0.65_0.22_350)]">Posi-Prene Squad.</span>
           </h2>
+          <p className="mt-3 text-base md:text-lg text-muted-foreground">
+            Your hands deserve this.
+          </p>
 
           <div className="mt-10 mx-auto max-w-xs">
             <img src={boxImg} alt="Posi-Prene Pink glove box" loading="lazy" width={1024} height={1024} className="w-full h-auto drop-shadow-2xl" />
