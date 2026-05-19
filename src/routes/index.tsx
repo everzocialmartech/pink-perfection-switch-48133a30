@@ -20,8 +20,9 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      {/* Nav */}
-      <header className="sticky top-0 inset-x-0 z-50 text-white bg-gradient-to-b from-[oklch(0.65_0.22_350)] via-[oklch(0.65_0.22_350/0.65)] to-[oklch(0.65_0.22_350/0)]">
+      {/* Nav + Hero wrapper — sticky nav unsticks at the end of the hero */}
+      <div className="relative">
+      <header className="sticky top-0 inset-x-0 z-50 text-white bg-[oklch(0.65_0.22_350)] shadow-[0_4px_20px_-8px_oklch(0.45_0.18_350/0.45)]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-11 flex items-center justify-between gap-4">
           <a
             href="#top"
@@ -141,6 +142,7 @@ function Index() {
 
         </div>
       </section>
+      </div>
 
       {/* SWITCH MOMENT */}
       <section id="reaction" className="scroll-mt-16 relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
