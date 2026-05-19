@@ -94,6 +94,9 @@ function Index() {
             </div>
 
             <div className="lg:col-span-2 grid gap-3 content-start">
+              <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-1">
+                Why people switch:
+              </p>
               {[
                 "Super stretchy, moves with you, not against you",
                 "Easy to put on with wet or sweaty hands",
