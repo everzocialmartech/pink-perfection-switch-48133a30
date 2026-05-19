@@ -38,7 +38,6 @@ function Index() {
               width={896}
               height={512}
               className="h-7 w-auto"
-              style={{ filter: "brightness(0) invert(1)" }}
             />
           </a>
 
