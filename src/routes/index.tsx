@@ -405,7 +405,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0b1f3a] text-white py-20 md:py-28">
       {/* BUY — split layout: 3D box left, authoritative CTA right */}
       <section id="buy" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
