@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
@@ -16,6 +16,29 @@ function Index() {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
       window.scrollTo({ top: 0, left: 0 });
     }
+  }, []);
+
+  // Scroll-reactive progress for the BUY section background lines
+  const buyRef = useRef<HTMLElement | null>(null);
+  const [buyProgress, setBuyProgress] = useState(0);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onScroll = () => {
+      const el = buyRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      // 0 when section bottom enters viewport, 1 when section top leaves
+      const p = 1 - (rect.top + rect.height) / (vh + rect.height);
+      setBuyProgress(Math.max(0, Math.min(1, p)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
