@@ -74,7 +74,8 @@ function Index() {
             <p className="text-sm text-muted-foreground md:max-w-xs">See what dental teams say the first time they try Posi-Prene Pink.</p>
           </div>
 
-          <div className="relative rounded-md overflow-hidden bg-primary shadow-xl ring-1 ring-[oklch(0.85_0.08_350)]">
+          <div className="grid lg:grid-cols-5 gap-6 items-stretch">
+            <div className="lg:col-span-3 relative rounded-md overflow-hidden bg-primary shadow-xl ring-1 ring-[oklch(0.85_0.08_350)]">
               <video
                 src="/reaction.mp4"
                 className="w-full h-full object-contain aspect-video bg-primary"
@@ -88,6 +89,26 @@ function Index() {
               <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-sm bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase text-[oklch(0.55_0.18_350)]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.6_0.2_350)] animate-pulse" /> Live reaction
               </div>
+            </div>
+
+            <div className="lg:col-span-2 grid gap-3 content-start">
+              {[
+                "Super stretchy, moves with you, not against you",
+                "Easy to put on with wet or sweaty hands",
+                "Made out of wet suit material — premium polychloroprene",
+                "No latex. No powder. No mess.",
+              ].map((title, i) => (
+                <div
+                  key={title}
+                  className="rounded-lg bg-white border border-[oklch(0.9_0.05_350)] p-4 flex items-start gap-3 shadow-sm"
+                >
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[oklch(0.97_0.04_350)] text-[oklch(0.55_0.22_350)] grid place-items-center text-[11px] font-bold tracking-widest">
+                    0{i + 1}
+                  </div>
+                  <div className="text-sm font-semibold text-primary leading-snug pt-1">{title}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
