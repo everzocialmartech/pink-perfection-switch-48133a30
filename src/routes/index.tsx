@@ -323,20 +323,28 @@ function Index() {
             {[...Array(9)].map((_, i) => {
               const baseY = 90 + i * 80;
               const dir = i % 2 === 0 ? 1 : -1;
-              const shift = dir * buyProgress * (120 + i * 18);
-              const dy = (buyProgress - 0.5) * (20 + i * 6);
+              // Lines start short near center and extend outward with scroll
+              const center = 600;
+              const maxHalf = 900 + i * 40;
+              const half = 60 + buyProgress * maxHalf;
+              const drift = dir * buyProgress * (60 + i * 10);
+              const x1 = center - half + drift;
+              const x2 = center + half + drift;
+              const dy = (buyProgress - 0.5) * (16 + i * 5);
+              const slope = dir * 30;
               return (
                 <line
                   key={i}
-                  x1={-200 + shift}
-                  y1={baseY + dy}
-                  x2={1400 + shift}
-                  y2={baseY - 60 + dy}
+                  x1={x1}
+                  y1={baseY + dy - slope / 2}
+                  x2={x2}
+                  y2={baseY + dy + slope / 2}
                   stroke="url(#buyLine)"
-                  strokeWidth={i % 3 === 0 ? 1.6 : 1}
+                  strokeWidth={i % 3 === 0 ? 7 : 4.5}
+                  strokeLinecap="round"
                   style={{
-                    transition: "all 120ms linear",
-                    opacity: 0.35 + buyProgress * 0.5,
+                    transition: "all 180ms cubic-bezier(0.16, 1, 0.3, 1)",
+                    opacity: 0.25 + buyProgress * 0.65,
                   }}
                 />
               );
