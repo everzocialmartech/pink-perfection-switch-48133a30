@@ -217,71 +217,139 @@ function Index() {
       </section>
       </div>
 
-      {/* SWITCH MOMENT */}
-      <section id="reaction" className="scroll-mt-16 relative bg-gradient-to-b from-[oklch(0.98_0.015_350)] to-white py-10 md:py-12 border-y border-[oklch(0.92_0.04_350)]">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
+      {/* THE REACTION — light, two-column: quotes left, video right */}
+      <section id="reaction" className="scroll-mt-16 relative bg-[oklch(0.985_0.005_280)] py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — headline + quotes */}
             <div>
-              <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-3">The reaction</p>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary leading-[1.1]">
-                Still using <span className="text-[oklch(0.6_0.18_350)]">stiff nitrile?</span>
-              </h2>
-            </div>
-            <p className="text-sm text-muted-foreground md:max-w-xs">See what dental teams say the first time they try Posi-Prene Pink Perfection.</p>
-          </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[oklch(0.9_0.02_280)] bg-white px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/70">
+                <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
+                The Reaction
+              </div>
 
-          <div className="grid lg:grid-cols-5 gap-6 items-stretch">
-            <div className="lg:col-span-3 relative rounded-md overflow-hidden bg-primary shadow-xl ring-1 ring-[oklch(0.85_0.08_350)]">
-              <video
-                src="/reaction.mp4"
-                className="w-full h-full object-contain aspect-video bg-primary"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-              />
-              <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-sm bg-white/90 backdrop-blur px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase text-[oklch(0.55_0.18_350)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.6_0.2_350)] animate-pulse" /> Live reaction
+              <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl text-[#0b1f3a]">
+                Still using{" "}
+                <em className="italic font-light text-[oklch(0.65_0.22_350)]">stiff nitrile?</em>
+              </h2>
+
+              <p className="mt-5 text-base text-[#0b1f3a]/60 max-w-md leading-relaxed">
+                What dental teams say the first time they try Posi-Prene Pink Perfection.
+              </p>
+
+              <div className="mt-10 space-y-7">
+                {[
+                  { quote: "I put it on and my hand just disappeared into it. It felt like skin.", who: "DDS, Ann Arbor" },
+                  { quote: "Wet hands, no fight. We've never had a glove go on this easily.", who: "Hygienist, MDA 2026" },
+                  { quote: "We tossed our nitrile by the end of the week. Whole office switched.", who: "Practice Manager" },
+                ].map((q) => (
+                  <figure key={q.who} className="pl-5 border-l-2 border-[oklch(0.65_0.22_350)]">
+                    <blockquote className="font-serif text-lg md:text-xl text-[#0b1f3a] leading-snug italic font-light">
+                      "{q.quote}"
+                    </blockquote>
+                    <figcaption className="mt-2 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/45">
+                      {q.who}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
 
-            <div className="lg:col-span-2 grid gap-3 content-start">
-              <p className="text-xs font-bold tracking-[0.25em] uppercase text-[oklch(0.6_0.18_350)] mb-1">
-                Why people switch:
-              </p>
-              {[
-                "Super stretchy, moves with you, not against you",
-                "Easy to put on with wet or sweaty hands",
-                "Made out of wet suit material — premium polychloroprene",
-                "No latex. No powder. No mess.",
-              ].map((title, i) => (
-                <div
-                  key={title}
-                  className="group cursor-pointer rounded-lg bg-white border border-[oklch(0.9_0.05_350)] p-4 flex items-start gap-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[oklch(0.65_0.22_350)] hover:shadow-[0_0_30px_-2px_oklch(0.65_0.22_350/0.55)]"
-                >
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-[oklch(0.97_0.04_350)] text-[oklch(0.55_0.22_350)] grid place-items-center text-[11px] font-bold tracking-widest transition-colors duration-300 group-hover:bg-[oklch(0.65_0.22_350)] group-hover:text-white">
-                    0{i + 1}
-                  </div>
-                  <div className="text-sm font-semibold text-primary leading-snug pt-1">{title}</div>
+            {/* Right — video */}
+            <div className="relative">
+              <div className="relative rounded-lg overflow-hidden bg-[#0b1f3a] shadow-[0_30px_60px_-25px_rgba(11,31,58,0.4)]">
+                <video
+                  src="/reaction.mp4"
+                  className="w-full h-full object-cover aspect-[4/5] bg-[#0b1f3a]"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 backdrop-blur px-3 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/85">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_350)] animate-pulse" />
+                  Live Reaction
                 </div>
-              ))}
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-8 flex justify-center">
-            <a
-              href="#buy"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.65_0.22_350/0.55)] hover:shadow-[0_16px_40px_-12px_oklch(0.65_0.22_350/0.75)] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              Shop Now <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+      {/* FOUR REASONS — dark navy, editorial grid */}
+      <section className="relative overflow-hidden bg-[#0b1f3a] text-white py-20 md:py-28">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-60"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 50% at 80% 20%, oklch(0.65 0.22 350 / 0.18) 0%, transparent 70%)",
+          }}
+        />
+
+        <div className="relative max-w-6xl mx-auto px-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/75 backdrop-blur-sm">
+              <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
+              Why teams stay
+            </div>
+            <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl">
+              Four reasons they{" "}
+              <em className="italic font-light text-[oklch(0.78_0.16_350)]">don't go back.</em>
+            </h2>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-lg overflow-hidden">
+            {[
+              { title: "Wetsuit stretch", body: "Polychloroprene moves with you, not against you. No fatigue at hour eight." },
+              { title: "Wet-hand glide", body: "Slides on over damp or sweaty skin. No fight, no tear, no second pair." },
+              { title: "Premium feel", body: "Soft-touch matte finish with real tactile feedback. Reads instruments cleanly." },
+              { title: "Clean chemistry", body: "Latex-free. Powder-free. No mess on the tray, no mess on the patient." },
+            ].map((item, i) => (
+              <div key={item.title} className="relative bg-[#0b1f3a] p-8 md:p-10 overflow-hidden group">
+                {/* Ghost number */}
+                <div
+                  className="absolute -top-4 -right-2 font-serif font-normal italic select-none pointer-events-none text-[8rem] leading-none text-[oklch(0.65_0.22_350)]/[0.08]"
+                  aria-hidden
+                >
+                  {i + 1}
+                </div>
+                {/* Pink short rule */}
+                <div className="w-8 h-px bg-[oklch(0.65_0.22_350)] mb-6 transition-all duration-500 group-hover:w-16" />
+                <h3 className="font-serif text-2xl md:text-[1.625rem] font-normal text-white leading-tight">{item.title}</h3>
+                <p className="mt-3 text-sm text-white/55 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA — pull quote left, ghost button right */}
+          <div className="mt-16 md:mt-20 pt-12 border-t border-white/10 grid md:grid-cols-2 gap-10 items-center">
+            <figure className="max-w-md">
+              <blockquote className="font-serif text-xl md:text-2xl italic font-light text-white/90 leading-snug">
+                "We re-ordered three cases the same month. It's just a better glove."
+              </blockquote>
+              <figcaption className="mt-3 text-[10px] tracking-[0.22em] uppercase text-white/45">
+                Dr. Patel · Group Practice, Detroit
+              </figcaption>
+            </figure>
+
+            <div className="flex flex-col md:items-end gap-3">
+              <a
+                href="#buy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="group inline-flex items-center gap-3 rounded-full border border-white/25 bg-transparent text-white px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:border-[oklch(0.65_0.22_350)] hover:bg-[oklch(0.65_0.22_350)] hover:shadow-[0_20px_40px_-15px_oklch(0.65_0.22_350/0.6)]"
+              >
+                Shop Posi-Prene
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+              <a href="#" className="text-xs text-white/45 tracking-wider hover:text-white/80 transition-colors underline-offset-4 hover:underline md:text-right">
+                or request a free sample
+              </a>
+            </div>
           </div>
         </div>
       </section>
