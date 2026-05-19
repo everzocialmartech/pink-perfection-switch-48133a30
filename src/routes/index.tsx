@@ -56,6 +56,7 @@ function Reveal({
 }
 
 function Index() {
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
