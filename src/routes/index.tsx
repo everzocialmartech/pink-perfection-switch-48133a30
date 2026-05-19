@@ -283,27 +283,121 @@ function Index() {
             </h2>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-lg overflow-hidden">
-            {[
-              { title: "Wetsuit stretch", body: "Polychloroprene moves with you, not against you. No fatigue at hour eight." },
-              { title: "Wet-hand glide", body: "Slides on over damp or sweaty skin. No fight, no tear, no second pair." },
-              { title: "Premium feel", body: "Soft-touch matte finish with real tactile feedback. Reads instruments cleanly." },
-              { title: "Clean chemistry", body: "Latex-free. Powder-free. No mess on the tray, no mess on the patient." },
-            ].map((item, i) => (
-              <div key={item.title} className="relative bg-[#0b1f3a] p-8 md:p-10 overflow-hidden group">
-                {/* Ghost number */}
-                <div
-                  className="absolute -top-4 -right-2 font-serif font-normal italic select-none pointer-events-none text-[8rem] leading-none text-[oklch(0.65_0.22_350)]/[0.08]"
-                  aria-hidden
-                >
-                  {i + 1}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-6 md:auto-rows-[minmax(190px,auto)] gap-4 md:gap-5">
+            {/* A — HERO: Wet-hand glide with abstract flow lines */}
+            <div className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors">
+              <svg
+                aria-hidden
+                className="absolute inset-0 w-full h-full opacity-50 pointer-events-none"
+                viewBox="0 0 600 400"
+                preserveAspectRatio="none"
+              >
+                <defs>
+                  <linearGradient id="glide-line" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
+                    <stop offset="50%" stopColor="oklch(0.78 0.16 350)" stopOpacity="0.55" />
+                    <stop offset="100%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                {[...Array(7)].map((_, i) => (
+                  <path
+                    key={i}
+                    d={`M -50 ${120 + i * 28} C 180 ${80 + i * 30}, 380 ${200 + i * 22}, 650 ${130 + i * 26}`}
+                    fill="none"
+                    stroke="url(#glide-line)"
+                    strokeWidth="1"
+                  />
+                ))}
+              </svg>
+              <div className="relative h-full flex flex-col justify-end">
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[oklch(0.78_0.16_350)] font-medium">
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 02 · Glide
                 </div>
-                {/* Pink short rule */}
-                <div className="w-8 h-px bg-[oklch(0.65_0.22_350)] mb-6 transition-all duration-500 group-hover:w-16" />
-                <h3 className="font-serif text-2xl md:text-[1.625rem] font-normal text-white leading-tight">{item.title}</h3>
-                <p className="mt-3 text-sm text-white/55 leading-relaxed">{item.body}</p>
+                <h3 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-normal text-white leading-[1.05] max-w-md">
+                  Wet-hand glide.
+                </h3>
+                <p className="mt-4 text-sm md:text-base text-white/60 leading-relaxed max-w-sm">
+                  Slides on over damp or sweaty skin. No fight, no tear, no second pair.
+                </p>
               </div>
-            ))}
+            </div>
+
+            {/* B — STAT anchor: ivory card with big numeral */}
+            <div className="md:col-span-2 relative overflow-hidden rounded-2xl bg-[oklch(0.97_0.01_280)] text-[#0b1f3a] p-8 flex flex-col justify-between">
+              <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-[#0b1f3a]/60 font-medium">
+                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> Reorder rate
+              </div>
+              <div>
+                <div className="font-serif text-[5rem] md:text-[6rem] leading-none tracking-tight">
+                  98<span className="text-[oklch(0.6_0.22_350)] italic font-light">%</span>
+                </div>
+                <p className="mt-2 text-xs text-[#0b1f3a]/55 leading-snug max-w-[14rem]">
+                  Of practices that try Posi-Prene re-order within 30 days.
+                </p>
+              </div>
+            </div>
+
+            {/* C — Premium feel: small text card */}
+            <div className="md:col-span-2 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 group hover:bg-white/[0.06] transition-colors">
+              <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
+                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 03 · Touch
+              </div>
+              <h3 className="mt-4 font-serif text-2xl md:text-[1.625rem] font-normal text-white leading-tight">
+                Premium feel.
+              </h3>
+              <p className="mt-3 text-sm text-white/55 leading-relaxed">
+                Soft-touch matte finish. Real tactile feedback — reads instruments cleanly.
+              </p>
+            </div>
+
+            {/* D — Wetsuit stretch with stretch SVG */}
+            <div className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors min-h-[210px]">
+              <svg
+                aria-hidden
+                className="absolute right-6 top-1/2 -translate-y-1/2 opacity-70 pointer-events-none"
+                width="160"
+                height="120"
+                viewBox="0 0 160 120"
+              >
+                <g fill="none" stroke="oklch(0.78 0.16 350)" strokeOpacity="0.55" strokeWidth="1" strokeLinecap="round">
+                  <line x1="20" y1="60" x2="40" y2="60" />
+                  <line x1="120" y1="60" x2="140" y2="60" />
+                  <polyline points="40,55 35,60 40,65" />
+                  <polyline points="120,55 125,60 120,65" />
+                </g>
+                <ellipse cx="80" cy="60" rx="36" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.4" strokeWidth="1" />
+                <ellipse cx="80" cy="60" rx="52" ry="22" fill="none" stroke="oklch(0.65 0.22 350)" strokeOpacity="0.7" strokeWidth="1.2" strokeDasharray="3 3" />
+              </svg>
+              <div className="relative max-w-[60%]">
+                <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
+                  <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 01 · Stretch
+                </div>
+                <h3 className="mt-4 font-serif text-2xl md:text-[1.75rem] font-normal text-white leading-tight">
+                  Wetsuit stretch.
+                </h3>
+                <p className="mt-3 text-sm text-white/55 leading-relaxed">
+                  Polychloroprene moves with you. No fatigue at hour eight.
+                </p>
+              </div>
+            </div>
+
+            {/* E — Clean chemistry: small badge-style card */}
+            <div className="md:col-span-3 relative overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-8 md:p-10 group hover:bg-white/[0.06] transition-colors">
+              <div className="inline-flex items-center gap-2 text-[10px] tracking-[0.28em] uppercase text-white/55 font-medium">
+                <span className="w-6 h-px bg-[oklch(0.65_0.22_350)]" /> 04 · Clean
+              </div>
+              <h3 className="mt-4 font-serif text-2xl md:text-[1.75rem] font-normal text-white leading-tight">
+                Clean chemistry.
+              </h3>
+              <p className="mt-3 text-sm text-white/55 leading-relaxed max-w-sm">
+                Latex-free. Powder-free. No mess on the tray, no mess on the patient.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Latex-free</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Powder-free</span>
+                <span className="px-2.5 py-1 rounded-full border border-white/15 text-[9px] tracking-[0.22em] uppercase text-white/70">Ambidextrous</span>
+              </div>
+            </div>
           </div>
 
           {/* Bottom CTA — pull quote left, ghost button right */}
