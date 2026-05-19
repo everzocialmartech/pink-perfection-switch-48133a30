@@ -26,7 +26,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 pb-6">
+      <section className="relative overflow-hidden min-h-[85vh] md:min-h-[95vh] flex items-center pt-16 pb-12">
         {/* Brand gradient backdrop: trust-blue to emotional-pink */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[oklch(0.97_0.02_240)]" />
         <div className="absolute -top-32 -left-32 w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-sm bg-primary/10 blur-3xl animate-hero-glow-in" />
@@ -41,7 +41,7 @@ function Index() {
 
           {/* Floating 3D glove popping up from behind the box */}
           <div
-            className="relative -mt-4 mb-[-3rem] mx-auto max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] pointer-events-none"
+            className="relative -mt-4 mb-2 mx-auto max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] pointer-events-none"
             style={{ perspective: "1000px" }}
           >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
@@ -78,7 +78,7 @@ function Index() {
             <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-3/4 h-6 rounded-full bg-foreground/25 blur-2xl z-0" />
           </div>
 
-          <div className="mt-2 flex items-center justify-center gap-3 flex-wrap animate-hero-rise delay-300">
+          <div className="mt-10 md:mt-12 flex items-center justify-center gap-3 flex-wrap animate-hero-rise delay-300">
             <a
               href="#buy"
               onClick={(e) => {
