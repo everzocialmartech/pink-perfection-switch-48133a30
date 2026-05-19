@@ -218,36 +218,40 @@ function Index() {
       </div>
 
       {/* THE REACTION — light, two-column: quotes left, video right */}
-      <section id="reaction" className="scroll-mt-16 relative bg-[oklch(0.985_0.005_280)] py-20 md:py-28">
+      <section id="reaction" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left — headline + quotes */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[oklch(0.9_0.02_280)] bg-white px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/70">
-                <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
+              <div className="inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/65">
+                <span className="w-8 h-px bg-[oklch(0.65_0.22_350)]" />
                 The Reaction
               </div>
 
-              <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl text-[#0b1f3a]">
-                Still using{" "}
-                <em className="italic font-light text-[oklch(0.65_0.22_350)]">stiff nitrile?</em>
+              <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1] text-5xl md:text-6xl lg:text-7xl text-[#0b1f3a]">
+                Still using<br />
+                <em className="italic font-light text-[oklch(0.6_0.22_350)]">stiff nitrile?</em>
               </h2>
 
-              <p className="mt-5 text-base text-[#0b1f3a]/60 max-w-md leading-relaxed">
-                What dental teams say the first time they try Posi-Prene Pink Perfection.
+              <p className="mt-6 text-base text-[#0b1f3a]/55 max-w-md leading-relaxed">
+                See what dental teams said the first time they tried Posi-Prene at the
+                Michigan Dental Association.
               </p>
 
-              <div className="mt-10 space-y-7">
+              <div className="mt-10 space-y-4">
                 {[
                   { quote: "I put it on and my hand just disappeared into it. It felt like skin.", who: "DDS, Ann Arbor" },
                   { quote: "Wet hands, no fight. We've never had a glove go on this easily.", who: "Hygienist, MDA 2026" },
                   { quote: "We tossed our nitrile by the end of the week. Whole office switched.", who: "Practice Manager" },
                 ].map((q) => (
-                  <figure key={q.who} className="pl-5 border-l-2 border-[oklch(0.65_0.22_350)]">
-                    <blockquote className="font-serif text-lg md:text-xl text-[#0b1f3a] leading-snug italic font-light">
+                  <figure
+                    key={q.who}
+                    className="relative rounded-md bg-white pl-6 pr-5 py-5 shadow-[0_8px_24px_-12px_rgba(11,31,58,0.12)] border-l-2 border-[oklch(0.65_0.22_350)]"
+                  >
+                    <blockquote className="font-serif text-base md:text-lg text-[#0b1f3a] leading-snug italic font-light">
                       "{q.quote}"
                     </blockquote>
-                    <figcaption className="mt-2 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/45">
+                    <figcaption className="mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40">
                       {q.who}
                     </figcaption>
                   </figure>
@@ -257,7 +261,7 @@ function Index() {
 
             {/* Right — video */}
             <div className="relative">
-              <div className="relative rounded-lg overflow-hidden bg-[#0b1f3a] shadow-[0_30px_60px_-25px_rgba(11,31,58,0.4)]">
+              <div className="relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
                 <video
                   src="/reaction.mp4"
                   className="w-full h-full object-cover aspect-[4/5] bg-[#0b1f3a]"
@@ -272,6 +276,10 @@ function Index() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_350)] animate-pulse" />
                   Live Reaction
                 </div>
+                <div className="pointer-events-none absolute bottom-5 left-5 right-5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/70">
+                  Michigan Dental Association
+                </div>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
               </div>
             </div>
           </div>
