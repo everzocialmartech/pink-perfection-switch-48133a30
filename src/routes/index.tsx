@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
@@ -16,6 +16,29 @@ function Index() {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
       window.scrollTo({ top: 0, left: 0 });
     }
+  }, []);
+
+  // Scroll-reactive progress for the BUY section background lines
+  const buyRef = useRef<HTMLElement | null>(null);
+  const [buyProgress, setBuyProgress] = useState(0);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onScroll = () => {
+      const el = buyRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const vh = window.innerHeight || 1;
+      // 0 when section bottom enters viewport, 1 when section top leaves
+      const p = 1 - (rect.top + rect.height) / (vh + rect.height);
+      setBuyProgress(Math.max(0, Math.min(1, p)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -268,8 +291,60 @@ function Index() {
 
 
       {/* BUY */}
-      <section id="buy" className="scroll-mt-16 bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28">
-        <div className="max-w-2xl mx-auto px-6">
+      <section
+        id="buy"
+        ref={buyRef}
+        className="relative overflow-hidden scroll-mt-16 bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28"
+      >
+        {/* Scroll-reactive pink line background */}
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-0">
+          {/* Soft pink wash that brightens on scroll */}
+          <div
+            className="absolute inset-0 transition-opacity duration-300"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 0%, oklch(0.92 0.09 350 / 0.55) 0%, transparent 60%)",
+              opacity: 0.35 + buyProgress * 0.65,
+            }}
+          />
+          {/* Diagonal pink lines — drift horizontally with scroll */}
+          <svg
+            className="absolute inset-0 w-full h-full"
+            viewBox="0 0 1200 800"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="buyLine" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
+                <stop offset="50%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="oklch(0.65 0.22 350)" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            {[...Array(9)].map((_, i) => {
+              const baseY = 90 + i * 80;
+              const dir = i % 2 === 0 ? 1 : -1;
+              const shift = dir * buyProgress * (120 + i * 18);
+              const dy = (buyProgress - 0.5) * (20 + i * 6);
+              return (
+                <line
+                  key={i}
+                  x1={-200 + shift}
+                  y1={baseY + dy}
+                  x2={1400 + shift}
+                  y2={baseY - 60 + dy}
+                  stroke="url(#buyLine)"
+                  strokeWidth={i % 3 === 0 ? 1.6 : 1}
+                  style={{
+                    transition: "all 120ms linear",
+                    opacity: 0.35 + buyProgress * 0.5,
+                  }}
+                />
+              );
+            })}
+          </svg>
+        </div>
+
+        <div className="relative z-10 max-w-2xl mx-auto px-6">
           <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
               <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
