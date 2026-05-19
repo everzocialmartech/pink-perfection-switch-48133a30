@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import boxImg from "@/assets/box.jpg";
 import floatingGlove from "@/assets/floating-glove.png";
 import posipreneBox from "@/assets/posiprene-box.png";
@@ -9,6 +10,13 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      window.scrollTo({ top: 0, left: 0 });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       {/* Nav */}
