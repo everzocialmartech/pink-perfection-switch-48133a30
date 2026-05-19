@@ -10,6 +10,52 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  as: As = "div",
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+  as?: any;
+}) {
+  const ref = useRef<HTMLElement | null>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <As
+      ref={ref as any}
+      className={`${className} transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </As>
+  );
+}
+
 function Index() {
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
@@ -391,15 +437,15 @@ function Index() {
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
             <div className="relative">
-              <p className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
+              <Reveal as="p" className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)]">
                 <Truck className="w-3.5 h-3.5" /> Ships today · Orders before 1pm EST
-              </p>
-              <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
+              </Reveal>
+              <Reveal as="h2" delay={120} className="mt-2 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
                 Join the <span className="text-[oklch(0.65_0.22_350)]">Posi-Prene Squad.</span>
-              </h2>
-              <p className="mt-2 text-sm md:text-base text-muted-foreground">
+              </Reveal>
+              <Reveal as="p" delay={240} className="mt-2 text-sm md:text-base text-muted-foreground">
                 Your hands deserve this.
-              </p>
+              </Reveal>
 
               <div className="mt-6 mx-auto max-w-[200px] [perspective:1000px]">
                 <img
