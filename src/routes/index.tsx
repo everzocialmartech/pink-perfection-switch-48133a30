@@ -41,13 +41,13 @@ function Index() {
 
           {/* Floating 3D glove popping up from behind the box */}
           <div
-            className="relative -mt-4 mb-2 mx-auto max-w-[12rem] sm:max-w-[14rem] md:max-w-[16rem] lg:max-w-[18rem] pointer-events-none"
+            className="relative -mt-4 mb-2 mx-auto max-w-[14rem] sm:max-w-[16rem] md:max-w-[19rem] lg:max-w-[22rem] pointer-events-none"
             style={{ perspective: "1000px" }}
           >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] rounded-sm bg-primary/15 blur-3xl" />
 
             {/* Glove — behind the box, pops up */}
-            <div className="relative z-10 mx-auto w-[95%] -mb-[28%]">
+            <div className="relative z-10 mx-auto w-[80%] -mb-[40%]">
               <img
                 src={floatingGlove}
                 alt="Posi-Prene Pink glove floating"
@@ -58,7 +58,6 @@ function Index() {
                   transformOrigin: "bottom center",
                   animation:
                     "glove-popup 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1s both, float 6s ease-in-out 2.6s infinite",
-                  filter: "drop-shadow(0 18px 22px oklch(0.45 0.18 350 / 0.35))",
                 }}
               />
             </div>
@@ -70,7 +69,11 @@ function Index() {
                 alt="Posi-Prene Pink Perfection glove box"
                 width={1200}
                 height={900}
-                className="relative w-full h-auto animate-box-rise drop-shadow-2xl"
+                className="relative w-full h-auto animate-box-rise"
+                style={{
+                  filter:
+                    "saturate(1.35) contrast(1.1) brightness(1.04) drop-shadow(0 14px 22px oklch(0.45 0.18 350 / 0.25))",
+                }}
               />
             </div>
 
