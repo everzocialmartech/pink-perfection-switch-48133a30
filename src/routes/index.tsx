@@ -343,6 +343,15 @@ function Index() {
                 </div>
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
               </div>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href="#challenge"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] px-8 py-4 text-sm font-medium tracking-[0.22em] uppercase text-white shadow-[0_20px_40px_-15px_rgba(11,31,58,0.5)] transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-15px_oklch(0.65_0.22_350/0.55)]"
+                >
+                  Make the switch
+                  <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
