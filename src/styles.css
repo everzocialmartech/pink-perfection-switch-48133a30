@@ -140,12 +140,12 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
-    font-feature-settings: "ss01", "cv11";
+    font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.005em;
   }
 
   .font-serif {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "IBM Plex Serif", ui-serif, Georgia, serif;
     letter-spacing: -0.01em;
   }
 }
