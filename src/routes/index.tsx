@@ -337,155 +337,137 @@ function Index() {
         </div>
       </section>
 
-      {/* CHALLENGE */}
-      <section id="challenge" className="scroll-mt-16 relative overflow-hidden bg-primary text-primary-foreground py-16 md:py-24">
-        {/* Background flourishes */}
-        <div className="pointer-events-none absolute -top-32 -left-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -right-32 w-[55vw] h-[55vw] max-w-[600px] max-h-[600px] rounded-full bg-[oklch(0.65_0.22_350)]/20 blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "24px 24px" }} />
+      {/* CHALLENGE — editorial navy card, video framed as designed object */}
+      <section id="challenge" className="scroll-mt-16 relative bg-white py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center bg-[#0b1f3a] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
+            <div className="lg:col-span-7 z-10">
+              <div className="space-y-7 md:space-y-8">
+                <div className="inline-flex items-center gap-4">
+                  <span className="h-px w-12 bg-[oklch(0.65_0.22_350)]" />
+                  <p className="text-[oklch(0.78_0.16_350)] font-medium tracking-[0.22em] uppercase text-[11px]">
+                    Live Application
+                  </p>
+                </div>
+                <h2 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.5rem]">
+                  Wet hands?<br />
+                  <em className="italic font-light text-[oklch(0.78_0.16_350)]">Now gloved fast.</em>
+                </h2>
+                <p className="text-base md:text-lg text-white/65 font-light leading-relaxed max-w-md">
+                  Engineered for high-tempo environments where every second counts. Posi-Prene
+                  slides on effortlessly, even over damp skin.
+                </p>
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-5">
+                  <a
+                    href="#buy"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="group inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-white/10 hover:border-white/35"
+                  >
+                    Watch the demonstration
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                  <p className="text-[10px] tracking-[0.22em] uppercase text-white/35">
+                    Filmed live · MDA 2026
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]">
-            Wet hands? <span className="text-[oklch(0.65_0.22_350)]">Now gloved fast.</span>
-          </h2>
-          <p className="mt-3 text-lg md:text-xl font-semibold text-primary-foreground/90">
-            With Posi-Prene.
-          </p>
-          <div className="mt-10 relative mx-auto max-w-2xl aspect-[9/16] sm:aspect-video rounded-lg overflow-hidden bg-black shadow-[0_30px_80px_-20px_oklch(0.65_0.22_350/0.6)] ring-1 ring-[oklch(0.65_0.22_350)]/40">
-            <video
-              src="/challenge.mp4"
-              className="absolute inset-0 w-full h-full object-contain"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-          </div>
-          <p className="mt-4 text-xs font-semibold tracking-[0.2em] uppercase text-primary-foreground/60">
-            Filmed live at <span className="text-[oklch(0.85_0.12_350)]">MDA 2026</span> — Michigan Dental Association Show
-          </p>
-
-          <div className="mt-10 flex justify-center">
-            <a
-              href="#buy"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("buy")?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-md bg-white text-primary px-9 py-4 text-sm font-bold uppercase tracking-[0.15em] shadow-[0_10px_30px_-10px_oklch(0.2_0_0/0.5)] hover:shadow-[0_16px_40px_-12px_oklch(0.2_0_0/0.7)] hover:bg-[oklch(0.96_0.02_350)] transition-all duration-300 ease-out hover:-translate-y-0.5"
-            >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[oklch(0.65_0.22_350)]/20 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-out" />
-              Shop Now <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
+                <video
+                  src="/challenge.mp4"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+                <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
+                    Michigan Dental Association
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-
-      {/* BUY */}
-      <section
-        id="buy"
-        ref={buyRef}
-        className="relative overflow-hidden scroll-mt-16 bg-gradient-to-b from-white to-[oklch(0.97_0.02_240)] pt-16 pb-24 md:pb-28"
-      >
-        {/* Scroll-reactive pink line background */}
-        <div aria-hidden className="pointer-events-none absolute inset-0 -z-0">
-          {/* Soft pink wash that brightens on scroll */}
-          <div
-            className="absolute inset-0 transition-opacity duration-300"
-            style={{
-              background:
-                "radial-gradient(ellipse at 50% 0%, oklch(0.92 0.09 350 / 0.55) 0%, transparent 60%)",
-              opacity: 0.35 + buyProgress * 0.65,
-            }}
-          />
-          {/* Diagonal pink lines — drift horizontally with scroll */}
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 1200 800"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient id="buyLine" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stopColor="oklch(0.7 0.2 350)" stopOpacity="0.85" />
-                <stop offset="100%" stopColor="oklch(0.6 0.24 350)" stopOpacity="0.95" />
-              </linearGradient>
-            </defs>
-            {[...Array(7)].map((_, i) => {
-              const lineW = 1000;
-              const finalX = 100; // centered in 1200 viewBox
-              const fromRight = i % 2 === 0; // 0: right, 1: left, 2: right...
-              const offscreen = fromRight ? 1300 : -1000 - 100;
-              const y = 80 + i * 90;
-              // All lines finish by progress = 0.5 (card centered in viewport)
-              const threshold = i * 0.045;
-              const span = 0.22;
-              const t = Math.max(0, Math.min(1, (buyProgress - threshold) / span));
-              // ease-out cubic
-              const eased = 1 - Math.pow(1 - t, 3);
-              const x = offscreen + (finalX - offscreen) * eased;
-              return (
-                <rect
-                  key={i}
-                  x={x}
-                  y={y}
-                  width={lineW}
-                  height={34}
-                  rx={17}
-                  fill="url(#buyLine)"
-                  style={{
-                    transition: "all 600ms cubic-bezier(0.22, 1, 0.36, 1)",
-                    opacity: 0.55 + eased * 0.4,
-                  }}
-                />
-              );
-            })}
-          </svg>
-        </div>
-
-        <div className="relative z-10 max-w-2xl mx-auto px-6">
-          <div className="relative rounded-2xl bg-white border border-[oklch(0.92_0.05_350)] p-8 md:p-12 text-center shadow-[0_10px_40px_-15px_oklch(0.65_0.22_350/0.25)]">
-            <div className="relative">
-              <Reveal as="p" className="inline-flex items-center justify-center gap-2 text-[11px] font-bold tracking-[0.25em] uppercase text-[oklch(0.55_0.22_350)] leading-none">
-                <Truck className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
-                <span>Ships today — orders before 4pm EST</span>
-              </Reveal>
-              <Reveal as="h2" delay={40} className="mt-4 text-3xl md:text-5xl font-bold tracking-tight leading-[1.05] text-primary">
-                Join the <span className="text-[oklch(0.65_0.22_350)]">Posi-Prene Squad.</span>
-              </Reveal>
-              <Reveal as="p" delay={80} className="mt-3 text-sm md:text-base text-muted-foreground">
-                Your hands deserve this.
-              </Reveal>
-
-              <div className="mt-6 mx-auto max-w-[200px] [perspective:1000px]">
+      {/* BUY — restrained closing CTA */}
+      <section id="buy" className="scroll-mt-16 relative bg-white py-20 md:py-28">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[oklch(0.985_0.005_280)] border border-[oklch(0.92_0.01_280)] p-10 md:p-16 lg:p-24 text-center">
+            <div className="mb-12 md:mb-16 flex justify-center">
+              <div className="relative">
                 <img
                   src={boxImg}
-                  alt="Posi-Prene Pink glove box"
+                  alt="Posi-Prene Pink Perfection glove box"
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="w-full h-auto drop-shadow-2xl animate-buy-box-float will-change-transform"
+                  className="w-64 md:w-80 h-auto"
                 />
+                <div aria-hidden className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[85%] h-8 bg-black/15 blur-2xl rounded-full -z-10" />
+              </div>
+            </div>
+
+            <div className="max-w-2xl mx-auto space-y-10">
+              <div className="space-y-5">
+                <div className="inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/65">
+                  <span className="w-8 h-px bg-[oklch(0.65_0.22_350)]" />
+                  The Professional's Choice
+                </div>
+                <h3 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-6xl text-[#0b1f3a]">
+                  Ready to experience<br />
+                  <em className="italic font-light text-[oklch(0.6_0.22_350)]">the new standard?</em>
+                </h3>
+                <p className="text-base md:text-lg text-[#0b1f3a]/55 leading-relaxed max-w-lg mx-auto">
+                  Upgrade your practice to the performance of polychloroprene. Trusted by leading
+                  clinicians across the country.
+                </p>
               </div>
 
-              <a
-                href="#"
-                className="group/btn mt-5 relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-md bg-[oklch(0.65_0.22_350)] text-white px-10 py-4 text-sm font-bold uppercase tracking-[0.15em] hover:bg-[oklch(0.6_0.24_350)] transition-all duration-300 ease-out hover:-translate-y-0.5 w-full sm:w-auto shadow-md"
-              >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent group-hover/btn:translate-x-full transition-transform duration-700 ease-out" />
-                Buy Posi-Prene Pink Perfection <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-              </a>
-
-              <div className="mt-3 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-                <ShieldCheck className="w-3.5 h-3.5" /> Free shipping on orders over $250
-              </div>
-
-              <div className="mt-5 pt-5 border-t border-[oklch(0.95_0.03_350)]">
-                <a href="#" className="text-sm font-semibold text-[oklch(0.55_0.22_350)] underline-offset-4 hover:underline">
-                  Not sure yet? Get a free sample →
+              <div className="flex flex-col items-center gap-5">
+                <a
+                  href="#"
+                  className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] text-white px-10 py-4 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:shadow-[0_20px_50px_-15px_oklch(0.65_0.22_350/0.6)] hover:-translate-y-0.5"
+                >
+                  Secure Posi-Prene for your practice
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
+                <a
+                  href="#"
+                  className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline"
+                >
+                  or request a complimentary sample kit
+                </a>
+              </div>
+
+              <div className="pt-8 flex flex-wrap items-center justify-center gap-6 md:gap-10 border-t border-[oklch(0.92_0.01_280)]">
+                <div className="flex items-center gap-2 pt-8 md:pt-0">
+                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
+                    Free clinical shipping
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 pt-8 md:pt-0">
+                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
+                    Latex-Free Certified
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 pt-8 md:pt-0">
+                  <Check className="w-3.5 h-3.5 text-[oklch(0.55_0.15_160)]" />
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-[#0b1f3a]/45 font-medium">
+                    Ships same day before 4pm EST
+                  </span>
+                </div>
               </div>
             </div>
           </div>
