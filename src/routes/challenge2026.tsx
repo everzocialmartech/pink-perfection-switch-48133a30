@@ -7,7 +7,7 @@ import stretchCard from "@/assets/stretch-card.png";
 import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/challenge2026")({
-  component: Index,
+  component: Challenge2026Page,
 });
 
 function Reveal({
@@ -104,7 +104,7 @@ function ChallengeVideo() {
   );
 }
 
-function Index() {
+function Challenge2026Page() {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
