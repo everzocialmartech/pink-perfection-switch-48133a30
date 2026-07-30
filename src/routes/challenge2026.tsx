@@ -1,12 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import posipreneBox from "@/assets/posiprene-box.png";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
-import stretchCard from "@/assets/stretch-card.png";
-import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Lock, Trophy } from "lucide-react";
+
+const SHOP_URL =
+  "https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free";
+const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
+const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
+const IG_URL = "https://www.instagram.com/clinicalsupplycompany";
 
 export const Route = createFileRoute("/challenge2026")({
+  head: () => ({
+    meta: [
+      { title: "The Posi-Prene Challenge — Fastest Hands in Dentistry" },
+      {
+        name: "description",
+        content:
+          "You've been challenged. Race Posi-Prene against standard nitrile on wet hands, post the video, and win three months of Posi-Prene for your practice.",
+      },
+      { property: "og:title", content: "The Posi-Prene Challenge — You've Been Challenged" },
+      {
+        property: "og:description",
+        content:
+          "Race Posi-Prene against standard nitrile on wet hands. Post the video. Win three months of gloves.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://pink-perfection-switch.lovable.app/challenge2026" },
+      { name: "twitter:card", content: "summary" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://pink-perfection-switch.lovable.app/challenge2026" },
+    ],
+  }),
   component: Challenge2026Page,
 });
 
@@ -14,14 +40,12 @@ function Reveal({
   children,
   delay = 0,
   className = "",
-  as: As = "div",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
-  as?: any;
 }) {
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const el = ref.current;
@@ -38,73 +62,79 @@ function Reveal({
           }
         });
       },
-      { threshold: 0.01, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.01, rootMargin: "0px 0px -8% 0px" },
     );
     io.observe(el);
     return () => io.disconnect();
   }, []);
   return (
-    <As
-      ref={ref as any}
-      className={`${className} transition-all duration-300 ease-out ${
+    <div
+      ref={ref}
+      className={`transition-all duration-500 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      }`}
+      } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
-    </As>
-  );
-}
-
-function ChallengeVideo() {
-  const ref = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useState(true);
-  useEffect(() => {
-    const v = ref.current;
-    if (!v) return;
-    v.muted = true;
-    v.play().catch(() => {});
-  }, []);
-  const toggle = () => {
-    const v = ref.current;
-    if (!v) return;
-    const next = !muted;
-    setMuted(next);
-    v.muted = next;
-    v.volume = 1;
-    v.play().catch(() => {});
-  };
-  return (
-    <div className="relative w-full max-w-[320px] aspect-[9/16] bg-[#06152b] rounded-[1.75rem] border-[10px] border-[#06152b] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] overflow-hidden group">
-      <video
-        ref={ref}
-        src="/challenge.mp4"
-        className="absolute inset-0 w-full h-full object-cover"
-        autoPlay
-        loop
-        playsInline
-        preload="metadata"
-        onVolumeChange={(e) => setMuted((e.target as HTMLVideoElement).muted)}
-      />
-      <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-      <button
-        type="button"
-        onClick={toggle}
-        aria-label={muted ? "Unmute video" : "Mute video"}
-        className="absolute top-3 right-3 z-10 inline-flex items-center justify-center w-9 h-9 rounded-full bg-black/55 backdrop-blur-sm text-white border border-white/20 hover:bg-black/75 transition-colors"
-      >
-        {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-      </button>
-      <div className="pointer-events-none absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/75 to-transparent">
-        <p className="text-[10px] uppercase tracking-[0.22em] text-white/75 font-medium">
-          Michigan Dental Association
-        </p>
-      </div>
     </div>
   );
 }
 
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/70 backdrop-blur-sm">
+      <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
+      {children}
+    </div>
+  );
+}
+
+function PinkButton({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff3d8b] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-[0_18px_45px_-15px_rgba(255,61,139,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[oklch(0.65_0.24_350)] ${className}`}
+    >
+      {children}
+      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+    </a>
+  );
+}
+
+function GhostButton({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white/85 transition-all duration-300 hover:border-white/60 hover:bg-white/5 hover:text-white ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
+
 function Challenge2026Page() {
+  const [entry, setEntry] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
@@ -114,426 +144,329 @@ function Challenge2026Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans antialiased">
-      {/* Nav + Hero wrapper — sticky nav unsticks at the end of the hero */}
-      <div className="relative">
-      {/* Hairline pink accent — the only place pink lives at full intensity */}
+    <div className="min-h-screen bg-[#050d1a] text-white font-sans antialiased">
       <div className="h-[3px] w-full bg-[oklch(0.65_0.22_350)]" />
-      <header className="sticky top-0 inset-x-0 z-50 text-white bg-[#0b1f3a] shadow-[0_4px_24px_-12px_rgba(0,0,0,0.6)]">
+      <header className="sticky top-0 inset-x-0 z-50 bg-[#050d1a]/90 backdrop-blur-md border-b border-white/5">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between gap-4">
-          <a
-            href="#top"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="flex items-center shrink-0"
-            aria-label="Clinical Supply Co. — Home"
-          >
-            <img
-              src={cscLogo}
-              alt="Clinical Supply Co."
-              width={896}
-              height={512}
-              className="h-7 w-auto opacity-95"
-            />
-          </a>
-
+          <img src={cscLogo} alt="Clinical Supply Co." width={896} height={512} className="h-7 w-auto opacity-95" />
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-white/40">
+            Invitation Only
+          </span>
         </div>
       </header>
 
-      {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden bg-[#0b1f3a] text-white pt-16 md:pt-24 pb-10 md:pb-16">
-        {/* Atmospheric depth — soft sapphire glow */}
+      {/* SECTION 1 — HERO */}
+      <section className="relative overflow-hidden pt-16 md:pt-24 pb-16 md:pb-24">
         <div
-          className="absolute inset-0 pointer-events-none animate-hero-glow-in"
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 55% at 50% 35%, rgba(56,103,180,0.35) 0%, rgba(56,103,180,0.12) 40%, rgba(11,31,58,0) 75%)",
+              "radial-gradient(ellipse 65% 55% at 50% 20%, rgba(56,103,180,0.22) 0%, rgba(5,13,26,0) 70%)",
           }}
         />
-        {/* Single pink accent glow — restrained */}
         <div
-          className="absolute -top-24 right-[-10%] w-[40vw] h-[40vw] max-w-[480px] max-h-[480px] rounded-full pointer-events-none animate-hero-glow-in delay-300"
-          style={{ background: "radial-gradient(circle, oklch(0.65 0.22 350 / 0.22) 0%, transparent 65%)", filter: "blur(40px)" }}
+          aria-hidden
+          className="absolute inset-0 pointer-events-none opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+            maskImage: "radial-gradient(ellipse at 50% 30%, black 0%, transparent 75%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute -top-24 right-[-10%] w-[42vw] h-[42vw] max-w-[520px] max-h-[520px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, oklch(0.65 0.22 350 / 0.28) 0%, transparent 65%)",
+            filter: "blur(50px)",
+          }}
         />
 
         <div className="relative w-full max-w-5xl mx-auto px-6 text-center">
-          {/* Eyebrow badge */}
-          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/75 backdrop-blur-sm">
-            <span className="w-1 h-1 rounded-full bg-[oklch(0.65_0.22_350)]" />
-            Posi-Prene Pink Perfection
+          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[oklch(0.65_0.22_350/0.4)] bg-[oklch(0.65_0.22_350/0.1)] px-4 py-1.5 text-[10px] font-bold tracking-[0.32em] uppercase text-[oklch(0.82_0.14_350)]">
+            <Lock className="w-3 h-3" />
+            You've been challenged
           </div>
 
-          {/* Serif headline — Cormorant Garamond, generous breathing room */}
-          <h1 className="font-serif font-normal tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-8 md:mt-10 max-w-4xl mx-auto animate-hero-rise text-balance">
-            The glove dental teams<br className="hidden sm:block" />{" "}
-            <em className="italic font-light text-[oklch(0.78_0.16_350)]">keep switching to.</em>
+          <h1 className="font-serif font-normal tracking-tight leading-[1.04] text-[2.5rem] sm:text-6xl md:text-7xl mt-8 md:mt-10 max-w-4xl mx-auto animate-hero-rise text-balance">
+            Think Your Dental Practice Has the{" "}
+            <em className="italic font-light text-[oklch(0.78_0.16_350)]">Fastest Hands?</em>
           </h1>
 
-          {/* Subline */}
-          <p className="mt-7 max-w-xl mx-auto text-base md:text-lg text-white/65 font-light leading-relaxed animate-hero-rise delay-150">
-            Polychloroprene built like a wetsuit. Fits like a second skin.
-            Latex-free. Powder-free. Compromise-free.
+          <p className="mt-7 max-w-2xl mx-auto text-base md:text-lg text-white/60 font-light leading-relaxed animate-hero-rise delay-150">
+            Put Posi-Prene against standard nitrile on wet or sweaty hands. Record the race, post
+            it and prove which glove—and which practice—comes out on top.
           </p>
 
-          {/* Product — single hero element, no competing glove */}
-          <div
-            className="relative mt-14 md:mt-16 mx-auto max-w-[18rem] md:max-w-[22rem] animate-box-rise"
-            style={{ perspective: "1200px" }}
-          >
+          <div className="mt-10 animate-hero-rise delay-300">
+            <PinkButton href={SHOP_URL}>Take the challenge</PinkButton>
+          </div>
+
+          <div className="relative mt-14 md:mt-16 mx-auto max-w-[16rem] md:max-w-[20rem] animate-box-rise">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0 -z-10"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 65%, oklch(0.65 0.22 350 / 0.35) 0%, transparent 60%)",
-                filter: "blur(40px)",
+                  "radial-gradient(ellipse at 50% 60%, oklch(0.65 0.22 350 / 0.4) 0%, transparent 62%)",
+                filter: "blur(45px)",
               }}
             />
             <img
-              src={posipreneBox}
-              alt="Posi-Prene Pink Perfection glove box"
-              width={1200}
-              height={900}
+              src={posipreneBoxReal}
+              alt="Posi-Prene Pink glove box"
               className="relative w-full h-auto animate-box-float will-change-transform"
-              style={{
-                filter: "drop-shadow(0 30px 50px rgba(0,0,0,0.55)) drop-shadow(0 0 30px oklch(0.65 0.22 350 / 0.25))",
-              }}
             />
           </div>
+        </div>
+      </section>
 
-          {/* CTA — refined, not aggressive */}
-          <div className="mt-12 md:mt-14 flex flex-col items-center gap-4 animate-hero-rise delay-300">
-            <a
-              href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-8 py-3.5 text-[13px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:text-white hover:shadow-[0_20px_50px_-15px_oklch(0.65_0.22_350/0.7)]"
-            >
-              Shop Posi-Prene
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+      {/* SECTION 2 — THE PRIZE */}
+      <section className="relative border-y border-white/10 bg-[#081428] py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <Reveal className="text-center">
+            <Eyebrow>The prize</Eyebrow>
+            <h2 className="font-serif font-normal text-4xl md:text-5xl mt-6 leading-[1.1]">
+              Win <em className="italic text-[oklch(0.78_0.16_350)]">Three Months</em> of Posi-Prene
+            </h2>
+            <p className="mt-5 max-w-xl mx-auto text-white/60 font-light leading-relaxed">
+              Keep your practice stocked with Posi-Prene for three full months.
+            </p>
+          </Reveal>
 
-            <a
-              href="https://clinicalsupplycompany.com/pages/csc-samples-request"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-white/45 tracking-wider hover:text-white/80 transition-colors underline-offset-4 hover:underline"
-            >
-              or request a free sample
-            </a>
-          </div>
-
-          {/* Stats strip — architectural social proof */}
-          <div className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
             {[
-              { stat: "0%", label: "Latex" },
-              { stat: "100%", label: "Polychloroprene" },
-              { stat: "4pm", label: "Same-day ship cutoff EST" },
-            ].map((item) => (
-              <div key={item.label} className="text-center min-w-0">
-                <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-white leading-none">{item.stat}</div>
-                <div className="mt-2 text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.22em] uppercase text-white/45 leading-snug break-words">{item.label}</div>
-              </div>
+              {
+                k: "3 cases",
+                v: "One full case every month for three months—three cases total.",
+              },
+              {
+                k: "Most likes",
+                v: "The eligible practice whose challenge video receives the most likes by the official deadline wins.",
+              },
+              {
+                k: "Official rules",
+                v: "Winner selection and eligibility are subject to the Official Rules.",
+              },
+            ].map((item, i) => (
+              <Reveal key={item.k} delay={i * 80}>
+                <div className="h-full rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition-all duration-300 hover:border-[oklch(0.65_0.22_350/0.45)] hover:bg-white/[0.06]">
+                  <Trophy className="w-5 h-5 text-[oklch(0.78_0.16_350)]" />
+                  <p className="mt-5 font-serif text-2xl">{item.k}</p>
+                  <p className="mt-3 text-sm text-white/55 font-light leading-relaxed">{item.v}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
-      </div>
 
-      {/* THE REACTION — light, two-column: quotes left, video right */}
-      <section id="reaction" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Left — headline + quotes */}
-            <div>
-              <div className="inline-flex items-center gap-3 text-[11px] font-medium tracking-[0.28em] uppercase text-[#0b1f3a]/65">
-                <span className="w-8 h-px bg-[oklch(0.65_0.22_350)]" />
-                The Reaction
-              </div>
+      {/* SECTION 3 — HOW TO TAKE THE CHALLENGE */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <Reveal className="text-center">
+            <Eyebrow>How to take the challenge</Eyebrow>
+            <h2 className="font-serif font-normal text-4xl md:text-5xl mt-6">
+              Ready. Wet. <em className="italic text-[oklch(0.78_0.16_350)]">Glove!</em>
+            </h2>
+          </Reveal>
 
-              <h2 className="mt-6 font-serif font-normal tracking-tight leading-[1] text-5xl md:text-6xl lg:text-7xl text-[#0b1f3a]">
-                Still using<br />
-                <em className="italic font-light text-[oklch(0.6_0.22_350)]">stiff nitrile?</em>
-              </h2>
-
-              <p className="mt-6 text-base text-[#0b1f3a]/55 max-w-md leading-relaxed">
-                See what dental teams said the first time they tried Posi-Prene at the
-                Michigan Dental Association.
-              </p>
-
-              {/* Mobile-only video — between description and testimonials */}
-              <div className="md:hidden mt-8 relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_30px_60px_-25px_rgba(11,31,58,0.45)] mx-auto max-w-[320px]">
-                <video
-                  src="/reaction.mp4"
-                  className="w-full h-auto block bg-[#0b1f3a] aspect-[9/16] object-cover"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-                <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 backdrop-blur px-2.5 py-1 text-[9px] font-medium tracking-[0.28em] uppercase text-white/85">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_350)] animate-pulse" />
-                  Live
-                </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/55 to-transparent" />
-                <div className="pointer-events-none absolute bottom-3 left-4 right-4 text-[9px] font-medium tracking-[0.28em] uppercase text-white/70">
-                  Michigan Dental Association
-                </div>
-              </div>
-
-              <div className="mt-10 flex items-center gap-3">
-                <span className="h-px flex-1 bg-[#0b1f3a]/10" />
-                <h3 className="font-serif text-sm md:text-base italic font-light text-[#0b1f3a]/70 tracking-wide whitespace-nowrap">
-                  Polychloroprene is Better
-                </h3>
-                <span className="h-px flex-1 bg-[#0b1f3a]/10" />
-              </div>
-              <div className="mt-5 space-y-4">
-                {[
-                  {
-                    quote: (
-                      <>I put it on and my hand <strong className="font-medium text-[#0b1f3a]">just disappeared into it</strong>. It felt like skin.</>
-                    ),
-                    who: "DDS, Ann Arbor",
-                  },
-                  {
-                    quote: (
-                      <><strong className="font-medium text-[#0b1f3a]">Wet hands, no fight.</strong> We've never had a glove go on this easily.</>
-                    ),
-                    who: "Hygienist, MDA 2026",
-                  },
-                  {
-                    quote: (
-                      <>We tossed our nitrile by the end of the week. <strong className="font-medium text-[#0b1f3a]">Whole office switched.</strong></>
-                    ),
-                    who: "Practice Manager",
-                  },
-                ].map((q) => (
-                  <figure
-                    key={q.who}
-                    tabIndex={0}
-                    className="group relative overflow-hidden rounded-md bg-white pl-6 pr-5 py-5 shadow-[0_8px_24px_-12px_rgba(11,31,58,0.12)] border-l-2 border-[oklch(0.65_0.22_350)] cursor-pointer transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_24px_50px_-20px_rgba(11,31,58,0.25)] hover:border-l-[3px] hover:pl-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-[oklch(0.65_0.22_350)]/40 active:translate-y-0 active:scale-[0.995] active:shadow-[0_10px_24px_-14px_rgba(11,31,58,0.2)]"
-                  >
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{
-                        background:
-                          "radial-gradient(120% 80% at 0% 0%, oklch(0.65 0.22 350 / 0.06), transparent 55%)",
-                      }}
-                    />
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute -top-2 left-3 font-serif text-5xl leading-none text-[oklch(0.65_0.22_350)]/0 group-hover:text-[oklch(0.65_0.22_350)]/15 transition-colors duration-500 select-none"
-                    >
-                      “
-                    </span>
-                    <blockquote className="relative text-base md:text-lg text-[#0b1f3a]/70 leading-relaxed font-light transition-colors duration-300 group-hover:text-[#0b1f3a]">
-                      "{q.quote}"
-                    </blockquote>
-                    <figcaption className="relative mt-3 text-[10px] tracking-[0.22em] uppercase text-[#0b1f3a]/40 transition-colors duration-300 group-hover:text-[#0b1f3a]/70">
-                      {q.who}
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-            </div>
-
-            {/* Right — video */}
-            <div className="relative hidden md:block">
-              <div className="relative rounded-xl overflow-hidden bg-[#0b1f3a] shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
-                <video
-                  src="/reaction.mp4"
-                  className="w-full h-auto block bg-[#0b1f3a]"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
-                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/40 backdrop-blur px-3 py-1.5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/85">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[oklch(0.65_0.22_350)] animate-pulse" />
-                  Live Reaction
-                </div>
-                <div className="pointer-events-none absolute bottom-5 left-5 right-5 text-[10px] font-medium tracking-[0.28em] uppercase text-white/70">
-                  Michigan Dental Association
-                </div>
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/55 to-transparent" />
-              </div>
-              <div className="mt-8 flex justify-center">
-                <a
-                  href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 rounded-full bg-[#0b1f3a] px-8 py-4 text-sm font-medium tracking-[0.22em] uppercase text-white shadow-[0_20px_40px_-15px_rgba(11,31,58,0.5)] transition-all duration-300 hover:bg-[oklch(0.65_0.22_350)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-15px_oklch(0.65_0.22_350/0.55)]"
-                >
-                  Make the switch
-                  <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOUR REASONS — dark navy, editorial grid */}
-      {/* CHALLENGE — editorial navy card, video framed as designed object */}
-      <section id="challenge" className="scroll-mt-16 relative bg-white py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center bg-[#0b1f3a] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden p-8 md:p-14 lg:p-20 text-white shadow-[0_40px_80px_-30px_rgba(11,31,58,0.45)]">
-            <div className="lg:col-span-7 z-10">
-              <div className="space-y-7 md:space-y-8">
-                <div className="inline-flex items-center gap-4">
-                  <span className="h-px w-12 bg-[oklch(0.65_0.22_350)]" />
-                  <p className="text-[oklch(0.78_0.16_350)] font-medium tracking-[0.22em] uppercase text-[11px]">
-                    Live Application
-                  </p>
-                </div>
-                <h2 className="font-serif font-normal tracking-tight leading-[1.05] text-4xl sm:text-5xl lg:text-[4.5rem]">
-                  Wet hands?<br />
-                  <em className="italic font-light text-[oklch(0.78_0.16_350)]">Now gloved fast.</em>
-                </h2>
-                <p className="text-base md:text-lg text-white/65 font-light leading-relaxed max-w-md">
-                  Engineered for high-tempo environments where every second counts. Posi-Prene
-                  slides on effortlessly, even over damp skin.
-                </p>
-                <div className="pt-2 flex items-center gap-4">
-                  <span className="inline-flex items-center gap-2 text-[10px] tracking-[0.22em] uppercase text-white/55">
-                    <span className="w-6 h-px bg-white/30" />
-                    Filmed live · MDA 2026
+          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
+            {[
+              {
+                n: "1",
+                t: "Gather Your Team",
+                d: "Bring together the people in your dental practice who are ready to compete.",
+              },
+              {
+                n: "2",
+                t: "Choose Your Posi-Prene Wearer",
+                d: "One person wears Posi-Prene. Everyone else wears standard nitrile gloves.",
+              },
+              {
+                n: "3",
+                t: "Wet Your Hands and Race",
+                d: "Start with wet, sweaty or recently sanitized hands. Race to see who can glove up first.",
+              },
+              {
+                n: "4",
+                t: "Record and Post It",
+                d: "Capture the entire challenge and post the video on Instagram or Facebook.",
+              },
+            ].map((s, i) => (
+              <Reveal key={s.n} delay={i * 70}>
+                <div className="h-full bg-[#050d1a] p-8 transition-colors duration-300 hover:bg-[#0b1a30]">
+                  <span className="font-serif text-5xl text-[oklch(0.65_0.22_350/0.5)]">
+                    0{s.n}
                   </span>
+                  <h3 className="mt-4 text-lg font-semibold">{s.t}</h3>
+                  <p className="mt-2 text-sm text-white/55 font-light leading-relaxed">{s.d}</p>
                 </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 flex flex-col items-center lg:items-end gap-6">
-              <ChallengeVideo />
-              <a
-                href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 rounded-full bg-white text-[#0b1f3a] px-7 py-3 text-[12px] font-medium tracking-[0.18em] uppercase transition-all duration-300 hover:bg-[oklch(0.78_0.16_350)] hover:text-white hover:shadow-[0_20px_40px_-15px_oklch(0.65_0.22_350/0.55)]"
-              >
-                Shop now
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </div>
+              </Reveal>
+            ))}
           </div>
+
+          <Reveal className="mt-10 flex flex-col sm:flex-row justify-center gap-3">
+            <GhostButton href={FB_URL}>
+              <Facebook className="w-4 h-4" /> Follow CSC on Facebook
+            </GhostButton>
+            <GhostButton href={IG_URL}>
+              <Instagram className="w-4 h-4" /> Follow CSC on Instagram
+            </GhostButton>
+          </Reveal>
         </div>
       </section>
 
-      {/* BUY — split layout: 3D box left, authoritative CTA right */}
-      <section id="buy" className="scroll-mt-16 relative bg-[oklch(0.975_0.008_260)] py-20 md:py-28">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 items-stretch rounded-[2rem] md:rounded-[2.5rem] overflow-hidden border border-[oklch(0.92_0.01_280)] bg-white shadow-[0_30px_60px_-25px_rgba(11,31,58,0.15)]">
+      {/* SECTION 4 — DON'T HAVE POSI-PRENE */}
+      <section className="border-y border-white/10 bg-[#081428] py-20 md:py-28">
+        <div className="max-w-5xl mx-auto px-6 grid gap-12 md:grid-cols-2 md:items-center">
+          <Reveal>
+            <Eyebrow>Don't have Posi-Prene?</Eyebrow>
+            <h2 className="font-serif font-normal text-4xl md:text-5xl mt-6 leading-[1.1]">
+              You Can Still <em className="italic text-[oklch(0.78_0.16_350)]">Take the Challenge</em>
+            </h2>
+            <p className="mt-5 text-white/60 font-light leading-relaxed">
+              Get the gloves you need and put Posi-Prene to the test against the standard nitrile
+              gloves your practice currently uses.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-3">
+              <PinkButton href={SHOP_URL}>Buy Posi-Prene now</PinkButton>
+              <GhostButton href={SAMPLES_URL}>Request free samples</GhostButton>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="relative mx-auto max-w-[18rem]">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10"
+                style={{
+                  background:
+                    "radial-gradient(ellipse at 50% 60%, oklch(0.65 0.22 350 / 0.35) 0%, transparent 62%)",
+                  filter: "blur(40px)",
+                }}
+              />
+              <img src={posipreneBoxReal} alt="Posi-Prene Pink glove box" className="w-full h-auto" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-            {/* LEFT — CSS-rendered 3D box on a soft surface */}
-            <div
-              className="relative flex items-center justify-center p-12 md:p-16 lg:p-20 min-h-[420px] md:min-h-[560px] overflow-hidden"
-              style={{
-                backgroundImage:
-                  "radial-gradient(circle at 1px 1px, oklch(0.7 0.04 260) 1px, transparent 0)",
-                backgroundSize: "18px 18px",
-                backgroundColor: "oklch(0.97 0.008 260)",
+      {/* SECTION 5 — SUBMIT YOUR ENTRY */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-3xl mx-auto px-6">
+          <Reveal className="text-center">
+            <Eyebrow>Submit your entry</Eyebrow>
+            <h2 className="font-serif font-normal text-4xl md:text-5xl mt-6">
+              Make Your Challenge <em className="italic text-[oklch(0.78_0.16_350)]">Official</em>
+            </h2>
+            <p className="mt-5 text-white/60 font-light">To enter the Posi-Prene Challenge:</p>
+          </Reveal>
+
+          <Reveal delay={80}>
+            <ol className="mt-9 space-y-3 text-left">
+              {[
+                "Post your video on Instagram or Facebook.",
+                "Tag Clinical Supply Company.",
+                "Use #PosiPreneChallenge in your caption.",
+                "Make sure your post is public so CSC can view it.",
+                "Submit the link to your post through the form on this page.",
+              ].map((line, i) => (
+                <li
+                  key={line}
+                  className="flex gap-4 rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 text-sm text-white/70 font-light"
+                >
+                  <span className="text-[oklch(0.78_0.16_350)] font-semibold">0{i + 1}</span>
+                  {line}
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+
+          <Reveal delay={140}>
+            <form
+              className="mt-10 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (entry.trim()) setSubmitted(true);
               }}
             >
-              <div className="relative w-full max-w-[22rem] md:max-w-[26rem] animate-buy-box-float">
-                <img
-                  src={posipreneBoxReal}
-                  alt="Posi-Prene Pink Perfection — Polychloroprene examination gloves box"
-                  loading="lazy"
-                  width={1152}
-                  height={1152}
-                  className="relative w-full h-auto drop-shadow-[0_40px_50px_rgba(11,31,58,0.35)]"
-                />
-                <div aria-hidden className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[75%] h-6 bg-black/20 blur-2xl rounded-full -z-10" />
-                <div className="mt-6 text-center">
-                  <p className="text-[10px] tracking-[0.32em] uppercase text-[#0b1f3a]/40 font-medium">
-                    Polychloroprene Examination Gloves
-                  </p>
+              {submitted ? (
+                <p className="text-center text-sm text-white/75 font-light">
+                  Entry received. The CSC team will review your post — keep it public so we can
+                  count those likes.
+                </p>
+              ) : (
+                <div className="flex flex-col gap-3 sm:flex-row">
+                  <input
+                    type="url"
+                    required
+                    value={entry}
+                    onChange={(e) => setEntry(e.target.value)}
+                    placeholder="Paste your Instagram or Facebook post link"
+                    className="flex-1 rounded-full border border-white/15 bg-[#050d1a] px-5 py-4 text-sm text-white placeholder:text-white/35 outline-none transition-colors focus:border-[oklch(0.65_0.22_350/0.7)]"
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#ff3d8b] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[oklch(0.65_0.24_350)]"
+                  >
+                    Submit your challenge
+                  </button>
                 </div>
-              </div>
-            </div>
-
-            {/* RIGHT — CTA */}
-            <div className="bg-[oklch(0.985_0.005_280)] p-10 md:p-14 lg:p-20 flex flex-col justify-center">
-              <div className="inline-flex items-start gap-3 text-[11px] font-medium tracking-[0.22em] uppercase text-[#0b1f3a]/65">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[oklch(0.65_0.22_350)]/30 bg-[oklch(0.65_0.22_350)]/8 text-[oklch(0.6_0.22_350)] shrink-0">
-                  <Truck className="w-3.5 h-3.5" aria-hidden />
-                </span>
-                <span className="pt-1.5 leading-snug">
-                  Ships today — orders before <span className="text-[#0b1f3a]">4pm EST</span>
-                </span>
-              </div>
-
-              <h3 className="mt-7 font-serif font-normal tracking-tight leading-[1.05] text-4xl md:text-5xl lg:text-[3.5rem] text-[#0b1f3a]">
-                Experience the{" "}
-                <em className="italic font-light text-[oklch(0.6_0.22_350)]">difference.</em>
-              </h3>
-
-              <div className="mt-5 w-10 h-px bg-[oklch(0.65_0.22_350)]" />
-
-              <p className="mt-6 text-base md:text-lg text-[#0b1f3a]/55 leading-relaxed max-w-md">
-                Join thousands of dental teams who've already made the switch to Posi-Prene.
-              </p>
-
-              <div className="mt-10">
-                <a
-                  href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex w-full sm:w-auto items-center justify-between gap-6 rounded-md bg-[#ff3d8b] text-white px-8 py-5 text-[12px] font-medium tracking-[0.22em] uppercase transition-all duration-300 hover:bg-[#ff1f78] hover:shadow-[0_20px_50px_-20px_rgba(255,61,139,0.7)] hover:-translate-y-0.5"
-                >
-                  Order Posi-Prene
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
-              </div>
-
-              <div className="mt-6 flex items-center gap-2 text-xs text-[#0b1f3a]/50">
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <polygon points="12,2 15,8.5 22,9.3 17,14 18.2,21 12,17.8 5.8,21 7,14 2,9.3 9,8.5" />
-                </svg>
-                Free shipping on orders over $250
-              </div>
-
-              <div className="mt-4">
-                <a
-                  href="https://clinicalsupplycompany.com/pages/csc-samples-request"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-[#0b1f3a]/55 tracking-wider hover:text-[#0b1f3a] transition-colors underline-offset-4 hover:underline"
-                >
-                  Not sure yet? Request a free sample →
-                </a>
-              </div>
-            </div>
-          </div>
+              )}
+            </form>
+          </Reveal>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* SECTION 6 — AMBASSADOR */}
+      <section className="relative overflow-hidden border-t border-white/10 bg-[#081428] py-20 md:py-28">
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 55% 60% at 50% 100%, oklch(0.65 0.22 350 / 0.18) 0%, transparent 70%)",
+          }}
+        />
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <Reveal>
+            <Eyebrow>Become a Posi-Prene Ambassador</Eyebrow>
+            <h2 className="font-serif font-normal text-4xl md:text-5xl mt-6 leading-[1.1]">
+              Your Video Could Lead to{" "}
+              <em className="italic text-[oklch(0.78_0.16_350)]">Something Bigger</em>
+            </h2>
+            <p className="mt-6 text-white/60 font-light leading-relaxed">
+              CSC is looking for real dental professionals to become future Posi-Prene Ambassadors.
+            </p>
+            <p className="mt-4 text-white/60 font-light leading-relaxed">
+              Show us your practice's energy and personality. If your video is funny, creative,
+              engaging or well-edited, the CSC team may contact you about a future Posi-Prene
+              Ambassador partnership.
+            </p>
+            <p className="mt-6 font-serif text-2xl italic text-white/85">
+              Take the challenge. Tag CSC. Make sure we can find you.
+            </p>
+            <div className="mt-10">
+              <PinkButton href={SHOP_URL}>Take the Posi-Prene Challenge</PinkButton>
+            </div>
+            <p className="mt-8 text-xs text-white/35 font-light">
+              Participation does not guarantee selection as a Posi-Prene Ambassador.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* removed duplicate */}
-      <footer className="bg-primary text-primary-foreground/80 py-10  -mt-8 relative z-0">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm">
-          <img
-            src={cscLogo}
-            alt="Clinical Supply Co."
-            width={896}
-            height={512}
-            loading="lazy"
-            className="h-24 md:h-28 w-auto"
-          />
-          <div>© {new Date().getFullYear()} Clinical Supply Company</div>
-          <a href="tel:18004680188" className="font-semibold text-primary-foreground hover:text-accent">1 (800) 468 0188</a>
+      <footer className="border-t border-white/10 py-10">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-4 text-center">
+          <img src={cscLogo} alt="Clinical Supply Co." className="h-10 w-auto opacity-80" />
+          <p className="text-xs text-white/35">
+            © {new Date().getFullYear()} Clinical Supply Company. Winner selection and eligibility
+            are subject to the Official Rules.
+          </p>
         </div>
       </footer>
-
     </div>
   );
 }
