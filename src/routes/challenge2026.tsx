@@ -261,7 +261,7 @@ function Challenge2026Page() {
       </section>
 
       {/* PRIZE - white */}
-      <section id="prize" className="relative overflow-hidden bg-white py-16 md:py-20 scroll-mt-32">
+      <section id="prize" className="relative overflow-hidden bg-white py-16 md:py-20 scroll-mt-28">
         {/* soft light drift */}
         <div
           aria-hidden
@@ -349,7 +349,7 @@ function Challenge2026Page() {
       </section>
 
       {/* RULES / HOW TO - navy */}
-      <section id="rules" className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20 scroll-mt-32">
+      <section id="rules" className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20 scroll-mt-28">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -361,7 +361,7 @@ function Challenge2026Page() {
         <div className="relative max-w-5xl mx-auto px-6">
           <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
             {/* Sticky left rail */}
-            <Reveal className="md:sticky md:top-32">
+            <Reveal className="md:sticky md:top-28">
               <img
                 src={cscLogo}
                 alt="Clinical Supply Company"
@@ -482,7 +482,7 @@ function Challenge2026Page() {
       </section>
 
       {/* AMBASSADOR - navy */}
-      <section id="ambassador" className="bg-[#2D3142] text-white py-16 md:py-20 text-center scroll-mt-32">
+      <section id="ambassador" className="bg-[#2D3142] text-white py-16 md:py-20 text-center scroll-mt-28">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
             <img
