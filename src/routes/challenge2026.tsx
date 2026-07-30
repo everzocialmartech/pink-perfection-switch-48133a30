@@ -121,7 +121,7 @@ function Challenge2026Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#000e32] font-sans antialiased">
+    <div className="challenge-type min-h-screen bg-white text-[#000e32] antialiased">
       <div className="h-[3px] w-full bg-[#ff6527]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#000e32]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between">

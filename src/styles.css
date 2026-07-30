@@ -156,6 +156,28 @@
   50% { transform: translateY(-18px) rotate(2deg); }
 }
 
+/* Challenge 2026 typography — Work Sans */
+.challenge-type,
+.challenge-type input,
+.challenge-type button {
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+}
+.challenge-type h1,
+.challenge-type h2,
+.challenge-type h3,
+.challenge-type .font-serif,
+.challenge-type em {
+  font-family: "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@keyframes float-unused {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(2deg); }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
