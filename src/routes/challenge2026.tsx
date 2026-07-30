@@ -192,7 +192,7 @@ function Challenge2026Page() {
           <Reveal>
             <Eyebrow>The prize</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Three months of <em className="italic text-[#ff6527]">Posi-Prene</em>
+              Three months of <em className="italic text-[#1762ef]">Posi-Prene</em>
             </h2>
             <p className="mt-4 text-[#000e32]/60 font-light">
               Three cases — one a month. Most likes by the deadline wins.
@@ -254,7 +254,7 @@ function Challenge2026Page() {
           <Reveal>
             <Eyebrow>Need gloves?</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              You can still <em className="italic text-[#ff6527]">take the challenge</em>
+              You can still <em className="italic text-[#1762ef]">take the challenge</em>
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
               <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
