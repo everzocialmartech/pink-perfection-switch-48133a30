@@ -207,7 +207,9 @@ function Challenge2026Page() {
           </h1>
 
           <p className="mt-5 max-w-lg mx-auto text-base md:text-lg text-white/65 font-light animate-hero-rise delay-150">
-            Posi-Prene vs. nitrile on wet hands. Race it. Film it. Post it.
+            Posi-Prene vs. Standard nitrile on wet hands.
+            <br />
+            Race it. Film it. Post it.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 animate-hero-rise delay-300">
