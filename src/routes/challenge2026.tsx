@@ -342,7 +342,7 @@ function Challenge2026Page() {
               </h2>
 
               <ul className="mt-7 space-y-3">
-                {["3 cases", "1 per month", "Shipped free to your practice"].map((spec) => (
+                {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
                   <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/75 font-light">
                     <span aria-hidden className="h-px w-6 shrink-0 bg-[#00857E]" />
                     {spec}
