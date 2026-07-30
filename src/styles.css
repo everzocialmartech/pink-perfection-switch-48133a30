@@ -284,3 +284,36 @@
 .animate-flash-blur {
   animation: flash-blur 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
+
+@keyframes shh-whisper {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    letter-spacing: 0.9em;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: 0.35em;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shh-glow {
+  0%,
+  100% {
+    opacity: 0.75;
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 22px rgba(123, 164, 255, 0.55);
+  }
+}
+
+.animate-shh {
+  animation:
+    shh-whisper 1.4s cubic-bezier(0.16, 1, 0.3, 1) both,
+    shh-glow 4s ease-in-out 1.6s infinite;
+}
