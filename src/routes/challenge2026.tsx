@@ -414,11 +414,11 @@ function Challenge2026Page() {
               />
               <div className="relative">
                 <div className="flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#03CDC2]" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#03CDC2]">
+                  <span className="h-px w-8 bg-[#00857E]" />
+                  <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.24em] text-[#00857E]">
                     Gear up
                   </span>
-                  <span className="h-px w-8 bg-[#03CDC2]" />
+                  <span className="h-px w-8 bg-[#00857E]" />
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl mt-6 text-[#2D3142] leading-[1.15]">
                   Need gloves?
