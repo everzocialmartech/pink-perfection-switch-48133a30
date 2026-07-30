@@ -94,7 +94,7 @@ export const Route = createFileRoute("/challenge2026")({
 });
 
 const BIG_CTA =
-  "group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold tracking-[0.01em] text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]";
+  "group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#03CDC2] px-8 py-4 text-[0.95rem] font-semibold tracking-[0.01em] text-[#08202C] shadow-[0_18px_40px_-16px_rgba(3,205,194,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2FE3D9]";
 
 
 
