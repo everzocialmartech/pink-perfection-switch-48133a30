@@ -86,13 +86,14 @@ const BIG_CTA =
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
   const [beat, setBeat] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     let raf = 0;
+    setCount(0);
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) return;
@@ -121,13 +122,14 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
   return (
     <div
       ref={ref}
-      className="mt-8 inline-flex items-center gap-3"
+      aria-live="off"
+      className="inline-flex items-baseline gap-3 border-b-2 border-[#03CDC2] pb-2"
     >
       <Heart
-        className={`h-6 w-6 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
+        className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
         fill="#C8378A"
       />
-      <span className="text-2xl md:text-3xl font-semibold tabular-nums text-[#2D3142]">
+      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
         {count.toLocaleString()}
       </span>
       <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
