@@ -386,7 +386,7 @@ function Challenge2026Page() {
                 </p>
 
                 <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
                     Head start
                   </p>
                   <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
