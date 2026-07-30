@@ -481,6 +481,14 @@ function Challenge2026Page() {
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
                   the team must wear regular nitrile gloves.
                 </p>
+                <figure className="relative mx-auto mt-10 max-w-md md:max-w-2xl rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white/70 px-5 py-6 md:px-10 md:py-9 text-left shadow-[0_18px_40px_-26px_rgba(45,49,66,0.4)]">
+                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/80">
+                    &ldquo;PosiPrene gloves are the{" "}
+                    <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
+                    with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
+                    no latex. Once you try them, you won&rsquo;t go back!&rdquo;
+                  </blockquote>
+                </figure>
               </div>
             </div>
           </Reveal>
