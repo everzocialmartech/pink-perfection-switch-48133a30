@@ -330,13 +330,10 @@ function Challenge2026Page() {
           <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
             {/* Left: the prize */}
             <Reveal>
-              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#C8378A]/45">
-                <Trophy className="h-7 w-7 text-[#C8378A]" strokeWidth={1.2} />
+              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#00857E]/40">
+                <Trophy className="h-7 w-7 text-[#00857E]" strokeWidth={1.2} />
               </div>
-              <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.22em] uppercase text-[#C8378A]">
-                <span className="h-px w-6 bg-[#C8378A]" />
-                The grand prize
-              </div>
+              <Eyebrow>The grand prize</Eyebrow>
               <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
                 Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
               </h2>
