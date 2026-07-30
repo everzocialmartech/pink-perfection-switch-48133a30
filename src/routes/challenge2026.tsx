@@ -330,9 +330,9 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      <footer className="bg-white py-8 text-center">
-        <img src={cscLogo} alt="Clinical Supply Co." className="h-9 w-auto mx-auto opacity-70 invert-0" />
-        <p className="mt-3 text-xs text-[#0b1f3a]/40">
+      <footer className="bg-[#050d1a] py-8 text-center border-t border-white/10">
+        <img src={cscLogo} alt="Clinical Supply Co." className="h-9 w-auto mx-auto opacity-80" />
+        <p className="mt-3 text-xs text-white/35">
           © {new Date().getFullYear()} Clinical Supply Company
         </p>
       </footer>
