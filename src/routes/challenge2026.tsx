@@ -380,6 +380,10 @@ function Challenge2026Page() {
                 Request free samples
               </a>
             </div>
+            <p className="mt-6 text-xs md:text-sm text-[#000e32]/50 font-light max-w-xl mx-auto">
+              Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
+              team must wear regular nitrile gloves.
+            </p>
           </Reveal>
 
         </div>
