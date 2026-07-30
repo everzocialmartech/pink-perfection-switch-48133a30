@@ -313,7 +313,7 @@ function Challenge2026Page() {
             </div>
           </Reveal>
 
-          <Reveal delay={80} className="mt-14">
+          <Reveal delay={80} className="mt-14 rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
             <h3 className="font-serif text-3xl md:text-4xl">Submit your entry</h3>
             <p className="mt-3 text-sm text-[#000e32]/55 font-light">
               Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
@@ -337,7 +337,7 @@ function Challenge2026Page() {
                     value={entry}
                     onChange={(e) => setEntry(e.target.value)}
                     placeholder="Paste your post link"
-                    className="flex-1 rounded-full border border-[#000e32]/15 px-5 py-4 text-sm outline-none focus:border-[#1762ef]"
+                    className="flex-1 rounded-full border border-[#000e32]/15 bg-white px-5 py-4 text-sm outline-none focus:border-[#1762ef]"
                   />
                   <button type="submit" className={BIG_CTA}>
                     Submit
