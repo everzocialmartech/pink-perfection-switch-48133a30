@@ -314,8 +314,17 @@ function Challenge2026Page() {
       </section>
 
       {/* RULES / HOW TO - navy */}
-      <section id="rules" className="bg-[#000e32] text-white py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6">
+      <section id="rules" className="relative overflow-hidden bg-[#000e32] text-white py-16 md:py-20">
+        <div aria-hidden className="wet-drops pointer-events-none absolute inset-0" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 0%, rgba(23,98,239,0.18), transparent 60%)",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-6">
           <Reveal className="text-center">
             <img
               src={cscLogo}
