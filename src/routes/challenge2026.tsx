@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Trophy, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,59 +93,9 @@ export const Route = createFileRoute("/challenge2026")({
   component: Challenge2026Page,
 });
 
-function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        }),
-      { threshold: 0.01, rootMargin: "0px 0px -8% 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-500 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
 const BIG_CTA =
   "group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold tracking-[0.01em] text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]";
 
-const NAV_LINKS: { label: string; hash?: string; href?: string }[] = [
-  { label: "The prize", hash: "prize" },
-  { label: "The rules", hash: "rules" },
-  { label: "Become an ambassador", hash: "ambassador" },
-  { label: "Shop", href: SHOP_URL },
-  { label: "Free samples", href: SAMPLES_URL },
-];
 
 
 function PinkCTA({
@@ -204,9 +154,27 @@ function HashtagChip({ dark = false }: { dark?: boolean }) {
   );
 }
 
+
+type StepDef = { id: string; label: string; next?: string };
+
+const STEPS: StepDef[] = [
+  { id: "hero", label: "The challenge", next: "Accept the challenge" },
+  { id: "beat", label: "Can you beat them?", next: "Yes, what\u2019s the prize?" },
+  { id: "prize", label: "The grand prize", next: "Look up the rules" },
+  { id: "rules", label: "The rules", next: "Become an ambassador" },
+  { id: "ambassador", label: "Ambassador", next: "Need gloves?" },
+  { id: "gear", label: "Need gloves?" },
+];
+
 function Challenge2026Page() {
   const [entry, setEntry] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(0);
+
+  const go = (i: number) => {
+    setStep(Math.max(0, Math.min(STEPS.length - 1, i)));
+    if (typeof window !== "undefined") window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
@@ -215,405 +183,415 @@ function Challenge2026Page() {
     }
   }, []);
 
+  const NextButton = ({ dark = false }: { dark?: boolean }) => {
+    const next = STEPS[step].next;
+    if (!next) return null;
+    return (
+      <button type="button" onClick={() => go(step + 1)} className={BIG_CTA}>
+        {next}
+        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </button>
+    );
+  };
+
+  const BackButton = ({ dark = false }: { dark?: boolean }) =>
+    step === 0 ? null : (
+      <button
+        type="button"
+        onClick={() => go(step - 1)}
+        className={`inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] transition-colors ${
+          dark ? "text-white/45 hover:text-white" : "text-[#2D3142]/45 hover:text-[#2D3142]"
+        }`}
+      >
+        <ArrowRight className="w-3.5 h-3.5 rotate-180" /> Back
+      </button>
+    );
+
   return (
-    <div className="challenge-type min-h-screen bg-white text-[#2D3142] antialiased">
+    <div className="challenge-type min-h-screen bg-white text-[#2D3142] antialiased flex flex-col">
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
-          <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-14 w-auto" />
+          <button type="button" onClick={() => go(0)} aria-label="Back to the start">
+            <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-14 w-auto" />
+          </button>
           <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-5 md:h-6 w-auto" />
         </div>
-        <nav
-          aria-label="Section navigation"
-          className="border-t border-white/10 bg-[#333745]"
-        >
+        <nav aria-label="Step navigation" className="border-t border-white/10 bg-[#333745]">
           <ul className="max-w-6xl mx-auto flex items-center gap-1 overflow-x-auto px-4 sm:px-6 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-2">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label} className="shrink-0">
-                {link.hash ? (
-                  <a
-                    href={`#${link.hash}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(link.hash!)?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] text-[#03CDC2] transition-colors hover:bg-[#03CDC2]/15 hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                )}
+            {STEPS.map((s, i) => (
+              <li key={s.id} className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => go(i)}
+                  aria-current={i === step ? "step" : undefined}
+                  className={`inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] transition-colors ${
+                    i === step
+                      ? "bg-[#03CDC2]/15 text-[#03CDC2]"
+                      : "text-white/60 hover:bg-white/10 hover:text-white"
+                  }`}
+                >
+                  {s.label}
+                </button>
               </li>
             ))}
+            <li className="shrink-0">
+              <a
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] text-[#03CDC2] transition-colors hover:bg-[#03CDC2]/15 hover:text-white"
+              >
+                Shop
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
 
-      {/* HERO - navy */}
-      <section className="relative overflow-hidden bg-[#2D3142] text-white pt-14 pb-16 md:pt-20 md:pb-20">
-        <img
-          src={challengeHero.url}
-          alt=""
-          aria-hidden
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div aria-hidden className="absolute inset-0 bg-[#2D3142]/80" />
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(3,205,194,0.22) 0%, rgba(45,49,66,0) 70%)",
-          }}
-        />
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#03CDC2]/40 bg-[#03CDC2]/10 px-4 py-1.5 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#03CDC2]">
-            The Posi-Prene Challenge
-          </div>
-
-          <h1 className="font-serif font-normal uppercase tracking-tight leading-[1.03] text-[2.5rem] sm:text-6xl md:text-7xl mt-7 animate-flash-blur text-balance">
-            <span className="animate-shh block text-white tracking-[0.35em] text-[1.5rem] sm:text-3xl md:text-4xl mb-2">
-              Shh&hellip;
-            </span>
-            You&rsquo;ve Been{" "}
-            <em className="italic font-light text-[#03CDC2]">Challenged</em>
-          </h1>
-
-          <p className="mt-5 max-w-lg mx-auto text-base md:text-lg text-white/65 font-light animate-hero-rise delay-150">
-            Posi-Prene vs. Standard nitrile on wet hands.
-            <br />
-            Race it. Film it. Post it.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3 animate-hero-rise delay-300">
-            <a
-              href="#rules"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
+      <main key={step} className="flex-1 animate-hero-rise">
+        {/* STEP 0 - HERO */}
+        {step === 0 && (
+          <section className="relative overflow-hidden bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+            <img src={challengeHero.url} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
+            <div aria-hidden className="absolute inset-0 bg-[#2D3142]/80" />
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(3,205,194,0.22) 0%, rgba(45,49,66,0) 70%)",
               }}
-              className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-9 py-4 text-[0.95rem] font-medium text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
-            >
-              <span
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(3,205,194,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
-              />
-              <Lock className="relative w-4 h-4 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="relative">See the rules</span>
-              <ArrowRight className="relative w-4 h-4 opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-1" />
-            </a>
-          </div>
-
-        </div>
-      </section>
-
-      {/* PRIZE - white */}
-      <section id="prize" className="relative overflow-hidden bg-white py-16 md:py-20 scroll-mt-28">
-        {/* soft light drift */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
-          }}
-        />
-        <div className="relative max-w-5xl mx-auto px-6">
-          <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
-            {/* Left: the prize */}
-            <Reveal>
-              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#00857E]/40">
-                <Trophy className="h-7 w-7 text-[#00857E]" strokeWidth={1.2} />
-              </div>
-              <Eyebrow>The grand prize</Eyebrow>
-              <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
-                Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
-              </h2>
-
-              <ul className="mt-7 space-y-3">
-                {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                  <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/75 font-light">
-                    <span aria-hidden className="h-px w-6 shrink-0 bg-[#00857E]" />
-                    {spec}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
-                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
-                <p className="text-[0.95rem] md:text-base text-[#2D3142] font-normal">
-                  Most likes by the deadline wins.
-                </p>
+            />
+            <div className="relative max-w-4xl mx-auto px-6 text-center">
+              <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#03CDC2]/40 bg-[#03CDC2]/10 px-4 py-1.5 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#03CDC2]">
+                The Posi-Prene Challenge
               </div>
 
-              <a
-                href="#rules"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className={`${BIG_CTA} mt-9`}
-              >
-                Take the challenge
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </Reveal>
+              <h1 className="font-serif font-normal uppercase tracking-tight leading-[1.03] text-[2.5rem] sm:text-6xl md:text-7xl mt-7 animate-flash-blur text-balance">
+                <span className="animate-shh block text-white tracking-[0.35em] text-[1.5rem] sm:text-3xl md:text-4xl mb-2">
+                  Shh&hellip;
+                </span>
+                You&rsquo;ve Been <em className="italic font-light text-[#03CDC2]">Challenged</em>
+              </h1>
 
-            {/* Right: status card */}
-            <Reveal delay={120}>
-              <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
-                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
-                  </span>
-                  Most likes wins
+              <p className="mt-5 max-w-lg mx-auto text-base md:text-lg text-white/65 font-light animate-hero-rise delay-150">
+                Posi-Prene vs. Standard nitrile on wet hands.
+                <br />
+                Race it. Film it. Post it.
+              </p>
+
+              <div className="mt-9 flex justify-center animate-hero-rise delay-300">
+                <NextButton />
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* STEP 1 - CAN YOU BEAT THEM */}
+        {step === 1 && (
+          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 80% 60% at 20% 15%, rgba(3,205,194,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 88% 88%, rgba(200,55,138,0.10) 0%, rgba(255,255,255,0) 62%)",
+              }}
+            />
+            <div className="relative max-w-5xl mx-auto px-6 w-full">
+              <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-14 md:items-center">
+                <div>
+                  <Eyebrow>The competition</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1] text-[#2D3142]">
+                    Can your practice beat them all?
+                  </h2>
+                  <p className="mt-6 max-w-md text-base md:text-lg text-[#333745]/75 font-light">
+                    Every team that races posts their video. The one with the most likes at the
+                    deadline takes the prize.
+                  </p>
+                  <div className="mt-9 flex flex-wrap items-center gap-5">
+                    <NextButton />
+                    <BackButton />
+                  </div>
                 </div>
 
-                <div className="mt-4">
-                  <LikeCounter />
+                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
+                    </span>
+                    Most likes wins
+                  </div>
+                  <div className="mt-4">
+                    <LikeCounter />
+                  </div>
+                  <p className="mt-3 text-xs text-[#333745]/55 font-light">
+                    Example only. Your entry&rsquo;s likes start counting the moment you post.
+                  </p>
                 </div>
-                <p className="mt-3 text-xs text-[#333745]/55 font-light">
-                  Example only. Your entry&rsquo;s likes start counting the moment you post.
-                </p>
+              </div>
+            </div>
+          </section>
+        )}
 
-                <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
+        {/* STEP 2 - PRIZE */}
+        {step === 2 && (
+          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
+              }}
+            />
+            <div className="relative max-w-5xl mx-auto px-6 w-full">
+              <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
+                <div>
+                  <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#00857E]/40">
+                    <Trophy className="h-7 w-7 text-[#00857E]" strokeWidth={1.2} />
+                  </div>
+                  <Eyebrow>The grand prize</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
+                    Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
+                  </h2>
+
+                  <ul className="mt-7 space-y-3">
+                    {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
+                      <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/75 font-light">
+                        <span aria-hidden className="h-px w-6 shrink-0 bg-[#00857E]" />
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
+                    <p className="text-[0.95rem] md:text-base text-[#2D3142] font-normal">
+                      Most likes by the deadline wins.
+                    </p>
+                  </div>
+
+                  <div className="mt-9 flex flex-wrap items-center gap-5">
+                    <NextButton />
+                    <BackButton />
+                  </div>
+                </div>
+
+                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
                   <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
                     Head start
                   </p>
                   <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
-                    <strong className="font-semibold text-[#2D3142]">Loyal Posi-Prene users</strong>{" "}
-                    get a full month of advantage to gather likes before the challenge goes public.
+                    <strong className="font-semibold text-[#2D3142]">Loyal Posi-Prene users</strong> get
+                    a full month of advantage to gather likes before the challenge goes public.
                   </p>
+                  <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                      Tag your post
+                    </p>
+                    <div className="mt-3">
+                      <HashtagChip />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* RULES / HOW TO - navy */}
-      <section id="rules" className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20 scroll-mt-28">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 0%, rgba(3,205,194,0.16), transparent 60%)",
-          }}
-        />
-        <div className="relative max-w-5xl mx-auto px-6">
-          <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
-            {/* Sticky left rail */}
-            <Reveal className="md:sticky md:top-28">
-              <img
-                src={cscLogo}
-                alt="Clinical Supply Company"
-                className="h-10 md:h-12 w-auto mb-5"
-              />
-              <Eyebrow dark>Official rules</Eyebrow>
-              <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.05]">
-                Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
-              </h2>
-              <p className="mt-5 text-sm text-white/60 font-light max-w-xs">
-                Four steps, about five minutes. Tag your post so we can count the likes.
-              </p>
-              <div className="mt-6">
-                <HashtagChip dark />
-              </div>
-            </Reveal>
-
-            {/* Numbered timeline */}
-            <ol className="relative border-l border-white/12 pl-8 md:pl-10 space-y-8">
-              {[
-                ["01", "Gather your team.", "Two or more people, any operatory."],
-                ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
-                ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
-                ["04", "Film it and post it.", "Instagram or Facebook, tag Clinical Supply Company and use the hashtag."],
-              ].map(([n, title, body], i) => (
-                <Reveal key={n} delay={i * 70}>
-                  <li className="relative">
-                    <span
-                      aria-hidden
-                      className="absolute -left-[2.6rem] md:-left-[3.1rem] top-0 flex h-9 w-9 items-center justify-center rounded-full border border-[#03CDC2]/40 bg-[#2D3142] font-serif text-sm text-[#03CDC2]"
-                    >
-                      {n}
-                    </span>
-                    <h3 className="font-serif text-2xl md:text-[1.75rem] leading-tight">{title}</h3>
-                    <p className="mt-2 text-sm md:text-base text-white/65 font-light">{body}</p>
-                  </li>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
-
-          <Reveal className="mt-14 flex flex-col sm:flex-row justify-center gap-3">
-            <a
-              href={FB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-            >
-              <Facebook className="w-4 h-4" /> Follow on Facebook
-            </a>
-            <a
-              href={IG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
-            >
-              <Instagram className="w-4 h-4" /> Follow on Instagram
-            </a>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* NEED GLOVES + ENTER - light */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl"
-              />
-              <div className="relative">
-                <Eyebrow>Gear up</Eyebrow>
-                <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
-                  Need gloves?
-                  <span className="block mt-2 text-[#333745]/80">
-                    You can still take the challenge
-                  </span>
-                </h2>
-                <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                  <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
-                  <a
-                    href={SAMPLES_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
-                  >
-                    Request free samples
-                  </a>
-                </div>
-                <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
-                  Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
-                  the team must wear regular nitrile gloves.
-                </p>
-                <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
-                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
-                    &ldquo;PosiPrene gloves are the{" "}
-                    <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
-                    with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
-                    no latex. Once you try them, you won&rsquo;t go back!&rdquo;
-                  </blockquote>
-                </figure>
               </div>
             </div>
-          </Reveal>
+          </section>
+        )}
 
-        </div>
-      </section>
-
-      {/* AMBASSADOR - navy */}
-      <section id="ambassador" className="bg-[#2D3142] text-white py-16 md:py-20 text-center scroll-mt-28">
-        <div className="max-w-2xl mx-auto px-6">
-          <Reveal>
-            <img
-              src={posiPreneLogo.url}
-              alt="Posi-Prene"
-              className="mx-auto mb-6 h-8 md:h-10 w-auto"
+        {/* STEP 3 - RULES */}
+        {step === 3 && (
+          <section className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20 min-h-[calc(100vh-6.5rem)]">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{ background: "radial-gradient(ellipse at 50% 0%, rgba(3,205,194,0.16), transparent 60%)" }}
             />
-            <div className="flex justify-center">
-              <Eyebrow dark>Become an Ambassador</Eyebrow>
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
-              Your video could lead to something bigger
-            </h2>
-            <p className="mt-6 mx-auto max-w-xl text-base md:text-lg text-white/75 font-light">
-              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
-              Ambassador partnership.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <a
-                href="#rules"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className={BIG_CTA}
-              >
-                Take the challenge
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
-            </div>
-            <p className="mt-6 text-xs text-white/35 font-light">
-              Participation does not guarantee selection. Winner selection and eligibility are
-              subject to the Official Rules.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+            <div className="relative max-w-5xl mx-auto px-6">
+              <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
+                <div>
+                  <img src={cscLogo} alt="Clinical Supply Company" className="h-10 md:h-12 w-auto mb-5" />
+                  <Eyebrow dark>Official rules</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.05]">
+                    Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
+                  </h2>
+                  <p className="mt-5 text-sm text-white/60 font-light max-w-xs">
+                    Four steps, about five minutes. Tag your post so we can count the likes.
+                  </p>
+                  <div className="mt-6">
+                    <HashtagChip dark />
+                  </div>
+                </div>
 
-      {/* SUBMIT ENTRY - white */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Reveal className="rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
-            <Eyebrow>This goes directly to the CSC team</Eyebrow>
-            <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-            <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
-              Tag Clinical Supply Company · keep your post public.
-            </p>
-            <div className="mt-4">
-              <HashtagChip />
+                <ol className="relative border-l border-white/12 pl-8 md:pl-10 space-y-8">
+                  {[
+                    ["01", "Gather your team.", "Two or more people, any operatory."],
+                    ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
+                    ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
+                    ["04", "Film it and post it.", "Instagram or Facebook, tag Clinical Supply Company and use the hashtag."],
+                  ].map(([n, title, body]) => (
+                    <li key={n} className="relative">
+                      <span
+                        aria-hidden
+                        className="absolute -left-[2.6rem] md:-left-[3.1rem] top-0 flex h-9 w-9 items-center justify-center rounded-full border border-[#03CDC2]/40 bg-[#2D3142] font-serif text-sm text-[#03CDC2]"
+                      >
+                        {n}
+                      </span>
+                      <h3 className="font-serif text-2xl md:text-[1.75rem] leading-tight">{title}</h3>
+                      <p className="mt-2 text-sm md:text-base text-white/65 font-light">{body}</p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={FB_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  <Facebook className="w-4 h-4" /> Follow on Facebook
+                </a>
+                <a
+                  href={IG_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  <Instagram className="w-4 h-4" /> Follow on Instagram
+                </a>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-5">
+                <NextButton dark />
+                <BackButton dark />
+              </div>
             </div>
-            <form
-              className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
-              onSubmit={(e) => {
-                e.preventDefault();
-                if (entry.trim()) setSubmitted(true);
-              }}
-            >
-              {submitted ? (
-                <p className="w-full text-sm text-[#2D3142]/70 font-light">
-                  Entry received. Keep your post public so we can count the likes.
+          </section>
+        )}
+
+        {/* STEP 4 - AMBASSADOR */}
+        {step === 4 && (
+          <section className="bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16 text-center">
+            <div className="max-w-2xl mx-auto px-6">
+              <img src={posiPreneLogo.url} alt="Posi-Prene" className="mx-auto mb-6 h-8 md:h-10 w-auto" />
+              <div className="flex justify-center">
+                <Eyebrow dark>Become an Ambassador</Eyebrow>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
+                Your video could lead to something bigger
+              </h2>
+              <p className="mt-6 mx-auto max-w-xl text-base md:text-lg text-white/75 font-light">
+                Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
+                Ambassador partnership.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center justify-center gap-5">
+                <NextButton dark />
+                <BackButton dark />
+              </div>
+              <p className="mt-6 text-xs text-white/35 font-light">
+                Participation does not guarantee selection. Winner selection and eligibility are
+                subject to the Official Rules.
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* STEP 5 - NEED GLOVES + SUBMIT */}
+        {step === 5 && (
+          <section className="bg-white py-14 md:py-20 min-h-[calc(100vh-6.5rem)]">
+            <div className="max-w-4xl mx-auto px-6">
+              <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
+                <div aria-hidden className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl" />
+                <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl" />
+                <div className="relative">
+                  <Eyebrow>Gear up</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
+                    Need gloves?
+                    <span className="block mt-2 text-[#333745]/80">You can still take the challenge</span>
+                  </h2>
+                  <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                    <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
+                    <a
+                      href={SAMPLES_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
+                    >
+                      Request free samples
+                    </a>
+                  </div>
+                  <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
+                    Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
+                    team must wear regular nitrile gloves.
+                  </p>
+                  <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
+                    <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
+                      &ldquo;PosiPrene gloves are the{" "}
+                      <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
+                      with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no
+                      latex. Once you try them, you won&rsquo;t go back!&rdquo;
+                    </blockquote>
+                  </figure>
+                </div>
+              </div>
+
+              <div className="mt-10 rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12 text-center">
+                <div className="flex justify-center">
+                  <Eyebrow>This goes directly to the CSC team</Eyebrow>
+                </div>
+                <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
+                <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
+                  Tag Clinical Supply Company · keep your post public.
                 </p>
-              ) : (
-                <>
-                  <input
-                    type="url"
-                    required
-                    value={entry}
-                    onChange={(e) => setEntry(e.target.value)}
-                    placeholder="Paste your post link"
-                    aria-label="Your post link"
-                    className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
-                  />
-                  <button
-                    type="submit"
-                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]"
-                  >
-                    Submit
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </>
-              )}
-            </form>
-          </Reveal>
-        </div>
-      </section>
+                <div className="mt-4">
+                  <HashtagChip />
+                </div>
+                <form
+                  className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    if (entry.trim()) setSubmitted(true);
+                  }}
+                >
+                  {submitted ? (
+                    <p className="w-full text-sm text-[#2D3142]/70 font-light">
+                      Entry received. Keep your post public so we can count the likes.
+                    </p>
+                  ) : (
+                    <>
+                      <input
+                        type="url"
+                        required
+                        value={entry}
+                        onChange={(e) => setEntry(e.target.value)}
+                        placeholder="Paste your post link"
+                        aria-label="Your post link"
+                        className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
+                      />
+                      <button
+                        type="submit"
+                        className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]"
+                      >
+                        Submit
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </>
+                  )}
+                </form>
+              </div>
+
+              <div className="mt-8 flex justify-center">
+                <BackButton />
+              </div>
+            </div>
+          </section>
+        )}
+      </main>
 
       <footer className="bg-[#2D3142] py-8 text-center border-t border-white/10">
         <img src={cscLogo} alt="Clinical Supply Co." className="h-9 w-auto mx-auto opacity-80" />
