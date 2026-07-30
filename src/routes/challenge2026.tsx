@@ -249,7 +249,7 @@ function Challenge2026Page() {
             </div>
             <Eyebrow>The prize</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Three months of <em className="italic text-[#1762ef]">Posi-Prene</em>
+              Three months of <em className="italic text-[#1762ef]">FREE</em> Posi-Prene Gloves
             </h2>
             <p className="mt-4 text-[#000e32]/60 font-light">
               Three cases, one a month. Most likes by the deadline wins.
