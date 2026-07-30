@@ -138,7 +138,7 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
         fill="#C8378A"
       />
       <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
-        {count.toLocaleString()}
+        {count.toLocaleString("en-US")}
       </span>
       <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
         likes
