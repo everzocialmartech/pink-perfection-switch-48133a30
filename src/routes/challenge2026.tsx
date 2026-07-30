@@ -187,12 +187,12 @@ function Challenge2026Page() {
         <div className="relative w-full max-w-5xl mx-auto px-6 text-center">
           <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[oklch(0.65_0.22_350/0.4)] bg-[oklch(0.65_0.22_350/0.1)] px-4 py-1.5 text-[10px] font-bold tracking-[0.32em] uppercase text-[oklch(0.82_0.14_350)]">
             <Lock className="w-3 h-3" />
-            You've been challenged
+            The Posi-Prene Challenge
           </div>
 
-          <h1 className="font-serif font-normal tracking-tight leading-[1.04] text-[2.5rem] sm:text-6xl md:text-7xl mt-8 md:mt-10 max-w-4xl mx-auto animate-hero-rise text-balance">
-            Think Your Dental Practice Has the{" "}
-            <em className="italic font-light text-[oklch(0.78_0.16_350)]">Fastest Hands?</em>
+          <h1 className="font-serif font-normal tracking-tight leading-[1.04] text-[2.5rem] sm:text-6xl md:text-7xl mt-8 md:mt-10 max-w-4xl mx-auto animate-flash-blur text-balance uppercase">
+            You&rsquo;ve Been{" "}
+            <em className="italic font-light text-[oklch(0.78_0.16_350)]">Challenged</em>
           </h1>
 
           <p className="mt-7 max-w-2xl mx-auto text-base md:text-lg text-white/60 font-light leading-relaxed animate-hero-rise delay-150">
