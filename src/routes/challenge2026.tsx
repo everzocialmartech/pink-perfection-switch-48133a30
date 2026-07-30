@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy } from "lucide-react";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
@@ -91,61 +91,6 @@ const NAV_LINKS: { label: string; hash?: string; href?: string }[] = [
   { label: "Shop", href: SHOP_URL },
   { label: "Free samples", href: SAMPLES_URL },
 ];
-
-function LikeCounter({ target = 2847 }: { target?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(target);
-  const [beat, setBeat] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let raf = 0;
-    setCount(0);
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting) return;
-        io.disconnect();
-        setBeat(true);
-        const start = performance.now();
-        const duration = 2200;
-        const tick = (now: number) => {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          setCount(Math.round(target * eased));
-          if (t < 1) raf = requestAnimationFrame(tick);
-          else setBeat(false);
-        };
-        raf = requestAnimationFrame(tick);
-      },
-      { threshold: 0.4 }
-    );
-    io.observe(el);
-    return () => {
-      io.disconnect();
-      cancelAnimationFrame(raf);
-    };
-  }, [target]);
-
-  return (
-    <div
-      ref={ref}
-      aria-live="off"
-      className="inline-flex items-baseline gap-3 border-b-2 border-[#03CDC2] pb-2"
-    >
-      <Heart
-        className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
-        fill="#C8378A"
-      />
-      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
-        {count.toLocaleString("en-US")}
-      </span>
-      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
-        likes
-      </span>
-    </div>
-  );
-}
 
 
 function PinkCTA({
@@ -370,7 +315,7 @@ function Challenge2026Page() {
               </a>
             </Reveal>
 
-            {/* Right: live leaderboard card */}
+            {/* Right: status card */}
             <Reveal delay={120}>
               <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
                 <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
@@ -378,14 +323,14 @@ function Challenge2026Page() {
                     <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
                   </span>
-                  Likes to beat
+                  Now open
                 </div>
 
-                <div className="mt-4">
-                  <LikeCounter />
-                </div>
-                <p className="mt-3 text-xs text-[#333745]/55 font-light">
-                  Current leader &middot; @posiprene.race
+                <p className="mt-4 font-serif text-3xl md:text-4xl leading-[1.15] text-[#2D3142]">
+                  Be the first entry on the board.
+                </p>
+                <p className="mt-3 text-sm text-[#333745]/60 font-light">
+                  No videos posted yet. The like count starts the moment you enter.
                 </p>
 
                 <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
