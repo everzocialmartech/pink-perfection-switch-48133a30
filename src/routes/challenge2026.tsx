@@ -77,7 +77,7 @@ function Reveal({
 }
 
 const BIG_CTA =
-  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#C8378A] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#A82B72] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
+  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#C8378A] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(200,55,138,0.45)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#A82B72] hover:shadow-[0_26px_60px_-14px_rgba(200,55,138,0.6)]";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
