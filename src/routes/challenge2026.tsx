@@ -340,84 +340,84 @@ function Challenge2026Page() {
 
         {/* STEP 2 - PRIZE */}
         {step === 2 && (
-          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+          <section className="relative overflow-hidden bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
+                  "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.22) 0%, rgba(45,49,66,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(3,205,194,0.14) 0%, rgba(45,49,66,0) 62%)",
               }}
             />
             <div className="relative max-w-5xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
                 <div>
-                  <Eyebrow>The grand prize</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
-                    Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
+                  <Eyebrow dark>The grand prize</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-white leading-[1.1]">
+                    Three months of <em className="italic text-[#FF6FB4]">FREE</em> Posi-Prene Gloves
                   </h2>
 
                   {/* Wrapped-present card holding the prize contents */}
-                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/25 bg-[#C8378A]/[0.06] px-6 pb-6 pt-9 shadow-[0_24px_50px_-32px_rgba(200,55,138,0.6)]">
+                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/40 bg-[#C8378A]/[0.12] px-6 pb-6 pt-9 shadow-[0_24px_50px_-28px_rgba(200,55,138,0.8)]">
                     {/* ribbon */}
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/15"
+                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/25"
                     />
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/15"
+                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/25"
                     />
                     {/* bow */}
                     <span
                       aria-hidden
                       className="absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1"
                     >
-                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#C8378A]" />
-                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
+                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#FF6FB4]" />
+                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
                     </span>
 
-                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF6FB4]">
                       What&rsquo;s inside
                     </p>
                     <ul className="relative mt-4 space-y-3">
                       {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                        <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/80 font-light">
-                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#00857E]" strokeWidth={1.4} />
+                        <li key={spec} className="flex items-center gap-3 text-sm text-white/80 font-light">
+                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#03CDC2]" strokeWidth={1.4} />
                           {spec}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
-                    <p className="text-[0.95rem] md:text-base text-[#2D3142] font-normal">
+                  <div className="mt-8 border-t border-white/15 pt-4 flex items-start gap-3">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#03CDC2]" />
+                    <p className="text-[0.95rem] md:text-base text-white font-normal">
                       Most likes by the deadline wins.
                     </p>
                   </div>
 
                   <div className="mt-9 flex flex-wrap items-center gap-5">
-                    <NextButton />
-                    <BackButton />
+                    <NextButton dark />
+                    <BackButton dark />
                   </div>
                 </div>
 
-                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                <div className="rounded-2xl md:rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(0,0,0,0.6)]">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                     Head start
                   </p>
-                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
-                    <strong className="font-semibold text-[#2D3142]">Loyal Posi-Prene users</strong> get
+                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-white/75 font-light">
+                    <strong className="font-semibold text-white">Loyal Posi-Prene users</strong> get
                     a full month of advantage to gather likes before the challenge goes public.
                   </p>
-                  <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                  <div className="mt-7 border-t border-white/10 pt-6">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                       Tag your post
                     </p>
                     <div className="mt-3">
-                      <HashtagChip />
+                      <HashtagChip dark />
                     </div>
                   </div>
                 </div>
