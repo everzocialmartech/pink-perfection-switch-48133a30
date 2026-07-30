@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
 import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
