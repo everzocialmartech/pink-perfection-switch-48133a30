@@ -373,31 +373,50 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      {/* NEED GLOVES + ENTER - white */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      {/* NEED GLOVES + ENTER - light */}
+      <section className="bg-white py-16 md:py-24">
+        <div className="max-w-4xl mx-auto px-6">
           <Reveal>
-            <h2 className="font-serif text-4xl md:text-5xl">
-              Need gloves?
-              <span className="block mt-2">
-                You can still <em className="italic text-[#03CDC2]">take the challenge</em>
-              </span>
-            </h2>
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
-              <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
-              <a
-                href={SAMPLES_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[#2D3142]/20 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#2D3142] transition-all duration-300 hover:border-[#2D3142] hover:-translate-y-1"
-              >
-                Request free samples
-              </a>
+            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16 text-center">
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl"
+              />
+              <div className="relative">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="h-px w-8 bg-[#03CDC2]" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#03CDC2]">
+                    Gear up
+                  </span>
+                  <span className="h-px w-8 bg-[#03CDC2]" />
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl mt-6 text-[#2D3142] leading-[1.15]">
+                  Need gloves?
+                  <span className="block mt-2 text-[#333745]/80">
+                    You can still <em className="italic text-[#C8378A]">take the challenge</em>
+                  </span>
+                </h2>
+                <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+                  <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
+                  <a
+                    href={SAMPLES_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full border-2 border-[#03CDC2] bg-white/70 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#2D3142] transition-all duration-300 hover:-translate-y-1 hover:bg-[#03CDC2] hover:text-[#2D3142] hover:shadow-[0_20px_50px_-18px_rgba(3,205,194,0.8)]"
+                  >
+                    Request free samples
+                  </a>
+                </div>
+                <p className="mt-8 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl mx-auto">
+                  Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
+                  the team must wear regular nitrile gloves.
+                </p>
+              </div>
             </div>
-            <p className="mt-6 text-xs md:text-sm text-[#2D3142]/50 font-light max-w-xl mx-auto">
-              Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
-              team must wear regular nitrile gloves.
-            </p>
           </Reveal>
 
         </div>
