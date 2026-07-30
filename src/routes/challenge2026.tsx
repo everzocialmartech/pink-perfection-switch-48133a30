@@ -218,7 +218,7 @@ function Challenge2026Page() {
                 e.preventDefault();
                 document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={BIG_CTA}
+              className={`${BIG_CTA} bg-[#1762ef] shadow-[0_20px_50px_-14px_rgba(23,98,239,0.85)] hover:bg-[#114b9c] hover:shadow-[0_26px_60px_-14px_rgba(23,98,239,0.95)]`}
             >
               Look up the rules
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
