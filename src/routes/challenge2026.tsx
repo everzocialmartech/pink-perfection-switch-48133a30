@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Trophy, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,59 +93,9 @@ export const Route = createFileRoute("/challenge2026")({
   component: Challenge2026Page,
 });
 
-function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        }),
-      { threshold: 0.01, rootMargin: "0px 0px -8% 0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-500 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-}
-
 const BIG_CTA =
   "group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold tracking-[0.01em] text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]";
 
-const NAV_LINKS: { label: string; hash?: string; href?: string }[] = [
-  { label: "The prize", hash: "prize" },
-  { label: "The rules", hash: "rules" },
-  { label: "Become an ambassador", hash: "ambassador" },
-  { label: "Shop", href: SHOP_URL },
-  { label: "Free samples", href: SAMPLES_URL },
-];
 
 
 function PinkCTA({
