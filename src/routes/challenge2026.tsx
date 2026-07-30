@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
+import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
 const SHOP_URL =
@@ -184,6 +185,12 @@ function Challenge2026Page() {
 
       {/* HERO - navy */}
       <section className="relative overflow-hidden bg-[#000e32] text-white pt-14 pb-16 md:pt-20 md:pb-20">
+        <img
+          src={challengeHero.url}
+          alt="Clinician pulling on a Posi-Prene glove"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div aria-hidden className="absolute inset-0 bg-[#000e32]/80" />
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
