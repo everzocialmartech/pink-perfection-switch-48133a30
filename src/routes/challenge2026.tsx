@@ -281,7 +281,7 @@ function Challenge2026Page() {
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#1762ef]/10 ring-1 ring-[#1762ef]/30 shadow-[0_18px_40px_-18px_rgba(23,98,239,0.7)]">
               <Trophy className="h-9 w-9 text-[#1762ef]" strokeWidth={1.6} />
             </div>
-            <Eyebrow>The prize</Eyebrow>
+            <Eyebrow>The grand prize</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
               Three months of <em className="italic text-[#1762ef]">FREE</em> Posi-Prene Gloves
             </h2>
