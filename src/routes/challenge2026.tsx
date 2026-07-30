@@ -164,15 +164,15 @@ function Challenge2026Page() {
     <div className="challenge-type min-h-screen bg-white text-[#2D3142] antialiased">
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-20 md:h-24 flex items-center justify-between gap-4">
-          <img src={cscLogo} alt="Clinical Supply Co." className="h-14 md:h-[4.5rem] w-auto" />
-          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-6 md:h-8 w-auto" />
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
+          <img src={cscLogo} alt="Clinical Supply Co." className="h-9 md:h-11 w-auto" />
+          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-4 md:h-5 w-auto" />
         </div>
         <nav
           aria-label="Section navigation"
           className="border-t border-white/10 bg-[#333745]"
         >
-          <ul className="max-w-6xl mx-auto flex items-center gap-1 overflow-x-auto px-4 sm:px-6 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-2">
+          <ul className="max-w-6xl mx-auto flex items-center gap-1 overflow-x-auto px-4 sm:px-6 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-2">
             {NAV_LINKS.map((link) => (
               <li key={link.label} className="shrink-0">
                 {link.hash ? (
@@ -182,7 +182,7 @@ function Challenge2026Page() {
                       e.preventDefault();
                       document.getElementById(link.hash!)?.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="inline-flex items-center rounded-full px-3.5 py-2 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                    className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] text-white/70 transition-colors hover:bg-white/10 hover:text-white"
                   >
                     {link.label}
                   </a>
@@ -191,7 +191,7 @@ function Challenge2026Page() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full px-3.5 py-2 text-[11px] md:text-xs font-bold uppercase tracking-[0.14em] text-[#03CDC2] transition-colors hover:bg-[#03CDC2]/15 hover:text-white"
+                    className="inline-flex items-center rounded-full px-3 py-1.5 text-[10px] md:text-[11px] font-bold uppercase tracking-[0.14em] text-[#03CDC2] transition-colors hover:bg-[#03CDC2]/15 hover:text-white"
                   >
                     {link.label}
                   </a>
