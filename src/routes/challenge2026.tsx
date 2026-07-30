@@ -370,7 +370,7 @@ function Challenge2026Page() {
               </a>
             </Reveal>
 
-            {/* Right: live leaderboard card */}
+            {/* Right: status card */}
             <Reveal delay={120}>
               <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
                 <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
@@ -378,14 +378,14 @@ function Challenge2026Page() {
                     <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
                   </span>
-                  Likes to beat
+                  Now open
                 </div>
 
-                <div className="mt-4">
-                  <LikeCounter />
-                </div>
-                <p className="mt-3 text-xs text-[#333745]/55 font-light">
-                  Current leader &middot; @posiprene.race
+                <p className="mt-4 font-serif text-3xl md:text-4xl leading-[1.15] text-[#2D3142]">
+                  Be the first entry on the board.
+                </p>
+                <p className="mt-3 text-sm text-[#333745]/60 font-light">
+                  No videos posted yet. The like count starts the moment you enter.
                 </p>
 
                 <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
