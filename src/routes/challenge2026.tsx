@@ -77,7 +77,7 @@ function Reveal({
 }
 
 const BIG_CTA =
-  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[oklch(0.62_0.25_350)] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
+  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e0521a] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
 
 function PinkCTA({
   href,
@@ -139,7 +139,7 @@ function Challenge2026Page() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(255,101,39,0.16) 0%, rgba(0,14,50,0) 70%)",
+              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(23,98,239,0.28) 0%, rgba(0,14,50,0) 70%)",
           }}
         />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
@@ -177,7 +177,7 @@ function Challenge2026Page() {
               className="pointer-events-none absolute inset-0 -z-10"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 60%, rgba(255,101,39,0.4) 0%, transparent 62%)",
+                  "radial-gradient(ellipse at 50% 60%, rgba(23,98,239,0.45) 0%, transparent 62%)",
                 filter: "blur(40px)",
               }}
             />
