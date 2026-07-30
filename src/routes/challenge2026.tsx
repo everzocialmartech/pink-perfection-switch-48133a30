@@ -50,10 +50,10 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
         className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
         fill="#C8378A"
       />
-      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
+      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-white">
         {count.toLocaleString("en-US")}
       </span>
-      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
+      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/60">
         likes
       </span>
     </div>
@@ -208,7 +208,7 @@ function Challenge2026Page() {
     );
 
   return (
-    <div className="challenge-type min-h-screen bg-white text-[#2D3142] antialiased flex flex-col">
+    <div className="challenge-type min-h-screen bg-[#2D3142] text-white antialiased flex flex-col">
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
@@ -292,44 +292,44 @@ function Challenge2026Page() {
 
         {/* STEP 1 - CAN YOU BEAT THEM */}
         {step === 1 && (
-          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+          <section className="relative overflow-hidden bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 80% 60% at 20% 15%, rgba(3,205,194,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 88% 88%, rgba(200,55,138,0.10) 0%, rgba(255,255,255,0) 62%)",
+                  "radial-gradient(ellipse 80% 60% at 20% 15%, rgba(3,205,194,0.18) 0%, rgba(45,49,66,0) 62%), radial-gradient(ellipse 80% 60% at 88% 88%, rgba(200,55,138,0.16) 0%, rgba(45,49,66,0) 62%)",
               }}
             />
             <div className="relative max-w-5xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-14 md:items-center">
                 <div>
-                  <Eyebrow>The competition</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1] text-[#2D3142]">
+                  <Eyebrow dark>The competition</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1] text-white">
                     Can your practice beat them all?
                   </h2>
-                  <p className="mt-6 max-w-md text-base md:text-lg text-[#333745]/75 font-light">
+                  <p className="mt-6 max-w-md text-base md:text-lg text-white/70 font-light">
                     Every team that races posts their video. The one with the most likes at the
                     deadline takes the prize.
                   </p>
                   <div className="mt-9 flex flex-wrap items-center gap-5">
-                    <NextButton />
-                    <BackButton />
+                    <NextButton dark />
+                    <BackButton dark />
                   </div>
                 </div>
 
-                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
-                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                <div className="rounded-2xl md:rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(0,0,0,0.6)]">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#03CDC2]" />
                     </span>
                     Most likes wins
                   </div>
                   <div className="mt-4">
                     <LikeCounter />
                   </div>
-                  <p className="mt-3 text-xs text-[#333745]/55 font-light">
+                  <p className="mt-3 text-xs text-white/50 font-light">
                     Example only. Your entry&rsquo;s likes start counting the moment you post.
                   </p>
                 </div>
