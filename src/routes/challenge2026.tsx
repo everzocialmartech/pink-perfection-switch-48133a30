@@ -315,7 +315,6 @@ function Challenge2026Page() {
 
       {/* RULES / HOW TO - navy */}
       <section id="rules" className="relative overflow-hidden bg-[#000e32] text-white py-16 md:py-20">
-        <div aria-hidden className="wet-drops pointer-events-none absolute inset-0" />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
