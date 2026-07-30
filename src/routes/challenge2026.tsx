@@ -77,7 +77,7 @@ function Reveal({
 }
 
 const BIG_CTA =
-  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff3d8b] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,61,139,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[oklch(0.62_0.25_350)] hover:shadow-[0_26px_60px_-14px_rgba(255,61,139,0.95)]";
+  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[oklch(0.62_0.25_350)] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
 
 function PinkCTA({
   href,
@@ -100,10 +100,10 @@ function Eyebrow({ dark = false, children }: { dark?: boolean; children: React.R
   return (
     <div
       className={`inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase ${
-        dark ? "text-white/55" : "text-[#0b1f3a]/50"
+        dark ? "text-white/55" : "text-[#000e32]/50"
       }`}
     >
-      <span className="h-px w-6 bg-[#ff3d8b]" />
+      <span className="h-px w-6 bg-[#ff6527]" />
       {children}
     </div>
   );
@@ -121,9 +121,9 @@ function Challenge2026Page() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#0b1f3a] font-sans antialiased">
-      <div className="h-[3px] w-full bg-[#ff3d8b]" />
-      <header className="sticky top-0 inset-x-0 z-50 bg-[#050d1a]">
+    <div className="min-h-screen bg-white text-[#000e32] font-sans antialiased">
+      <div className="h-[3px] w-full bg-[#ff6527]" />
+      <header className="sticky top-0 inset-x-0 z-50 bg-[#000e32]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between">
           <img src={cscLogo} alt="Clinical Supply Co." className="h-7 w-auto" />
           <span className="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-white/40">
@@ -133,24 +133,24 @@ function Challenge2026Page() {
       </header>
 
       {/* HERO — navy */}
-      <section className="relative overflow-hidden bg-[#050d1a] text-white pt-14 pb-16 md:pt-20 md:pb-20">
+      <section className="relative overflow-hidden bg-[#000e32] text-white pt-14 pb-16 md:pt-20 md:pb-20">
         <div
           aria-hidden
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(255,61,139,0.16) 0%, rgba(5,13,26,0) 70%)",
+              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(255,101,39,0.16) 0%, rgba(0,14,50,0) 70%)",
           }}
         />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#ff3d8b]/40 bg-[#ff3d8b]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[oklch(0.82_0.14_350)]">
+          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#ff6527]/40 bg-[#ff6527]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#ff9b6b]">
             <Lock className="w-3 h-3" />
             The Posi-Prene Challenge
           </div>
 
           <h1 className="font-serif font-normal uppercase tracking-tight leading-[1.03] text-[2.5rem] sm:text-6xl md:text-7xl mt-7 animate-flash-blur text-balance">
             You&rsquo;ve Been{" "}
-            <em className="italic font-light text-[oklch(0.78_0.16_350)]">Challenged</em>
+            <em className="italic font-light text-[#ff8a52]">Challenged</em>
           </h1>
 
           <p className="mt-5 max-w-lg mx-auto text-base md:text-lg text-white/65 font-light animate-hero-rise delay-150">
@@ -177,7 +177,7 @@ function Challenge2026Page() {
               className="pointer-events-none absolute inset-0 -z-10"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 60%, rgba(255,61,139,0.4) 0%, transparent 62%)",
+                  "radial-gradient(ellipse at 50% 60%, rgba(255,101,39,0.4) 0%, transparent 62%)",
                 filter: "blur(40px)",
               }}
             />
@@ -192,9 +192,9 @@ function Challenge2026Page() {
           <Reveal>
             <Eyebrow>The prize</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Three months of <em className="italic text-[#ff3d8b]">Posi-Prene</em>
+              Three months of <em className="italic text-[#ff6527]">Posi-Prene</em>
             </h2>
-            <p className="mt-4 text-[#0b1f3a]/60 font-light">
+            <p className="mt-4 text-[#000e32]/60 font-light">
               Three cases — one a month. Most likes by the deadline wins.
             </p>
           </Reveal>
@@ -202,12 +202,12 @@ function Challenge2026Page() {
       </section>
 
       {/* RULES / HOW TO — navy */}
-      <section id="rules" className="bg-[#050d1a] text-white py-16 md:py-20">
+      <section id="rules" className="bg-[#000e32] text-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6">
           <Reveal className="text-center">
             <Eyebrow dark>How it works</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Ready. Wet. <em className="italic text-[oklch(0.78_0.16_350)]">Glove!</em>
+              Ready. Wet. <em className="italic text-[#ff8a52]">Glove!</em>
             </h2>
           </Reveal>
 
@@ -220,7 +220,7 @@ function Challenge2026Page() {
             ].map(([n, t], i) => (
               <Reveal key={n} delay={i * 60}>
                 <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                  <span className="font-serif text-2xl text-[#ff3d8b]">{n}</span>
+                  <span className="font-serif text-2xl text-[#ff6527]">{n}</span>
                   <span className="text-sm text-white/75 font-light">{t}</span>
                 </div>
               </Reveal>
@@ -254,7 +254,7 @@ function Challenge2026Page() {
           <Reveal>
             <Eyebrow>Need gloves?</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              You can still <em className="italic text-[#ff3d8b]">take the challenge</em>
+              You can still <em className="italic text-[#ff6527]">take the challenge</em>
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
               <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
@@ -262,7 +262,7 @@ function Challenge2026Page() {
                 href={SAMPLES_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border-2 border-[#0b1f3a]/20 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#0b1f3a] transition-all duration-300 hover:border-[#0b1f3a] hover:-translate-y-1"
+                className="inline-flex items-center justify-center rounded-full border-2 border-[#000e32]/20 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#000e32] transition-all duration-300 hover:border-[#000e32] hover:-translate-y-1"
               >
                 Request free samples
               </a>
@@ -271,7 +271,7 @@ function Challenge2026Page() {
 
           <Reveal delay={80} className="mt-14">
             <h3 className="font-serif text-3xl md:text-4xl">Submit your entry</h3>
-            <p className="mt-3 text-sm text-[#0b1f3a]/55 font-light">
+            <p className="mt-3 text-sm text-[#000e32]/55 font-light">
               Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
             </p>
             <form
@@ -282,7 +282,7 @@ function Challenge2026Page() {
               }}
             >
               {submitted ? (
-                <p className="w-full text-sm text-[#0b1f3a]/70 font-light">
+                <p className="w-full text-sm text-[#000e32]/70 font-light">
                   Entry received — keep your post public so we can count the likes.
                 </p>
               ) : (
@@ -293,7 +293,7 @@ function Challenge2026Page() {
                     value={entry}
                     onChange={(e) => setEntry(e.target.value)}
                     placeholder="Paste your post link"
-                    className="flex-1 rounded-full border border-[#0b1f3a]/15 px-5 py-4 text-sm outline-none focus:border-[#ff3d8b]"
+                    className="flex-1 rounded-full border border-[#000e32]/15 px-5 py-4 text-sm outline-none focus:border-[#ff6527]"
                   />
                   <button type="submit" className={BIG_CTA}>
                     Submit
@@ -307,13 +307,13 @@ function Challenge2026Page() {
       </section>
 
       {/* AMBASSADOR — navy */}
-      <section className="bg-[#050d1a] text-white py-16 md:py-20 text-center">
+      <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
             <Eyebrow dark>Ambassadors</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
               Your video could lead to{" "}
-              <em className="italic text-[oklch(0.78_0.16_350)]">something bigger</em>
+              <em className="italic text-[#ff8a52]">something bigger</em>
             </h2>
             <p className="mt-5 text-white/60 font-light">
               Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
@@ -330,7 +330,7 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      <footer className="bg-[#050d1a] py-8 text-center border-t border-white/10">
+      <footer className="bg-[#000e32] py-8 text-center border-t border-white/10">
         <img src={cscLogo} alt="Clinical Supply Co." className="h-9 w-auto mx-auto opacity-80" />
         <p className="mt-3 text-xs text-white/35">
           © {new Date().getFullYear()} Clinical Supply Company
