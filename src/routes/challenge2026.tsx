@@ -279,6 +279,8 @@ function Challenge2026Page() {
                 Posi-Prene vs. Standard nitrile on wet hands.
                 <br />
                 Race it. Film it. Post it.
+                <br />
+                <span className="text-[#03CDC2] font-normal">Posi-Prene Always Wins.</span>
               </p>
 
               <div className="mt-9 flex justify-center animate-hero-rise delay-300">
