@@ -204,7 +204,7 @@ function Challenge2026Page() {
 
           <h1 className="font-serif font-normal uppercase tracking-tight leading-[1.03] text-[2.5rem] sm:text-6xl md:text-7xl mt-7 animate-flash-blur text-balance">
             You&rsquo;ve Been{" "}
-            <em className="italic font-light text-[#ff8a52]">Challenged</em>
+            <em className="italic font-light text-[#4d8dff]">Challenged</em>
           </h1>
 
           <p className="mt-5 max-w-lg mx-auto text-base md:text-lg text-white/65 font-light animate-hero-rise delay-150">
