@@ -527,16 +527,16 @@ function Challenge2026Page() {
 
         {/* STEP 5 - NEED GLOVES + SUBMIT */}
         {step === 5 && (
-          <section className="bg-white py-14 md:py-20 min-h-[calc(100vh-6.5rem)]">
+          <section className="bg-[#2D3142] text-white py-14 md:py-20 min-h-[calc(100vh-6.5rem)]">
             <div className="max-w-4xl mx-auto px-6">
-              <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
-                <div aria-hidden className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl" />
-                <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-12 md:px-14 md:py-16">
+                <div aria-hidden className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/20 blur-3xl" />
+                <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/20 blur-3xl" />
                 <div className="relative">
-                  <Eyebrow>Gear up</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
+                  <Eyebrow dark>Gear up</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-white leading-[1.15] max-w-xl">
                     Need gloves?
-                    <span className="block mt-2 text-[#333745]/80">You can still take the challenge</span>
+                    <span className="block mt-2 text-white/70">You can still take the challenge</span>
                   </h2>
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
                     <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
@@ -544,19 +544,19 @@ function Challenge2026Page() {
                       href={SAMPLES_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
+                      className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 text-[0.95rem] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#03CDC2] hover:text-[#03CDC2]"
                     >
                       Request free samples
                     </a>
                   </div>
-                  <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
+                  <p className="mt-6 text-xs md:text-sm text-white/55 font-light max-w-xl">
                     Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
                     team must wear regular nitrile gloves.
                   </p>
-                  <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
-                    <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
+                  <figure className="relative mt-10 max-w-2xl border-t border-white/12 pt-7">
+                    <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-white/75">
                       &ldquo;PosiPrene gloves are the{" "}
-                      <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
+                      <strong className="font-semibold text-white">FASTEST</strong> to put on, even
                       with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no
                       latex. Once you try them, you won&rsquo;t go back!&rdquo;
                     </blockquote>
@@ -564,16 +564,16 @@ function Challenge2026Page() {
                 </div>
               </div>
 
-              <div className="mt-10 rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12 text-center">
+              <div className="mt-10 rounded-3xl border border-white/12 bg-[#333745] px-6 py-10 md:px-10 md:py-12 text-center">
                 <div className="flex justify-center">
-                  <Eyebrow>This goes directly to the CSC team</Eyebrow>
+                  <Eyebrow dark>This goes directly to the CSC team</Eyebrow>
                 </div>
                 <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-                <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
+                <p className="mt-3 text-sm text-white/65 font-light">
                   Tag Clinical Supply Company · keep your post public.
                 </p>
                 <div className="mt-4">
-                  <HashtagChip />
+                  <HashtagChip dark />
                 </div>
                 <form
                   className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
@@ -583,7 +583,7 @@ function Challenge2026Page() {
                   }}
                 >
                   {submitted ? (
-                    <p className="w-full text-sm text-[#2D3142]/70 font-light">
+                    <p className="w-full text-sm text-white/70 font-light">
                       Entry received. Keep your post public so we can count the likes.
                     </p>
                   ) : (
@@ -595,7 +595,7 @@ function Challenge2026Page() {
                         onChange={(e) => setEntry(e.target.value)}
                         placeholder="Paste your post link"
                         aria-label="Your post link"
-                        className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
+                        className="flex-1 rounded-full border border-white/20 bg-white/[0.06] px-5 py-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-[#03CDC2] focus:ring-2 focus:ring-[#03CDC2]/30"
                       />
                       <button
                         type="submit"
@@ -610,7 +610,7 @@ function Challenge2026Page() {
               </div>
 
               <div className="mt-8 flex justify-center">
-                <BackButton />
+                <BackButton dark />
               </div>
             </div>
           </section>
