@@ -358,9 +358,11 @@ function Challenge2026Page() {
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal>
-            <Eyebrow>Need gloves?</Eyebrow>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              You can still <em className="italic text-[#1762ef]">take the challenge</em>
+            <h2 className="font-serif text-4xl md:text-5xl">
+              Need gloves?
+              <span className="block mt-2">
+                You can still <em className="italic text-[#1762ef]">take the challenge</em>
+              </span>
             </h2>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
               <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
