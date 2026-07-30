@@ -480,7 +480,7 @@ function Challenge2026Page() {
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl"
@@ -490,36 +490,30 @@ function Challenge2026Page() {
                 className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl"
               />
               <div className="relative">
-                <div className="flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#00857E]" />
-                  <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.24em] text-[#00857E]">
-                    Gear up
-                  </span>
-                  <span className="h-px w-8 bg-[#00857E]" />
-                </div>
-                <h2 className="font-serif text-4xl md:text-5xl mt-6 text-[#2D3142] leading-[1.15]">
+                <Eyebrow>Gear up</Eyebrow>
+                <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
                   Need gloves?
                   <span className="block mt-2 text-[#333745]/80">
-                    You can still <em className="italic text-[#C8378A]">take the challenge</em>
+                    You can still take the challenge
                   </span>
                 </h2>
-                <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
                   <a
                     href={SAMPLES_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full border-2 border-[#03CDC2] bg-white/70 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#2D3142] transition-all duration-300 hover:-translate-y-1 hover:bg-[#03CDC2] hover:text-[#2D3142] hover:shadow-[0_20px_50px_-18px_rgba(3,205,194,0.8)]"
+                    className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
                   >
                     Request free samples
                   </a>
                 </div>
-                <p className="mt-8 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl mx-auto">
+                <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
                   the team must wear regular nitrile gloves.
                 </p>
-                <figure className="relative mx-auto mt-10 max-w-md md:max-w-2xl rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white/70 px-5 py-6 md:px-10 md:py-9 text-left shadow-[0_18px_40px_-26px_rgba(45,49,66,0.4)]">
-                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/80">
+                <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
+                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
                     &ldquo;PosiPrene gloves are the{" "}
                     <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
                     with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
