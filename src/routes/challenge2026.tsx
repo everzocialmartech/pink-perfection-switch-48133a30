@@ -497,9 +497,12 @@ function Challenge2026Page() {
           <Reveal className="rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
             <Eyebrow>This goes directly to the CSC team</Eyebrow>
             <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-            <p className="mt-3 text-sm text-[#2D3142]/55 font-light">
-              Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
+            <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
+              Tag Clinical Supply Company · keep your post public.
             </p>
+            <div className="mt-4">
+              <HashtagChip />
+            </div>
             <form
               className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
               onSubmit={(e) => {
@@ -519,11 +522,12 @@ function Challenge2026Page() {
                     value={entry}
                     onChange={(e) => setEntry(e.target.value)}
                     placeholder="Paste your post link"
-                    className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none focus:border-[#03CDC2]"
+                    aria-label="Your post link"
+                    className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
                   />
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(23,98,239,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:shadow-[0_26px_60px_-14px_rgba(23,98,239,0.95)]"
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#12333A] shadow-[0_20px_50px_-14px_rgba(3,205,194,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:text-white hover:shadow-[0_26px_60px_-14px_rgba(3,205,194,0.95)]"
                   >
                     Submit
                     <ArrowRight className="w-4 h-4" />
