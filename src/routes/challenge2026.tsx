@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy } from "lucide-react";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
@@ -91,61 +91,6 @@ const NAV_LINKS: { label: string; hash?: string; href?: string }[] = [
   { label: "Shop", href: SHOP_URL },
   { label: "Free samples", href: SAMPLES_URL },
 ];
-
-function LikeCounter({ target = 2847 }: { target?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(target);
-  const [beat, setBeat] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let raf = 0;
-    setCount(0);
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting) return;
-        io.disconnect();
-        setBeat(true);
-        const start = performance.now();
-        const duration = 2200;
-        const tick = (now: number) => {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          setCount(Math.round(target * eased));
-          if (t < 1) raf = requestAnimationFrame(tick);
-          else setBeat(false);
-        };
-        raf = requestAnimationFrame(tick);
-      },
-      { threshold: 0.4 }
-    );
-    io.observe(el);
-    return () => {
-      io.disconnect();
-      cancelAnimationFrame(raf);
-    };
-  }, [target]);
-
-  return (
-    <div
-      ref={ref}
-      aria-live="off"
-      className="inline-flex items-baseline gap-3 border-b-2 border-[#03CDC2] pb-2"
-    >
-      <Heart
-        className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
-        fill="#C8378A"
-      />
-      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
-        {count.toLocaleString("en-US")}
-      </span>
-      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
-        likes
-      </span>
-    </div>
-  );
-}
 
 
 function PinkCTA({
