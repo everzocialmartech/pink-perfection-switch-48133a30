@@ -330,39 +330,55 @@ function Challenge2026Page() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 0%, rgba(23,98,239,0.18), transparent 60%)",
+              "radial-gradient(ellipse at 50% 0%, rgba(3,205,194,0.16), transparent 60%)",
           }}
         />
-        <div className="relative max-w-4xl mx-auto px-6">
-          <Reveal className="text-center">
-            <img
-              src={cscLogo}
-              alt="Clinical Supply Company"
-              className="h-10 md:h-12 w-auto mx-auto mb-5"
-            />
-            <Eyebrow dark>Official rules</Eyebrow>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
-            </h2>
-          </Reveal>
+        <div className="relative max-w-5xl mx-auto px-6">
+          <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
+            {/* Sticky left rail */}
+            <Reveal className="md:sticky md:top-32">
+              <img
+                src={cscLogo}
+                alt="Clinical Supply Company"
+                className="h-10 md:h-12 w-auto mb-5"
+              />
+              <Eyebrow dark>Official rules</Eyebrow>
+              <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.05]">
+                Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
+              </h2>
+              <p className="mt-5 text-sm text-white/60 font-light max-w-xs">
+                Four steps, about five minutes. Tag your post so we can count the likes.
+              </p>
+              <div className="mt-6">
+                <HashtagChip dark />
+              </div>
+            </Reveal>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2">
-            {[
-              ["01", "Gather your team."],
-              ["02", "One wears Posi-Prene, the rest wear nitrile."],
-              ["03", "Wet hands. Race to glove up first."],
-              ["04", "Film it and post it on Instagram or Facebook. Use the #PosiPreneChallenge and tag us."],
-            ].map(([n, t], i) => (
-              <Reveal key={n} delay={i * 60}>
-                <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                  <span className="font-serif text-2xl text-[#03CDC2]">{n}</span>
-                  <span className="text-sm text-white/75 font-light">{t}</span>
-                </div>
-              </Reveal>
-            ))}
+            {/* Numbered timeline */}
+            <ol className="relative border-l border-white/12 pl-8 md:pl-10 space-y-8">
+              {[
+                ["01", "Gather your team.", "Two or more people, any operatory."],
+                ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
+                ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
+                ["04", "Film it and post it.", "Instagram or Facebook, tag Clinical Supply Company and use the hashtag."],
+              ].map(([n, title, body], i) => (
+                <Reveal key={n} delay={i * 70}>
+                  <li className="relative">
+                    <span
+                      aria-hidden
+                      className="absolute -left-[2.6rem] md:-left-[3.1rem] top-0 flex h-9 w-9 items-center justify-center rounded-full border border-[#03CDC2]/40 bg-[#2D3142] font-serif text-sm text-[#03CDC2]"
+                    >
+                      {n}
+                    </span>
+                    <h3 className="font-serif text-2xl md:text-[1.75rem] leading-tight">{title}</h3>
+                    <p className="mt-2 text-sm md:text-base text-white/65 font-light">{body}</p>
+                  </li>
+                </Reveal>
+              ))}
+            </ol>
           </div>
 
-          <Reveal className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <Reveal className="mt-14 flex flex-col sm:flex-row justify-center gap-3">
             <a
               href={FB_URL}
               target="_blank"
