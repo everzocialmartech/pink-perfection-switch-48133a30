@@ -251,12 +251,16 @@ function Challenge2026Page() {
           </Reveal>
 
           <Reveal delay={120} className="mt-12">
-            <figure className="mx-auto max-w-2xl rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-9 md:px-10 md:py-11">
+            <figure className="relative mx-auto max-w-2xl rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-9 md:px-10 md:py-11 shadow-[0_18px_40px_-24px_rgba(0,14,50,0.35)]">
               <blockquote className="font-light text-lg md:text-xl leading-relaxed text-[#000e32]/80">
                 &ldquo;PosiPrene gloves are the <strong className="font-semibold text-[#000e32]">FASTEST</strong> to put
-                on with wet or sweaty hands, strong, sturdy, with a latex feel and absolutely NO nitrile. Once you try
-                these, you won&rsquo;t go back!&rdquo;
+                on, even with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no latex.
+                Once you try them, you won&rsquo;t go back!&rdquo;
               </blockquote>
+              <span
+                aria-hidden
+                className="absolute left-12 -bottom-3 h-6 w-6 rotate-45 rounded-[4px] border-b border-r border-[#000e32]/10 bg-[#f1f3f7]"
+              />
             </figure>
           </Reveal>
         </div>
