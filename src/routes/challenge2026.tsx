@@ -206,7 +206,7 @@ function Challenge2026Page() {
           </div>
 
           <h1 className="font-serif font-normal uppercase tracking-tight leading-[1.03] text-[2.5rem] sm:text-6xl md:text-7xl mt-7 animate-flash-blur text-balance">
-            <span className="block text-[#4d8dff] tracking-[0.35em] text-[1.5rem] sm:text-3xl md:text-4xl mb-2">
+            <span className="block text-white tracking-[0.35em] text-[1.5rem] sm:text-3xl md:text-4xl mb-2">
               Shh&hellip;
             </span>
             You&rsquo;ve Been{" "}
