@@ -244,7 +244,7 @@ function Challenge2026Page() {
 
       {/* PRIZE - white */}
       <section className="relative overflow-hidden bg-white py-16 md:py-20">
-        {/* elegant motion: sweeping hairline curves + soft light drift */}
+        {/* soft light drift */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
@@ -253,30 +253,6 @@ function Challenge2026Page() {
               "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
           }}
         />
-        <svg
-          aria-hidden
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          viewBox="0 0 1200 500"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <linearGradient id="prizeFlow" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#C8378A" stopOpacity="0" />
-              <stop offset="45%" stopColor="#C8378A" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#C8378A" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          {[0, 1, 2, 3, 4, 5].map((i) => (
-            <path
-              key={i}
-              d={`M -80 ${140 + i * 44} C 300 ${60 + i * 44}, 900 ${300 + i * 44}, 1280 ${190 + i * 44}`}
-              fill="none"
-              stroke="url(#prizeFlow)"
-              strokeWidth={i % 2 === 0 ? 1.1 : 0.6}
-              vectorEffect="non-scaling-stroke"
-            />
-          ))}
-        </svg>
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <Reveal>
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#C8378A] ring-4 ring-[#C8378A]/15 shadow-[0_22px_45px_-18px_rgba(200,55,138,0.85)]">
