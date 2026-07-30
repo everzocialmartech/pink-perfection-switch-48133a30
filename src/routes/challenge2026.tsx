@@ -250,7 +250,7 @@ function Challenge2026Page() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(23,98,239,0.08) 0%, rgba(255,255,255,0) 60%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(23,98,239,0.07) 0%, rgba(255,255,255,0) 60%)",
+              "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
           }}
         />
         <svg
@@ -261,9 +261,9 @@ function Challenge2026Page() {
         >
           <defs>
             <linearGradient id="prizeFlow" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#03CDC2" stopOpacity="0" />
-              <stop offset="45%" stopColor="#03CDC2" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#03CDC2" stopOpacity="0" />
+              <stop offset="0%" stopColor="#C8378A" stopOpacity="0" />
+              <stop offset="45%" stopColor="#C8378A" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#C8378A" stopOpacity="0" />
             </linearGradient>
           </defs>
           {[0, 1, 2, 3, 4, 5].map((i) => (
@@ -279,17 +279,20 @@ function Challenge2026Page() {
         </svg>
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <Reveal>
-            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#03CDC2]/10 ring-1 ring-[#03CDC2]/30 shadow-[0_18px_40px_-18px_rgba(23,98,239,0.7)]">
-              <Trophy className="h-9 w-9 text-[#03CDC2]" strokeWidth={1.6} />
+            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#C8378A] ring-4 ring-[#C8378A]/15 shadow-[0_22px_45px_-18px_rgba(200,55,138,0.85)]">
+              <Trophy className="h-9 w-9 text-white" strokeWidth={1.6} />
             </div>
-            <Eyebrow>The grand prize</Eyebrow>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Three months of <em className="italic text-[#03CDC2]">FREE</em> Posi-Prene Gloves
+            <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase text-[#C8378A]">
+              <span className="h-px w-6 bg-[#C8378A]" />
+              The grand prize
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142]">
+              Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
             </h2>
-            <p className="mt-4 text-[#2D3142]/60 font-light">
+            <p className="mt-4 text-[#333745]/65 font-light">
               Three cases, one a month. Shipped to your practice.
             </p>
-            <p className="mt-6 md:mt-8 mx-auto inline-flex rounded-full border border-[#03CDC2]/40 bg-[#03CDC2]/10 px-6 py-3 text-base md:text-lg font-semibold text-[#333745]">
+            <p className="mt-6 md:mt-8 mx-auto inline-flex rounded-full bg-[#C8378A] px-6 py-3 text-base md:text-lg font-semibold text-white shadow-[0_18px_40px_-20px_rgba(200,55,138,0.9)]">
               Most likes by the deadline wins.
             </p>
             <div className="mt-6 md:mt-8">
