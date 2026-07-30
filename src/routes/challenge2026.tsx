@@ -180,6 +180,7 @@ function Challenge2026Page() {
       <header className="sticky top-0 inset-x-0 z-50 bg-[#000e32]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-12 w-auto" />
+          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-4 md:h-5 w-auto" />
         </div>
       </header>
 
