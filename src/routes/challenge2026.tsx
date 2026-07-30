@@ -201,7 +201,17 @@ function Challenge2026Page() {
           </p>
 
           <div className="mt-10 animate-hero-rise delay-300">
-            <PinkButton href={SHOP_URL}>Take the challenge</PinkButton>
+            <a
+              href="#rules"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#ff3d8b] px-8 py-4 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-[0_18px_45px_-15px_rgba(255,61,139,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[oklch(0.65_0.24_350)]"
+            >
+              Look up the rules
+              <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+            </a>
           </div>
 
           <div className="relative mt-14 md:mt-16 mx-auto max-w-[16rem] md:max-w-[20rem] animate-box-rise">
@@ -264,7 +274,7 @@ function Challenge2026Page() {
       </section>
 
       {/* SECTION 3 — HOW TO TAKE THE CHALLENGE */}
-      <section className="py-20 md:py-28">
+      <section id="rules" className="py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-6">
           <Reveal className="text-center">
             <Eyebrow>How to take the challenge</Eyebrow>
