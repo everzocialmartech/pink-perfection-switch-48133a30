@@ -86,13 +86,14 @@ const BIG_CTA =
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target);
   const [beat, setBeat] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     let raf = 0;
+    setCount(0);
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) return;
@@ -121,13 +122,14 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
   return (
     <div
       ref={ref}
-      className="mt-8 inline-flex items-center gap-3"
+      aria-live="off"
+      className="inline-flex items-baseline gap-3 border-b-2 border-[#03CDC2] pb-2"
     >
       <Heart
-        className={`h-6 w-6 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
+        className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
         fill="#C8378A"
       />
-      <span className="text-2xl md:text-3xl font-semibold tabular-nums text-[#2D3142]">
+      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
         {count.toLocaleString()}
       </span>
       <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
@@ -284,42 +286,80 @@ function Challenge2026Page() {
               "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
           }}
         />
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <Reveal>
-            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#C8378A] ring-4 ring-[#C8378A]/15 shadow-[0_22px_45px_-18px_rgba(200,55,138,0.85)]">
-              <Trophy className="h-9 w-9 text-white" strokeWidth={1.6} />
-            </div>
-            <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#C8378A]">
-              <span className="h-px w-6 bg-[#C8378A]" />
-              The grand prize
-            </div>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142]">
-              Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
-            </h2>
-            <p className="mt-4 text-[#333745]/65 font-light">
-              Three cases, one a month. Shipped to your practice.
-            </p>
-            <p className="mt-6 md:mt-8 mx-auto inline-flex rounded-full bg-[#C8378A] px-6 py-3 text-base md:text-lg font-semibold text-white shadow-[0_18px_40px_-20px_rgba(200,55,138,0.9)]">
-              Most likes by the deadline wins.
-            </p>
-            <div className="mt-6 md:mt-8">
-              <LikeCounter />
-            </div>
-          </Reveal>
+        <div className="relative max-w-5xl mx-auto px-6">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
+            {/* Left: the prize */}
+            <Reveal>
+              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#C8378A]/45">
+                <Trophy className="h-7 w-7 text-[#C8378A]" strokeWidth={1.2} />
+              </div>
+              <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.22em] uppercase text-[#C8378A]">
+                <span className="h-px w-6 bg-[#C8378A]" />
+                The grand prize
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
+                Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
+              </h2>
 
-          <Reveal delay={120} className="mt-12">
-            <figure className="relative mx-auto max-w-md md:max-w-2xl rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-5 py-6 md:px-10 md:py-11 shadow-[0_18px_40px_-24px_rgba(0,14,50,0.35)]">
-              <blockquote className="font-light text-[0.95rem] md:text-xl leading-relaxed text-[#2D3142]/80">
-                &ldquo;PosiPrene gloves are the <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put
-                on, even with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no latex.
-                Once you try them, you won&rsquo;t go back!&rdquo;
-              </blockquote>
-              <span
-                aria-hidden
-                className="absolute left-8 md:left-12 -bottom-2.5 h-5 w-5 md:h-6 md:w-6 rotate-45 rounded-[4px] border-b border-r border-[#2D3142]/10 bg-[#f1f3f7]"
-              />
-            </figure>
-          </Reveal>
+              <ul className="mt-7 space-y-3">
+                {["3 cases", "1 per month", "Shipped free to your practice"].map((spec) => (
+                  <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/75 font-light">
+                    <span aria-hidden className="h-px w-6 shrink-0 bg-[#00857E]" />
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
+                <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
+                <p className="text-[0.95rem] md:text-base text-[#2D3142] font-normal">
+                  Most likes by the deadline wins.
+                </p>
+              </div>
+
+              <a
+                href="#rules"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={`${BIG_CTA} mt-9`}
+              >
+                Take the challenge
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </Reveal>
+
+            {/* Right: live leaderboard card */}
+            <Reveal delay={120}>
+              <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
+                <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
+                  </span>
+                  Likes to beat
+                </div>
+
+                <div className="mt-4">
+                  <LikeCounter />
+                </div>
+                <p className="mt-3 text-xs text-[#333745]/55 font-light">
+                  Current leader &middot; @posiprene.race
+                </p>
+
+                <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                    Head start
+                  </p>
+                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
+                    <strong className="font-semibold text-[#2D3142]">Loyal Posi-Prene users</strong>{" "}
+                    get a full month of advantage to gather likes before the challenge goes public.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -441,6 +481,14 @@ function Challenge2026Page() {
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
                   the team must wear regular nitrile gloves.
                 </p>
+                <figure className="relative mx-auto mt-10 max-w-md md:max-w-2xl rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white/70 px-5 py-6 md:px-10 md:py-9 text-left shadow-[0_18px_40px_-26px_rgba(45,49,66,0.4)]">
+                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/80">
+                    &ldquo;PosiPrene gloves are the{" "}
+                    <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
+                    with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
+                    no latex. Once you try them, you won&rsquo;t go back!&rdquo;
+                  </blockquote>
+                </figure>
               </div>
             </div>
           </Reveal>
