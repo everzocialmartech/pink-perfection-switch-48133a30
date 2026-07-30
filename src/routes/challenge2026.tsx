@@ -274,7 +274,7 @@ function Challenge2026Page() {
               ["01", "Gather your team."],
               ["02", "One wears Posi-Prene, the rest wear nitrile."],
               ["03", "Wet hands. Race to glove up first."],
-              ["04", "Film it and post it on Instagram or Facebook."],
+              ["04", "Film it and post it on Instagram or Facebook. Use the #PosiPreneChallenge and tag us."],
             ].map(([n, t], i) => (
               <Reveal key={n} delay={i * 60}>
                 <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4">
