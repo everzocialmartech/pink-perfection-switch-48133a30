@@ -3,12 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
 const IG_URL = "https://www.instagram.com/clinicalsupplyco/";
+const HASHTAG = "#PosiPreneChallenge";
+const OG_IMAGE =
+  "https://pink-perfection-switch.lovable.app/__l5e/assets-v1/284b47f4-69de-4735-844d-b7779e04008c/challenge-hero.png";
 
 export const Route = createFileRoute("/challenge2026")({
   head: () => ({
@@ -26,7 +29,9 @@ export const Route = createFileRoute("/challenge2026")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://pink-perfection-switch.lovable.app/challenge2026" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/challenge2026" }],
   }),
@@ -125,7 +130,7 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
       <span className="text-2xl md:text-3xl font-semibold tabular-nums text-[#2D3142]">
         {count.toLocaleString()}
       </span>
-      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#2D3142]/50">
+      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
         likes
       </span>
     </div>
@@ -153,13 +158,39 @@ function PinkCTA({
 function Eyebrow({ dark = false, children }: { dark?: boolean; children: React.ReactNode }) {
   return (
     <div
-      className={`inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase ${
-        dark ? "text-white/55" : "text-[#2D3142]/50"
+      className={`inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase ${
+        dark ? "text-white/70" : "text-[#2D3142]/70"
       }`}
     >
-      <span className="h-px w-6 bg-[#03CDC2]" />
+      <span className={`h-px w-6 ${dark ? "bg-[#03CDC2]" : "bg-[#00857E]"}`} />
       {children}
     </div>
+  );
+}
+
+function HashtagChip({ dark = false }: { dark?: boolean }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        navigator.clipboard?.writeText(HASHTAG);
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      }}
+      aria-label={`Copy ${HASHTAG} to clipboard`}
+      className={`group inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+        dark
+          ? "border-[#03CDC2]/45 bg-[#03CDC2]/10 text-[#03CDC2] hover:bg-[#03CDC2]/20"
+          : "border-[#00857E]/35 bg-[#00857E]/5 text-[#00857E] hover:bg-[#00857E]/10"
+      }`}
+    >
+      {HASHTAG}
+      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4 opacity-70" />}
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Hashtag copied" : ""}
+      </span>
+    </button>
   );
 }
 
@@ -188,7 +219,8 @@ function Challenge2026Page() {
       <section className="relative overflow-hidden bg-[#2D3142] text-white pt-14 pb-16 md:pt-20 md:pb-20">
         <img
           src={challengeHero.url}
-          alt="Clinician pulling on a Posi-Prene glove"
+          alt=""
+          aria-hidden
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div aria-hidden className="absolute inset-0 bg-[#2D3142]/80" />
@@ -197,12 +229,11 @@ function Challenge2026Page() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(23,98,239,0.28) 0%, rgba(0,14,50,0) 70%)",
+              "radial-gradient(ellipse 60% 55% at 50% 25%, rgba(3,205,194,0.22) 0%, rgba(45,49,66,0) 70%)",
           }}
         />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#03CDC2]/40 bg-[#03CDC2]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#03CDC2]">
-            <Lock className="w-3 h-3" />
+          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#03CDC2]/40 bg-[#03CDC2]/10 px-4 py-1.5 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#03CDC2]">
             The Posi-Prene Challenge
           </div>
 
@@ -227,11 +258,11 @@ function Challenge2026Page() {
                 e.preventDefault();
                 document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-11 py-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.32em] text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(23,98,239,0.55)]"
+              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-11 py-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
             >
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(122,164,255,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(3,205,194,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
               />
               <Lock className="relative w-3.5 h-3.5 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
               <span className="relative">Look up the rules</span>
@@ -258,7 +289,7 @@ function Challenge2026Page() {
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#C8378A] ring-4 ring-[#C8378A]/15 shadow-[0_22px_45px_-18px_rgba(200,55,138,0.85)]">
               <Trophy className="h-9 w-9 text-white" strokeWidth={1.6} />
             </div>
-            <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase text-[#C8378A]">
+            <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#C8378A]">
               <span className="h-px w-6 bg-[#C8378A]" />
               The grand prize
             </div>
@@ -299,39 +330,55 @@ function Challenge2026Page() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 0%, rgba(23,98,239,0.18), transparent 60%)",
+              "radial-gradient(ellipse at 50% 0%, rgba(3,205,194,0.16), transparent 60%)",
           }}
         />
-        <div className="relative max-w-4xl mx-auto px-6">
-          <Reveal className="text-center">
-            <img
-              src={cscLogo}
-              alt="Clinical Supply Company"
-              className="h-10 md:h-12 w-auto mx-auto mb-5"
-            />
-            <Eyebrow dark>Official rules</Eyebrow>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
-            </h2>
-          </Reveal>
+        <div className="relative max-w-5xl mx-auto px-6">
+          <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
+            {/* Sticky left rail */}
+            <Reveal className="md:sticky md:top-32">
+              <img
+                src={cscLogo}
+                alt="Clinical Supply Company"
+                className="h-10 md:h-12 w-auto mb-5"
+              />
+              <Eyebrow dark>Official rules</Eyebrow>
+              <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.05]">
+                Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
+              </h2>
+              <p className="mt-5 text-sm text-white/60 font-light max-w-xs">
+                Four steps, about five minutes. Tag your post so we can count the likes.
+              </p>
+              <div className="mt-6">
+                <HashtagChip dark />
+              </div>
+            </Reveal>
 
-          <div className="mt-10 grid gap-3 sm:grid-cols-2">
-            {[
-              ["01", "Gather your team."],
-              ["02", "One wears Posi-Prene, the rest wear nitrile."],
-              ["03", "Wet hands. Race to glove up first."],
-              ["04", "Film it and post it on Instagram or Facebook. Use the #PosiPreneChallenge and tag us."],
-            ].map(([n, t], i) => (
-              <Reveal key={n} delay={i * 60}>
-                <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                  <span className="font-serif text-2xl text-[#03CDC2]">{n}</span>
-                  <span className="text-sm text-white/75 font-light">{t}</span>
-                </div>
-              </Reveal>
-            ))}
+            {/* Numbered timeline */}
+            <ol className="relative border-l border-white/12 pl-8 md:pl-10 space-y-8">
+              {[
+                ["01", "Gather your team.", "Two or more people, any operatory."],
+                ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
+                ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
+                ["04", "Film it and post it.", "Instagram or Facebook, tag Clinical Supply Company and use the hashtag."],
+              ].map(([n, title, body], i) => (
+                <Reveal key={n} delay={i * 70}>
+                  <li className="relative">
+                    <span
+                      aria-hidden
+                      className="absolute -left-[2.6rem] md:-left-[3.1rem] top-0 flex h-9 w-9 items-center justify-center rounded-full border border-[#03CDC2]/40 bg-[#2D3142] font-serif text-sm text-[#03CDC2]"
+                    >
+                      {n}
+                    </span>
+                    <h3 className="font-serif text-2xl md:text-[1.75rem] leading-tight">{title}</h3>
+                    <p className="mt-2 text-sm md:text-base text-white/65 font-light">{body}</p>
+                  </li>
+                </Reveal>
+              ))}
+            </ol>
           </div>
 
-          <Reveal className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+          <Reveal className="mt-14 flex flex-col sm:flex-row justify-center gap-3">
             <a
               href={FB_URL}
               target="_blank"
@@ -367,11 +414,11 @@ function Challenge2026Page() {
               />
               <div className="relative">
                 <div className="flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#03CDC2]" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#03CDC2]">
+                  <span className="h-px w-8 bg-[#00857E]" />
+                  <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.24em] text-[#00857E]">
                     Gear up
                   </span>
-                  <span className="h-px w-8 bg-[#03CDC2]" />
+                  <span className="h-px w-8 bg-[#00857E]" />
                 </div>
                 <h2 className="font-serif text-4xl md:text-5xl mt-6 text-[#2D3142] leading-[1.15]">
                   Need gloves?
@@ -450,9 +497,12 @@ function Challenge2026Page() {
           <Reveal className="rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
             <Eyebrow>This goes directly to the CSC team</Eyebrow>
             <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-            <p className="mt-3 text-sm text-[#2D3142]/55 font-light">
-              Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
+            <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
+              Tag Clinical Supply Company · keep your post public.
             </p>
+            <div className="mt-4">
+              <HashtagChip />
+            </div>
             <form
               className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
               onSubmit={(e) => {
@@ -472,11 +522,12 @@ function Challenge2026Page() {
                     value={entry}
                     onChange={(e) => setEntry(e.target.value)}
                     placeholder="Paste your post link"
-                    className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none focus:border-[#03CDC2]"
+                    aria-label="Your post link"
+                    className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
                   />
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(23,98,239,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:shadow-[0_26px_60px_-14px_rgba(23,98,239,0.95)]"
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#12333A] shadow-[0_20px_50px_-14px_rgba(3,205,194,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:text-white hover:shadow-[0_26px_60px_-14px_rgba(3,205,194,0.95)]"
                   >
                     Submit
                     <ArrowRight className="w-4 h-4" />

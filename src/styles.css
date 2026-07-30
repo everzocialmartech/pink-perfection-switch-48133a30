@@ -272,17 +272,13 @@
   transform-origin: bottom center;
 }
 
-/* Fast flash/blur entrance — challenge hero */
+/* Fast, legible entrance — challenge hero headline */
 @keyframes flash-blur {
-  0%   { opacity: 0; filter: blur(18px); transform: scale(1.04); letter-spacing: 0.04em; }
-  35%  { opacity: 1; filter: blur(6px); }
-  55%  { opacity: 0.55; filter: blur(2px); }
-  70%  { opacity: 1; filter: blur(0.5px); }
-  82%  { opacity: 0.75; }
-  100% { opacity: 1; filter: blur(0); transform: scale(1); letter-spacing: normal; }
+  0%   { opacity: 0; filter: blur(6px); transform: scale(1.015); }
+  100% { opacity: 1; filter: blur(0); transform: scale(1); }
 }
 .animate-flash-blur {
-  animation: flash-blur 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: flash-blur 0.38s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 @keyframes shh-whisper {
@@ -316,6 +312,29 @@
   animation:
     shh-whisper 1.4s cubic-bezier(0.16, 1, 0.3, 1) both,
     shh-glow 4s ease-in-out 1.6s infinite;
+}
+
+/* Respect reduced-motion preferences across the whole app */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-flash-blur,
+  .animate-shh,
+  .animate-hero-rise {
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    letter-spacing: normal !important;
+  }
+  .animate-shh {
+    letter-spacing: 0.35em !important;
+  }
 }
 
 /* Wet-droplet texture for the "Ready. Wet. Glove!" section */
