@@ -276,7 +276,7 @@ function Challenge2026Page() {
       </section>
 
       {/* PRIZE - white */}
-      <section className="relative overflow-hidden bg-white py-16 md:py-20">
+      <section id="prize" className="relative overflow-hidden bg-white py-16 md:py-20 scroll-mt-32">
         {/* soft light drift */}
         <div
           aria-hidden
