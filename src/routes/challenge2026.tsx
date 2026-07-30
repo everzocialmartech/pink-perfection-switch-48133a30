@@ -497,7 +497,7 @@ function Challenge2026Page() {
       </section>
 
       {/* AMBASSADOR - navy */}
-      <section className="bg-[#2D3142] text-white py-16 md:py-20 text-center">
+      <section id="ambassador" className="bg-[#2D3142] text-white py-16 md:py-20 text-center scroll-mt-32">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
             <img
