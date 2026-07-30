@@ -265,7 +265,7 @@ function Challenge2026Page() {
           <Reveal className="text-center">
             <Eyebrow dark>How it works</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
-              Ready. Wet. <em className="italic text-[#ff8a52]">Glove!</em>
+              Ready. Wet. <em className="italic text-[#4d8dff]">Glove!</em>
             </h2>
           </Reveal>
 
