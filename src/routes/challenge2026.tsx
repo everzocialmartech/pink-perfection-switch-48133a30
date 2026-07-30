@@ -220,8 +220,8 @@ function Challenge2026Page() {
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
-          <img src={cscLogo} alt="Clinical Supply Co." className="h-9 md:h-11 w-auto" />
-          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-4 md:h-5 w-auto" />
+          <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-14 w-auto" />
+          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-5 md:h-6 w-auto" />
         </div>
         <nav
           aria-label="Section navigation"
@@ -300,14 +300,14 @@ function Challenge2026Page() {
                 e.preventDefault();
                 document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-11 py-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
+              className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-9 py-4 text-[0.95rem] font-medium text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(3,205,194,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
               />
-              <Lock className="relative w-3.5 h-3.5 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="relative">Look up the rules</span>
+              <Lock className="relative w-4 h-4 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="relative">See the rules</span>
               <ArrowRight className="relative w-4 h-4 opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-1" />
             </a>
           </div>
