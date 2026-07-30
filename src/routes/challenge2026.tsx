@@ -536,18 +536,15 @@ function Challenge2026Page() {
               alt="Posi-Prene"
               className="mx-auto mb-6 h-8 md:h-10 w-auto"
             />
-            <p className="text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-[#C8378A]">
-              Become an Ambassador
-            </p>
+            <div className="flex justify-center">
+              <Eyebrow dark>Become an Ambassador</Eyebrow>
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
-              Your video could lead to{" "}
-              <em className="italic text-[#D8559F]">something bigger</em>
+              Your video could lead to something bigger
             </h2>
-            <p className="mt-5 text-white/60 font-light">
-              Funny, creative, well-edited?
-            </p>
-            <p className="mt-4 mx-auto max-w-xl rounded-xl border border-[#C8378A]/40 bg-[#C8378A]/10 px-5 py-4 text-white text-base md:text-lg font-medium">
-              The CSC team may reach out about a future Posi-Prene Ambassador partnership.
+            <p className="mt-6 mx-auto max-w-xl text-base md:text-lg text-white/75 font-light">
+              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
+              Ambassador partnership.
             </p>
             <div className="mt-8 flex justify-center">
               <a
