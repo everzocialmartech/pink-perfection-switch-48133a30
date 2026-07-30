@@ -103,7 +103,7 @@ function Eyebrow({ dark = false, children }: { dark?: boolean; children: React.R
         dark ? "text-white/55" : "text-[#000e32]/50"
       }`}
     >
-      <span className="h-px w-6 bg-[#ff6527]" />
+      <span className="h-px w-6 bg-[#1762ef]" />
       {children}
     </div>
   );
@@ -122,7 +122,7 @@ function Challenge2026Page() {
 
   return (
     <div className="challenge-type min-h-screen bg-white text-[#000e32] antialiased">
-      <div className="h-[3px] w-full bg-[#ff6527]" />
+      <div className="h-[3px] w-full bg-[#1762ef]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#000e32]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 flex items-center justify-between">
           <img src={cscLogo} alt="Clinical Supply Co." className="h-7 w-auto" />
@@ -143,7 +143,7 @@ function Challenge2026Page() {
           }}
         />
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#ff6527]/40 bg-[#ff6527]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#ff9b6b]">
+          <div className="animate-hero-rise inline-flex items-center gap-2 rounded-full border border-[#1762ef]/40 bg-[#1762ef]/10 px-4 py-1.5 text-[10px] font-bold tracking-[0.3em] uppercase text-[#7ba4ff]">
             <Lock className="w-3 h-3" />
             The Posi-Prene Challenge
           </div>
@@ -220,7 +220,7 @@ function Challenge2026Page() {
             ].map(([n, t], i) => (
               <Reveal key={n} delay={i * 60}>
                 <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                  <span className="font-serif text-2xl text-[#ff6527]">{n}</span>
+                  <span className="font-serif text-2xl text-[#1762ef]">{n}</span>
                   <span className="text-sm text-white/75 font-light">{t}</span>
                 </div>
               </Reveal>
@@ -293,7 +293,7 @@ function Challenge2026Page() {
                     value={entry}
                     onChange={(e) => setEntry(e.target.value)}
                     placeholder="Paste your post link"
-                    className="flex-1 rounded-full border border-[#000e32]/15 px-5 py-4 text-sm outline-none focus:border-[#ff6527]"
+                    className="flex-1 rounded-full border border-[#000e32]/15 px-5 py-4 text-sm outline-none focus:border-[#1762ef]"
                   />
                   <button type="submit" className={BIG_CTA}>
                     Submit
