@@ -225,18 +225,6 @@ function Challenge2026Page() {
             </a>
           </div>
 
-          <div className="relative mt-10 mx-auto max-w-[13rem] md:max-w-[15rem] animate-box-rise">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 -z-10"
-              style={{
-                background:
-                  "radial-gradient(ellipse at 50% 60%, rgba(23,98,239,0.45) 0%, transparent 62%)",
-                filter: "blur(40px)",
-              }}
-            />
-            <img src={posipreneBoxReal} alt="Posi-Prene Pink glove box" className="w-full h-auto animate-box-float" />
-          </div>
         </div>
       </section>
 
