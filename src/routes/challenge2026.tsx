@@ -382,7 +382,37 @@ function Challenge2026Page() {
             </div>
           </Reveal>
 
-          <Reveal delay={80} className="mt-14 rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
+        </div>
+      </section>
+
+      {/* AMBASSADOR - navy */}
+      <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
+        <div className="max-w-2xl mx-auto px-6">
+          <Reveal>
+            <Eyebrow dark>Ambassadors</Eyebrow>
+            <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
+              Your video could lead to{" "}
+              <em className="italic text-[#ff8a52]">something bigger</em>
+            </h2>
+            <p className="mt-5 text-white/60 font-light">
+              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
+              Ambassador partnership.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <PinkCTA href={SHOP_URL}>Take the challenge</PinkCTA>
+            </div>
+            <p className="mt-6 text-xs text-white/35 font-light">
+              Participation does not guarantee selection. Winner selection and eligibility are
+              subject to the Official Rules.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SUBMIT ENTRY - white */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Reveal className="rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
             <h3 className="font-serif text-3xl md:text-4xl">Submit your entry</h3>
             <p className="mt-3 text-sm text-[#000e32]/55 font-light">
               Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
@@ -415,30 +445,6 @@ function Challenge2026Page() {
                 </>
               )}
             </form>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* AMBASSADOR - navy */}
-      <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
-        <div className="max-w-2xl mx-auto px-6">
-          <Reveal>
-            <Eyebrow dark>Ambassadors</Eyebrow>
-            <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
-              Your video could lead to{" "}
-              <em className="italic text-[#ff8a52]">something bigger</em>
-            </h2>
-            <p className="mt-5 text-white/60 font-light">
-              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
-              Ambassador partnership.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <PinkCTA href={SHOP_URL}>Take the challenge</PinkCTA>
-            </div>
-            <p className="mt-6 text-xs text-white/35 font-light">
-              Participation does not guarantee selection. Winner selection and eligibility are
-              subject to the Official Rules.
-            </p>
           </Reveal>
         </div>
       </section>
