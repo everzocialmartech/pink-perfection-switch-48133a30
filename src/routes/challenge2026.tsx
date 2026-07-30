@@ -364,7 +364,7 @@ function Challenge2026Page() {
       </section>
 
       {/* RULES / HOW TO - navy */}
-      <section id="rules" className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20">
+      <section id="rules" className="relative overflow-hidden bg-[#2D3142] text-white py-16 md:py-20 scroll-mt-32">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
