@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -352,9 +352,6 @@ function Challenge2026Page() {
             <div className="relative max-w-5xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
                 <div>
-                  <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#00857E]/40">
-                    <Trophy className="h-7 w-7 text-[#00857E]" strokeWidth={1.2} />
-                  </div>
                   <Eyebrow>The grand prize</Eyebrow>
                   <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
                     Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
