@@ -242,6 +242,16 @@ function Challenge2026Page() {
             </p>
             <LikeCounter />
           </Reveal>
+
+          <Reveal delay={120} className="mt-12">
+            <figure className="mx-auto max-w-2xl rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-9 md:px-10 md:py-11">
+              <blockquote className="font-light text-lg md:text-xl leading-relaxed text-[#000e32]/80">
+                &ldquo;PosiPrene gloves are the <strong className="font-semibold text-[#000e32]">FASTEST</strong> to put
+                on with wet or sweaty hands, strong, sturdy, with a latex feel and absolutely NO nitrile. Once you try
+                these, you won&rsquo;t go back!&rdquo;
+              </blockquote>
+            </figure>
+          </Reveal>
         </div>
       </section>
 
