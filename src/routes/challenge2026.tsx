@@ -392,14 +392,18 @@ function Challenge2026Page() {
       <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
-            <Eyebrow dark>Ambassadors</Eyebrow>
+            <p className="text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-[#ff6527]">
+              Become an Ambassador
+            </p>
             <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
               Your video could lead to{" "}
               <em className="italic text-[#ff8a52]">something bigger</em>
             </h2>
             <p className="mt-5 text-white/60 font-light">
-              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
-              Ambassador partnership.
+              Funny, creative, well-edited?
+            </p>
+            <p className="mt-4 mx-auto max-w-xl rounded-xl border border-[#ff6527]/40 bg-[#ff6527]/10 px-5 py-4 text-white text-base md:text-lg font-medium">
+              The CSC team may reach out about a future Posi-Prene Ambassador partnership.
             </p>
             <div className="mt-8 flex justify-center">
               <a
