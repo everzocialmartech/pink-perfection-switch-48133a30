@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import cscLogo from "@/assets/csc-logo.png";
+import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
-import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
+import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
 import { ArrowRight, Check, Copy, Facebook, Instagram, Trophy, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
@@ -213,9 +213,9 @@ function Challenge2026Page() {
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
           <button type="button" onClick={() => go(0)} aria-label="Back to the start">
-            <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-14 w-auto" />
+            <img src={cscLogo} alt="Clinical Supply Co." className="h-8 md:h-10 w-auto" />
           </button>
-          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-5 md:h-6 w-auto" />
+          <img src={posiPreneLogo} alt="Posi-Prene" className="h-3.5 md:h-4 w-auto" />
         </div>
         <nav aria-label="Step navigation" className="border-t border-white/10 bg-[#333745]">
           <ul className="max-w-6xl mx-auto flex items-center gap-1 overflow-x-auto px-4 sm:px-6 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-2">
@@ -413,7 +413,7 @@ function Challenge2026Page() {
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
                 <div>
-                  <img src={cscLogo} alt="Clinical Supply Company" className="h-10 md:h-12 w-auto mb-5" />
+                  <img src={cscLogo} alt="Clinical Supply Company" className="h-7 md:h-9 w-auto mb-5" />
                   <Eyebrow dark>Official rules</Eyebrow>
                   <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.05]">
                     Ready. Wet. <em className="italic text-[#03CDC2]">Glove!</em>
@@ -478,7 +478,7 @@ function Challenge2026Page() {
         {step === 4 && (
           <section className="bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16 text-center">
             <div className="max-w-2xl mx-auto px-6">
-              <img src={posiPreneLogo.url} alt="Posi-Prene" className="mx-auto mb-6 h-8 md:h-10 w-auto" />
+              <img src={posiPreneLogo} alt="Posi-Prene" className="mx-auto mb-6 h-5 md:h-6 w-auto" />
               <div className="flex justify-center">
                 <Eyebrow dark>Become an Ambassador</Eyebrow>
               </div>
@@ -594,7 +594,7 @@ function Challenge2026Page() {
       </main>
 
       <footer className="bg-[#2D3142] py-8 text-center border-t border-white/10">
-        <img src={cscLogo} alt="Clinical Supply Co." className="h-9 w-auto mx-auto opacity-80" />
+        <img src={cscLogo} alt="Clinical Supply Co." className="h-6 w-auto mx-auto opacity-80" />
         <p className="mt-3 text-xs text-white/35">
           © {new Date().getFullYear()} Clinical Supply Company
         </p>
