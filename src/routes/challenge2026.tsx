@@ -115,7 +115,7 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
   return (
     <div
       ref={ref}
-      className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#1762ef]/20 bg-[#1762ef]/[0.06] px-6 py-3"
+      className="mt-8 inline-flex items-center gap-3"
     >
       <Heart
         className={`h-6 w-6 text-[#ff6527] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
