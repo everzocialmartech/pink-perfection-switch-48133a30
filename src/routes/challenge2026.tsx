@@ -237,8 +237,33 @@ function Challenge2026Page() {
       </section>
 
       {/* PRIZE - white */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden bg-white py-16 md:py-20">
+        {/* speed streaks */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.5]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(102deg, rgba(23,98,239,0.13) 0px, rgba(23,98,239,0.13) 2px, rgba(23,98,239,0) 2px, rgba(23,98,239,0) 26px)",
+            maskImage:
+              "radial-gradient(ellipse 75% 65% at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 75% 65% at 50% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(102deg, rgba(23,98,239,0.22) 0px, rgba(23,98,239,0.22) 5px, rgba(23,98,239,0) 5px, rgba(23,98,239,0) 84px)",
+            maskImage:
+              "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.9) 100%)",
+            WebkitMaskImage:
+              "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 58%, rgba(0,0,0,0.9) 100%)",
+          }}
+        />
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <Reveal>
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#1762ef]/10 ring-1 ring-[#1762ef]/30 shadow-[0_18px_40px_-18px_rgba(23,98,239,0.7)]">
               <Trophy className="h-9 w-9 text-[#1762ef]" strokeWidth={1.6} />
