@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import posipreneBoxReal from "@/assets/posiprene-box-real.webp";
 import cscLogo from "@/assets/csc-logo.png";
-import { ArrowRight, Facebook, Instagram, Lock, Trophy } from "lucide-react";
+import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
 const SHOP_URL =
   "https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free";
@@ -77,6 +77,62 @@ function Reveal({
 }
 
 const BIG_CTA =
+  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e0521a] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
+
+function LikeCounter({ target = 2847 }: { target?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [count, setCount] = useState(0);
+  const [beat, setBeat] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        io.disconnect();
+        setBeat(true);
+        const start = performance.now();
+        const duration = 2200;
+        const tick = (now: number) => {
+          const t = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - t, 3);
+          setCount(Math.round(target * eased));
+          if (t < 1) raf = requestAnimationFrame(tick);
+          else setBeat(false);
+        };
+        raf = requestAnimationFrame(tick);
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [target]);
+
+  return (
+    <div
+      ref={ref}
+      className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#1762ef]/20 bg-[#1762ef]/[0.06] px-6 py-3"
+    >
+      <Heart
+        className={`h-6 w-6 text-[#ff6527] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
+        fill="#ff6527"
+      />
+      <span className="text-2xl md:text-3xl font-semibold tabular-nums text-[#000e32]">
+        {count.toLocaleString()}
+      </span>
+      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#000e32]/50">
+        likes
+      </span>
+    </div>
+  );
+}
+
+const UNUSED_CTA =
   "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e0521a] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
 
 function PinkCTA({
@@ -200,6 +256,7 @@ function Challenge2026Page() {
             <p className="mt-4 text-[#000e32]/60 font-light">
               Three cases, one a month. Most likes by the deadline wins.
             </p>
+            <LikeCounter />
           </Reveal>
         </div>
       </section>
