@@ -137,7 +137,7 @@ function Reveal({
 }
 
 const BIG_CTA =
-  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#C8378A] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(200,55,138,0.45)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#A82B72] hover:shadow-[0_26px_60px_-14px_rgba(200,55,138,0.6)]";
+  "group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold tracking-[0.01em] text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]";
 
 const NAV_LINKS: { label: string; hash?: string; href?: string }[] = [
   { label: "The prize", hash: "prize" },
@@ -220,8 +220,8 @@ function Challenge2026Page() {
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
-          <img src={cscLogo} alt="Clinical Supply Co." className="h-9 md:h-11 w-auto" />
-          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-4 md:h-5 w-auto" />
+          <img src={cscLogo} alt="Clinical Supply Co." className="h-11 md:h-14 w-auto" />
+          <img src={posiPreneLogo.url} alt="Posi-Prene" className="h-5 md:h-6 w-auto" />
         </div>
         <nav
           aria-label="Section navigation"
@@ -300,14 +300,14 @@ function Challenge2026Page() {
                 e.preventDefault();
                 document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-11 py-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.28em] text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
+              className="group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-9 py-4 text-[0.95rem] font-medium text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#03CDC2]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(3,205,194,0.5)]"
             >
               <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(3,205,194,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
               />
-              <Lock className="relative w-3.5 h-3.5 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-              <span className="relative">Look up the rules</span>
+              <Lock className="relative w-4 h-4 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="relative">See the rules</span>
               <ArrowRight className="relative w-4 h-4 opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-1" />
             </a>
           </div>
@@ -330,13 +330,10 @@ function Challenge2026Page() {
           <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
             {/* Left: the prize */}
             <Reveal>
-              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#C8378A]/45">
-                <Trophy className="h-7 w-7 text-[#C8378A]" strokeWidth={1.2} />
+              <div className="mb-7 flex h-16 w-16 items-center justify-center rounded-full border border-[#00857E]/40">
+                <Trophy className="h-7 w-7 text-[#00857E]" strokeWidth={1.2} />
               </div>
-              <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.22em] uppercase text-[#C8378A]">
-                <span className="h-px w-6 bg-[#C8378A]" />
-                The grand prize
-              </div>
+              <Eyebrow>The grand prize</Eyebrow>
               <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
                 Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
               </h2>
@@ -389,7 +386,7 @@ function Challenge2026Page() {
                 </p>
 
                 <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
                     Head start
                   </p>
                   <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
@@ -463,7 +460,7 @@ function Challenge2026Page() {
               href={FB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Facebook className="w-4 h-4" /> Follow on Facebook
             </a>
@@ -471,7 +468,7 @@ function Challenge2026Page() {
               href={IG_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Instagram className="w-4 h-4" /> Follow on Instagram
             </a>
@@ -483,7 +480,7 @@ function Challenge2026Page() {
       <section className="bg-white py-16 md:py-24">
         <div className="max-w-4xl mx-auto px-6">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
               <div
                 aria-hidden
                 className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl"
@@ -493,36 +490,30 @@ function Challenge2026Page() {
                 className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl"
               />
               <div className="relative">
-                <div className="flex items-center justify-center gap-3">
-                  <span className="h-px w-8 bg-[#00857E]" />
-                  <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.24em] text-[#00857E]">
-                    Gear up
-                  </span>
-                  <span className="h-px w-8 bg-[#00857E]" />
-                </div>
-                <h2 className="font-serif text-4xl md:text-5xl mt-6 text-[#2D3142] leading-[1.15]">
+                <Eyebrow>Gear up</Eyebrow>
+                <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
                   Need gloves?
                   <span className="block mt-2 text-[#333745]/80">
-                    You can still <em className="italic text-[#C8378A]">take the challenge</em>
+                    You can still take the challenge
                   </span>
                 </h2>
-                <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3">
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
                   <a
                     href={SAMPLES_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full border-2 border-[#03CDC2] bg-white/70 px-9 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#2D3142] transition-all duration-300 hover:-translate-y-1 hover:bg-[#03CDC2] hover:text-[#2D3142] hover:shadow-[0_20px_50px_-18px_rgba(3,205,194,0.8)]"
+                    className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
                   >
                     Request free samples
                   </a>
                 </div>
-                <p className="mt-8 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl mx-auto">
+                <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of
                   the team must wear regular nitrile gloves.
                 </p>
-                <figure className="relative mx-auto mt-10 max-w-md md:max-w-2xl rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white/70 px-5 py-6 md:px-10 md:py-9 text-left shadow-[0_18px_40px_-26px_rgba(45,49,66,0.4)]">
-                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/80">
+                <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
+                  <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
                     &ldquo;PosiPrene gloves are the{" "}
                     <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
                     with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
@@ -545,18 +536,15 @@ function Challenge2026Page() {
               alt="Posi-Prene"
               className="mx-auto mb-6 h-8 md:h-10 w-auto"
             />
-            <p className="text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-[#C8378A]">
-              Become an Ambassador
-            </p>
+            <div className="flex justify-center">
+              <Eyebrow dark>Become an Ambassador</Eyebrow>
+            </div>
             <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1]">
-              Your video could lead to{" "}
-              <em className="italic text-[#D8559F]">something bigger</em>
+              Your video could lead to something bigger
             </h2>
-            <p className="mt-5 text-white/60 font-light">
-              Funny, creative, well-edited?
-            </p>
-            <p className="mt-4 mx-auto max-w-xl rounded-xl border border-[#C8378A]/40 bg-[#C8378A]/10 px-5 py-4 text-white text-base md:text-lg font-medium">
-              The CSC team may reach out about a future Posi-Prene Ambassador partnership.
+            <p className="mt-6 mx-auto max-w-xl text-base md:text-lg text-white/75 font-light">
+              Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
+              Ambassador partnership.
             </p>
             <div className="mt-8 flex justify-center">
               <a
@@ -615,7 +603,7 @@ function Challenge2026Page() {
                   />
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#12333A] shadow-[0_20px_50px_-14px_rgba(3,205,194,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:text-white hover:shadow-[0_26px_60px_-14px_rgba(3,205,194,0.95)]"
+                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]"
                   >
                     Submit
                     <ArrowRight className="w-4 h-4" />
