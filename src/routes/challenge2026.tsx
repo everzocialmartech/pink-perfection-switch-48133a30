@@ -132,8 +132,6 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
   );
 }
 
-const UNUSED_CTA =
-  "group inline-flex items-center justify-center gap-3 rounded-full bg-[#ff6527] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-white shadow-[0_20px_50px_-14px_rgba(255,101,39,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e0521a] hover:shadow-[0_26px_60px_-14px_rgba(255,101,39,0.95)]";
 
 function PinkCTA({
   href,
