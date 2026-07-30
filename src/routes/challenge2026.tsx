@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Gift, Instagram, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -357,14 +357,39 @@ function Challenge2026Page() {
                     Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
                   </h2>
 
-                  <ul className="mt-7 space-y-3">
-                    {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                      <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/75 font-light">
-                        <span aria-hidden className="h-px w-6 shrink-0 bg-[#00857E]" />
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Wrapped-present card holding the prize contents */}
+                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/25 bg-[#C8378A]/[0.06] px-6 pb-6 pt-9 shadow-[0_24px_50px_-32px_rgba(200,55,138,0.6)]">
+                    {/* ribbon */}
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/15"
+                    />
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/15"
+                    />
+                    {/* bow */}
+                    <span
+                      aria-hidden
+                      className="absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1"
+                    >
+                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#C8378A]" />
+                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
+                    </span>
+
+                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                      What&rsquo;s inside
+                    </p>
+                    <ul className="relative mt-4 space-y-3">
+                      {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
+                        <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/80 font-light">
+                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#00857E]" strokeWidth={1.4} />
+                          {spec}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
                   <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
