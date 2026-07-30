@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
-import { ArrowRight, Check, Copy, Facebook, Gift, Instagram, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
