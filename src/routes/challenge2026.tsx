@@ -460,7 +460,7 @@ function Challenge2026Page() {
               href={FB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Facebook className="w-4 h-4" /> Follow on Facebook
             </a>
@@ -468,7 +468,7 @@ function Challenge2026Page() {
               href={IG_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-[11px] font-bold uppercase tracking-[0.18em] hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 text-[0.9rem] font-medium text-white/80 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Instagram className="w-4 h-4" /> Follow on Instagram
             </a>
@@ -603,7 +603,7 @@ function Challenge2026Page() {
                   />
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#03CDC2] px-10 py-5 text-xs sm:text-sm font-extrabold uppercase tracking-[0.18em] text-[#12333A] shadow-[0_20px_50px_-14px_rgba(3,205,194,0.85)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#333745] hover:text-white hover:shadow-[0_26px_60px_-14px_rgba(3,205,194,0.95)]"
+                    className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#C8378A] px-8 py-4 text-[0.95rem] font-semibold text-white shadow-[0_18px_40px_-16px_rgba(200,55,138,0.5)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#A82B72]"
                   >
                     Submit
                     <ArrowRight className="w-4 h-4" />
