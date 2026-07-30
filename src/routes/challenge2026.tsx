@@ -167,8 +167,6 @@ const STEPS: StepDef[] = [
 ];
 
 function Challenge2026Page() {
-  const [entry, setEntry] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [step, setStep] = useState(0);
 
   const go = (i: number) => {
@@ -562,51 +560,6 @@ function Challenge2026Page() {
                     </blockquote>
                   </figure>
                 </div>
-              </div>
-
-              <div className="mt-10 rounded-3xl border border-white/12 bg-[#333745] px-6 py-10 md:px-10 md:py-12 text-center">
-                <div className="flex justify-center">
-                  <Eyebrow dark>This goes directly to the CSC team</Eyebrow>
-                </div>
-                <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-                <p className="mt-3 text-sm text-white/65 font-light">
-                  Tag Clinical Supply Company · keep your post public.
-                </p>
-                <div className="mt-4">
-                  <HashtagChip dark />
-                </div>
-                <form
-                  className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    if (entry.trim()) setSubmitted(true);
-                  }}
-                >
-                  {submitted ? (
-                    <p className="w-full text-sm text-white/70 font-light">
-                      Entry received. Keep your post public so we can count the likes.
-                    </p>
-                  ) : (
-                    <>
-                      <input
-                        type="url"
-                        required
-                        value={entry}
-                        onChange={(e) => setEntry(e.target.value)}
-                        placeholder="Paste your post link"
-                        aria-label="Your post link"
-                        className="flex-1 rounded-full border border-white/20 bg-white/[0.06] px-5 py-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-[#03CDC2] focus:ring-2 focus:ring-[#03CDC2]/30"
-                      />
-                      <button
-                        type="submit"
-                        className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#03CDC2] px-8 py-4 text-[0.95rem] font-semibold text-[#08202C] shadow-[0_18px_40px_-16px_rgba(3,205,194,0.55)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#2FE3D9]"
-                      >
-                        Submit
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </>
-                  )}
-                </form>
               </div>
 
               <div className="mt-8 flex justify-center">
