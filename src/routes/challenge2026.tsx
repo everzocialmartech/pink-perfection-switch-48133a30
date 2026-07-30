@@ -289,10 +289,12 @@ function Challenge2026Page() {
             <p className="mt-4 text-[#000e32]/60 font-light">
               Three cases, one a month. Shipped to your practice.
             </p>
-            <p className="mt-4 mx-auto inline-flex rounded-full border border-[#1762ef]/40 bg-[#1762ef]/10 px-6 py-3 text-base md:text-lg font-semibold text-[#114b9c]">
+            <p className="mt-6 md:mt-8 mx-auto inline-flex rounded-full border border-[#1762ef]/40 bg-[#1762ef]/10 px-6 py-3 text-base md:text-lg font-semibold text-[#114b9c]">
               Most likes by the deadline wins.
             </p>
-            <LikeCounter />
+            <div className="mt-6 md:mt-8">
+              <LikeCounter />
+            </div>
           </Reveal>
 
           <Reveal delay={120} className="mt-12">
