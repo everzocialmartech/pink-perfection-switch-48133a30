@@ -7,7 +7,7 @@ import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-rea
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
-const IG_URL = "https://www.instagram.com/clinicalsupplycompany";
+const IG_URL = "https://www.instagram.com/clinicalsupplyco/";
 
 export const Route = createFileRoute("/challenge2026")({
   head: () => ({
