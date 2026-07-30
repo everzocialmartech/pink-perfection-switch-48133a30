@@ -289,7 +289,7 @@ function Challenge2026Page() {
             <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#C8378A] ring-4 ring-[#C8378A]/15 shadow-[0_22px_45px_-18px_rgba(200,55,138,0.85)]">
               <Trophy className="h-9 w-9 text-white" strokeWidth={1.6} />
             </div>
-            <div className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase text-[#C8378A]">
+            <div className="inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase text-[#C8378A]">
               <span className="h-px w-6 bg-[#C8378A]" />
               The grand prize
             </div>
