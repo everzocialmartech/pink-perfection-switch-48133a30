@@ -355,39 +355,13 @@ function Challenge2026Page() {
                     Three months of <em className="italic text-[#FF6FB4]">FREE</em> Posi-Prene Gloves
                   </h2>
 
-                  {/* Wrapped-present card holding the prize contents */}
-                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/40 bg-[#C8378A]/[0.12] px-6 pb-6 pt-9 shadow-[0_24px_50px_-28px_rgba(200,55,138,0.8)]">
-                    {/* ribbon */}
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/25"
-                    />
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/25"
-                    />
-                    {/* bow */}
-                    <span
-                      aria-hidden
-                      className="absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1"
-                    >
-                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#FF6FB4]" />
-                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
-                    </span>
-
-                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF6FB4]">
-                      What&rsquo;s inside
-                    </p>
-                    <ul className="relative mt-4 space-y-3">
-                      {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                        <li key={spec} className="flex items-center gap-3 text-sm text-white/80 font-light">
-                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#03CDC2]" strokeWidth={1.4} />
-                          {spec}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul className="mt-8 max-w-sm space-y-3 border-l border-[#03CDC2]/40 pl-5">
+                    {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
+                      <li key={spec} className="text-sm md:text-base text-white/80 font-light">
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className="mt-8 border-t border-white/15 pt-4 flex items-start gap-3">
                     <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#03CDC2]" />
