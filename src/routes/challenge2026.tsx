@@ -50,10 +50,10 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
         className={`h-6 w-6 shrink-0 translate-y-1 text-[#C8378A] transition-transform ${beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""}`}
         fill="#C8378A"
       />
-      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-[#2D3142]">
+      <span className="text-4xl md:text-5xl font-semibold tabular-nums text-white">
         {count.toLocaleString("en-US")}
       </span>
-      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#2D3142]/60">
+      <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/60">
         likes
       </span>
     </div>
@@ -208,7 +208,7 @@ function Challenge2026Page() {
     );
 
   return (
-    <div className="challenge-type min-h-screen bg-white text-[#2D3142] antialiased flex flex-col">
+    <div className="challenge-type min-h-screen bg-[#2D3142] text-white antialiased flex flex-col">
       <div className="h-[3px] w-full bg-[#03CDC2]" />
       <header className="sticky top-0 inset-x-0 z-50 bg-[#2D3142]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-14 md:h-16 flex items-center justify-between gap-4">
@@ -292,44 +292,44 @@ function Challenge2026Page() {
 
         {/* STEP 1 - CAN YOU BEAT THEM */}
         {step === 1 && (
-          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+          <section className="relative overflow-hidden bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 80% 60% at 20% 15%, rgba(3,205,194,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 88% 88%, rgba(200,55,138,0.10) 0%, rgba(255,255,255,0) 62%)",
+                  "radial-gradient(ellipse 80% 60% at 20% 15%, rgba(3,205,194,0.18) 0%, rgba(45,49,66,0) 62%), radial-gradient(ellipse 80% 60% at 88% 88%, rgba(200,55,138,0.16) 0%, rgba(45,49,66,0) 62%)",
               }}
             />
             <div className="relative max-w-5xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)] md:gap-14 md:items-center">
                 <div>
-                  <Eyebrow>The competition</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1] text-[#2D3142]">
+                  <Eyebrow dark>The competition</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 leading-[1.1] text-white">
                     Can your practice beat them all?
                   </h2>
-                  <p className="mt-6 max-w-md text-base md:text-lg text-[#333745]/75 font-light">
+                  <p className="mt-6 max-w-md text-base md:text-lg text-white/70 font-light">
                     Every team that races posts their video. The one with the most likes at the
                     deadline takes the prize.
                   </p>
                   <div className="mt-9 flex flex-wrap items-center gap-5">
-                    <NextButton />
-                    <BackButton />
+                    <NextButton dark />
+                    <BackButton dark />
                   </div>
                 </div>
 
-                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
-                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                <div className="rounded-2xl md:rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(0,0,0,0.6)]">
+                  <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full rounded-full bg-[#03CDC2] opacity-70 animate-ping" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#00857E]" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#03CDC2]" />
                     </span>
                     Most likes wins
                   </div>
                   <div className="mt-4">
                     <LikeCounter />
                   </div>
-                  <p className="mt-3 text-xs text-[#333745]/55 font-light">
+                  <p className="mt-3 text-xs text-white/50 font-light">
                     Example only. Your entry&rsquo;s likes start counting the moment you post.
                   </p>
                 </div>
@@ -340,84 +340,84 @@ function Challenge2026Page() {
 
         {/* STEP 2 - PRIZE */}
         {step === 2 && (
-          <section className="relative overflow-hidden bg-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
+          <section className="relative overflow-hidden bg-[#2D3142] text-white flex min-h-[calc(100vh-6.5rem)] items-center py-16">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.14) 0%, rgba(255,255,255,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(200,55,138,0.12) 0%, rgba(255,255,255,0) 62%)",
+                  "radial-gradient(ellipse 90% 60% at 15% 20%, rgba(200,55,138,0.22) 0%, rgba(45,49,66,0) 62%), radial-gradient(ellipse 80% 60% at 90% 85%, rgba(3,205,194,0.14) 0%, rgba(45,49,66,0) 62%)",
               }}
             />
             <div className="relative max-w-5xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-14 md:items-center">
                 <div>
-                  <Eyebrow>The grand prize</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.1]">
-                    Three months of <em className="italic text-[#C8378A]">FREE</em> Posi-Prene Gloves
+                  <Eyebrow dark>The grand prize</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-white leading-[1.1]">
+                    Three months of <em className="italic text-[#FF6FB4]">FREE</em> Posi-Prene Gloves
                   </h2>
 
                   {/* Wrapped-present card holding the prize contents */}
-                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/25 bg-[#C8378A]/[0.06] px-6 pb-6 pt-9 shadow-[0_24px_50px_-32px_rgba(200,55,138,0.6)]">
+                  <div className="relative mt-8 max-w-sm overflow-hidden rounded-2xl border border-[#C8378A]/40 bg-[#C8378A]/[0.12] px-6 pb-6 pt-9 shadow-[0_24px_50px_-28px_rgba(200,55,138,0.8)]">
                     {/* ribbon */}
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/15"
+                      className="pointer-events-none absolute inset-y-0 left-1/2 w-8 -translate-x-1/2 bg-[#C8378A]/25"
                     />
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/15"
+                      className="pointer-events-none absolute inset-x-0 top-9 h-8 bg-[#C8378A]/25"
                     />
                     {/* bow */}
                     <span
                       aria-hidden
                       className="absolute left-1/2 top-0 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1"
                     >
-                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-[#C8378A]" />
-                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#C8378A] bg-white" />
+                      <span className="h-5 w-6 rotate-[-18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-[#FF6FB4]" />
+                      <span className="h-5 w-6 rotate-[18deg] rounded-full border-[3px] border-[#FF6FB4] bg-[#2D3142]" />
                     </span>
 
-                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#C8378A]">
+                    <p className="relative text-[11px] font-bold uppercase tracking-[0.2em] text-[#FF6FB4]">
                       What&rsquo;s inside
                     </p>
                     <ul className="relative mt-4 space-y-3">
                       {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                        <li key={spec} className="flex items-center gap-3 text-sm text-[#333745]/80 font-light">
-                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#00857E]" strokeWidth={1.4} />
+                        <li key={spec} className="flex items-center gap-3 text-sm text-white/80 font-light">
+                          <Gift aria-hidden className="h-4 w-4 shrink-0 text-[#03CDC2]" strokeWidth={1.4} />
                           {spec}
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mt-8 border-t border-[#2D3142]/15 pt-4 flex items-start gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#00857E]" />
-                    <p className="text-[0.95rem] md:text-base text-[#2D3142] font-normal">
+                  <div className="mt-8 border-t border-white/15 pt-4 flex items-start gap-3">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#03CDC2]" />
+                    <p className="text-[0.95rem] md:text-base text-white font-normal">
                       Most likes by the deadline wins.
                     </p>
                   </div>
 
                   <div className="mt-9 flex flex-wrap items-center gap-5">
-                    <NextButton />
-                    <BackButton />
+                    <NextButton dark />
+                    <BackButton dark />
                   </div>
                 </div>
 
-                <div className="rounded-2xl md:rounded-3xl border border-[#2D3142]/10 bg-white px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(45,49,66,0.45)]">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                <div className="rounded-2xl md:rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-7 md:px-9 md:py-10 shadow-[0_28px_60px_-30px_rgba(0,0,0,0.6)]">
+                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                     Head start
                   </p>
-                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-[#2D3142]/80 font-light">
-                    <strong className="font-semibold text-[#2D3142]">Loyal Posi-Prene users</strong> get
+                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-white/75 font-light">
+                    <strong className="font-semibold text-white">Loyal Posi-Prene users</strong> get
                     a full month of advantage to gather likes before the challenge goes public.
                   </p>
-                  <div className="mt-7 border-t border-[#2D3142]/10 pt-6">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#00857E]">
+                  <div className="mt-7 border-t border-white/10 pt-6">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#03CDC2]">
                       Tag your post
                     </p>
                     <div className="mt-3">
-                      <HashtagChip />
+                      <HashtagChip dark />
                     </div>
                   </div>
                 </div>
@@ -527,16 +527,16 @@ function Challenge2026Page() {
 
         {/* STEP 5 - NEED GLOVES + SUBMIT */}
         {step === 5 && (
-          <section className="bg-white py-14 md:py-20 min-h-[calc(100vh-6.5rem)]">
+          <section className="bg-[#2D3142] text-white py-14 md:py-20 min-h-[calc(100vh-6.5rem)]">
             <div className="max-w-4xl mx-auto px-6">
-              <div className="relative overflow-hidden rounded-3xl border border-[#2D3142]/10 bg-[#F6F8FA] px-6 py-12 md:px-14 md:py-16">
-                <div aria-hidden className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/15 blur-3xl" />
-                <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/[0.05] px-6 py-12 md:px-14 md:py-16">
+                <div aria-hidden className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-[#03CDC2]/20 blur-3xl" />
+                <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#C8378A]/20 blur-3xl" />
                 <div className="relative">
-                  <Eyebrow>Gear up</Eyebrow>
-                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-[#2D3142] leading-[1.15] max-w-xl">
+                  <Eyebrow dark>Gear up</Eyebrow>
+                  <h2 className="font-serif text-4xl md:text-5xl mt-5 text-white leading-[1.15] max-w-xl">
                     Need gloves?
-                    <span className="block mt-2 text-[#333745]/80">You can still take the challenge</span>
+                    <span className="block mt-2 text-white/70">You can still take the challenge</span>
                   </h2>
                   <div className="mt-8 flex flex-col sm:flex-row gap-3">
                     <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
@@ -544,19 +544,19 @@ function Challenge2026Page() {
                       href={SAMPLES_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-[#2D3142]/25 bg-white/70 px-8 py-4 text-[0.95rem] font-medium text-[#2D3142] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#00857E] hover:text-[#00857E]"
+                      className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 py-4 text-[0.95rem] font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-[#03CDC2] hover:text-[#03CDC2]"
                     >
                       Request free samples
                     </a>
                   </div>
-                  <p className="mt-6 text-xs md:text-sm text-[#333745]/60 font-light max-w-xl">
+                  <p className="mt-6 text-xs md:text-sm text-white/55 font-light max-w-xl">
                     Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
                     team must wear regular nitrile gloves.
                   </p>
-                  <figure className="relative mt-10 max-w-2xl border-t border-[#2D3142]/12 pt-7">
-                    <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-[#2D3142]/75">
+                  <figure className="relative mt-10 max-w-2xl border-t border-white/12 pt-7">
+                    <blockquote className="font-light text-[0.95rem] md:text-lg leading-relaxed text-white/75">
                       &ldquo;PosiPrene gloves are the{" "}
-                      <strong className="font-semibold text-[#2D3142]">FASTEST</strong> to put on, even
+                      <strong className="font-semibold text-white">FASTEST</strong> to put on, even
                       with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no
                       latex. Once you try them, you won&rsquo;t go back!&rdquo;
                     </blockquote>
@@ -564,16 +564,16 @@ function Challenge2026Page() {
                 </div>
               </div>
 
-              <div className="mt-10 rounded-3xl border border-[#2D3142]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12 text-center">
+              <div className="mt-10 rounded-3xl border border-white/12 bg-[#333745] px-6 py-10 md:px-10 md:py-12 text-center">
                 <div className="flex justify-center">
-                  <Eyebrow>This goes directly to the CSC team</Eyebrow>
+                  <Eyebrow dark>This goes directly to the CSC team</Eyebrow>
                 </div>
                 <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your link</h3>
-                <p className="mt-3 text-sm text-[#2D3142]/65 font-light">
+                <p className="mt-3 text-sm text-white/65 font-light">
                   Tag Clinical Supply Company · keep your post public.
                 </p>
                 <div className="mt-4">
-                  <HashtagChip />
+                  <HashtagChip dark />
                 </div>
                 <form
                   className="mt-6 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto"
@@ -583,7 +583,7 @@ function Challenge2026Page() {
                   }}
                 >
                   {submitted ? (
-                    <p className="w-full text-sm text-[#2D3142]/70 font-light">
+                    <p className="w-full text-sm text-white/70 font-light">
                       Entry received. Keep your post public so we can count the likes.
                     </p>
                   ) : (
@@ -595,7 +595,7 @@ function Challenge2026Page() {
                         onChange={(e) => setEntry(e.target.value)}
                         placeholder="Paste your post link"
                         aria-label="Your post link"
-                        className="flex-1 rounded-full border border-[#2D3142]/15 bg-white px-5 py-4 text-sm outline-none transition-colors focus:border-[#00857E] focus:ring-2 focus:ring-[#00857E]/30"
+                        className="flex-1 rounded-full border border-white/20 bg-white/[0.06] px-5 py-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-[#03CDC2] focus:ring-2 focus:ring-[#03CDC2]/30"
                       />
                       <button
                         type="submit"
@@ -610,7 +610,7 @@ function Challenge2026Page() {
               </div>
 
               <div className="mt-8 flex justify-center">
-                <BackButton />
+                <BackButton dark />
               </div>
             </div>
           </section>
