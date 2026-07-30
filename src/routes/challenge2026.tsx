@@ -3,12 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
-import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
 const IG_URL = "https://www.instagram.com/clinicalsupplyco/";
+const HASHTAG = "#PosiPreneChallenge";
+const OG_IMAGE =
+  "https://pink-perfection-switch.lovable.app/__l5e/assets-v1/284b47f4-69de-4735-844d-b7779e04008c/challenge-hero.png";
 
 export const Route = createFileRoute("/challenge2026")({
   head: () => ({
@@ -26,7 +29,9 @@ export const Route = createFileRoute("/challenge2026")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://pink-perfection-switch.lovable.app/challenge2026" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: OG_IMAGE },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/challenge2026" }],
   }),
