@@ -13,13 +13,13 @@ const IG_URL = "https://www.instagram.com/clinicalsupplycompany";
 export const Route = createFileRoute("/challenge2026")({
   head: () => ({
     meta: [
-      { title: "The Posi-Prene Challenge — Fastest Hands in Dentistry" },
+      { title: "The Posi-Prene Challenge: Fastest Hands in Dentistry" },
       {
         name: "description",
         content:
           "You've been challenged. Race Posi-Prene against standard nitrile on wet hands, post the video, and win three months of gloves for your practice.",
       },
-      { property: "og:title", content: "The Posi-Prene Challenge — You've Been Challenged" },
+      { property: "og:title", content: "The Posi-Prene Challenge: You've Been Challenged" },
       {
         property: "og:description",
         content: "Race Posi-Prene against nitrile on wet hands. Post the video. Win three months of gloves.",
@@ -132,7 +132,7 @@ function Challenge2026Page() {
         </div>
       </header>
 
-      {/* HERO — navy */}
+      {/* HERO - navy */}
       <section className="relative overflow-hidden bg-[#000e32] text-white pt-14 pb-16 md:pt-20 md:pb-20">
         <div
           aria-hidden
@@ -186,7 +186,7 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      {/* PRIZE — white */}
+      {/* PRIZE - white */}
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal>
@@ -195,13 +195,13 @@ function Challenge2026Page() {
               Three months of <em className="italic text-[#1762ef]">Posi-Prene</em>
             </h2>
             <p className="mt-4 text-[#000e32]/60 font-light">
-              Three cases — one a month. Most likes by the deadline wins.
+              Three cases, one a month. Most likes by the deadline wins.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* RULES / HOW TO — navy */}
+      {/* RULES / HOW TO - navy */}
       <section id="rules" className="bg-[#000e32] text-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6">
           <Reveal className="text-center">
@@ -248,7 +248,7 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      {/* NEED GLOVES + ENTER — white */}
+      {/* NEED GLOVES + ENTER - white */}
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal>
@@ -283,7 +283,7 @@ function Challenge2026Page() {
             >
               {submitted ? (
                 <p className="w-full text-sm text-[#000e32]/70 font-light">
-                  Entry received — keep your post public so we can count the likes.
+                  Entry received. Keep your post public so we can count the likes.
                 </p>
               ) : (
                 <>
@@ -306,7 +306,7 @@ function Challenge2026Page() {
         </div>
       </section>
 
-      {/* AMBASSADOR — navy */}
+      {/* AMBASSADOR - navy */}
       <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
