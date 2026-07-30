@@ -322,7 +322,7 @@ function Challenge2026Page() {
               alt="Clinical Supply Company"
               className="h-10 md:h-12 w-auto mx-auto mb-5"
             />
-            <Eyebrow dark>How it works</Eyebrow>
+            <Eyebrow dark>Official rules</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl mt-5">
               Ready. Wet. <em className="italic text-[#4d8dff]">Glove!</em>
             </h2>
