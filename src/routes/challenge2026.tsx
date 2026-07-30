@@ -167,8 +167,6 @@ const STEPS: StepDef[] = [
 ];
 
 function Challenge2026Page() {
-  const [entry, setEntry] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [step, setStep] = useState(0);
 
   const go = (i: number) => {
