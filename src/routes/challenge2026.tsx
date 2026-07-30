@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
+import posiPreneLogo from "@/assets/posi-prene-logo-white.png.asset.json";
 import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
@@ -395,6 +396,11 @@ function Challenge2026Page() {
       <section className="bg-[#000e32] text-white py-16 md:py-20 text-center">
         <div className="max-w-2xl mx-auto px-6">
           <Reveal>
+            <img
+              src={posiPreneLogo.url}
+              alt="Posi-Prene"
+              className="mx-auto mb-6 h-8 md:h-10 w-auto"
+            />
             <p className="text-sm md:text-base font-semibold tracking-[0.22em] uppercase text-[#ff6527]">
               Become an Ambassador
             </p>
