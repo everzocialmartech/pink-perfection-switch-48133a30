@@ -158,13 +158,39 @@ function PinkCTA({
 function Eyebrow({ dark = false, children }: { dark?: boolean; children: React.ReactNode }) {
   return (
     <div
-      className={`inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.32em] uppercase ${
-        dark ? "text-white/55" : "text-[#2D3142]/50"
+      className={`inline-flex items-center gap-2 text-[11px] md:text-xs font-bold tracking-[0.24em] uppercase ${
+        dark ? "text-white/70" : "text-[#2D3142]/70"
       }`}
     >
-      <span className="h-px w-6 bg-[#03CDC2]" />
+      <span className={`h-px w-6 ${dark ? "bg-[#03CDC2]" : "bg-[#00857E]"}`} />
       {children}
     </div>
+  );
+}
+
+function HashtagChip({ dark = false }: { dark?: boolean }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={() => {
+        navigator.clipboard?.writeText(HASHTAG);
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      }}
+      aria-label={`Copy ${HASHTAG} to clipboard`}
+      className={`group inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
+        dark
+          ? "border-[#03CDC2]/45 bg-[#03CDC2]/10 text-[#03CDC2] hover:bg-[#03CDC2]/20"
+          : "border-[#00857E]/35 bg-[#00857E]/5 text-[#00857E] hover:bg-[#00857E]/10"
+      }`}
+    >
+      {HASHTAG}
+      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4 opacity-70" />}
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Hashtag copied" : ""}
+      </span>
+    </button>
   );
 }
 
