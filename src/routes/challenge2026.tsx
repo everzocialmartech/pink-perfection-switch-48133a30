@@ -417,7 +417,8 @@ function Challenge2026Page() {
       <section className="bg-white py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Reveal className="rounded-3xl border border-[#000e32]/10 bg-[#f1f3f7] px-6 py-10 md:px-10 md:py-12">
-            <h3 className="font-serif text-3xl md:text-4xl">Submit your entry</h3>
+            <Eyebrow>This goes directly to the CSC team</Eyebrow>
+            <h3 className="font-serif text-3xl md:text-4xl mt-4">Submit your entry</h3>
             <p className="mt-3 text-sm text-[#000e32]/55 font-light">
               Tag Clinical Supply Company · #PosiPreneChallenge · keep your post public.
             </p>
