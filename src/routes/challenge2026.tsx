@@ -226,10 +226,15 @@ function Challenge2026Page() {
                 e.preventDefault();
                 document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className={`${BIG_CTA} bg-[#1762ef] shadow-[0_20px_50px_-14px_rgba(23,98,239,0.85)] hover:bg-[#114b9c] hover:shadow-[0_26px_60px_-14px_rgba(23,98,239,0.95)]`}
+              className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full border border-white/25 bg-white/[0.04] px-11 py-5 text-xs sm:text-sm font-semibold uppercase tracking-[0.32em] text-white/85 backdrop-blur-sm transition-all duration-500 hover:border-[#4d8dff]/70 hover:text-white hover:shadow-[0_0_50px_-8px_rgba(23,98,239,0.55)]"
             >
-              Look up the rules
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -translate-x-full bg-[linear-gradient(100deg,transparent,rgba(122,164,255,0.28),transparent)] transition-transform duration-[1100ms] ease-out group-hover:translate-x-full"
+              />
+              <Lock className="relative w-3.5 h-3.5 opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
+              <span className="relative">Look up the rules</span>
+              <ArrowRight className="relative w-4 h-4 opacity-70 transition-all duration-500 group-hover:opacity-100 group-hover:translate-x-1" />
             </a>
           </div>
 
