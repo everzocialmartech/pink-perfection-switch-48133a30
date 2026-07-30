@@ -4,8 +4,7 @@ import cscLogo from "@/assets/csc-logo.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import { ArrowRight, Facebook, Instagram, Lock, Trophy, Heart } from "lucide-react";
 
-const SHOP_URL =
-  "https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free";
+const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
 const IG_URL = "https://www.instagram.com/clinicalsupplycompany";
@@ -403,7 +402,17 @@ function Challenge2026Page() {
               Ambassador partnership.
             </p>
             <div className="mt-8 flex justify-center">
-              <PinkCTA href={SHOP_URL}>Take the challenge</PinkCTA>
+              <a
+                href="#rules"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("rules")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className={BIG_CTA}
+              >
+                Take the challenge
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
             </div>
             <p className="mt-6 text-xs text-white/35 font-light">
               Participation does not guarantee selection. Winner selection and eligibility are
