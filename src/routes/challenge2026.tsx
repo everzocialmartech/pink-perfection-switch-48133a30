@@ -253,7 +253,7 @@ function Challenge2026Page() {
                     <span className="mt-3 block text-4xl md:text-5xl text-[#16002E]">
                       You&rsquo;ve been
                     </span>
-                    <span className="race-display mt-1 block text-[4.2rem] md:text-[6.5rem] text-[#F3267A]">
+                    <span className="race-display mt-1 block text-[3.8rem] md:text-[5.5rem] text-[#F3267A]">
                       Challenged
                     </span>
                   </h1>
