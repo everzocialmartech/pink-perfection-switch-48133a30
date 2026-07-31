@@ -363,9 +363,9 @@ function Challenge2026Page() {
                     ))}
                   </ul>
 
-                  <div className="mt-8 border-t border-white/15 pt-4 flex items-start gap-3">
-                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#03CDC2]" />
-                    <p className="text-[0.95rem] md:text-base text-white font-normal">
+                  <div className="mt-8 relative overflow-hidden rounded-xl border border-[#03CDC2]/50 bg-[#03CDC2]/12 px-5 py-4 shadow-[0_0_40px_-12px_rgba(3,205,194,0.5)]">
+                    <span aria-hidden className="absolute left-0 top-0 h-full w-1.5 bg-[#03CDC2]" />
+                    <p className="pl-3 text-base md:text-lg font-semibold uppercase tracking-[0.06em] text-[#03CDC2]">
                       Most likes by the deadline wins.
                     </p>
                   </div>
