@@ -140,20 +140,6 @@ function EdgeStreaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
 }
 
 /** Start-line ticks. */
-function GridTicks({ className = "" }: { className?: string }) {
-  return (
-    <div aria-hidden className={`pointer-events-none flex items-end gap-[6px] ${className}`}>
-      {Array.from({ length: 14 }).map((_, i) => (
-        <span
-          key={i}
-          className="block w-[3px] bg-[#F3267A]"
-          style={{ height: `${8 + (i % 4) * 7}px`, opacity: 0.25 + (i % 4) * 0.2 }}
-        />
-      ))}
-    </div>
-  );
-}
-
 function Badge({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#F3267A] bg-[#16002E] text-[#F3267A]">
