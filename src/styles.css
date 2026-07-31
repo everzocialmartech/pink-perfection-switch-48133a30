@@ -379,6 +379,9 @@
   }
   .animate-flash-blur,
   .animate-shh,
+  .animate-race-rise,
+  .animate-streak-l,
+  .animate-streak-r,
   .animate-hero-rise {
     filter: none !important;
     opacity: 1 !important;
