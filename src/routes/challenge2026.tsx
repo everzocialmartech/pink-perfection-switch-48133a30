@@ -374,7 +374,7 @@ function Challenge2026Page() {
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-16">
             <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-6xl mx-auto px-6 w-full">
-              <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16 md:items-center">
+              <div className="max-w-2xl">
                 <div className="animate-race-rise">
                   <Eyebrow>The competition</Eyebrow>
                   <h2 className="mt-5 text-5xl md:text-7xl text-[#16002E]">
@@ -385,13 +385,8 @@ function Challenge2026Page() {
                     Every team that races posts their video. The one with the most likes at the
                     deadline takes the prize.
                   </p>
-                  <div className="mt-9 flex flex-wrap items-center gap-6">
-                    <NextButton />
-                    <BackButton />
-                  </div>
-                </div>
 
-                <div className="animate-race-rise delay-200 relative bg-[#16002E] px-7 py-9 md:px-10 md:py-11">
+                  <div className="animate-race-rise delay-200 relative mt-8 bg-[#16002E] px-7 py-7 md:px-10 md:py-9">
                   <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full rounded-full bg-[#F3267A] opacity-70 animate-ping" />
@@ -399,12 +394,18 @@ function Challenge2026Page() {
                     </span>
                     Most likes wins
                   </div>
-                  <div className="mt-5">
-                    <LikeCounter />
+                    <div className="mt-5">
+                      <LikeCounter />
+                    </div>
+                    <p className="mt-4 text-xs text-white/55">
+                      Example only. Your entry&rsquo;s likes start counting the moment you post.
+                    </p>
                   </div>
-                  <p className="mt-4 text-xs text-white/55">
-                    Example only. Your entry&rsquo;s likes start counting the moment you post.
-                  </p>
+
+                  <div className="mt-8 flex flex-wrap items-center gap-6">
+                    <NextButton />
+                    <BackButton />
+                  </div>
                 </div>
               </div>
             </div>
