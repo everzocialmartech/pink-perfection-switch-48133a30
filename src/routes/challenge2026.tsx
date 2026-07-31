@@ -605,7 +605,6 @@ function Challenge2026Page() {
               <h2 className="mt-5 max-w-3xl text-5xl md:text-7xl leading-[0.9]">
                 Your video could lead to <span className="text-[#F3267A]">something bigger</span>
               </h2>
-              <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
               <p className="mt-6 max-w-xl text-base md:text-lg text-white/75">
                 Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
                 Ambassador partnership.
