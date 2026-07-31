@@ -112,10 +112,10 @@ function GhostNumeral({ n, className = "" }: { n: string; className?: string }) 
 function Streaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const bars = [
     { top: "8%", h: "10px", w: "62%", left: "-6%", d: "0s", c: PINK, o: 0.9, side: "l" },
-    { top: "20%", h: "22px", w: "48%", left: "auto", right: "-4%", d: "0.08s", c: PLUM, o: 1, side: "r" },
+    { top: "20%", h: "22px", w: "48%", left: "auto", right: "-4%", d: "0.08s", c: PINK, o: 0.3, side: "r" },
     { top: "44%", h: "6px", w: "38%", left: "-2%", d: "0.16s", c: PINK, o: 0.55, side: "l" },
     { top: "66%", h: "30px", w: "56%", left: "auto", right: "-8%", d: "0.24s", c: PINK, o: 0.22, side: "r" },
-    { top: "82%", h: "12px", w: "44%", left: "-4%", d: "0.32s", c: PLUM, o: 0.9, side: "l" },
+    { top: "82%", h: "12px", w: "44%", left: "-4%", d: "0.32s", c: PINK, o: 0.35, side: "l" },
   ] as const;
   const visible = tone === "light" ? bars.filter((b) => ["8%", "20%", "82%"].includes(b.top)) : bars;
   return (
