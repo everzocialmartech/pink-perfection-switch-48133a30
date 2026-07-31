@@ -6,6 +6,8 @@ import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
 import { ArrowRight, Check, Copy, Facebook, Instagram, Heart, Trophy } from "lucide-react";
 
 const PINK = "#F3267A";
+const INK = "#16002E";
+const PLUM = "#25003F";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
 const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
@@ -43,21 +45,23 @@ export const Route = createFileRoute("/challenge2026")({
 /* ---------- shared bits ---------- */
 
 const FOCUS =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F3267A]";
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#F3267A] focus-visible:ring-offset-[#16002E]";
 
-const PRIMARY =
-  `group inline-flex items-center justify-center gap-2.5 rounded-full bg-[#F3267A] px-7 py-3.5 text-[0.95rem] font-semibold text-white transition-transform duration-200 hover:-translate-y-[2px] ${FOCUS}`;
+const BIG_CTA = `group inline-flex items-center justify-center gap-3 bg-[#F3267A] px-8 py-4 text-[0.8rem] font-extrabold uppercase italic tracking-[0.14em] text-[#16002E] transition-transform duration-200 hover:-translate-y-[3px] hover:translate-x-[3px] ${FOCUS}`;
 
-const SECONDARY = (dark = false) =>
-  `group inline-flex items-center justify-center gap-2.5 rounded-full border px-7 py-3.5 text-[0.95rem] font-semibold transition-colors duration-200 ${FOCUS} ${
-    dark
-      ? "border-white/25 text-white hover:border-white/60"
-      : "border-[#16002E]/20 text-[#16002E] hover:border-[#16002E]/50"
-  }`;
+const GHOST_CTA = `group inline-flex items-center justify-center gap-3 border-2 border-current px-8 py-4 text-[0.8rem] font-extrabold uppercase italic tracking-[0.14em] transition-transform duration-200 hover:-translate-y-[3px] hover:translate-x-[3px] ${FOCUS}`;
 
-function PinkCTA({ href, children }: { href: string; children: React.ReactNode }) {
+function PinkCTA({
+  href,
+  children,
+  className = "",
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={PRIMARY}>
+    <a href={href} target="_blank" rel="noopener noreferrer" className={`${BIG_CTA} ${className}`}>
       {children}
       <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
     </a>
@@ -66,19 +70,103 @@ function PinkCTA({ href, children }: { href: string; children: React.ReactNode }
 
 function Eyebrow({ dark = false, children }: { dark?: boolean; children: React.ReactNode }) {
   return (
-    <p
-      className={`text-[0.78rem] font-semibold tracking-[0.14em] uppercase ${
-        dark ? "text-[#F3267A]" : "text-[#F3267A]"
+    <div
+      className={`inline-flex items-center gap-3 text-[11px] md:text-xs font-extrabold tracking-[0.28em] uppercase ${
+        dark ? "text-white/75" : "text-[#25003F]/75"
       }`}
     >
+      <span className="h-[3px] w-8 bg-[#F3267A]" />
       {children}
-    </p>
+    </div>
+  );
+}
+
+/** Oversized ghost numeral that drifts subtly on scroll. */
+function GhostNumeral({ n, className = "" }: { n: string; className?: string }) {
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => setY(window.scrollY * -0.09));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+  return (
+    <span
+      aria-hidden
+      style={{ transform: `translate3d(0, ${y}px, 0)` }}
+      className={`race-num pointer-events-none select-none absolute will-change-transform ${className}`}
+    >
+      {n}
+    </span>
+  );
+}
+
+/** Diagonal magenta / plum speed streaks. */
+function Streaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
+  const bars = [
+    { top: "8%", h: "10px", w: "62%", left: "-6%", d: "0s", c: PINK, o: 0.9, side: "l" },
+    { top: "20%", h: "22px", w: "48%", left: "auto", right: "-4%", d: "0.08s", c: PLUM, o: 1, side: "r" },
+    { top: "44%", h: "6px", w: "38%", left: "-2%", d: "0.16s", c: PINK, o: 0.55, side: "l" },
+    { top: "66%", h: "30px", w: "56%", left: "auto", right: "-8%", d: "0.24s", c: PINK, o: 0.22, side: "r" },
+    { top: "82%", h: "12px", w: "44%", left: "-4%", d: "0.32s", c: PLUM, o: 0.9, side: "l" },
+  ] as const;
+  const visible = tone === "light" ? bars.filter((b) => ["8%", "20%", "82%"].includes(b.top)) : bars;
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      {visible.map((b, i) => (
+        <span
+          key={i}
+          className={b.side === "l" ? "animate-streak-l absolute" : "animate-streak-r absolute"}
+          style={{
+            top: b.top,
+            left: (b as { left?: string }).left,
+            right: (b as { right?: string }).right,
+            width: b.w,
+            height: b.h,
+            background: b.c,
+            opacity: tone === "light" ? b.o * 0.35 : b.o,
+            animationDelay: b.d,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/** Start-line ticks. */
+function GridTicks({ className = "" }: { className?: string }) {
+  return (
+    <div aria-hidden className={`pointer-events-none flex items-end gap-[6px] ${className}`}>
+      {Array.from({ length: 14 }).map((_, i) => (
+        <span
+          key={i}
+          className="block w-[3px] bg-[#F3267A]"
+          style={{ height: `${8 + (i % 4) * 7}px`, opacity: 0.25 + (i % 4) * 0.2 }}
+        />
+      ))}
+    </div>
+  );
+}
+
+function Badge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#F3267A] bg-[#16002E] text-[#F3267A]">
+      {children}
+    </span>
   );
 }
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(target);
+  const [beat, setBeat] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -89,13 +177,15 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
       (entries) => {
         if (!entries[0].isIntersecting) return;
         io.disconnect();
+        setBeat(true);
         const start = performance.now();
-        const duration = 2000;
+        const duration = 2200;
         const tick = (now: number) => {
           const t = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - t, 3);
           setCount(Math.round(target * eased));
           if (t < 1) raf = requestAnimationFrame(tick);
+          else setBeat(false);
         };
         raf = requestAnimationFrame(tick);
       },
@@ -109,12 +199,17 @@ function LikeCounter({ target = 2847 }: { target?: number }) {
   }, [target]);
 
   return (
-    <div ref={ref} aria-live="off" className="inline-flex items-baseline gap-3">
-      <Heart className="h-6 w-6 shrink-0 translate-y-1 text-[#F3267A]" fill={PINK} />
-      <span className="race-num text-6xl md:text-7xl tabular-nums text-[#16002E]">
+    <div ref={ref} aria-live="off" className="inline-flex items-baseline gap-3 border-b-[3px] border-[#F3267A] pb-2">
+      <Heart
+        className={`h-6 w-6 shrink-0 translate-y-1 text-[#F3267A] transition-transform ${
+          beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""
+        }`}
+        fill={PINK}
+      />
+      <span className="race-num text-5xl md:text-6xl tabular-nums text-white">
         {count.toLocaleString("en-US")}
       </span>
-      <span className="text-sm text-[#16002E]/50">likes</span>
+      <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-white/60">likes</span>
     </div>
   );
 }
@@ -130,12 +225,14 @@ function HashtagChip({ dark = false }: { dark?: boolean }) {
         window.setTimeout(() => setCopied(false), 2000);
       }}
       aria-label={`Copy ${HASHTAG} to clipboard`}
-      className={`group inline-flex min-h-11 items-center gap-2 text-[0.95rem] font-semibold transition-colors ${FOCUS} ${
-        dark ? "text-[#F3267A] hover:text-white" : "text-[#F3267A] hover:text-[#16002E]"
+      className={`group inline-flex min-h-11 items-center gap-2 border-2 px-4 py-2 text-sm font-bold tracking-[0.04em] transition-colors ${FOCUS} ${
+        dark
+          ? "border-[#F3267A]/60 bg-[#F3267A]/10 text-[#F3267A] hover:bg-[#F3267A]/20"
+          : "border-[#F3267A] bg-[#F3267A]/8 text-[#C11259] hover:bg-[#F3267A]/15"
       }`}
     >
       {HASHTAG}
-      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4 opacity-60" />}
+      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4 opacity-70" />}
       <span className="sr-only" aria-live="polite">
         {copied ? "Hashtag copied" : ""}
       </span>
@@ -154,8 +251,6 @@ const STEPS: StepDef[] = [
   { id: "gear", label: "Need gloves?" },
 ];
 
-const SECTION = "mx-auto w-full max-w-5xl px-6";
-
 function Challenge2026Page() {
   const [step, setStep] = useState(0);
 
@@ -171,11 +266,11 @@ function Challenge2026Page() {
     }
   }, []);
 
-  const NextButton = () => {
+  const NextButton = ({ dark = false }: { dark?: boolean }) => {
     const next = STEPS[step].next;
     if (!next) return null;
     return (
-      <button type="button" onClick={() => go(step + 1)} className={PRIMARY}>
+      <button type="button" onClick={() => go(step + 1)} className={BIG_CTA}>
         {next}
         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
       </button>
@@ -187,100 +282,117 @@ function Challenge2026Page() {
       <button
         type="button"
         onClick={() => go(step - 1)}
-        className={`inline-flex items-center gap-2 text-[0.95rem] transition-colors ${FOCUS} ${
-          dark ? "text-white/50 hover:text-white" : "text-[#16002E]/50 hover:text-[#16002E]"
+        className={`inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.2em] transition-colors ${FOCUS} ${
+          dark ? "text-white/45 hover:text-[#F3267A]" : "text-[#25003F]/50 hover:text-[#C11259]"
         }`}
       >
-        <ArrowRight className="w-4 h-4 rotate-180" /> Back
+        <ArrowRight className="w-3.5 h-3.5 rotate-180" /> Back
       </button>
     );
 
   return (
-    <div className="challenge-type min-h-screen bg-white text-[#16002E] antialiased flex flex-col">
-      <header className="sticky top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-[#16002E]/10">
-        <div className="mx-auto max-w-5xl px-6 h-14 flex items-center justify-between gap-6">
+    <div className="challenge-type min-h-screen bg-[#16002E] text-white antialiased flex flex-col">
+      <div className="h-[4px] w-full bg-[#F3267A]" />
+      <header className="sticky top-0 inset-x-0 z-50 bg-[#16002E]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 md:h-14 flex items-center justify-between gap-4">
           <button type="button" onClick={() => go(0)} aria-label="Back to the start" className={FOCUS}>
-            <img src={cscLogo} alt="Clinical Supply Co." className="h-6 md:h-7 w-auto [filter:invert(1)]" />
+            <img src={cscLogo} alt="Clinical Supply Co." className="h-7 md:h-9 w-auto" />
           </button>
-
-          <nav aria-label="Step navigation" className="min-w-0">
-            <ul className="flex items-center gap-5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {STEPS.map((s, i) => (
-                <li key={s.id} className="shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => go(i)}
-                    aria-current={i === step ? "step" : undefined}
-                    className={`relative py-4 text-[0.82rem] transition-colors ${FOCUS} ${
-                      i === step ? "text-[#16002E]" : "text-[#16002E]/50 hover:text-[#16002E]"
-                    }`}
-                  >
-                    {s.label}
-                    {i === step && (
-                      <span aria-hidden className="absolute inset-x-0 -bottom-px h-[2px] bg-[#F3267A]" />
-                    )}
-                  </button>
-                </li>
-              ))}
-              <li className="shrink-0">
-                <a
-                  href={SHOP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`py-4 text-[0.82rem] font-semibold text-[#F3267A] transition-opacity hover:opacity-70 ${FOCUS}`}
-                >
-                  Shop
-                </a>
-              </li>
-            </ul>
-          </nav>
+          <img src={posiPreneLogo} alt="Posi-Prene" className="h-3.5 md:h-4 w-auto" />
         </div>
+        <nav aria-label="Step navigation" className="border-t border-white/10 bg-[#25003F]">
+          <ul className="max-w-6xl mx-auto flex items-center gap-1 overflow-x-auto px-4 sm:px-6 py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-2">
+            {STEPS.map((s, i) => (
+              <li key={s.id} className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => go(i)}
+                  aria-current={i === step ? "step" : undefined}
+                  className={`inline-flex items-center px-3 py-1.5 text-[10px] md:text-[11px] font-extrabold uppercase italic tracking-[0.16em] transition-colors ${FOCUS} ${
+                    i === step ? "bg-[#F3267A] text-[#16002E]" : "text-white/60 hover:text-[#F3267A]"
+                  }`}
+                >
+                  {s.label}
+                </button>
+              </li>
+            ))}
+            <li className="shrink-0">
+              <a
+                href={SHOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center px-3 py-1.5 text-[10px] md:text-[11px] font-extrabold uppercase italic tracking-[0.16em] text-[#F3267A] transition-colors hover:text-white ${FOCUS}`}
+              >
+                Shop
+              </a>
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <main key={step} className="flex-1">
         {/* STEP 0 - HERO */}
         {step === 0 && (
-          <section className="flex min-h-[calc(100vh-3.5rem)] items-center py-10 md:py-14">
-            <div className={SECTION}>
-              <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-                <div className="animate-race-rise max-w-md">
-                  <Eyebrow>The Posi-Prene Challenge</Eyebrow>
+          <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
+            <Streaks />
+            <div aria-hidden className="absolute inset-y-0 right-0 w-[62%] md:w-[48%]">
+              <img
+                src={challengeHero.url}
+                alt=""
+                className="race-duotone h-full w-full object-cover opacity-70"
+              />
+              <div
+                className="absolute inset-0 mix-blend-color"
+                style={{ background: `linear-gradient(200deg, ${PINK}, ${PLUM})` }}
+              />
+              <div
+                className="absolute inset-0"
+                style={{ background: `linear-gradient(90deg, ${INK} 0%, rgba(22,0,46,0.75) 35%, rgba(22,0,46,0.15) 100%)` }}
+              />
+            </div>
 
-                  <h1 className="mt-6">
-                    <span className="animate-shh block text-[0.95rem] tracking-[0.35em] font-semibold text-[#16002E]/45">
-                      Shh&hellip;
-                    </span>
-                    <span className="mt-3 block text-4xl md:text-5xl text-[#16002E]">
-                      You&rsquo;ve been
-                    </span>
-                    <span className="race-display mt-1 block text-[3.8rem] md:text-[5.5rem] text-[#F3267A]">
-                      Challenged
-                    </span>
-                  </h1>
+            <GhostNumeral
+              n="01"
+              className="right-2 md:right-8 bottom-0 text-[34vw] md:text-[26vw] leading-none text-white/[0.05]"
+            />
 
-                  <p className="mt-6 text-base md:text-lg leading-relaxed text-[#16002E]/65">
-                    Posi-Prene vs. Standard nitrile on wet hands.
-                    <br />
-                    Race it. Film it. Post it.
-                    <br />
-                    <span className="font-semibold text-[#16002E]">Posi-Prene Always Wins.</span>
-                  </p>
-
-                  <div className="mt-8">
-                    <NextButton />
-                  </div>
+            <div className="relative w-full max-w-6xl mx-auto px-6">
+              <div className="max-w-2xl text-left">
+                <div className="animate-race-rise flex items-center gap-4">
+                  <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.32em] text-[#F3267A]">
+                    Grid position
+                  </span>
+                  <GridTicks />
                 </div>
 
-                <div className="animate-race-rise delay-200 relative">
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute -left-10 top-1/2 hidden h-px w-24 bg-[#F3267A]/40 md:block"
-                  />
-                  <img
-                    src={challengeHero.url}
-                    alt="Gloved hands ready to race"
-                    className="w-full rounded-2xl object-cover aspect-[4/5] md:aspect-[4/5] bg-[#F5F4F2]"
-                  />
+                <div className="animate-race-rise delay-75 mt-3 inline-block border-2 border-[#F3267A]/60 px-3 py-1 text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.26em] text-[#F3267A]">
+                  The Posi-Prene Challenge
+                </div>
+
+                <h1 className="mt-4">
+                  <span className="animate-shh block text-white/80 tracking-[0.35em] text-[1.1rem] sm:text-2xl not-italic font-bold">
+                    Shh&hellip;
+                  </span>
+                  <span className="animate-race-rise delay-75 mt-1 block text-[2rem] sm:text-5xl md:text-6xl text-white">
+                    You&rsquo;ve Been
+                  </span>
+                  <span className="animate-race-rise delay-200 block text-[3.6rem] sm:text-[6rem] md:text-[8.5rem] text-[#F3267A] leading-[0.82]">
+                    Challenged
+                  </span>
+                </h1>
+
+                <p className="animate-race-rise delay-200 mt-4 max-w-md text-sm md:text-base text-white/70">
+                  Posi-Prene vs. Standard nitrile on wet hands.
+                  <br />
+                  Race it. Film it. Post it.
+                  <br />
+                  <span className="text-[#F3267A] font-semibold uppercase tracking-wide">
+                    Posi-Prene Always Wins.
+                  </span>
+                </p>
+
+                <div className="animate-race-rise delay-400 mt-6 flex">
+                  <NextButton />
                 </div>
               </div>
             </div>
@@ -289,32 +401,39 @@ function Challenge2026Page() {
 
         {/* STEP 1 - CAN YOU BEAT THEM */}
         {step === 1 && (
-          <section className="flex min-h-[calc(100vh-3.5rem)] items-center py-20 md:py-28">
-            <div className={SECTION}>
-              <div className="grid gap-14 md:grid-cols-2 md:gap-20 md:items-center">
+          <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+            <Streaks tone="light" />
+            <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <div className="relative max-w-6xl mx-auto px-6 w-full">
+              <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16 md:items-center">
                 <div className="animate-race-rise">
                   <Eyebrow>The competition</Eyebrow>
-                  <h2 className="mt-6 text-4xl md:text-5xl">
-                    Can your practice beat them all?
+                  <h2 className="mt-5 text-5xl md:text-7xl text-[#16002E]">
+                    Can your practice <span className="text-[#F3267A]">beat them all?</span>
                   </h2>
-                  <p className="mt-6 max-w-md text-base md:text-lg leading-relaxed text-[#16002E]/65">
+                  <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
+                  <p className="mt-6 max-w-md text-base md:text-lg text-[#16002E]/70">
                     Every team that races posts their video. The one with the most likes at the
                     deadline takes the prize.
                   </p>
-                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                  <div className="mt-9 flex flex-wrap items-center gap-6">
                     <NextButton />
                     <BackButton />
                   </div>
                 </div>
 
-                <div className="animate-race-rise delay-200 md:pl-10 md:border-l md:border-[#16002E]/10">
-                  <p className="text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-[#F3267A]">
+                <div className="animate-race-rise delay-200 relative bg-[#16002E] px-7 py-9 md:px-10 md:py-11">
+                  <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-[#F3267A] opacity-70 animate-ping" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F3267A]" />
+                    </span>
                     Most likes wins
-                  </p>
+                  </div>
                   <div className="mt-5">
                     <LikeCounter />
                   </div>
-                  <p className="mt-5 max-w-xs text-sm text-[#16002E]/50">
+                  <p className="mt-4 text-xs text-white/55">
                     Example only. Your entry&rsquo;s likes start counting the moment you post.
                   </p>
                 </div>
@@ -325,54 +444,72 @@ function Challenge2026Page() {
 
         {/* STEP 2 - PRIZE */}
         {step === 2 && (
-          <section className="flex min-h-[calc(100vh-3.5rem)] items-center bg-[#25003F] py-20 text-white md:py-28">
-            <div className={SECTION}>
-              <div className="grid gap-14 md:grid-cols-2 md:gap-20 md:items-center">
+          <section className="race-grain relative overflow-hidden bg-[#25003F] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background: `radial-gradient(ellipse 70% 60% at 20% 20%, rgba(243,38,122,0.28) 0%, rgba(37,0,63,0) 65%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(22,0,46,0.9) 0%, rgba(37,0,63,0) 60%)`,
+              }}
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute left-0 top-1/4 h-[38%] w-full opacity-[0.35]"
+              style={{ background: `linear-gradient(105deg, transparent 8%, ${INK} 30%, ${INK} 70%, transparent 92%)` }}
+            />
+            <GhostNumeral n="03" className="right-[-2vw] top-[-3vw] text-[34vw] md:text-[24vw] text-white/[0.05]" />
+
+            <div className="relative max-w-6xl mx-auto px-6 w-full">
+              <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-16 md:items-center">
                 <div className="animate-race-rise">
                   <Eyebrow dark>The grand prize</Eyebrow>
-                  <Trophy className="mt-8 h-10 w-10 text-[#F3267A]" strokeWidth={1.4} />
-                  <p className="race-display mt-6 text-4xl md:text-5xl text-white">Posi-Prene</p>
-                  <h2 className="mt-3 text-4xl md:text-5xl text-white">
-                    Three months of free gloves
+                  <div className="mt-6 flex items-center gap-4">
+                    <Trophy className="h-12 w-12 text-[#F3267A]" strokeWidth={1.6} />
+                    <span className="race-display block text-4xl md:text-6xl text-white leading-none">
+                      Posi-Prene
+                    </span>
+                  </div>
+                  <h2 className="mt-3 text-4xl md:text-6xl text-white">
+                    Three months of <span className="text-[#F3267A]">free</span> gloves
                   </h2>
 
-                  <ul className="mt-10 max-w-sm divide-y divide-white/10 border-y border-white/10">
+                  <ul className="mt-8 max-w-sm space-y-3 border-l-[4px] border-[#F3267A] pl-5">
                     {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                      <li key={spec} className="py-3.5 text-base text-white/70">
+                      <li key={spec} className="text-sm md:text-base text-white/80">
                         {spec}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-12 flex flex-wrap items-center gap-6">
-                    <NextButton />
+                  <div className="mt-8 bg-[#F3267A] px-6 py-5">
+                    <p className="race-display text-2xl md:text-4xl text-[#16002E] leading-none">
+                      Most likes by the deadline wins.
+                    </p>
+                  </div>
+
+                  <p className="mt-4 max-w-sm text-sm text-white/60">
+                    Deadline is going to be communicated through email and social media.
+                  </p>
+
+                  <div className="mt-9 flex flex-wrap items-center gap-6">
+                    <NextButton dark />
                     <BackButton dark />
                   </div>
                 </div>
 
-                <div className="animate-race-rise delay-200">
-                  <p className="text-3xl md:text-4xl font-bold leading-tight text-[#F3267A]">
-                    Most likes by the deadline wins.
+                <div className="animate-race-rise delay-200 border-2 border-white/15 px-7 py-9 md:px-10 md:py-11">
+                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
+                    Head start
                   </p>
-                  <p className="mt-5 max-w-sm text-sm text-white/55">
-                    Deadline is going to be communicated through email and social media.
+                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-white/75">
+                    <strong className="font-bold text-white">Loyal Posi-Prene users</strong> get a full
+                    month of advantage to gather likes before the challenge goes public.
                   </p>
-
-                  <div className="mt-12 max-w-sm border-t border-white/10 pt-8">
-                    <p className="text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-white/50">
-                      Head start
-                    </p>
-                    <p className="mt-3 text-base leading-relaxed text-white/70">
-                      <strong className="font-semibold text-white">Loyal Posi-Prene users</strong> get a
-                      full month of advantage to gather likes before the challenge goes public.
-                    </p>
-                  </div>
-
-                  <div className="mt-8">
-                    <p className="text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-white/50">
+                  <div className="mt-7 border-t border-white/15 pt-6">
+                    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                       Tag your post
                     </p>
-                    <div className="mt-2">
+                    <div className="mt-3">
                       <HashtagChip dark />
                     </div>
                   </div>
@@ -384,13 +521,18 @@ function Challenge2026Page() {
 
         {/* STEP 3 - RULES */}
         {step === 3 && (
-          <section className="min-h-[calc(100vh-3.5rem)] py-20 md:py-28">
-            <div className={SECTION}>
-              <div className="grid gap-14 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-20 md:items-start">
+          <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] py-16 md:py-20 min-h-[calc(100vh-5.5rem)]">
+            <GhostNumeral n="04" className="right-[-3vw] top-[10vh] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
+            <div className="relative max-w-6xl mx-auto px-6">
+              <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
                 <div className="animate-race-rise md:sticky md:top-28">
+                  <img src={cscLogo} alt="Clinical Supply Company" className="h-7 md:h-9 w-auto mb-5 invert-0 opacity-90 [filter:invert(1)]" />
                   <Eyebrow>Official rules</Eyebrow>
-                  <h2 className="mt-6 text-4xl md:text-5xl">Ready. Wet. Glove!</h2>
-                  <p className="mt-6 max-w-xs text-base leading-relaxed text-[#16002E]/65">
+                  <h2 className="mt-5 text-5xl md:text-7xl leading-[0.9]">
+                    Ready. Wet. <span className="text-[#F3267A]">Glove!</span>
+                  </h2>
+                  <span aria-hidden className="mt-5 block h-[6px] w-32 bg-[#F3267A]" />
+                  <p className="mt-5 text-sm text-[#16002E]/65 max-w-xs">
                     Four steps, about five minutes. Tag your post so we can count the likes.
                   </p>
                   <div className="mt-6">
@@ -398,7 +540,7 @@ function Challenge2026Page() {
                   </div>
                 </div>
 
-                <ol className="divide-y divide-[#16002E]/10 border-t border-[#16002E]/10">
+                <ol className="relative space-y-9 border-l-2 border-[#F3267A]/25 pl-8 md:pl-12">
                   {[
                     ["01", "Gather your team.", "Two or more people, any operatory."],
                     ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
@@ -407,43 +549,45 @@ function Challenge2026Page() {
                   ].map(([n, title, body], i) => (
                     <li
                       key={n}
-                      className="animate-race-rise flex gap-6 py-8"
+                      className={`animate-race-rise relative ${i % 2 ? "md:translate-x-6" : ""}`}
                       style={{ animationDelay: `${0.08 * i}s` }}
                     >
-                      <span aria-hidden className="race-num pt-1 text-lg text-[#F3267A]">
+                      <span aria-hidden className="race-num absolute -left-[2.4rem] md:-left-[3.6rem] -top-2 text-4xl md:text-5xl text-[#F3267A]">
                         {n}
                       </span>
-                      <div>
-                        <h3 className="text-xl md:text-2xl">{title}</h3>
-                        <p className="mt-2 max-w-md text-base text-[#16002E]/65">{body}</p>
-                      </div>
+                      <h3 className="text-2xl md:text-4xl leading-none">{title}</h3>
+                      <p className="mt-2 text-sm md:text-base text-[#16002E]/65">{body}</p>
                     </li>
                   ))}
                 </ol>
               </div>
 
-              <div className="mt-16 flex flex-wrap items-center gap-8">
+              <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href={FB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2.5 text-[0.95rem] text-[#16002E]/70 transition-colors hover:text-[#F3267A] ${FOCUS}`}
+                  className={`inline-flex items-center gap-3 ${FOCUS}`}
                 >
-                  <Facebook className="w-5 h-5" strokeWidth={1.6} />
-                  Follow on Facebook
+                  <Badge>
+                    <Facebook className="w-5 h-5" />
+                  </Badge>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.2em]">Follow on Facebook</span>
                 </a>
                 <a
                   href={IG_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2.5 text-[0.95rem] text-[#16002E]/70 transition-colors hover:text-[#F3267A] ${FOCUS}`}
+                  className={`inline-flex items-center gap-3 ${FOCUS}`}
                 >
-                  <Instagram className="w-5 h-5" strokeWidth={1.6} />
-                  Follow on Instagram
+                  <Badge>
+                    <Instagram className="w-5 h-5" />
+                  </Badge>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.2em]">Follow on Instagram</span>
                 </a>
               </div>
 
-              <div className="mt-12 flex flex-wrap items-center gap-6">
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
                 <NextButton />
                 <BackButton />
               </div>
@@ -453,81 +597,82 @@ function Challenge2026Page() {
 
         {/* STEP 4 - AMBASSADOR */}
         {step === 4 && (
-          <section className="flex min-h-[calc(100vh-3.5rem)] items-center bg-[#F7F6F4] py-20 md:py-28">
-            <div className={SECTION}>
-              <div className="animate-race-rise max-w-2xl">
-                <img src={posiPreneLogo} alt="Posi-Prene" className="mb-8 h-4 w-auto [filter:invert(1)] opacity-70" />
-                <Eyebrow>Become an ambassador</Eyebrow>
-                <h2 className="mt-6 text-4xl md:text-5xl">
-                  Your video could lead to something bigger
-                </h2>
-                <p className="mt-6 max-w-lg text-base md:text-lg leading-relaxed text-[#16002E]/65">
-                  Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
-                  Ambassador partnership.
-                </p>
-                <div className="mt-10 flex flex-wrap items-center gap-6">
-                  <NextButton />
-                  <BackButton />
-                </div>
-                <p className="mt-10 max-w-lg text-sm text-[#16002E]/45">
-                  Participation does not guarantee selection. Winner selection and eligibility are
-                  subject to the Official Rules.
-                </p>
+          <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+            <Streaks />
+            <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
+              <img src={posiPreneLogo} alt="Posi-Prene" className="mb-6 h-5 md:h-6 w-auto" />
+              <Eyebrow dark>Become an Ambassador</Eyebrow>
+              <h2 className="mt-5 max-w-3xl text-5xl md:text-7xl leading-[0.9]">
+                Your video could lead to <span className="text-[#F3267A]">something bigger</span>
+              </h2>
+              <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
+              <p className="mt-6 max-w-xl text-base md:text-lg text-white/75">
+                Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
+                Ambassador partnership.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-6">
+                <NextButton dark />
+                <BackButton dark />
               </div>
+              <p className="mt-6 max-w-xl text-xs text-white/40">
+                Participation does not guarantee selection. Winner selection and eligibility are
+                subject to the Official Rules.
+              </p>
             </div>
           </section>
         )}
 
         {/* STEP 5 - NEED GLOVES */}
         {step === 5 && (
-          <section className="flex min-h-[calc(100vh-3.5rem)] items-center py-20 md:py-28">
-            <div className={SECTION}>
-              <div className="animate-race-rise max-w-2xl">
+          <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-14 md:py-20 min-h-[calc(100vh-5.5rem)]">
+            <Streaks tone="light" />
+            <GhostNumeral n="05" className="left-[-3vw] bottom-[-3vw] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
+            <div className="relative max-w-5xl mx-auto px-6">
+              <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
-                <h2 className="mt-6 text-4xl md:text-5xl">
-                  Need gloves? You can still take the challenge
+                <h2 className="mt-5 text-5xl md:text-7xl leading-[0.9] max-w-2xl">
+                  Need gloves?
+                  <span className="block mt-2 text-[#F3267A]">You can still take the challenge</span>
                 </h2>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
+                <div className="mt-8 flex flex-col sm:flex-row gap-3">
                   <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
                   <a
                     href={SAMPLES_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={SECONDARY()}
+                    className={`${GHOST_CTA} text-[#25003F]`}
                   >
                     Request free samples
                   </a>
                 </div>
-                <p className="mt-8 max-w-xl text-sm text-[#16002E]/55">
+                <p className="mt-6 text-xs md:text-sm text-[#16002E]/60 max-w-xl">
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
                   team must wear regular nitrile gloves.
                 </p>
-
-                <figure className="mt-14 max-w-xl border-t border-[#16002E]/10 pt-8">
-                  <blockquote className="text-lg md:text-xl leading-relaxed text-[#16002E]/80">
+                <figure className="relative mt-10 max-w-2xl border-t-[3px] border-[#F3267A] pt-7">
+                  <blockquote className="text-[0.95rem] md:text-lg leading-relaxed text-[#16002E]/80">
                     &ldquo;PosiPrene gloves are the{" "}
-                    <strong className="font-semibold text-[#16002E]">FASTEST</strong> to put on, even
-                    with wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely
-                    no latex. Once you try them, you won&rsquo;t go back!&rdquo;
+                    <strong className="font-bold text-[#16002E]">FASTEST</strong> to put on, even with
+                    wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no
+                    latex. Once you try them, you won&rsquo;t go back!&rdquo;
                   </blockquote>
                 </figure>
+              </div>
 
-                <div className="mt-12">
-                  <BackButton />
-                </div>
+              <div className="mt-10 flex justify-center">
+                <BackButton />
               </div>
             </div>
           </section>
         )}
       </main>
 
-      <footer className="border-t border-[#16002E]/10 py-10">
-        <div className={`${SECTION} flex flex-col items-center gap-3 sm:flex-row sm:justify-between`}>
-          <img src={cscLogo} alt="Clinical Supply Co." className="h-5 w-auto [filter:invert(1)] opacity-70" />
-          <p className="text-sm text-[#16002E]/45">
-            © {new Date().getFullYear()} Clinical Supply Company
-          </p>
-        </div>
+      <footer className="bg-[#16002E] py-8 text-center border-t-[3px] border-[#F3267A]">
+        <img src={cscLogo} alt="Clinical Supply Co." className="h-6 w-auto mx-auto opacity-80" />
+        <p className="mt-3 text-xs text-white/35">
+          © {new Date().getFullYear()} Clinical Supply Company
+        </p>
       </footer>
     </div>
   );
