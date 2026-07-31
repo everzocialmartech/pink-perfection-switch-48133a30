@@ -548,7 +548,7 @@ function Challenge2026Page() {
                   ].map(([n, title, body], i) => (
                     <li
                       key={n}
-                      className={`animate-race-rise relative ${i % 2 ? "md:translate-x-6" : ""}`}
+                      className="animate-race-rise relative"
                       style={{ animationDelay: `${0.08 * i}s` }}
                     >
                       <span aria-hidden className="race-num absolute -left-[2.4rem] md:-left-[3.6rem] -top-2 text-4xl md:text-5xl text-[#F3267A]">
