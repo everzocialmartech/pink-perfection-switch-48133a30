@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
-import challengeHero from "@/assets/challenge-hero.png.asset.json";
 import challengeBg from "@/assets/challenge-bg.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
 import { ArrowRight, Check, Copy, Facebook, Instagram, Heart, Trophy } from "lucide-react";
@@ -343,22 +342,6 @@ function Challenge2026Page() {
         {step === 0 && (
           <section className="race-grain relative overflow-hidden bg-[#16002E]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
             <EdgeStreaks />
-            <div aria-hidden className="absolute inset-y-0 right-0 w-[62%] md:w-[48%]">
-              <img
-                src={challengeHero.url}
-                alt=""
-                className="race-duotone h-full w-full object-cover opacity-70"
-              />
-              <div
-                className="absolute inset-0 mix-blend-color"
-                style={{ background: `linear-gradient(200deg, ${PINK}, ${PLUM})` }}
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: `linear-gradient(90deg, ${INK} 0%, rgba(22,0,46,0.75) 35%, rgba(22,0,46,0.15) 100%)` }}
-              />
-            </div>
-
             <GhostNumeral
               n="01"
               className="right-2 md:right-8 bottom-0 text-[34vw] md:text-[26vw] leading-none text-white/[0.05]"
