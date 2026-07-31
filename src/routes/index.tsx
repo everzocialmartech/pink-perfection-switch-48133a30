@@ -143,7 +143,7 @@ function Index() {
       </header>
 
       {/* HERO — floating 3D glove */}
-      <section className="relative overflow-hidden bg-[#0b1f3a] text-white pt-16 md:pt-24 pb-10 md:pb-16">
+      <section className="relative overflow-hidden bg-[#0b1f3a] text-white pt-12 md:pt-16 pb-8 md:pb-12">
         {/* Atmospheric depth — soft sapphire glow */}
         <div
           className="absolute inset-0 pointer-events-none animate-hero-glow-in"
@@ -166,20 +166,20 @@ function Index() {
           </div>
 
           {/* Serif headline — Cormorant Garamond, generous breathing room */}
-          <h1 className="font-serif font-normal tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-8 md:mt-10 max-w-4xl mx-auto animate-hero-rise text-balance">
+          <h1 className="font-serif font-normal tracking-tight leading-[1.02] text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[4.5rem] mt-5 md:mt-6 max-w-4xl mx-auto animate-hero-rise text-balance">
             The glove dental teams<br className="hidden sm:block" />{" "}
             <em className="italic font-light text-[oklch(0.78_0.16_350)]">keep switching to.</em>
           </h1>
 
           {/* Subline */}
-          <p className="mt-7 max-w-xl mx-auto text-base md:text-lg text-white/65 font-light leading-relaxed animate-hero-rise delay-150">
+          <p className="mt-5 max-w-xl mx-auto text-base md:text-lg text-white/65 font-light leading-relaxed animate-hero-rise delay-150">
             Polychloroprene built like a wetsuit. Fits like a second skin.
             Latex-free. Powder-free. Compromise-free.
           </p>
 
           {/* Product — single hero element, no competing glove */}
           <div
-            className="relative mt-14 md:mt-16 mx-auto max-w-[18rem] md:max-w-[22rem] animate-box-rise"
+            className="relative mt-7 md:mt-8 mx-auto max-w-[13rem] md:max-w-[16rem] animate-box-rise"
             style={{ perspective: "1200px" }}
           >
             <div
@@ -204,7 +204,7 @@ function Index() {
           </div>
 
           {/* CTA — refined, not aggressive */}
-          <div className="mt-12 md:mt-14 flex flex-col items-center gap-4 animate-hero-rise delay-300">
+          <div className="mt-7 md:mt-8 flex flex-col items-center gap-3 animate-hero-rise delay-300">
             <a
               href="https://clinicalsupplycompany.com/collections/gloves/products/pink-posi-prene-gloves-powder-free"
               target="_blank"
@@ -226,7 +226,7 @@ function Index() {
           </div>
 
           {/* Stats strip — architectural social proof */}
-          <div className="mt-16 md:mt-20 pt-10 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
+          <div className="mt-10 md:mt-12 pt-7 border-t border-white/10 grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 max-w-3xl mx-auto animate-hero-rise delay-500">
             {[
               { stat: "0%", label: "Latex" },
               { stat: "100%", label: "Polychloroprene" },
