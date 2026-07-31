@@ -622,18 +622,18 @@ function Challenge2026Page() {
 
         {/* STEP 5 - NEED GLOVES */}
         {step === 5 && (
-          <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-14 md:py-20 min-h-[calc(100vh-5.5rem)]">
+          <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-8 md:py-10 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="06" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="06" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
-                <h2 className="mt-5 text-5xl md:text-7xl leading-[0.9] max-w-2xl">
+                <h2 className="mt-3 text-4xl md:text-6xl leading-[0.9] max-w-2xl">
                   Need gloves?
-                  <span className="block mt-2 text-[#F3267A]">You can still take the challenge</span>
+                  <span className="block mt-1 text-[#F3267A]">You can still take the challenge</span>
                 </h2>
-                <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
-                <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <span aria-hidden className="mt-4 block h-[6px] w-32 bg-[#F3267A]" />
+                <div className="mt-5 flex flex-col sm:flex-row gap-3">
                   <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
                   <a
                     href={SAMPLES_URL}
@@ -644,12 +644,12 @@ function Challenge2026Page() {
                     Request free samples
                   </a>
                 </div>
-                <p className="mt-6 text-xs md:text-sm text-[#16002E]/60 max-w-xl">
+                <p className="mt-4 text-xs text-[#16002E]/60 max-w-xl">
                   Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
                   team must wear regular nitrile gloves.
                 </p>
-                <figure className="relative mt-10 max-w-2xl border-t-[3px] border-[#F3267A] pt-7">
-                  <blockquote className="text-[0.95rem] md:text-lg leading-relaxed text-[#16002E]/80">
+                <figure className="relative mt-6 max-w-2xl border-t-[3px] border-[#F3267A] pt-4">
+                  <blockquote className="text-[0.9rem] md:text-base leading-relaxed text-[#16002E]/80">
                     &ldquo;PosiPrene gloves are the{" "}
                     <strong className="font-bold text-[#16002E]">FASTEST</strong> to put on, even with
                     wet or sweaty hands. Strong, sturdy, with a latex-like feel, and absolutely no
@@ -658,7 +658,7 @@ function Challenge2026Page() {
                 </figure>
               </div>
 
-              <div className="mt-10 flex justify-center">
+              <div className="mt-6 flex justify-center">
                 <BackButton />
               </div>
             </div>
