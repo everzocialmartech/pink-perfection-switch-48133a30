@@ -413,7 +413,7 @@ function Challenge2026Page() {
 
         {/* STEP 2 - PRIZE */}
         {step === 2 && (
-          <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+          <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
             <EdgeStreaks />
             <div
               aria-hidden
@@ -430,56 +430,56 @@ function Challenge2026Page() {
             <GhostNumeral n="03" className="right-[-2vw] top-[-3vw] text-[34vw] md:text-[24vw] text-white/[0.05]" />
 
             <div className="relative max-w-6xl mx-auto px-6 w-full">
-              <div className="grid gap-10 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-16 md:items-center">
+              <div className="grid gap-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-12 md:items-center">
                 <div className="animate-race-rise">
                   <Eyebrow dark>The grand prize</Eyebrow>
-                  <div className="mt-6 flex items-center gap-4">
-                    <Trophy className="h-12 w-12 text-[#F3267A]" strokeWidth={1.6} />
-                    <span className="race-display block text-4xl md:text-6xl text-white leading-none">
+                  <div className="mt-3 flex items-center gap-3">
+                    <Trophy className="h-8 w-8 md:h-10 md:w-10 text-[#F3267A]" strokeWidth={1.6} />
+                    <span className="race-display block text-3xl md:text-5xl text-white leading-none">
                       Posi-Prene
                     </span>
                   </div>
-                  <h2 className="mt-3 text-4xl md:text-6xl text-white">
+                  <h2 className="mt-2 text-3xl md:text-5xl text-white">
                     Three months of <span className="text-[#F3267A]">free</span> gloves
                   </h2>
 
-                  <ul className="mt-8 max-w-sm space-y-3 border-l-[4px] border-[#F3267A] pl-5">
+                  <ul className="mt-5 max-w-sm space-y-1.5 border-l-[4px] border-[#F3267A] pl-5">
                     {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                      <li key={spec} className="text-sm md:text-base text-white/80">
+                      <li key={spec} className="text-sm text-white/80">
                         {spec}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-8 bg-[#F3267A] px-6 py-5">
-                    <p className="race-display text-2xl md:text-4xl text-[#16002E] leading-none">
+                  <div className="mt-5 bg-[#F3267A] px-5 py-3.5">
+                    <p className="race-display text-xl md:text-3xl text-[#16002E] leading-none">
                       Most likes by the deadline wins.
                     </p>
                   </div>
 
-                  <p className="mt-4 max-w-sm text-sm text-white/60">
+                  <p className="mt-3 max-w-sm text-xs md:text-sm text-white/60">
                     Deadline is going to be communicated through email and social media.
                   </p>
 
-                  <div className="mt-9 flex flex-wrap items-center gap-6">
+                  <div className="mt-6 flex flex-wrap items-center gap-5">
                     <NextButton dark />
                     <BackButton dark />
                   </div>
                 </div>
 
-                <div className="animate-race-rise delay-200 border-2 border-white/15 px-7 py-9 md:px-10 md:py-11">
+                <div className="animate-race-rise delay-200 border-2 border-white/15 px-6 py-6 md:px-8 md:py-8">
                   <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                     Head start
                   </p>
-                  <p className="mt-3 text-sm md:text-[0.95rem] leading-relaxed text-white/75">
+                  <p className="mt-2 text-sm leading-relaxed text-white/75">
                     <strong className="font-bold text-white">Loyal Posi-Prene users</strong> get a full
                     month of advantage to gather likes before the challenge goes public.
                   </p>
-                  <div className="mt-7 border-t border-white/15 pt-6">
+                  <div className="mt-5 border-t border-white/15 pt-4">
                     <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                       Tag your post
                     </p>
-                    <div className="mt-3">
+                    <div className="mt-2">
                       <HashtagChip dark />
                     </div>
                   </div>
