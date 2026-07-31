@@ -117,9 +117,10 @@ function Streaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
     { top: "66%", h: "30px", w: "56%", left: "auto", right: "-8%", d: "0.24s", c: PINK, o: 0.22, side: "r" },
     { top: "82%", h: "12px", w: "44%", left: "-4%", d: "0.32s", c: PLUM, o: 0.9, side: "l" },
   ] as const;
+  const visible = tone === "light" ? bars.filter((b) => ["8%", "20%", "82%"].includes(b.top)) : bars;
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      {bars.map((b, i) => (
+      {visible.map((b, i) => (
         <span
           key={i}
           className={b.side === "l" ? "animate-streak-l absolute" : "animate-streak-r absolute"}
