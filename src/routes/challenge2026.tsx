@@ -140,20 +140,6 @@ function EdgeStreaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
 }
 
 /** Start-line ticks. */
-function GridTicks({ className = "" }: { className?: string }) {
-  return (
-    <div aria-hidden className={`pointer-events-none flex items-end gap-[6px] ${className}`}>
-      {Array.from({ length: 14 }).map((_, i) => (
-        <span
-          key={i}
-          className="block w-[3px] bg-[#F3267A]"
-          style={{ height: `${8 + (i % 4) * 7}px`, opacity: 0.25 + (i % 4) * 0.2 }}
-        />
-      ))}
-    </div>
-  );
-}
-
 function Badge({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-[#F3267A] bg-[#16002E] text-[#F3267A]">
@@ -349,14 +335,7 @@ function Challenge2026Page() {
 
             <div className="relative w-full max-w-6xl mx-auto px-6">
               <div className="max-w-2xl text-left">
-                <div className="animate-race-rise flex items-center gap-4">
-                  <span className="text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.32em] text-[#F3267A]">
-                    Grid position
-                  </span>
-                  <GridTicks />
-                </div>
-
-                <div className="animate-race-rise delay-75 mt-3 inline-block border-2 border-[#F3267A]/60 px-3 py-1 text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.26em] text-[#F3267A]">
+                <div className="animate-race-rise delay-75 inline-block border-2 border-[#F3267A]/60 px-3 py-1 text-[10px] md:text-[11px] font-extrabold uppercase tracking-[0.26em] text-[#F3267A]">
                   The Posi-Prene Challenge
                 </div>
 
