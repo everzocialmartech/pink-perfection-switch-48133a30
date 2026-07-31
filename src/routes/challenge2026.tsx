@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeHero from "@/assets/challenge-hero.png.asset.json";
+import challengeBg from "@/assets/challenge-bg.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
 import { ArrowRight, Check, Copy, Facebook, Instagram, Heart, Trophy } from "lucide-react";
 
@@ -290,9 +291,17 @@ function Challenge2026Page() {
     );
 
   return (
-    <div className="challenge-type min-h-screen bg-[#16002E] text-white antialiased flex flex-col">
+    <div
+      className="challenge-type relative min-h-screen bg-[#16002E] text-white antialiased flex flex-col"
+      style={{
+        backgroundImage: `url(${challengeBg.url})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="h-[4px] w-full bg-[#F3267A]" />
-      <header className="sticky top-0 inset-x-0 z-50 bg-[#16002E]">
+      <header className="sticky top-0 inset-x-0 z-50 bg-[#16002E]/90 backdrop-blur-md">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-12 md:h-14 flex items-center justify-between gap-4">
           <button type="button" onClick={() => go(0)} aria-label="Back to the start" className={FOCUS}>
             <img src={cscLogo} alt="Clinical Supply Co." className="h-7 md:h-9 w-auto" />
@@ -332,7 +341,7 @@ function Challenge2026Page() {
       <main key={step} className="flex-1">
         {/* STEP 0 - HERO */}
         {step === 0 && (
-          <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
+          <section className="race-grain relative overflow-hidden bg-[#16002E]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
             <EdgeStreaks />
             <div aria-hidden className="absolute inset-y-0 right-0 w-[62%] md:w-[48%]">
               <img
@@ -442,7 +451,7 @@ function Challenge2026Page() {
 
         {/* STEP 2 - PRIZE */}
         {step === 2 && (
-          <section className="race-grain relative overflow-hidden bg-[#25003F] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+          <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
             <EdgeStreaks />
             <div
               aria-hidden
@@ -595,7 +604,7 @@ function Challenge2026Page() {
 
         {/* STEP 4 - AMBASSADOR */}
         {step === 4 && (
-          <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
+          <section className="race-grain relative overflow-hidden bg-[#16002E]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
             <EdgeStreaks />
             <GhostNumeral n="05" className="right-[-2vw] top-[-2vw] text-[36vw] md:text-[26vw] text-white/[0.05]" />
             <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
@@ -666,7 +675,7 @@ function Challenge2026Page() {
         )}
       </main>
 
-      <footer className="bg-[#16002E] py-8 text-center border-t-[3px] border-[#F3267A]">
+      <footer className="bg-[#16002E]/80 py-8 text-center border-t-[3px] border-[#F3267A]">
         <img src={cscLogo} alt="Clinical Supply Co." className="h-6 w-auto mx-auto opacity-80" />
         <p className="mt-3 text-xs text-white/35">
           © {new Date().getFullYear()} Clinical Supply Company
