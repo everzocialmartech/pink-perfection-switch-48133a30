@@ -156,7 +156,7 @@
   50% { transform: translateY(-18px) rotate(2deg); }
 }
 
-/* Challenge 2026 typography — racing poster */
+/* Challenge 2026 typography — clean editorial */
 .challenge-type,
 .challenge-type input,
 .challenge-type button {
@@ -165,66 +165,36 @@
 }
 .challenge-type h1,
 .challenge-type h2,
-.challenge-type h3,
+.challenge-type h3 {
+  font-family: "Barlow", "Work Sans", system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
 .challenge-type .race-display {
   font-family: "Barlow Condensed", "Oswald", "Arial Narrow", system-ui, sans-serif;
   font-weight: 800;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  line-height: 0.92;
+  line-height: 0.9;
 }
 .challenge-type .race-num {
   font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
-  font-weight: 900;
+  font-weight: 800;
   font-style: italic;
   line-height: 0.8;
   letter-spacing: -0.03em;
 }
 
-/* print grain */
-.race-grain::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-}
-
-/* diagonal section edges */
-.race-edge-top {
-  clip-path: polygon(0 3.5vw, 100% 0, 100% 100%, 0 100%);
-}
-.race-edge-bottom {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 3.5vw), 0 100%);
-}
-
-@keyframes streak-in-right {
-  0% { opacity: 0; transform: translate3d(28%, 0, 0) skewX(-18deg); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) skewX(-18deg); }
-}
-@keyframes streak-in-left {
-  0% { opacity: 0; transform: translate3d(-28%, 0, 0) skewX(-18deg); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) skewX(-18deg); }
-}
-.animate-streak-r { animation: streak-in-right 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-streak-l { animation: streak-in-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
-
 @keyframes race-rise {
-  0% { opacity: 0; transform: translateY(22px) skewX(-4deg); }
-  100% { opacity: 1; transform: translateY(0) skewX(0deg); }
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-.animate-race-rise { animation: race-rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.animate-race-rise { animation: race-rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
 .delay-75 { animation-delay: 0.075s; }
 .delay-200 { animation-delay: 0.2s; }
 .delay-400 { animation-delay: 0.4s; }
-
-/* pink duotone for glove imagery */
-.race-duotone {
-  filter: grayscale(1) contrast(1.25) brightness(0.85);
-}
 
 @keyframes float-unused {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -357,7 +327,7 @@
   }
   50% {
     opacity: 1;
-    text-shadow: 0 0 22px rgba(3, 205, 194, 0.55);
+    text-shadow: none;
   }
 }
 
