@@ -623,7 +623,7 @@ function Challenge2026Page() {
         {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-14 md:py-20 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="05" className="left-[-3vw] bottom-[-3vw] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
+            <GhostNumeral n="05" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
