@@ -109,37 +109,6 @@ function GhostNumeral({ n, className = "" }: { n: string; className?: string }) 
 }
 
 /** Diagonal magenta / plum speed streaks. */
-function Streaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
-  const bars = [
-    { top: "8%", h: "10px", w: "62%", left: "-6%", d: "0s", c: PINK, o: 0.9, side: "l" },
-    { top: "20%", h: "22px", w: "48%", left: "auto", right: "-4%", d: "0.08s", c: PINK, o: 0.3, side: "r" },
-    { top: "44%", h: "6px", w: "38%", left: "-2%", d: "0.16s", c: PINK, o: 0.55, side: "l" },
-    { top: "66%", h: "30px", w: "56%", left: "auto", right: "-8%", d: "0.24s", c: PINK, o: 0.22, side: "r" },
-    { top: "82%", h: "12px", w: "44%", left: "-4%", d: "0.32s", c: PINK, o: 0.35, side: "l" },
-  ] as const;
-  const visible = tone === "light" ? bars.filter((b) => ["8%", "20%", "82%"].includes(b.top)) : bars;
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      {visible.map((b, i) => (
-        <span
-          key={i}
-          className={b.side === "l" ? "animate-streak-l absolute" : "animate-streak-r absolute"}
-          style={{
-            top: b.top,
-            left: (b as { left?: string }).left,
-            right: (b as { right?: string }).right,
-            width: b.w,
-            height: b.h,
-            background: b.c,
-            opacity: tone === "light" ? b.o * 0.35 : b.o,
-            animationDelay: b.d,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
 /** Start-line ticks. */
 function GridTicks({ className = "" }: { className?: string }) {
   return (
@@ -334,7 +303,6 @@ function Challenge2026Page() {
         {/* STEP 0 - HERO */}
         {step === 0 && (
           <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
-            <Streaks />
             <div aria-hidden className="absolute inset-y-0 right-0 w-[62%] md:w-[48%]">
               <img
                 src={challengeHero.url}
@@ -402,7 +370,6 @@ function Challenge2026Page() {
         {/* STEP 1 - CAN YOU BEAT THEM */}
         {step === 1 && (
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-16">
-            <Streaks tone="light" />
             <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-6xl mx-auto px-6 w-full">
               <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] md:gap-16 md:items-center">
@@ -598,7 +565,6 @@ function Challenge2026Page() {
         {/* STEP 4 - AMBASSADOR */}
         {step === 4 && (
           <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
-            <Streaks />
             <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
               <img src={posiPreneLogo} alt="Posi-Prene" className="mb-6 h-5 md:h-6 w-auto" />
               <Eyebrow dark>Become an Ambassador</Eyebrow>
@@ -624,7 +590,6 @@ function Challenge2026Page() {
         {/* STEP 5 - NEED GLOVES */}
         {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-14 md:py-20 min-h-[calc(100vh-5.5rem)]">
-            <Streaks tone="light" />
             <GhostNumeral n="05" className="left-[-3vw] bottom-[-3vw] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
