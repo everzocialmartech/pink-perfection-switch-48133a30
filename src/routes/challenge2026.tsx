@@ -597,6 +597,7 @@ function Challenge2026Page() {
         {step === 4 && (
           <section className="race-grain relative overflow-hidden bg-[#16002E] text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
             <EdgeStreaks />
+            <GhostNumeral n="05" className="right-[-2vw] top-[-2vw] text-[36vw] md:text-[26vw] text-white/[0.05]" />
             <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
               <img src={posiPreneLogo} alt="Posi-Prene" className="mb-6 h-5 md:h-6 w-auto" />
               <Eyebrow dark>Become an Ambassador</Eyebrow>
@@ -623,7 +624,7 @@ function Challenge2026Page() {
         {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-14 md:py-20 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="05" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="06" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
