@@ -445,7 +445,7 @@ function Challenge2026Page() {
                   </h2>
 
                   <ul className="mt-5 max-w-sm space-y-1.5 border-l-[4px] border-[#F3267A] pl-5">
-                    {["3 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
+                    {["2 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
                       <li key={spec} className="text-sm text-white/80">
                         {spec}
                       </li>
