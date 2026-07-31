@@ -108,7 +108,37 @@ function GhostNumeral({ n, className = "" }: { n: string; className?: string }) 
   );
 }
 
-/** Diagonal magenta / plum speed streaks. */
+/** Speed streaks pinned to the top / bottom edges, never behind copy. */
+function EdgeStreaks({ tone = "dark" }: { tone?: "dark" | "light" }) {
+  const bars = [
+    { top: "10px", h: "10px", w: "34%", left: "-4%", d: "0s", o: 0.9, side: "l" },
+    { top: "30px", h: "5px", w: "22%", left: "auto", right: "-2%", d: "0.1s", o: 0.5, side: "r" },
+    { bottom: "14px", h: "14px", w: "30%", left: "auto", right: "-4%", d: "0.2s", o: 0.8, side: "r" },
+    { bottom: "40px", h: "5px", w: "18%", left: "-2%", d: "0.3s", o: 0.45, side: "l" },
+  ] as const;
+  return (
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      {bars.map((b, i) => (
+        <span
+          key={i}
+          className={b.side === "l" ? "animate-streak-l absolute" : "animate-streak-r absolute"}
+          style={{
+            top: (b as { top?: string }).top,
+            bottom: (b as { bottom?: string }).bottom,
+            left: (b as { left?: string }).left,
+            right: (b as { right?: string }).right,
+            width: b.w,
+            height: b.h,
+            background: PINK,
+            opacity: tone === "light" ? b.o * 0.4 : b.o,
+            animationDelay: b.d,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 /** Start-line ticks. */
 function GridTicks({ className = "" }: { className?: string }) {
   return (
