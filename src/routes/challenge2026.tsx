@@ -370,6 +370,10 @@ function Challenge2026Page() {
                     </p>
                   </div>
 
+                  <p className="mt-4 max-w-sm text-sm text-white/60 font-light">
+                    Deadline is going to be communicated through email and social media.
+                  </p>
+
                   <div className="mt-9 flex flex-wrap items-center gap-5">
                     <NextButton dark />
                     <BackButton dark />
