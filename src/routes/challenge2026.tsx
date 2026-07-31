@@ -468,20 +468,20 @@ function Challenge2026Page() {
                   </div>
                 </div>
 
-                <div className="animate-race-rise delay-200 border-2 border-white/15 px-6 py-6 md:px-8 md:py-8">
+                <div className="animate-race-rise delay-200 bg-white text-[#16002E] border-2 border-white px-6 py-6 md:px-8 md:py-8">
                   <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                     Head start
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-white/75">
-                    <strong className="font-bold text-white">Loyal Posi-Prene users</strong> get a full
+                  <p className="mt-2 text-sm leading-relaxed text-[#16002E]/75">
+                    <strong className="font-bold text-[#16002E]">Loyal Posi-Prene users</strong> get a full
                     month of advantage to gather likes before the challenge goes public.
                   </p>
-                  <div className="mt-5 border-t border-white/15 pt-4">
+                  <div className="mt-5 border-t border-[#16002E]/15 pt-4">
                     <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
                       Tag your post
                     </p>
                     <div className="mt-2">
-                      <HashtagChip dark />
+                      <HashtagChip />
                     </div>
                   </div>
                 </div>
