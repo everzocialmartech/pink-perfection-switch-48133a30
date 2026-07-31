@@ -525,7 +525,6 @@ function Challenge2026Page() {
             <div className="relative max-w-6xl mx-auto px-6">
               <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
                 <div className="animate-race-rise md:sticky md:top-28">
-                  <img src={cscLogo} alt="Clinical Supply Company" className="h-7 md:h-9 w-auto mb-5 invert-0 opacity-90 [filter:invert(1)]" />
                   <Eyebrow>Official rules</Eyebrow>
                   <h2 className="mt-5 text-5xl md:text-7xl leading-[0.9]">
                     Ready. Wet. <span className="text-[#F3267A]">Glove!</span>
