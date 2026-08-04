@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PosipreneRouteImport } from './routes/posiprene'
+import { Route as Challenge2026RouteImport } from './routes/challenge2026'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PosipreneRoute = PosipreneRouteImport.update({
   id: '/posiprene',
   path: '/posiprene',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Challenge2026Route = Challenge2026RouteImport.update({
+  id: '/challenge2026',
+  path: '/challenge2026',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +31,31 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/posiprene'
+  fullPaths: '/' | '/challenge2026' | '/posiprene'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/posiprene'
-  id: '__root__' | '/' | '/posiprene'
+  to: '/' | '/challenge2026' | '/posiprene'
+  id: '__root__' | '/' | '/challenge2026' | '/posiprene'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  Challenge2026Route: typeof Challenge2026Route
   PosipreneRoute: typeof PosipreneRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/posiprene'
       fullPath: '/posiprene'
       preLoaderRoute: typeof PosipreneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenge2026': {
+      id: '/challenge2026'
+      path: '/challenge2026'
+      fullPath: '/challenge2026'
+      preLoaderRoute: typeof Challenge2026RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  Challenge2026Route: Challenge2026Route,
   PosipreneRoute: PosipreneRoute,
 }
 export const routeTree = rootRouteImport
