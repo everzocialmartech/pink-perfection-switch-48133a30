@@ -7,6 +7,22 @@ import stretchCard from "@/assets/stretch-card.png";
 import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
 export const Route = createFileRoute("/posiprene")({
+  head: () => ({
+    meta: [
+      { title: "Posi-Prene Pink: The Latex-Free Glove Teams Switch To" },
+      {
+        name: "description",
+        content:
+          "Posi-Prene Pink polychloroprene gloves: wet-hand stretch, premium feel, 98% reorder rate. Same-day shipping from Clinical Supply Company.",
+      },
+      { property: "og:title", content: "Posi-Prene Pink: The Latex-Free Glove Teams Switch To" },
+      {
+        property: "og:description",
+        content: "Wet-hand stretch, premium feel, 98% reorder rate. Latex-free polychloroprene gloves for dental teams.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
