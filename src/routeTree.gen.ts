@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PosipreneRouteImport } from './routes/posiprene'
 import { Route as Challenge2026RouteImport } from './routes/challenge2026'
 import { Route as IndexRouteImport } from './routes/index'
 
+const PosipreneRoute = PosipreneRouteImport.update({
+  id: '/posiprene',
+  path: '/posiprene',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Challenge2026Route = Challenge2026RouteImport.update({
   id: '/challenge2026',
   path: '/challenge2026',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/challenge2026': typeof Challenge2026Route
+  '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/challenge2026': typeof Challenge2026Route
+  '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/challenge2026': typeof Challenge2026Route
+  '/posiprene': typeof PosipreneRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/challenge2026'
+  fullPaths: '/' | '/challenge2026' | '/posiprene'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/challenge2026'
-  id: '__root__' | '/' | '/challenge2026'
+  to: '/' | '/challenge2026' | '/posiprene'
+  id: '__root__' | '/' | '/challenge2026' | '/posiprene'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Challenge2026Route: typeof Challenge2026Route
+  PosipreneRoute: typeof PosipreneRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/posiprene': {
+      id: '/posiprene'
+      path: '/posiprene'
+      fullPath: '/posiprene'
+      preLoaderRoute: typeof PosipreneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/challenge2026': {
       id: '/challenge2026'
       path: '/challenge2026'
@@ -71,17 +88,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Challenge2026Route: Challenge2026Route,
+  PosipreneRoute: PosipreneRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
