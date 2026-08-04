@@ -6,7 +6,7 @@ import cscLogo from "@/assets/csc-logo.png";
 import stretchCard from "@/assets/stretch-card.png";
 import { ArrowRight, Truck, Volume2, VolumeX } from "lucide-react";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/posiprene")({
   component: Index,
 });
 

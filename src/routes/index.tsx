@@ -17,7 +17,7 @@ const HASHTAG = "#PosiPreneChallenge";
 const OG_IMAGE =
   "https://pink-perfection-switch.lovable.app/__l5e/assets-v1/284b47f4-69de-4735-844d-b7779e04008c/challenge-hero.png";
 
-export const Route = createFileRoute("/challenge2026")({
+export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "The Posi-Prene Challenge: Fastest Hands in Dentistry" },
@@ -32,12 +32,12 @@ export const Route = createFileRoute("/challenge2026")({
         content: "Race Posi-Prene against nitrile on wet hands. Post the video. Win three months of gloves.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://pink-perfection-switch.lovable.app/challenge2026" },
+      { property: "og:url", content: "https://pink-perfection-switch.lovable.app/" },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/challenge2026" }],
+    links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/" }],
   }),
   component: Challenge2026Page,
 });
