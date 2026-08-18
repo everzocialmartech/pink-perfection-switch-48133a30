@@ -449,20 +449,13 @@ function ODAChallenge2026Page() {
                     <span className="font-bold text-[#16002E]">Can you beat them all?</span>
                   </p>
 
-                  <div className="animate-race-rise delay-200 relative mt-8 bg-[#16002E] px-7 py-7 md:px-10 md:py-9">
-                  <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-[#F3267A] opacity-70 animate-ping" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F3267A]" />
-                    </span>
-                    Most likes wins
-                  </div>
-                    <div className="mt-5">
-                      <LikeCounter />
-                    </div>
-                    <p className="mt-4 text-xs text-white/55">
-                      Example only. Your entry&rsquo;s likes start counting the moment you post.
-                    </p>
+                  <div className="animate-race-rise delay-200 relative mt-8 bg-white px-7 py-7 md:px-10 md:py-9">
+                    <img
+                      src={odaLogo.url}
+                      alt="Ohio Dental Association: Advocate. Inform. Serve."
+                      className="h-16 md:h-20 w-auto"
+                      loading="lazy"
+                    />
                   </div>
 
                   <div className="mt-8 flex flex-wrap items-center gap-6">
