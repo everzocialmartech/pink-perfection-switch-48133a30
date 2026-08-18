@@ -10,7 +10,7 @@ const INK = "#16002E";
 const PLUM = "#25003F";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
-const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
+const ODA_REGISTER_URL = "https://www.oda.org/annual-session/";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
 const IG_URL = "https://www.instagram.com/clinicalsupplyco/";
 const HASHTAG = "#PosiPreneChallenge";
@@ -615,17 +615,16 @@ function ODAChallenge2026Page() {
                 <div className="mt-5 flex flex-col sm:flex-row gap-3">
                   <PinkCTA href={SHOP_URL}>Buy Posi-Prene now</PinkCTA>
                   <a
-                    href={SAMPLES_URL}
+                    href={ODA_REGISTER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${GHOST_CTA} text-[#25003F]`}
                   >
-                    Request free samples
+                    Register here
                   </a>
                 </div>
                 <p className="mt-4 text-xs text-[#16002E]/60 max-w-xl">
-                  Disclaimer: Only one pair of Posi-Prene gloves is required to race, the rest of the
-                  team must wear regular nitrile gloves.
+                  2026 ODA Annual Session, Ohio Dental Association.
                 </p>
                 <figure className="relative mt-6 max-w-2xl border-t-[3px] border-[#F3267A] pt-4">
                   <blockquote className="text-[0.9rem] md:text-base leading-relaxed text-[#16002E]/80">
