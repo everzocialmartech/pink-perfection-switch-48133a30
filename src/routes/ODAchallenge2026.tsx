@@ -229,7 +229,8 @@ function HashtagChip({ dark = false }: { dark?: boolean }) {
 type StepDef = { id: string; label: string; next?: string };
 
 const STEPS: StepDef[] = [
-  { id: "hero", label: "The challenge", next: "Accept the challenge" },
+  { id: "hero", label: "The challenge", next: "See you at ODA" },
+  { id: "show", label: "ODA Show", next: "Accept the challenge" },
   { id: "beat", label: "Can you beat them?", next: "Yes, what\u2019s the prize?" },
   { id: "prize", label: "The grand prize", next: "Look up the rules" },
   { id: "rules", label: "The rules", next: "Become an ambassador" },
@@ -371,9 +372,9 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 1 - CAN YOU BEAT THEM */}
-        {step === 1 && (
+        {step === 2 && (
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-16">
-            <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="03" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-6xl mx-auto px-6 w-full">
               <div className="max-w-2xl">
                 <div className="animate-race-rise">
@@ -414,7 +415,7 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 2 - PRIZE */}
-        {step === 2 && (
+        {step === 3 && (
           <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
             <EdgeStreaks />
             <div
@@ -429,7 +430,7 @@ function ODAChallenge2026Page() {
               className="pointer-events-none absolute left-0 top-1/4 h-[38%] w-full opacity-[0.35]"
               style={{ background: `linear-gradient(105deg, transparent 8%, ${INK} 30%, ${INK} 70%, transparent 92%)` }}
             />
-            <GhostNumeral n="03" className="right-[-2vw] top-[-3vw] text-[34vw] md:text-[24vw] text-white/[0.05]" />
+            <GhostNumeral n="04" className="right-[-2vw] top-[-3vw] text-[34vw] md:text-[24vw] text-white/[0.05]" />
 
             <div className="relative max-w-6xl mx-auto px-6 w-full">
               <div className="grid gap-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-12 md:items-center">
@@ -492,9 +493,9 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 3 - RULES */}
-        {step === 3 && (
+        {step === 4 && (
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] py-16 md:py-20 min-h-[calc(100vh-5.5rem)]">
-            <GhostNumeral n="04" className="right-[-3vw] top-[10vh] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
+            <GhostNumeral n="05" className="right-[-3vw] top-[10vh] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
             <div className="relative max-w-6xl mx-auto px-6">
               <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
                 <div className="animate-race-rise md:sticky md:top-28">
@@ -567,10 +568,10 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 4 - AMBASSADOR */}
-        {step === 4 && (
+        {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-[#16002E]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
             <EdgeStreaks />
-            <GhostNumeral n="05" className="right-[-2vw] top-[-2vw] text-[36vw] md:text-[26vw] text-white/[0.05]" />
+            <GhostNumeral n="06" className="right-[-2vw] top-[-2vw] text-[36vw] md:text-[26vw] text-white/[0.05]" />
             <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
               <img src={posiPreneLogo} alt="Posi-Prene" className="mb-6 h-5 md:h-6 w-auto" />
               <Eyebrow dark>Become an Ambassador</Eyebrow>
@@ -594,10 +595,10 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 5 - NEED GLOVES */}
-        {step === 5 && (
+        {step === 6 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-8 md:py-10 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="06" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="07" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
