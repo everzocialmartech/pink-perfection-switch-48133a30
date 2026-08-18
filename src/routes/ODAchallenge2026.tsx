@@ -363,8 +363,69 @@ function ODAChallenge2026Page() {
                   </span>
                 </p>
 
+                <p className="animate-race-rise delay-400 mt-5 text-base md:text-xl font-extrabold uppercase italic tracking-[0.14em] text-white">
+                  See you at ODA Show{" "}
+                  <span className="bg-[#F3267A] px-2 py-0.5 text-[#16002E]">Booth 300</span>
+                </p>
+
                 <div className="animate-race-rise delay-400 mt-6 flex">
                   <NextButton />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* STEP 1 - ODA SHOW */}
+        {step === 1 && (
+          <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-14">
+            <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <div className="relative max-w-6xl mx-auto px-6 w-full">
+              <div className="animate-race-rise max-w-3xl">
+                <Eyebrow>ODA Annual Session 2026</Eyebrow>
+                <h2 className="mt-5 text-4xl md:text-6xl text-[#16002E]">
+                  See you at <span className="text-[#F3267A]">Booth 300</span>
+                </h2>
+                <span aria-hidden className="mt-5 block h-[6px] w-40 bg-[#F3267A]" />
+
+                <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                  <div className="border-l-4 border-[#F3267A] pl-5">
+                    <div className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#16002E]/60">
+                      Dates
+                    </div>
+                    <ul className="mt-3 space-y-1 text-lg md:text-xl font-bold text-[#16002E]">
+                      <li>September 17, 2026</li>
+                      <li>September 18, 2026</li>
+                      <li>September 19, 2026</li>
+                    </ul>
+                  </div>
+                  <div className="border-l-4 border-[#F3267A] pl-5">
+                    <div className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#16002E]/60">
+                      Location
+                    </div>
+                    <p className="mt-3 text-lg md:text-xl font-bold text-[#16002E]">
+                      Greater Columbus Convention Center
+                    </p>
+                    <p className="mt-1 text-sm text-[#16002E]/60">Columbus, Ohio</p>
+                  </div>
+                </div>
+
+                <div className="animate-race-rise delay-200 mt-8 bg-[#16002E] px-7 py-7 md:px-9 md:py-8 text-white">
+                  <div className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#F3267A]">
+                    What?
+                  </div>
+                  <p className="mt-4 text-sm md:text-base text-white/75">
+                    The ODA Annual Session is Sept. 17-19 in Columbus at the Greater Columbus
+                    Convention Center and the Hilton Columbus Downtown Hotel. The ODA Annual Session
+                    offers many opportunities to earn CE from top dental industry experts, re-connect
+                    with friends and peers, and experience great dental products and services
+                    first-hand.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex flex-wrap items-center gap-6">
+                  <NextButton />
+                  <BackButton />
                 </div>
               </div>
             </div>
