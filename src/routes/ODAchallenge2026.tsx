@@ -232,8 +232,7 @@ const STEPS: StepDef[] = [
   { id: "hero", label: "The challenge", next: "See you at ODA" },
   { id: "show", label: "ODA Show", next: "Accept the challenge" },
   { id: "beat", label: "Can you beat them?", next: "There\u2019s more\u2026" },
-  { id: "bigger", label: "Early notice", next: "Look up the rules" },
-  { id: "rules", label: "The rules", next: "Need gloves?" },
+  { id: "bigger", label: "Early notice", next: "Need gloves?" },
   { id: "gear", label: "Need gloves?" },
 ];
 
