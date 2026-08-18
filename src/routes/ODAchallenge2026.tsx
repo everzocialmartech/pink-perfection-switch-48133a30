@@ -445,11 +445,9 @@ function ODAChallenge2026Page() {
                     <span className="text-[#F3267A]">Are you the fastest at ODA?</span>
                   </h2>
                   <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
-                  <p className="mt-6 max-w-md text-base md:text-lg text-[#16002E]/70">
+                  <p className="mt-6 max-w-xl text-base md:text-lg text-[#16002E]/70">
                     Put on Posi-Prene with wet or sweaty hands.{" "}
-                    <span className="font-bold text-[#16002E]">Can you beat them all?</span>
-                  </p>
-                  <p className="mt-4 max-w-md text-base md:text-lg italic text-[#16002E]/70">
+                    <span className="font-bold text-[#16002E]">Can you beat them all?</span>{" "}
                     Every team says they&rsquo;re fast until the clock starts. Step up, or chicken
                     out and watch someone else take the title.
                   </p>
