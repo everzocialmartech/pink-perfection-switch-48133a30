@@ -583,82 +583,11 @@ function ODAChallenge2026Page() {
           </section>
         )}
 
-        {/* STEP 3 - RULES */}
+        {/* STEP 4 - NEED GLOVES */}
         {step === 4 && (
-          <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] py-16 md:py-20 min-h-[calc(100vh-5.5rem)]">
-            <GhostNumeral n="05" className="right-[-3vw] top-[10vh] text-[34vw] md:text-[24vw] text-[#25003F]/[0.05]" />
-            <div className="relative max-w-6xl mx-auto px-6">
-              <div className="grid gap-12 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-16 md:items-start">
-                <div className="animate-race-rise md:sticky md:top-28">
-                  <Eyebrow>Official rules</Eyebrow>
-                  <h2 className="mt-5 text-5xl md:text-7xl leading-[0.9]">
-                    Ready. Wet. <span className="text-[#F3267A]">Glove!</span>
-                  </h2>
-                  <span aria-hidden className="mt-5 block h-[6px] w-32 bg-[#F3267A]" />
-                  <div className="mt-6">
-                    <HashtagChip />
-                  </div>
-                </div>
-
-                <ol className="relative space-y-9 border-l-2 border-[#F3267A]/25 pl-8 md:pl-12">
-                  {[
-                    ["01", "Gather your fastest team members.", "Two or more people, any operatory."],
-                    ["02", "Wet hands, race.", "Soak up, then glove up. First one fully gloved wins the heat."],
-                    ["03", "Posi-Prene Winner, ODA 2026.", "Claim your prize and become the winner of ODA."],
-                  ].map(([n, title, body], i) => (
-                    <li
-                      key={n}
-                      className="animate-race-rise relative"
-                      style={{ animationDelay: `${0.08 * i}s` }}
-                    >
-                      <span aria-hidden className="race-num absolute -left-[2.4rem] md:-left-[3.6rem] -top-2 text-4xl md:text-5xl text-[#F3267A]">
-                        {n}
-                      </span>
-                      <h3 className="text-2xl md:text-4xl leading-none">{title}</h3>
-                      <p className="mt-2 text-sm md:text-base text-[#16002E]/65">{body}</p>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-
-              <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href={FB_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-3 ${FOCUS}`}
-                >
-                  <Badge>
-                    <Facebook className="w-5 h-5" />
-                  </Badge>
-                  <span className="text-[11px] font-extrabold uppercase tracking-[0.2em]">Follow on Facebook</span>
-                </a>
-                <a
-                  href={IG_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-3 ${FOCUS}`}
-                >
-                  <Badge>
-                    <Instagram className="w-5 h-5" />
-                  </Badge>
-                  <span className="text-[11px] font-extrabold uppercase tracking-[0.2em]">Follow on Instagram</span>
-                </a>
-              </div>
-
-              <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
-                <NextButton />
-                <BackButton />
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* STEP 5 - NEED GLOVES */}
-        {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-8 md:py-10 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="06" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="05" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
