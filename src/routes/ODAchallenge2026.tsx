@@ -449,6 +449,10 @@ function ODAChallenge2026Page() {
                     Put on Posi-Prene with wet or sweaty hands.{" "}
                     <span className="font-bold text-[#16002E]">Can you beat them all?</span>
                   </p>
+                  <p className="mt-4 max-w-md text-base md:text-lg italic text-[#16002E]/70">
+                    Every team says they&rsquo;re fast until the clock starts. Step up, or chicken
+                    out and watch someone else take the title.
+                  </p>
 
                   <div className="animate-race-rise delay-200 relative mt-8 bg-[#16002E] px-7 py-7 md:px-10 md:py-9">
                     <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
