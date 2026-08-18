@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeBg from "@/assets/challenge-bg.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
+import odaLogo from "@/assets/oda-logo.png.asset.json";
 import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
 
 const PINK = "#F3267A";
