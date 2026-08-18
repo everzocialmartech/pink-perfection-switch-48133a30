@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeBg from "@/assets/challenge-bg.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Heart, Trophy } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
 
 const PINK = "#F3267A";
 const INK = "#16002E";
@@ -231,10 +231,9 @@ type StepDef = { id: string; label: string; next?: string };
 const STEPS: StepDef[] = [
   { id: "hero", label: "The challenge", next: "See you at ODA" },
   { id: "show", label: "ODA Show", next: "Accept the challenge" },
-  { id: "beat", label: "Can you beat them?", next: "Yes, what\u2019s the prize?" },
-  { id: "prize", label: "The grand prize", next: "Look up the rules" },
-  { id: "rules", label: "The rules", next: "Become an ambassador" },
-  { id: "ambassador", label: "Ambassador", next: "Need gloves?" },
+  { id: "beat", label: "Can you beat them?", next: "There\u2019s more\u2026" },
+  { id: "bigger", label: "Early notice", next: "Look up the rules" },
+  { id: "rules", label: "The rules", next: "Need gloves?" },
   { id: "gear", label: "Need gloves?" },
 ];
 
@@ -476,9 +475,9 @@ function ODAChallenge2026Page() {
           </section>
         )}
 
-        {/* STEP 2 - PRIZE */}
+        {/* STEP 3 - EARLY NOTICE */}
         {step === 3 && (
-          <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-8 md:py-10">
+          <section className="race-grain relative overflow-hidden bg-[#25003F]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-10 md:py-14">
             <EdgeStreaks />
             <div
               aria-hidden
@@ -487,67 +486,38 @@ function ODAChallenge2026Page() {
                 background: `radial-gradient(ellipse 70% 60% at 20% 20%, rgba(243,38,122,0.28) 0%, rgba(37,0,63,0) 65%), radial-gradient(ellipse 70% 60% at 90% 90%, rgba(22,0,46,0.9) 0%, rgba(37,0,63,0) 60%)`,
               }}
             />
-            <span
-              aria-hidden
-              className="pointer-events-none absolute left-0 top-1/4 h-[38%] w-full opacity-[0.35]"
-              style={{ background: `linear-gradient(105deg, transparent 8%, ${INK} 30%, ${INK} 70%, transparent 92%)` }}
-            />
             <GhostNumeral n="04" className="right-[-2vw] top-[-3vw] text-[34vw] md:text-[24vw] text-white/[0.05]" />
 
-            <div className="relative max-w-6xl mx-auto px-6 w-full">
-              <div className="grid gap-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-12 md:items-center">
-                <div className="animate-race-rise">
-                  <Eyebrow dark>The grand prize</Eyebrow>
-                  <div className="mt-3 flex items-center gap-3">
-                    <Trophy className="h-8 w-8 md:h-10 md:w-10 text-[#F3267A]" strokeWidth={1.6} />
-                    <span className="race-display block text-3xl md:text-5xl text-white leading-none">
-                      Posi-Prene
-                    </span>
-                  </div>
-                  <h2 className="mt-2 text-3xl md:text-5xl text-white">
-                    Three months of <span className="text-[#F3267A]">free</span> gloves
-                  </h2>
+            <div className="relative max-w-5xl mx-auto px-6 w-full">
+              <div className="animate-race-rise max-w-3xl">
+                <Eyebrow dark>Early notice</Eyebrow>
+                <h2 className="mt-5 text-4xl md:text-7xl leading-[0.9] text-white">
+                  Something <span className="text-[#F3267A]">bigger</span> is coming
+                </h2>
+                <span aria-hidden className="mt-5 block h-[6px] w-40 bg-[#F3267A]" />
 
-                  <ul className="mt-5 max-w-sm space-y-1.5 border-l-[4px] border-[#F3267A] pl-5">
-                    {["2 cases per month", "3 full months", "Shipped free to your practice"].map((spec) => (
-                      <li key={spec} className="text-sm text-white/80">
-                        {spec}
-                      </li>
-                    ))}
-                  </ul>
+                <p className="mt-6 max-w-xl text-base md:text-lg text-white/75">
+                  The race is only the beginning. At the ODA Show we&rsquo;re unveiling something we
+                  have been keeping very quiet.
+                </p>
 
-                  <div className="mt-5 bg-[#F3267A] px-5 py-3.5">
-                    <p className="race-display text-xl md:text-3xl text-[#16002E] leading-none">
-                      Most likes by the deadline wins.
-                    </p>
-                  </div>
-
-                  <p className="mt-3 max-w-sm text-xs md:text-sm text-white/60">
-                    Deadline is going to be communicated through email and social media.
+                <div className="animate-race-rise delay-200 mt-7 border-l-[4px] border-[#F3267A] bg-[#16002E]/70 px-6 py-5 md:px-8 md:py-6">
+                  <p className="race-display text-2xl md:text-4xl leading-none text-white">
+                    You&rsquo;ll want to be at{" "}
+                    <span className="bg-[#F3267A] px-2 text-[#16002E]">Booth 300</span> first.
                   </p>
-
-                  <div className="mt-6 flex flex-wrap items-center gap-5">
-                    <NextButton dark />
-                    <BackButton dark />
-                  </div>
+                  <p className="mt-3 text-sm text-white/55">
+                    No hints, no previews. It gets revealed live in Columbus, September 17-19.
+                  </p>
                 </div>
 
-                <div className="animate-race-rise delay-200 bg-white text-[#16002E] border-2 border-white px-6 py-6 md:px-8 md:py-8">
-                  <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
-                    Head start
-                  </p>
-                  <p className="mt-2 text-sm leading-relaxed text-[#16002E]/75">
-                    <strong className="font-bold text-[#16002E]">Loyal Posi-Prene users</strong> get a full
-                    month of advantage to gather likes before the challenge goes public.
-                  </p>
-                  <div className="mt-5 border-t border-[#16002E]/15 pt-4">
-                    <p className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
-                      Tag your post
-                    </p>
-                    <div className="mt-2">
-                      <HashtagChip />
-                    </div>
-                  </div>
+                <p className="mt-5 text-[11px] font-extrabold uppercase tracking-[0.24em] text-[#F3267A]">
+                  Shh&hellip; you heard it here first.
+                </p>
+
+                <div className="mt-8 flex flex-wrap items-center gap-5">
+                  <NextButton dark />
+                  <BackButton dark />
                 </div>
               </div>
             </div>
@@ -629,38 +599,11 @@ function ODAChallenge2026Page() {
           </section>
         )}
 
-        {/* STEP 4 - AMBASSADOR */}
-        {step === 5 && (
-          <section className="race-grain relative overflow-hidden bg-[#16002E]/72 text-white flex min-h-[calc(100vh-5.5rem)] items-center py-16">
-            <EdgeStreaks />
-            <GhostNumeral n="06" className="right-[-2vw] top-[-2vw] text-[36vw] md:text-[26vw] text-white/[0.05]" />
-            <div className="relative max-w-5xl mx-auto px-6 w-full text-left">
-              <img src={posiPreneLogo} alt="Posi-Prene" className="mb-6 h-5 md:h-6 w-auto" />
-              <Eyebrow dark>Become an Ambassador</Eyebrow>
-              <h2 className="mt-5 max-w-3xl text-5xl md:text-7xl leading-[0.9]">
-                Your video could lead to <span className="text-[#F3267A]">something bigger</span>
-              </h2>
-              <p className="mt-6 max-w-xl text-base md:text-lg text-white/75">
-                Funny, creative, well-edited? The CSC team may reach out about a future Posi-Prene
-                Ambassador partnership.
-              </p>
-              <div className="mt-9 flex flex-wrap items-center gap-6">
-                <NextButton dark />
-                <BackButton dark />
-              </div>
-              <p className="mt-6 max-w-xl text-xs text-white/40">
-                Participation does not guarantee selection. Winner selection and eligibility are
-                subject to the Official Rules.
-              </p>
-            </div>
-          </section>
-        )}
-
         {/* STEP 5 - NEED GLOVES */}
-        {step === 6 && (
+        {step === 5 && (
           <section className="race-grain relative overflow-hidden bg-white text-[#16002E] py-8 md:py-10 min-h-[calc(100vh-5.5rem)]">
             <EdgeStreaks tone="light" />
-            <GhostNumeral n="07" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="06" className="left-[-2vw] bottom-[-1vw] text-[30vw] md:text-[22vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-5xl mx-auto px-6">
               <div className="animate-race-rise">
                 <Eyebrow>Gear up</Eyebrow>
