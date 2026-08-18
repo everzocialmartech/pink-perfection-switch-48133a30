@@ -151,6 +151,60 @@ function Badge({ children }: { children: React.ReactNode }) {
 }
 
 function LikeCounter({ target = 2847 }: { target?: number }) {
+  return null as unknown as JSX.Element;
+}
+
+function RaceTimer({ stopAt = 4.32 }: { stopAt?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [t, setT] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    let raf = 0;
+    let timeout: ReturnType<typeof setTimeout>;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries[0].isIntersecting) return;
+        const run = () => {
+          const start = performance.now();
+          const tick = (now: number) => {
+            const elapsed = (now - start) / 1000;
+            if (elapsed >= stopAt) {
+              setT(stopAt);
+              timeout = setTimeout(run, 2000);
+              return;
+            }
+            setT(elapsed);
+            raf = requestAnimationFrame(tick);
+          };
+          raf = requestAnimationFrame(tick);
+        };
+        run();
+      },
+      { threshold: 0.4 }
+    );
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+    };
+  }, [stopAt]);
+
+  const secs = Math.floor(t);
+  const hundredths = Math.floor((t - secs) * 100);
+  return (
+    <div ref={ref} className="flex items-baseline gap-2 tabular-nums">
+      <span className="text-6xl md:text-7xl font-extrabold italic leading-none text-[#F3267A]">
+        {String(secs).padStart(2, "0")}.{String(hundredths).padStart(2, "0")}
+      </span>
+      <span className="text-sm font-extrabold uppercase tracking-[0.22em] text-white/70">sec</span>
+    </div>
+  );
+}
+
+function LikeCounterLegacy({ target = 2847 }: { target?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [count, setCount] = useState(target);
   const [beat, setBeat] = useState(false);
