@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PosipreneRouteImport } from './routes/posiprene'
 import { Route as Challenge2026RouteImport } from './routes/challenge2026'
+import { Route as ODAchallenge2026RouteImport } from './routes/ODAchallenge2026'
 import { Route as IndexRouteImport } from './routes/index'
 
 const PosipreneRoute = PosipreneRouteImport.update({
@@ -23,6 +24,11 @@ const Challenge2026Route = Challenge2026RouteImport.update({
   path: '/challenge2026',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ODAchallenge2026Route = ODAchallenge2026RouteImport.update({
+  id: '/ODAchallenge2026',
+  path: '/ODAchallenge2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ODAchallenge2026': typeof ODAchallenge2026Route
   '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ODAchallenge2026': typeof ODAchallenge2026Route
   '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ODAchallenge2026': typeof ODAchallenge2026Route
   '/challenge2026': typeof Challenge2026Route
   '/posiprene': typeof PosipreneRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/challenge2026' | '/posiprene'
+  fullPaths: '/' | '/ODAchallenge2026' | '/challenge2026' | '/posiprene'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/challenge2026' | '/posiprene'
-  id: '__root__' | '/' | '/challenge2026' | '/posiprene'
+  to: '/' | '/ODAchallenge2026' | '/challenge2026' | '/posiprene'
+  id: '__root__' | '/' | '/ODAchallenge2026' | '/challenge2026' | '/posiprene'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ODAchallenge2026Route: typeof ODAchallenge2026Route
   Challenge2026Route: typeof Challenge2026Route
   PosipreneRoute: typeof PosipreneRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Challenge2026RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ODAchallenge2026': {
+      id: '/ODAchallenge2026'
+      path: '/ODAchallenge2026'
+      fullPath: '/ODAchallenge2026'
+      preLoaderRoute: typeof ODAchallenge2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ODAchallenge2026Route: ODAchallenge2026Route,
   Challenge2026Route: Challenge2026Route,
   PosipreneRoute: PosipreneRoute,
 }

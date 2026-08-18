@@ -20,24 +20,25 @@ const OG_IMAGE =
 export const Route = createFileRoute("/ODAchallenge2026")({
   head: () => ({
     meta: [
-      { title: "The Posi-Prene Challenge: Fastest Hands in Dentistry" },
+      { title: "Posi-Prene Challenge at ODA 2026: Booth 300" },
       {
         name: "description",
         content:
-          "You've been challenged. Race Posi-Prene against standard nitrile on wet hands, post the video, and win three months of gloves for your practice.",
+          "See you at the ODA Annual Session, Sept 17-19, 2026, Greater Columbus Convention Center, Booth 300. Race Posi-Prene against nitrile on wet hands and win gloves for your practice.",
       },
-      { property: "og:title", content: "The Posi-Prene Challenge: You've Been Challenged" },
+      { property: "og:title", content: "Posi-Prene Challenge at ODA 2026: Booth 300" },
       {
         property: "og:description",
-        content: "Race Posi-Prene against nitrile on wet hands. Post the video. Win three months of gloves.",
+        content:
+          "ODA Annual Session, Sept 17-19, 2026 in Columbus. Find us at Booth 300 and take the Posi-Prene Challenge.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://pink-perfection-switch.lovable.app/" },
+      { property: "og:url", content: "https://pink-perfection-switch.lovable.app/ODAchallenge2026" },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://pink-perfection-switch.lovable.app/ODAchallenge2026" }],
   }),
   component: ODAChallenge2026Page,
 });
