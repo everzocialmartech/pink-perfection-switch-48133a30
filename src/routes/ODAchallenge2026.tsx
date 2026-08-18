@@ -539,9 +539,6 @@ function ODAChallenge2026Page() {
                     Ready. Wet. <span className="text-[#F3267A]">Glove!</span>
                   </h2>
                   <span aria-hidden className="mt-5 block h-[6px] w-32 bg-[#F3267A]" />
-                  <p className="mt-5 text-sm text-[#16002E]/65 max-w-xs">
-                    Four steps, about five minutes. Tag your post so we can count the likes.
-                  </p>
                   <div className="mt-6">
                     <HashtagChip />
                   </div>
@@ -549,9 +546,9 @@ function ODAChallenge2026Page() {
 
                 <ol className="relative space-y-9 border-l-2 border-[#F3267A]/25 pl-8 md:pl-12">
                   {[
-                    ["01", "Gather your team.", "Two or more people, any operatory."],
-                    ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
-                    ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
+                    ["01", "Gather your fastest team members.", "Two or more people, any operatory."],
+                    ["02", "Wet hands, race.", "Soak up, then glove up. First one fully gloved wins the heat."],
+                    ["03", "Posi-Prene Winner, ODA 2026.", "Claim your prize and become the winner of ODA."],
                   ].map(([n, title, body], i) => (
                     <li
                       key={n}
