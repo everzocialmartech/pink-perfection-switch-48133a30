@@ -4,7 +4,7 @@ import cscLogo from "@/assets/csc-logo-wordmark.png";
 import challengeBg from "@/assets/challenge-bg.png.asset.json";
 import posiPreneLogo from "@/assets/posi-prene-wordmark.png";
 import odaLogo from "@/assets/oda-logo.png.asset.json";
-import { ArrowRight, Check, Copy, Facebook, Instagram, Heart } from "lucide-react";
+import { ArrowRight, Check, Copy, Facebook, Instagram, Timer } from "lucide-react";
 
 const PINK = "#F3267A";
 const INK = "#16002E";
@@ -150,10 +150,6 @@ function Badge({ children }: { children: React.ReactNode }) {
   );
 }
 
-function LikeCounter({ target = 2847 }: { target?: number }) {
-  return null as unknown as JSX.Element;
-}
-
 function RaceTimer({ stopAt = 4.32 }: { stopAt?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [t, setT] = useState(0);
@@ -200,57 +196,6 @@ function RaceTimer({ stopAt = 4.32 }: { stopAt?: number }) {
         {String(secs).padStart(2, "0")}.{String(hundredths).padStart(2, "0")}
       </span>
       <span className="text-sm font-extrabold uppercase tracking-[0.22em] text-white/70">sec</span>
-    </div>
-  );
-}
-
-function LikeCounterLegacy({ target = 2847 }: { target?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState(target);
-  const [beat, setBeat] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    let raf = 0;
-    setCount(0);
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting) return;
-        io.disconnect();
-        setBeat(true);
-        const start = performance.now();
-        const duration = 2200;
-        const tick = (now: number) => {
-          const t = Math.min((now - start) / duration, 1);
-          const eased = 1 - Math.pow(1 - t, 3);
-          setCount(Math.round(target * eased));
-          if (t < 1) raf = requestAnimationFrame(tick);
-          else setBeat(false);
-        };
-        raf = requestAnimationFrame(tick);
-      },
-      { threshold: 0.4 }
-    );
-    io.observe(el);
-    return () => {
-      io.disconnect();
-      cancelAnimationFrame(raf);
-    };
-  }, [target]);
-
-  return (
-    <div ref={ref} aria-live="off" className="inline-flex items-baseline gap-3 border-b-[3px] border-[#F3267A] pb-2">
-      <Heart
-        className={`h-6 w-6 shrink-0 translate-y-1 text-[#F3267A] transition-transform ${
-          beat ? "animate-[pulse_0.7s_ease-in-out_infinite]" : ""
-        }`}
-        fill={PINK}
-      />
-      <span className="race-num text-5xl md:text-6xl tabular-nums text-white">
-        {count.toLocaleString("en-US")}
-      </span>
-      <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-white/60">likes</span>
     </div>
   );
 }
@@ -504,11 +449,24 @@ function ODAChallenge2026Page() {
                     <span className="font-bold text-[#16002E]">Can you beat them all?</span>
                   </p>
 
-                  <div className="animate-race-rise delay-200 relative mt-8 bg-white px-7 py-7 md:px-10 md:py-9">
+                  <div className="animate-race-rise delay-200 relative mt-8 bg-[#16002E] px-7 py-7 md:px-10 md:py-9">
+                    <div className="flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#F3267A]">
+                      <Timer className="h-4 w-4" />
+                      Fastest time to glove up wins
+                    </div>
+                    <div className="mt-5">
+                      <RaceTimer />
+                    </div>
+                    <p className="mt-4 text-xs text-white/55">
+                      Example only. Your clock starts the moment your hands hit the gloves.
+                    </p>
+                  </div>
+
+                  <div className="animate-race-rise delay-200 mt-6 inline-block bg-white px-6 py-5">
                     <img
                       src={odaLogo.url}
                       alt="Ohio Dental Association: Advocate. Inform. Serve."
-                      className="h-16 md:h-20 w-auto"
+                      className="h-14 md:h-16 w-auto"
                       loading="lazy"
                     />
                   </div>
