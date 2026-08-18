@@ -569,10 +569,13 @@ function ODAChallenge2026Page() {
                   have been keeping very quiet.
                 </p>
 
-                <div className="animate-race-rise delay-200 mt-7 border-l-[4px] border-[#F3267A] bg-[#16002E]/70 px-6 py-5 md:px-8 md:py-6">
-                  <p className="race-display text-2xl md:text-4xl leading-none text-white">
-                    You&rsquo;ll want to be at{" "}
-                    <span className="bg-[#F3267A] px-2 text-[#16002E]">Booth 300</span> first.
+                <div className="animate-race-rise delay-200 mt-7 border-l-[4px] border-[#F3267A] bg-[#16002E]/70 px-5 py-5 md:px-8 md:py-6">
+                  <p className="race-display text-xl sm:text-2xl md:text-4xl leading-tight text-white">
+                    <span className="block">You&rsquo;ll want to be at</span>
+                    <span className="mt-2 flex flex-nowrap items-baseline gap-2 whitespace-nowrap">
+                      <span className="bg-[#F3267A] px-2 py-0.5 text-[#16002E]">Booth 300</span>
+                      <span>first.</span>
+                    </span>
                   </p>
                   <p className="mt-3 text-sm text-white/55">
                     No hints, no previews. It gets revealed live in Columbus, September 17-19.
