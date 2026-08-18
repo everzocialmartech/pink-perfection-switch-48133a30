@@ -363,6 +363,11 @@ function ODAChallenge2026Page() {
                   <span className="bg-[#F3267A] px-2 py-0.5 text-[#16002E]">Booth 300</span>
                 </p>
 
+                <p className="animate-race-rise delay-400 mt-4 max-w-md text-sm md:text-base italic text-white/75">
+                  So&hellip; are you ready to take on the challenge, or are you going to get scared
+                  and let it slide?
+                </p>
+
                 <div className="animate-race-rise delay-400 mt-6 flex">
                   <NextButton />
                 </div>
