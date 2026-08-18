@@ -352,13 +352,10 @@ function ODAChallenge2026Page() {
                   </span>
                 </h1>
 
-                <p className="animate-race-rise delay-200 mt-4 max-w-md text-sm md:text-base text-white/70">
-                  Posi-Prene vs. Standard nitrile on wet hands.
-                  <br />
-                  Race it. Film it. Post it.
-                  <br />
-                  <span className="text-[#F3267A] font-semibold uppercase tracking-wide">
-                    Posi-Prene Always Wins.
+                <p className="animate-race-rise delay-200 mt-4 max-w-md text-sm md:text-base font-extrabold uppercase tracking-[0.08em] text-white/80">
+                  Two practices, one glove,{" "}
+                  <span className="text-[#F3267A]">
+                    who is the fastest at donning with wet hands?
                   </span>
                 </p>
 
