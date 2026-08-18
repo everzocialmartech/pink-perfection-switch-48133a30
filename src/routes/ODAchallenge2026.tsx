@@ -441,8 +441,8 @@ function ODAChallenge2026Page() {
                 <div className="animate-race-rise">
                   <Eyebrow>The competition</Eyebrow>
                   <h2 className="mt-5 text-5xl md:text-7xl text-[#16002E]">
-                    Teams race against each other, let&rsquo;s find the{" "}
-                    <span className="text-[#F3267A]">fastest hands at ODA.</span>
+                    Can your team beat them all?{" "}
+                    <span className="text-[#F3267A]">Are you the fastest at ODA?</span>
                   </h2>
                   <span aria-hidden className="mt-6 block h-[6px] w-40 bg-[#F3267A]" />
                   <p className="mt-6 max-w-md text-base md:text-lg text-[#16002E]/70">
