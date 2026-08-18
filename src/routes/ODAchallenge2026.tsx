@@ -10,7 +10,6 @@ const INK = "#16002E";
 const PLUM = "#25003F";
 
 const SHOP_URL = "https://clinicalsupplycompany.com/collections/posi-prene";
-const SAMPLES_URL = "https://clinicalsupplycompany.com/pages/csc-samples-request";
 const ODA_REGISTER_URL = "https://www.oda.org/annual-session/";
 const FB_URL = "https://www.facebook.com/clinicalsupplycompany";
 const IG_URL = "https://www.instagram.com/clinicalsupplyco/";
