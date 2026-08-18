@@ -363,6 +363,11 @@ function ODAChallenge2026Page() {
                   <span className="bg-[#F3267A] px-2 py-0.5 text-[#16002E]">Booth 300</span>
                 </p>
 
+                <p className="animate-race-rise delay-400 mt-4 max-w-md text-sm md:text-base italic text-white/75">
+                  So&hellip; are you ready to take on the challenge, or are you going to get scared
+                  and let it slide?
+                </p>
+
                 <div className="animate-race-rise delay-400 mt-6 flex">
                   <NextButton />
                 </div>
@@ -443,6 +448,10 @@ function ODAChallenge2026Page() {
                   <p className="mt-6 max-w-md text-base md:text-lg text-[#16002E]/70">
                     Put on Posi-Prene with wet or sweaty hands.{" "}
                     <span className="font-bold text-[#16002E]">Can you beat them all?</span>
+                  </p>
+                  <p className="mt-4 max-w-md text-base md:text-lg italic text-[#16002E]/70">
+                    Every team says they&rsquo;re fast until the clock starts. Step up, or chicken
+                    out and watch someone else take the title.
                   </p>
 
                   <div className="animate-race-rise delay-200 relative mt-8 bg-[#16002E] px-7 py-7 md:px-10 md:py-9">
