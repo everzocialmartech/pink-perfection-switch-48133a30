@@ -552,7 +552,6 @@ function ODAChallenge2026Page() {
                     ["01", "Gather your team.", "Two or more people, any operatory."],
                     ["02", "Split the gloves.", "One person wears Posi-Prene, the rest wear standard nitrile."],
                     ["03", "Wet hands. Race.", "Soak up, then glove up. First one fully gloved wins the heat."],
-                    ["04", "Film it and post it.", "Instagram or Facebook, tag Clinical Supply Company and use the hashtag."],
                   ].map(([n, title, body], i) => (
                     <li
                       key={n}
