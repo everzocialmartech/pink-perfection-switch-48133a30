@@ -467,7 +467,7 @@ function ODAChallenge2026Page() {
                     </p>
                   </div>
 
-                  <div className="animate-race-rise delay-200 mt-6 inline-block bg-white px-6 py-5">
+                  <div className="animate-race-rise delay-200 mt-6 inline-block bg-white px-6 pt-5 pb-2">
                     <img
                       src={odaLogo.url}
                       alt="Ohio Dental Association: Advocate. Inform. Serve."
@@ -478,7 +478,7 @@ function ODAChallenge2026Page() {
                 </div>
               </div>
 
-              <div className="mt-14 border-t-2 border-[#F3267A]/20 pt-10">
+              <div className="mt-5 border-t-2 border-[#F3267A]/20 pt-6">
                 <div className="animate-race-rise">
                   <Eyebrow>Official rules</Eyebrow>
                   <h3 className="mt-4 text-4xl md:text-6xl leading-[0.9]">
