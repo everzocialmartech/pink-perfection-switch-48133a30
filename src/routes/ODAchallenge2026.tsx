@@ -229,9 +229,9 @@ function HashtagChip({ dark = false }: { dark?: boolean }) {
 type StepDef = { id: string; label: string; next?: string };
 
 const STEPS: StepDef[] = [
-  { id: "hero", label: "The challenge", next: "See you at ODA" },
-  { id: "show", label: "ODA Show", next: "Accept the challenge" },
-  { id: "beat", label: "Can you beat them?", next: "There\u2019s more\u2026" },
+  { id: "hero", label: "The challenge", next: "Accept the challenge" },
+  { id: "beat", label: "Can you beat them?", next: "See you at ODA" },
+  { id: "show", label: "ODA Show", next: "There\u2019s more\u2026" },
   { id: "bigger", label: "Early notice", next: "Need gloves?" },
   { id: "gear", label: "Need gloves?" },
 ];
@@ -371,10 +371,10 @@ function ODAChallenge2026Page() {
           </section>
         )}
 
-        {/* STEP 1 - ODA SHOW */}
-        {step === 1 && (
+        {/* STEP 2 - ODA SHOW */}
+        {step === 2 && (
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] flex min-h-[calc(100vh-5.5rem)] items-center py-14">
-            <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="03" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-6xl mx-auto px-6 w-full">
               <div className="animate-race-rise max-w-3xl">
                 <Eyebrow>ODA Annual Session 2026</Eyebrow>
@@ -428,9 +428,9 @@ function ODAChallenge2026Page() {
         )}
 
         {/* STEP 1 - CAN YOU BEAT THEM */}
-        {step === 2 && (
+        {step === 1 && (
           <section className="race-grain race-edge-bottom relative overflow-hidden bg-white text-[#16002E] min-h-[calc(100vh-5.5rem)] py-16">
-            <GhostNumeral n="03" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
+            <GhostNumeral n="02" className="left-[-2vw] bottom-[-2vw] text-[36vw] md:text-[26vw] text-[#25003F]/[0.06]" />
             <div className="relative max-w-6xl mx-auto px-6 w-full">
               <div className="max-w-2xl">
                 <div className="animate-race-rise">
